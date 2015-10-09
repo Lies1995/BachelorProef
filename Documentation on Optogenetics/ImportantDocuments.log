@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.7)  9 OCT 2015 10:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.7)  9 OCT 2015 17:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -563,6 +563,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--68
 
 
 ]
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 98.
+
+
+LaTeX Warning: Citation `OptoGen' on page 2 undefined on input line 98.
+
+
+LaTeX Warning: Citation `Opsin' on page 2 undefined on input line 101.
+
 
 Class scrartcl Warning: Usage of deprecated font command `\sl'!
 (scrartcl)              You should note, that in 1994 font command `\sl' has
@@ -575,26 +584,136 @@ Class scrartcl Warning: Usage of deprecated font command `\sl'!
 (scrartcl)              Note also, that KOMA-Script will remove the definition
 (scrartcl)              of `\sl' anytime until release of about version 3.20.
 (scrartcl)              But for now, KOMA-Script will replace deprecated `\sl'
-(scrartcl)              by `\normalfont \slshape ' on input line 78.
+(scrartcl)              by `\normalfont \slshape ' on input line 103.
 
-[2] (./ImportantDocuments.aux) ) 
+[2]
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 104
+.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+)
+Overfull \hbox (6.31873pt too wide) in paragraph at lines 108--112
+\T1/futs/m/n/10.95 re-search has been done to ge-net-i-cally mod-ify mam-malian
+ neu-rons to have these light-sensitive
+ []
+
+
+LaTeX Warning: Citation `First' on page 3 undefined on input line 121.
+
+
+LaTeX Warning: Citation `Youtube' on page 3 undefined on input line 132.
+
+
+Underfull \hbox (badness 1946) in paragraph at lines 134--134
+[]|\T1/futs/m/n/10.95 The grad-ual loss in in-ten-sity
+ []
+
+
+Underfull \hbox (badness 2435) in paragraph at lines 134--134
+[]|\T1/futs/m/n/10.95 Attenuation can be caused by the
+ []
+
+
+Underfull \hbox (badness 6016) in paragraph at lines 136--136
+[]|\T1/futs/m/n/10.95 Optical fiber with only one
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+[]|\T1/futs/m/n/10.95 Multimode
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+[]|\T1/futs/m/n/10.95 Optical fiber with more
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
+[]|\T1/futs/m/n/10.95 Cutoff
+ []
+
+
+Underfull \hbox (badness 3701) in paragraph at lines 138--138
+[]|\T1/futs/m/n/10.95 the wave-length above which
+ []
+
+
+Underfull \hbox (badness 1838) in paragraph at lines 138--138
+[]|\T1/futs/m/n/10.95 propertie of a sin-gle mode op-ti-cal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--139
+[]|\T1/futs/m/n/10.95 Mode field
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--140
+[]|\T1/futs/m/n/10.95 Numerical
+ []
+
+
+Underfull \hbox (badness 5519) in paragraph at lines 140--140
+[]|\T1/futs/m/n/10.95 the mea-sure of the an-gu-lar
+ []
+
+No file ImportantDocuments.bbl.
+
+Class scrartcl Warning: Usage of deprecated font command `\sl'!
+(scrartcl)              You should note, that in 1994 font command `\sl' has
+(scrartcl)              been defined for compatiblitiy to Script 2.0 only.
+(scrartcl)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrartcl)              shouldn't use such commands any longer and within
+(scrartcl)              KOMA-Script usage of `\sl' is definitely deprecated.
+(scrartcl)              See `fntguide.pdf' for more information about
+(scrartcl)              recommended font commands.
+(scrartcl)              Note also, that KOMA-Script will remove the definition
+(scrartcl)              of `\sl' anytime until release of about version 3.20.
+(scrartcl)              But for now, KOMA-Script will replace deprecated `\sl'
+(scrartcl)              by `\normalfont \slshape ' on input line 150.
+
+[3]
+
+Class scrartcl Warning: Usage of deprecated font command `\sl'!
+(scrartcl)              You should note, that in 1994 font command `\sl' has
+(scrartcl)              been defined for compatiblitiy to Script 2.0 only.
+(scrartcl)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrartcl)              shouldn't use such commands any longer and within
+(scrartcl)              KOMA-Script usage of `\sl' is definitely deprecated.
+(scrartcl)              See `fntguide.pdf' for more information about
+(scrartcl)              recommended font commands.
+(scrartcl)              Note also, that KOMA-Script will remove the definition
+(scrartcl)              of `\sl' anytime until release of about version 3.20.
+(scrartcl)              But for now, KOMA-Script will replace deprecated `\sl'
+(scrartcl)              by `\normalfont \slshape ' on input line 150.
+
+[4] (./ImportantDocuments.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 5420 strings out of 493089
- 76970 string characters out of 6134842
- 197637 words of memory out of 5000000
- 8805 multiletter control sequences out of 15000+600000
- 96777 words of font info for 99 fonts, out of 8000000 for 9000
+ 5461 strings out of 493089
+ 77573 string characters out of 6134842
+ 201663 words of memory out of 5000000
+ 8837 multiletter control sequences out of 15000+600000
+ 101771 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,47p,491b,249s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/d
-vips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier
-/fourier-ms.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/pu
-tr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putr8a.pf
-b></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on ImportantDocuments.pdf (2 pages, 48378 bytes).
+ 41i,11n,47p,491b,269s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on ImportantDocuments.pdf (4 pages, 68478 bytes).
 PDF statistics:
- 28 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
