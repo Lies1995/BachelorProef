@@ -1,0 +1,88 @@
+Deze link is de link naar de site waar ik dit stappenplan vandaan heb.
+
+http://educ.jmu.edu/~arnoldea/latex_setup_and_tutorial.htm
+
+Arnold - Math 475, Fall 2007
+
+LaTeX Setup and Tutorial
+
+Introduction
+
+LaTeX works like this:
+First, you use a text editor (we'll be using the freeware Texmaker) to create a LaTeX document.
+
+Then, you run a LaTeX compiler (we'll be using MiKTeX).
+Finally, you need to use some kind of viewer/previewer (we'll be using Yap, which stands for "Yet Another Previewer") to view or print the formatted file.
+You will do everything from the program Texmaker, which  will utilize MiKTeX and Yap. This document will take you through the steps of downloading, installing, configuring, and working with MiKTeX and Texmaker. Be sure to follow ALL of the directions below, IN ORDER.
+
+Downloading and installing MiKTeX for Windows
+
+Go to miktex.org/2.8/setup.
+Click the Download button next to "Basic MiKTeX 2.7" Installer
+Now click "Save File".
+Find where the file was saved and double click on it.
+Windows will ask "Unknown publisher, install anyway?".  Click "run".
+The Setup wizard will now open.  Click the box "I accept" and keep clicking "next" until the setup is complete.  Don't change any of the defaults.
+At the end, click close.
+ 
+
+Now you are ready to download the text editor, Texmaker for Windows.
+
+Go to http://www.xm1math.net/texmaker/download.html
+Now click under the appropriate platform.  If you are using windows, click on Executable file for win32 systems : texmakerwin32_install.exe.
+Now click "Run" (or click save, save the installer to the desktop, and then double click the icon).
+Windows will ask "Unknown publisher, install anyway?".  Click "run".
+The Setup wizard will now open.  Click the box "I agree" then click "install" and keep clicking "next" until the setup is complete.  Don't change any of the defaults.
+At the end, click close.
+ 
+Creating a simple document using LaTeX with TeXMaker for Windows
+
+Now we're finally ready to write a document in LaTeX. The instructions below will take you through the process of creating a very simple document.
+Open: Texmaker from the Start menu.  You may want to put a shortcut on your desktop.
+Write: In the upper right box, type this:
+\documentclass{article} 
+\begin{document} 
+Hello universe! 
+\end{document}
+
+ 
+
+    3.  Save: Save this file as "universe.tex" to whatever directory you choose. Be sure the extension is "tex" and NOT "txt". Also be sure to select "All Files" under the "Save as Type" menu before you save.
+    4.  Compile:  Now click on the little "PDFLAT" icon on the toolbar.  You should get a message below the window which reads  "Process Started" "Process exited normally".
+
+    5. View: Now click the PDF icon on the tool bar to view the PDF file.
+
+ 
+
+Texmaker has a special command called "Quick Build".  If you click on the "Q" button to the left of the "Latex" button, Texmaker will show you the log file in the lower window with any errors highlighted in red. First you need to configure Quick Build.  On the menu bar at the top of the screen, click on "Options", then "Configure Texmaker".  Now click the button to the left calls "Quick Build".  Click the button that says "PDF LaTeX + View PDF".  Then "ok".
+
+Handling compiling errors
+
+LaTeX is a very picky typesetting program, and a lot of tiny things can cause compiling errors. By following the instructions below you will introduce an error into your universe.tex file and then see how to deal with it.
+Change your .tex file so that it looks like this:
+ 
+
+ 
+\documentclass{article}
+\begin{document}
+Howdy universe!
+The & is a special character.
+\end{document}
+Now click Typeset and you will get the following error:  "Misplaced alignment tab character &".
+ 
+
+In LaTeX, the "&" character is used for tabbing (alignment) in certain environments, but it is not a legal character on its own; that is what the first line of the error message above is saying - that the character "&" is being used somewhere it shouldn't. Click "Go To Error" to go to the place where the compiler thinks there is an error in the editing window.
+    4.   To fix the problem, you could "comment out" the entire line by placing a % at the beginning of the line.  Try this and click typeset again.
+
+    5.  Or you can do as LaTeX suggests, and put a "\" in front of the &.  Remove the % and try this.
+
+Printing a finished LaTeX document
+
+If you want to print right from the computer you are working on, it's easy; just choose "Print" from the "File" menu of the PDF viewer.  Don't print from the Texmaker window, because you will only be printing the LaTeX code, not the finished product.
+ 
+
+Thanks to Laura Taalman for assistance with this document.
+
+ 
+
+ 
