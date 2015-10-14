@@ -1,18 +1,16 @@
 function MCML_plot
     close all
-%------DATA--------
-    L = {'470';'560'};    
+    
+    L = {'470';'560'};                                    
     NA = {'12';'37'};                                                  
     dia = {'9';'200'};
-    file_path = '/Users/LIesDeceuninck/Desktop';
-%-------PLOT-------
-    for i = 1: length(L);
-    for j= 1: length(NA)                                         
-    i=1;j=1;
+    file_path = '\Users\LIesDeceuninck\Documents\github\BachelorProef\Licht_verdeling';
+    
+    for n_L = 1
+    for n_NA = 1                                         
+    for n_dia =1
         
-      n_L=L(i); n_NA=NA(j); n_dia=dia(j);
-     
-      file_name = ['L_' char(n_L) '_NA_' char(n_NA) '_d_' char(n_dia) '.Frzc']; 
+                file_name = ['L_' char(L(n_L)) '_NA_' char(NA(n_NA)) '_d_' char(dia(n_dia)) '.Frzc']; 
                 file_Frz = [fullfile(file_path,file_name)];   
         
                 [r,z,Data] = read_F(file_Frz);                              % /cm^2
@@ -21,16 +19,16 @@ function MCML_plot
                 R_Fig = [-r(end:-1:1), r];                                  % mm
                 Data_Fig = [Data(:,end:-1:1) Data]*1;                       % * # mW @ tip
 
-                figure(1)
                                        
                 imagesc(R_Fig,z,Data_Fig); colorbar;   
                 xlabel('r (mm)'); ylabel('z (mm)'); 
 %                xlim([-0.1,0.1 ]);ylim([0,0.7]);
-               figure(2) 
+                
               plot(z,Data_Fig(:,501))                                     % I(r,z) [mW/mm²]    
               xlim([0,3]);ylim([0,500]);         
-  end
-  end 
+     end
+     end
+    end
      
     % read data from file            
 function [r,z,Data] = read_F(MCML_file_MCO)
