@@ -4,12 +4,11 @@ function MCML_plot
     L = {'470';'560'};                                    
     NA = {'12';'37'};                                                  
     dia = {'9';'200'};
-    file_path = '\Users\LIesDeceuninck\Documents\github\BachelorProef\Licht_verdeling';
+    file_path = 'C:\Users\LIesDeceuninck\Documents\github\BachelorProef\BaProject\Licht_verdeling';
     
     for n_L = 1
     for n_NA = 1                                         
     for n_dia =1
-        
                 file_name = ['L_' char(L(n_L)) '_NA_' char(NA(n_NA)) '_d_' char(dia(n_dia)) '.Frzc']; 
                 file_Frz = [fullfile(file_path,file_name)];   
         
