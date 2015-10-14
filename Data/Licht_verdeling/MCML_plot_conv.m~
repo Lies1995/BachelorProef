@@ -1,6 +1,5 @@
 
 function MCML_plot
-%------Setup--------
     close all
 % Change default text fonts
 set(0,'DefaultAxesFontName', 'Times New Roman')
@@ -12,8 +11,7 @@ set(0,'DefaultTextFontSize', 18)
     L = {'474';'560'};    
     NA = {'12';'37'};                                                  
     dia = {'9';'200'};
-    file_path_L = '/Users/LIesDeceuninck/Documents/github/BachelorProef/Data/Licht_verdeling/Output';
-    file_path_H='
+    file_path = '/Users/LIesDeceuninck/Documents/github/BachelorProef/Data/Licht_verdeling/Output';
     k=1;
 %-------PLOT-------
     for i = 1: length(L); 
@@ -22,12 +20,9 @@ set(0,'DefaultTextFontSize', 18)
         figure(k)
         
                 n_L=L(i); n_NA=NA(j); n_dia=dia(j);                    % * # mW @ tip
-                
-                [R_Fig,z,Data_Fig]=MCML_Data(n_L,n_NA,n_dia,file_path);
-                
-                
+                [file_name,R_Fig,z,Data_Fig]=MCML_Data(n_L,n_NA,n_dia,file_path);               
                 imagesc(R_Fig,z,Data_Fig); colorbar;  
-                title(['$\lambda=$' char(n_L) ', NA=' char(n_NA) ', d=' char(n_dia)],'interpreter', 'LaTex');
+                title('$\lambda$'char(n): );
                 xlabel('r (mm)', 'interpreter', 'LaTex'); 
                 ylabel('z (mm)', 'interpreter', 'LaTex'); 
                  
