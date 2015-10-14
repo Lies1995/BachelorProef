@@ -1,6 +1,8 @@
 function [r,z,Data] = read_F(MCML_file_MCO)
-%UNTITLED3 Summary of this function goes here
-%   Detailed explanation goes here
+%read_F reads data from an .Frzc file
+%   Reads in the data form teh MCML_file_MCO
+%   changes the units
+%   puts everything in the right format
 
     S= importdata(MCML_file_MCO);
     r = S.data(:,1); 
@@ -20,6 +22,7 @@ function [r,z,Data] = read_F(MCML_file_MCO)
     Data = reshape(Data,z_length,r_length);
     Data(end,:) = 0;
     Data(:,end) = 0;
+    Data = Data./100; %% /cm^2-> /mm^2
 
 end
 
