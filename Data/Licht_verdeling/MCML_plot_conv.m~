@@ -1,0 +1,30 @@
+
+function MCML_plot
+    close all
+%------DATA--------
+    L = {'470';'560'};    
+    NA = {'12';'37'};                                                  
+    dia = {'9';'200'};
+    file_path = '/Users/LIesDeceuninck/Documents/github/BachelorProef/Data/Licht_verdeling/Output';
+%-------PLOT-------
+    for i = 1: length(L);                                       
+        figure(i)
+        
+                n_L=L(i); n_NA=NA(1); n_dia=dia(1);                    % * # mW @ tip
+                [R_Fig,z,Data_Fig]=MCML_Data(n_L,n_NA,n_dia,file_path);
+                
+                
+                
+                subplot(1,2,1)                   
+                imagesc(R_Fig,z,Data_Fig); colorbar;   
+                xlabel('r (mm)'); ylabel('z (mm)'); 
+%                xlim([-0.1,0.1 ]);ylim([0,0.7]);
+
+                n_L=L(i); n_NA=NA(2); n_dia=dia(2);                    % * # mW @ tip
+                [R_Fig,z,Data_Fig]=MCML_Data(n_L,n_NA,n_dia,file_path);
+                subplot(1,2,2)
+%                 plot(z,Data_Fig(:,501))                                     % I(r,z) [mW/mm²]    
+%                 xlim([0,3]);ylim([0,500]);         
+  end
+  end 
+               
