@@ -1,14 +1,14 @@
 function MCML_plot
     close all
 %------DATA--------
-    L = {'470';'560'};    
+    L = {'474';'560'};    
     NA = {'12';'37'};                                                  
     dia = {'9';'200'};
     file_path = '/Users/LIesDeceuninck/Documents/github/BachelorProef/Data/Licht_verdeling/Output';
 %-------PLOT-------
     for i = 1: length(L);
     for j= 1: length(NA)                                         
-    i=1;j=1;
+    i=2;j=2;
         
       n_L=L(i); n_NA=NA(j); n_dia=dia(j);
      
