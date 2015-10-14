@@ -1,6 +1,6 @@
 
 %-------Setup-------
-Setup_Data
+MCML_Setup_Data
 file_path=LD;                                                %Choose what path to use
 %LD=Lies Deceuninck, HV=Hannelore Verhoeven
 

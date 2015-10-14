@@ -1,4 +1,4 @@
-function [r,z,Data] = read_F(MCML_file_MCO)
+function [r,z,Data] = MCML_read_F(MCML_file_MCO)
 %read_F reads data from an .Frzc file
 %   Reads in the data form teh MCML_file_MCO
 %   changes the units
