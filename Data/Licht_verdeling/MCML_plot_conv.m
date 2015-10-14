@@ -10,7 +10,7 @@ function MCML_plot
 %-------PLOT-------
     for i = 1: length(L); 
     for j=1:length(NA)
-        hold on
+        
         figure(k)
         
                 n_L=L(i); n_NA=NA(j); n_dia=dia(j);                    % * # mW @ tip
@@ -22,7 +22,7 @@ function MCML_plot
 %                 plot(z,Data_Fig(:,501))                                     % I(r,z) [mW/mm²]    
 %                 xlim([0,3]);ylim([0,500]); 
             k=k+1;
-        hold off
+        
   end
   end 
                
