@@ -4,7 +4,7 @@ function MCML_plot
     L = {'470';'560'};    
     NA = {'12';'37'};                                                  
     dia = {'9';'200'};
-    file_path = '/Users/LIesDeceuninck/Desktop';
+    file_path = '/Users/LIesDeceuninck/Documents/github/BachelorProef/Data/Licht_verdeling/Output';
 %-------PLOT-------
     for i = 1: length(L);
     for j= 1: length(NA)                                         
@@ -31,8 +31,7 @@ function MCML_plot
               xlim([0,3]);ylim([0,500]);         
   end
   end 
-     
-    % read data from file            
+               
 function [r,z,Data] = read_F(MCML_file_MCO)
 
 

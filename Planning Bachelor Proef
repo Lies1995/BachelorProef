@@ -1,0 +1,29 @@
+Planning Bachelor Proef
+
+---Wat betreft github:---
+(Voorlopig) niet werken met Branches.
+De files voor fluence rate /licht intensiteit, enkel het bestand voor het lezen in matlab committen
+Weensdag 14 oktober
+Hannelore: alle .Frzc files maken en committen. 
+		-L_474_NA_0.12_d_9
+		-L_474_NA_0.37_d_200
+		-L_560_NA_0.12_d_9
+		-L_560_NA_0.37_d_200
+Lies: alle afbeeldingen+data maken voor de fluencerate
+		-Script aanpassen zodat dat in 1 run kan gebeuren
+		-4x afbeelding
+		-4x datafile
+		-doorsturen naar Barbara
+Woensdag 21 oktober
+*netjes opschrijven wat we nu aan het doen zijn/gedaan hebben: 
+	-algemeen doel--> temperatuursvergelijking--> fluence rate nodig--> HOe?
+	-monte carlo methode uitleggen (kort)
+	-temperatuursvergelijking bespreken--> parameters die erin staan kort uitlegge
+	(allemaal maar eerste versie)
+
+*Nadenken over hoe de matlab code voor temperatuursverandering en eraan beginnnen
+Woensdag 21 oktober
+	-script voor 1 fluence rate om te zetten naar DT
+Vrijdag 23 oktober
+	-script voor alle 4 om te zetten naar DT
+	-integratie van plots op x aantal tijdstippen (x, verctor in begin file)
