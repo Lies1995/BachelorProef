@@ -6,11 +6,12 @@ function MCML_plot
     dia = {'9';'200'};
     file_path = '/Users/LIesDeceuninck/Desktop';
 %-------PLOT-------
-    for i = 1: length(L);
-    for j= 1: length(NA)                                         
-    i=1;j=1;
+%     for i = 1: length(L);
+%     for j= 1: length(NA)                                         
+%     for k= 1:length(dia)
         
-      n_L=L(i); n_NA=NA(j); n_dia=dia(j);
+        i=1;j=1;k=1;
+      n_L=L(i); n_NA=NA(j); n_dia=dia(k);
      
       file_name = ['L_' char(n_L) '_NA_' char(n_NA) '_d_' char(n_dia) '.Frzc']; 
                 file_Frz = [fullfile(file_path,file_name)];   
@@ -29,8 +30,9 @@ function MCML_plot
                figure(2) 
               plot(z,Data_Fig(:,501))                                     % I(r,z) [mW/mm²]    
               xlim([0,3]);ylim([0,500]);         
-  end
-  end 
+%      end
+%      end
+%     end
      
     % read data from file            
 function [r,z,Data] = read_F(MCML_file_MCO)
