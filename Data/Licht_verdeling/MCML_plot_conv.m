@@ -31,8 +31,7 @@ function MCML_plot
               xlim([0,3]);ylim([0,500]);         
   end
   end 
-     
-    % read data from file            
+               
 function [r,z,Data] = read_F(MCML_file_MCO)
 
 
