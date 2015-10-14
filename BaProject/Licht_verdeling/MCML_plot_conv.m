@@ -4,7 +4,7 @@ function MCML_plot
     L = {'470';'560'};                                    
     NA = {'12';'37'};                                                  
     dia = {'9';'200'};
-    file_path = 'C:\Users\barbara.gysbrechts\Desktop\BaProject\Licht_verdeling';
+    file_path = '/Users/LIesDeceuninck/Desktop/';
     
     for n_L = 1
     for n_NA = 1                                         
@@ -21,10 +21,10 @@ function MCML_plot
                                        
                 imagesc(R_Fig,z,Data_Fig); colorbar;   
                 xlabel('r (mm)'); ylabel('z (mm)'); 
-%                xlim([-0.1,0.1 ]);ylim([0,0.7]);
+                xlim([-0.1,0.1 ]);ylim([0,0.7]);
                 
-              plot(z,Data_Fig(:,501))                                     % I(r,z) [mW/mm²]    
-              xlim([0,3]);ylim([0,500]);         
+%               plot(z,Data_Fig(:,501))                                     % I(r,z) [mW/mm²]    
+%               xlim([0,3]);ylim([0,500]);         
      end
      end
     end
