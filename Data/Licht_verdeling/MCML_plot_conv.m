@@ -4,7 +4,7 @@ function MCML_plot
     L = {'470';'560'};    
     NA = {'12';'37'};                                                  
     dia = {'9';'200'};
-    file_path = '/Users/LIesDeceuninck/Documents/github/BachelorProef/Licht_verdeling/Output';
+    file_path = '/Users/LIesDeceuninck/Documents/github/BachelorProef/Data/Licht_verdeling/Output';
 %-------PLOT-------
     for i = 1: length(L);
     for j= 1: length(NA)                                         
