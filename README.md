@@ -16,7 +16,7 @@ Lies: alle afbeeldingen+data maken voor de fluencerate
 	[x]Script aanpassen zodat dat in 1 run kan gebeuren
 	[x]4x afbeelding (mooi)
 Vrijdag 16 oktober
-	[ ]4x datafile 
+	[x]4x datafile 
 	[ ]doorsturen naar Barbara
 
 
