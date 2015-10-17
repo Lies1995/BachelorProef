@@ -13,13 +13,14 @@ Hannelore: alle .Frzc files maken en committen.
 - [x] L_560_NA_0.12_d_9
 - [x] L_560_NA_0.37_d_200
 Lies: alle afbeeldingen+data maken voor de fluencerate
-- [x]eerste versie plots
-- [x]eerste versies doorsturen plots
-- [x]Script aanpassen zodat dat in 1 run kan gebeuren
-- [x]4x afbeelding (mooi)
+- [x] eerste versie plots
+- [x] eerste versies doorsturen plots
+- [x] Script aanpassen zodat dat in 1 run kan gebeuren
+- [x] 4x afbeelding (mooi)
 Vrijdag 16 oktober
-- [x]4x datafile 
-- [ ]doorsturen naar Barbara
+- [x] 4x datafile 
+- [ ] nieuwe afbeeldingen maken
+- [ ] doorsturen naar Barbara
 
 
 
