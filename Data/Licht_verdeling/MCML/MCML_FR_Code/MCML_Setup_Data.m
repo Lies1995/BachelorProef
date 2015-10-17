@@ -3,8 +3,8 @@
     % Change default text font size
         set(0,'DefaultAxesFontSize', 18)
     %File Path
-        LD = '/Users/LIesDeceuninck/Documents/github/BachelorProef/Data/Licht_verdeling/MCML_Sim/Output';
-        HV= 'C:\Users\hannelore\Documents\2015-2016\BachelorProef\Data\Licht_verdeling\MCML_Sim\Output';                                  
+        LD = '/Users/LIesDeceuninck/Documents/BachelorProef/Data/Licht_verdeling';
+        HV= 'C:\Users\hannelore\Documents\2015-2016\BachelorProef\Data\Licht_verdeling';                                  
 %------DATA--------
     %Wavelengths(nm)
         L = {'474';'560'}; 

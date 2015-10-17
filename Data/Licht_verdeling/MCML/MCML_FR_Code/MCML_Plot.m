@@ -4,17 +4,21 @@ MCML_Setup_Data
 file_path=LD;                                                %Choose what path to use
 %LD=Lies Deceuninck, HV=Hannelore Verhoeven
 
-%-------PLOT-------
+
+
+% %-------PLOT-------
 k=1;
   for i = 1: length(L); 
     for j=1:length(NA)
         
         fig=figure(k);                                      %make figure
-        set(fig, 'Position', [10 1000 1400 500]);           
+        set(fig, 'Position', [10 1000 1400 500]);    
+        
         
              n_L=L(i); n_NA=NA(j); n_d=d(j);                %Specifying data
-             [r,z,fRate,filename]=MCML_Data(n_L,n_NA,n_d,file_path); %Calculation Fluence rate   
-             csvwrite(['MCML_Data_FR' filename],fRate); %store data in external datafiles.
+             [r,z,fRate,filename]=MCML_Data(n_L,n_NA,n_d,file_path); %Calculation Fluence rate 
+             fullfilename=fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR' filename]);
+             csvwrite(fullfilename,fRate); %store data in external datafiles.
                                   
                
              subplot(1,2,1)                                 %Plot Fluence Rate (color) (mW/mm^)
@@ -41,10 +45,12 @@ k=1;
                    xlim([0,10]);ylim([0,0.2]);   
                end
                
+               gfxfullfilename=fullfile(file_path,'MCML','MCML_FR_gfx',['MCML_gfx_FR' filename]);
+            saveas(fig, gfxfullfilename,'pdf');
          k=k+1;
         
     end
   end 
 %  csvwrite('MCML_Data_',fRateData(:,:,1));
-  
- 
+%   
+%  
