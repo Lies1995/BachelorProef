@@ -38,9 +38,9 @@ k=1;
                 ylabel('$\phi$ [$\frac{mW}{mm^2}$]', 'interpreter', 'LaTex'); 
                 
                if j==1 
-                   xlim([0,10]);ylim([0,200]);
+                   xlim([0,4]);ylim([0,3200]);
                elseif j==2 
-                   xlim([0,8]);ylim([0,10]);   
+                   xlim([0,4]);ylim([0,80]);   
                end
                
          k=k+1;
