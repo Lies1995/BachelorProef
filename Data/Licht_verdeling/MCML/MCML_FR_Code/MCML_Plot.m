@@ -4,7 +4,6 @@ MCML_Setup_Data
 file_path=LD;                                                %Choose what path to use
 %LD=Lies Deceuninck, HV=Hannelore Verhoeven
 
-
 % %-------PLOT-------
 k=1;
   for i = 1: length(L); 
@@ -16,7 +15,7 @@ k=1;
         fig.PaperPosition=[10 1000 1400 500];
              n_L=L(i); n_NA=NA(j); n_d=d(j);                %Specifying data
              [r,z,fRate,filename]=MCML_Data(n_L,n_NA,n_d,file_path); %Calculation Fluence rate 
-             fullfilename=fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR' filename]);
+             fullfilename=fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR_' filename]);
              csvwrite(fullfilename,fRate); %store data in external datafiles.
                                   
                
@@ -39,19 +38,12 @@ k=1;
                 ylabel('$\phi$ [$\frac{mW}{mm^2}$]', 'interpreter', 'LaTex'); 
                 
                if j==1 
-                   xlim([0,10]);ylim([0,100]);
+                   xlim([0,10]);ylim([0,200]);
                elseif j==2 
-                   xlim([0,10]);ylim([0,0.2]);   
+                   xlim([0,8]);ylim([0,10]);   
                end
                
-               gfxfullfilename=fullfile(file_path,'MCML','MCML_FR_gfx',['MCML_gfx_FR' filename]);
-              % fig.PaperPositionMode = 'manual';
-            %print(fig,gfxfullfilename,'-dpng');
-            saveas(fig, gfxfullfilename,'png');
          k=k+1;
         
     end
   end 
-%  csvwrite('MCML_Data_',fRateData(:,:,1));
-%   
-%  
