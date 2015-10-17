@@ -5,7 +5,6 @@ file_path=LD;                                                %Choose what path t
 %LD=Lies Deceuninck, HV=Hannelore Verhoeven
 
 
-
 % %-------PLOT-------
 k=1;
   for i = 1: length(L); 
@@ -14,7 +13,7 @@ k=1;
         fig=figure(k);                                      %make figure
         set(fig, 'Position', [10 1000 1400 500]);    
         
-        
+        fig.PaperPosition=[10 1000 1400 500];
              n_L=L(i); n_NA=NA(j); n_d=d(j);                %Specifying data
              [r,z,fRate,filename]=MCML_Data(n_L,n_NA,n_d,file_path); %Calculation Fluence rate 
              fullfilename=fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR' filename]);
@@ -46,7 +45,9 @@ k=1;
                end
                
                gfxfullfilename=fullfile(file_path,'MCML','MCML_FR_gfx',['MCML_gfx_FR' filename]);
-            saveas(fig, gfxfullfilename,'pdf');
+              % fig.PaperPositionMode = 'manual';
+            %print(fig,gfxfullfilename,'-dpng');
+            saveas(fig, gfxfullfilename,'png');
          k=k+1;
         
     end
