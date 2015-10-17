@@ -13,24 +13,24 @@ Hannelore: alle .Frzc files maken en committen.
 Lies: alle afbeeldingen+data maken voor de fluencerate
 - [x]eerste versie plots
 - [x]eerste versies doorsturen plots
-	[x]Script aanpassen zodat dat in 1 run kan gebeuren
-	[x]4x afbeelding (mooi)
+- [x]Script aanpassen zodat dat in 1 run kan gebeuren
+- [x]4x afbeelding (mooi)
 Vrijdag 16 oktober
-	[x]4x datafile 
-	[ ]doorsturen naar Barbara
+- [x]4x datafile 
+- [ ]doorsturen naar Barbara
 
 
 
 Hannelore: netjes opschrijven wat we nu aan het doen zijn/gedaan hebben: 
 Woensdag 21 oktober
-	[ ]algemeen doel--> temperatuursvergelijking--> fluence rate nodig--> HOe?
-	[ ]monte carlo methode uitleggen (kort)
-	[ ]temperatuursvergelijking bespreken--> parameters die erin staan kort uitlegge
+- [ ]algemeen doel--> temperatuursvergelijking--> fluence rate nodig--> HOe?
+- [ ]monte carlo methode uitleggen (kort)
+- [ ]temperatuursvergelijking bespreken--> parameters die erin staan kort uitlegge
 		(allemaal maar eerste versie)
 
 Lies: Nadenken over hoe de matlab code voor temperatuursverandering en eraan beginnnen
 Woensdag 21 oktober
-	[ ]script voor 1 fluence rate om te zetten naar DT
+- [ ]script voor 1 fluence rate om te zetten naar DT
 Vrijdag 23 oktober
-	[ ]script voor alle 4 om te zetten naar DT
-	[ ]integratie van plots op x aantal tijdstippen (x, verctor in begin file)
+- [ ]script voor alle 4 om te zetten naar DT
+- [ ]integratie van plots op x aantal tijdstippen (x, verctor in begin file)
