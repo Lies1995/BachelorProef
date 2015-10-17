@@ -19,8 +19,8 @@ Lies: alle afbeeldingen+data maken voor de fluencerate
 - [x] 4x afbeelding (mooi)
 Vrijdag 16 oktober
 - [x] 4x datafile 
-- [ ] nieuwe afbeeldingen maken
-- [ ] doorsturen naar Barbara
+- [x] nieuwe afbeeldingen maken
+- [x] doorsturen naar Barbara
 
 
 
@@ -33,7 +33,6 @@ Woensdag 21 oktober
 
 Lies: Nadenken over hoe de matlab code voor temperatuursverandering en eraan beginnnen
 Woensdag 21 oktober
-- [ ] fix figures in een mapje automatisch 
 - [ ] script voor 1 fluence rate om te zetten naar DT
 Vrijdag 23 oktober
 - [ ] script voor alle 4 om te zetten naar DT
