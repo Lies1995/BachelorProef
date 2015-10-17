@@ -1,4 +1,6 @@
+------------------------
 Planning Bachelor Proef
+------------------------
 
 ---Wat betreft github:---
 (Voorlopig) niet werken met Branches.
