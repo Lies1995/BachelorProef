@@ -26,14 +26,18 @@ Vrijdag 16 oktober
 
 Hannelore: netjes opschrijven wat we nu aan het doen zijn/gedaan hebben: 
 Woensdag 21 oktober
-- [ ]algemeen doel--> temperatuursvergelijking--> fluence rate nodig--> HOe?
-- [ ]monte carlo methode uitleggen (kort)
-- [ ]temperatuursvergelijking bespreken--> parameters die erin staan kort uitlegge
+- [ ] algemeen doel--> temperatuursvergelijking--> fluence rate nodig--> HOe?
+- [ ] monte carlo methode uitleggen (kort)
+- [ ] temperatuursvergelijking bespreken--> parameters die erin staan kort uitlegge
 		(allemaal maar eerste versie)
 
 Lies: Nadenken over hoe de matlab code voor temperatuursverandering en eraan beginnnen
 Woensdag 21 oktober
-- [ ]script voor 1 fluence rate om te zetten naar DT
+- [ ] fix figures in een mapje automatisch 
+- [ ] script voor 1 fluence rate om te zetten naar DT
 Vrijdag 23 oktober
-- [ ]script voor alle 4 om te zetten naar DT
-- [ ]integratie van plots op x aantal tijdstippen (x, verctor in begin file)
+- [ ] script voor alle 4 om te zetten naar DT
+- [ ] integratie van plots op x aantal tijdstippen (x, verctor in begin file)
+
+
+- [ ] Furikov lezen (referentie vijf van artikel (2))--> omdat ze hier vaak naar refereren.
