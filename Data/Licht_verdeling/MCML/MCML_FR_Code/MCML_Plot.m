@@ -12,7 +12,7 @@ k=1;
         fig=figure(k);                                      %make figure
         set(fig, 'Position', [10 1000 1400 500]);    
         
-        fig.PaperPosition=[10 1000 1400 500];
+    
              n_L=L(i); n_NA=NA(j); n_d=d(j);                %Specifying data
              [r,z,fRate,filename]=MCML_Data(n_L,n_NA,n_d,file_path); %Calculation Fluence rate 
              fullfilename=fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR_' filename]);
