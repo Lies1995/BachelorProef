@@ -23,6 +23,7 @@
         c=3650; %mJ/(g*K)
         k= 0.530; %W/(m*K)
         w_L= [4.5 100]; % um
+        
      %times to evaluate
         t=0.001; %s
         
@@ -31,6 +32,7 @@
 path=LD;
 
 dT=zeros(gp, gp,length(t));
+prop=[0 0 g p c k 0]
 % %-------PLOT-------
 
 k=1;
@@ -46,10 +48,17 @@ k=1;
              datafile_name = ['L_' char(n_L) '_NA_' char(n_NA) '_d_' char(n_d)];
              fulldatafilename=fullfile(path,'MCML','MCML_FR_Data',['MCML_Data_FR_' datafile_name]);
              phi=csvread(fulldatafilename);
-             prop=[u_a(i) u_s(i) g p c k w_L(j)];
-             dT(:,:,k)=Traise_Data(prop,phi,t);                    
+             prop(1)=u_a(i);
+             prop(2)=u_s(i);
+             prop(7)=w_L(j);
+             dT(:,:,k)=Traise_Data(prop,phi,t); 
+             filename_R=[fullfile(path,'MCML','MCML_FR_Data','MCML_Data_FR_r')];
+             filename_Z=[fullfile(path,'MCML','MCML_FR_Data','MCML_Data_FR_z')];
+             r=csvread(filename_R);
+             z=csvread(filename_Z);
                
            %  subplot(1,2,1)                                 %Plot Fluence Rate (color) (mW/mm^)
+           
              imagesc(r,z,dT(:,:,k)); c=colorbar;                  
                 title({'Fluence Rate';['$\lambda=$' char(n_L) ', NA=' ...
                     char(n_NA) ', d=' char(n_d)]},'interpreter', 'LaTex');
@@ -62,7 +71,7 @@ k=1;
                 
             
                
-               gfxfullfilename=fullfile(file_path,'MCML','MCML_FR_gfx',['MCML_gfx_FR' filename]);
+               gfxfullfilename=fullfile(path,'MCML','MCML_FR_gfx',['MCML_gfx_FR' datafile_name]);
             saveas(fig, gfxfullfilename,'pdf');
          k=k+1;
         
