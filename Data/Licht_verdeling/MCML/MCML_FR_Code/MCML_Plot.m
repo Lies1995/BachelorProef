@@ -1,23 +1,26 @@
 
 %-------Setup-------
 MCML_Setup_Data
-file_path=LD;                                                %Choose what path to use
+file_path=LD;                                               %Choose what path to use
 %LD=Lies Deceuninck, HV=Hannelore Verhoeven
 
 % %-------PLOT-------
-k=1;
+k=1;                                                        %Index for figures
   for i = 1: length(L); 
     for j=1:length(NA)
         
-        fig=figure(k);                                      %make figure
-        set(fig, 'Position', [10 1000 1400 500]);    
+        fig=figure(k);                                      %make figure k
+        set(fig, 'Position', [10 1000 1400 500]);
         
     
              n_L=L(i); n_NA=NA(j); n_d=d(j);                %Specifying data
              [r,z,fRate,filename]=MCML_Data(n_L,n_NA,n_d,file_path); %Calculation Fluence rate 
+             
              fullfilename=fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR_' filename]);
+             filename_r=fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_r');
              csvwrite(fullfilename,fRate); %store data in external datafiles.
-                                  
+             csvwrite(r, filename_r);
+             
                
              subplot(1,2,1)                                 %Plot Fluence Rate (color) (mW/mm^)
              imagesc(r,z,fRate); c=colorbar;                  
