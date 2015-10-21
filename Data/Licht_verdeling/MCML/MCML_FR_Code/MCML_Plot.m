@@ -16,12 +16,12 @@ k=1;                                                        %Index for figures
              n_L=L(i); n_NA=NA(j); n_d=d(j);                %Specifying data
              [r,z,fRate,filename]=MCML_Data(n_L,n_NA,n_d,file_path); %Calculation Fluence rate 
              
-             fullfilename=fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR_' filename]);
-             filename_r=fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_r');
-              filename_z=fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_z');
+             fullfilename=[fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR_' filename])];
+             filename_r=[fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_r')];
+             filename_z=[fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_z')];
              csvwrite(fullfilename,fRate); %store data in external datafiles.
-             csvwrite(r, filename_r);
-             
+             csvwrite(filename_r, r);
+             csvwrite(filename_z, z);
                
              subplot(1,2,1)                                 %Plot Fluence Rate (color) (mW/mm^)
              imagesc(r,z,fRate); c=colorbar;                  
