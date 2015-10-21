@@ -18,6 +18,7 @@ k=1;                                                        %Index for figures
              
              fullfilename=fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR_' filename]);
              filename_r=fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_r');
+              filename_z=fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_z');
              csvwrite(fullfilename,fRate); %store data in external datafiles.
              csvwrite(r, filename_r);
              
