@@ -33,7 +33,6 @@ k=1;                                                        %Index for figures
                 c.Label.FontSize=20;
                 c.Label.Interpreter='latex';
                 
-                
              subplot(1,2,2)                                 %Plot Fluence Rate (height) (mW/mm^2)
              plot(z,fRate(:,501)) 
                 title({'Fluence Rate';['$\lambda=$' char(n_L) ', NA=' ...
