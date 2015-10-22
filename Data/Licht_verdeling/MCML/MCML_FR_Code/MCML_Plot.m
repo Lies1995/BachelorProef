@@ -23,7 +23,7 @@ k=1;                                                        %Index for figures
              csvwrite(filename_r, r);
              csvwrite(filename_z, z);
                
-             subplot(1,2,1)                                 %Plot Fluence Rate (color) (mW/mm^)
+             subplot(1,2,1)                                 %Plot Fluence Rate (color) (mW/mm^2)
              imagesc(r,z,fRate); c=colorbar;                  
                 title({'Fluence Rate';['$\lambda=$' char(n_L) ', NA=' ...
                     char(n_NA) ', d=' char(n_d)]},'interpreter', 'LaTex');
@@ -34,7 +34,7 @@ k=1;                                                        %Index for figures
                 c.Label.Interpreter='latex';
                 
                 
-             subplot(1,2,2)                                 %Plot Fluence Rate (height) (mW/mm^)
+             subplot(1,2,2)                                 %Plot Fluence Rate (height) (mW/mm^2)
              plot(z,fRate(:,501)) 
                 title({'Fluence Rate';['$\lambda=$' char(n_L) ', NA=' ...
                     char(n_NA) ', d=' char(n_d)]},'interpreter', 'LaTex');
