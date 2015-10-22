@@ -36,7 +36,7 @@ Woensdag 21 oktober
 - [x] script voor 1 fluence rate om te zetten naar DT
 Vrijdag 23 oktober
 - [x] script voor alle 4 om te zetten naar DT
-- [ ] maak mooie afbeeldingen fluence rate (juiste schaling)
+- [x] maak mooie afbeeldingen fluence rate (juiste schaling)
 - [ ] integratie van plots op x aantal tijdstippen (x, verctor in begin file)
 - [ ] schrijf appart documentje met alle data geordend voor de Traise
 
