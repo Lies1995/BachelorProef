@@ -1,7 +1,8 @@
 
 %-------Setup-------
-MCML_Setup_Data
-file_path=LD;                                               %Choose what path to use
+
+file_path=LD;                                                %Choose what path to use
+
 %LD=Lies Deceuninck, HV=Hannelore Verhoeven
 
 % %-------PLOT-------
@@ -33,17 +34,19 @@ k=1;                                                        %Index for figures
                 c.Label.FontSize=20;
                 c.Label.Interpreter='latex';
                 
+
              subplot(1,2,2)                                 %Plot Fluence Rate (height) (mW/mm^2)
+
              plot(z,fRate(:,501)) 
-                title({'Fluence Rate';['$\lambda=$' char(n_L) ', NA=' ...
+                title({'Fluence Rate at r=0';['$\lambda=$' char(n_L) ', NA=' ...
                     char(n_NA) ', d=' char(n_d)]},'interpreter', 'LaTex');
                 xlabel('z [mm]', 'interpreter', 'LaTex'); 
                 ylabel('$\phi$ [$\frac{mW}{mm^2}$]', 'interpreter', 'LaTex'); 
                 
                if j==1 
-                   xlim([0,4]);ylim([0,3200]);
+                   xlim([0,0.6]);ylim([0,3200]);
                elseif j==2 
-                   xlim([0,4]);ylim([0,80]);   
+                   xlim([0,2]);ylim([0,80]);   
                end
                
          k=k+1;
