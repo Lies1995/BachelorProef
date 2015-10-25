@@ -19,11 +19,13 @@ k=1;                                                        %Index for figures
              fullfilename=[fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR_' filename])];
              filename_r=[fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_r')];
              filename_z=[fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_z')];
-             csvwrite(fullfilename,fRate); %store data in external datafiles.
+             csvwrite(fullfilename,fRate); %store data in external datafiles. row--> Z collumn-->r
              csvwrite(filename_r, r);
              csvwrite(filename_z, z);
                
-             subplot(1,2,1)                                 %Plot Fluence Rate (color) (mW/mm^)
+             subplot(1,2,1)    
+             
+             %Plot Fluence Rate (color) (mW/mm^)
              imagesc(r,z,fRate); c=colorbar;                  
                 title({'Fluence Rate';['$\lambda=$' char(n_L) ', NA=' ...
                     char(n_NA) ', d=' char(n_d)]},'interpreter', 'LaTex');

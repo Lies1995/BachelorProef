@@ -38,14 +38,14 @@ for i = 1: length(L);
 
       %--------Calculation--------------  
       for l=1:length(t)
-          fig=figure(m);  
+          fig=figure(k);  
         %calculate temperature raise
-         dT(:,:,k,l)=Traise_Data(prop,phi,t(l)); 
+         dT(:,:,k)=Traise_Data(prop,phi,t(l)); %dT(z,r,t) (row x collumn)
       
       %--------Plot--------------
 
        % plot temperature raise (color) (K)                               
-         imagesc(r,z,dT(:,:,k,l)); c=colorbar; 
+         imagesc(r,z,dT(:,:,k)); c=colorbar; 
 
        %labels  
             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
@@ -64,15 +64,16 @@ for i = 1: length(L);
                 xlim([-1,1]);ylim([0,1.5]);
             end   
           
-          m=m+1 ;
+          k=k+1 ;
            
       end
-      csvwrite('tempIn',dT(:,:,k,1));
-      dT(493,2,k,:)
-      squeeze(dT(493,2,k,:))
-      fig=figure(m);
-       plot(t,squeeze(dT(500,1,k,:)));
-     m=m+1;
+      csvwrite('tempIn',dT(:,:,1));
+      %dT(2,,1)
+      dT(2,500,1)
+      
+%       squeeze(dT(493,2,k))
+%       fig=figure(m);
+%        plot(t,squeeze(dT(500,1,k,:)));
      k=k+1;
 
     end
