@@ -2,7 +2,7 @@
 %-------Setup-------
 
 Traise_Setup_Data;
-%t=0.010; %times to evaluate[s]
+t=[0.001,0.01,0.1]; %times to evaluate[s]
 path=LD; %path
 %positions in tissue
     filename_R=[fullfile(path,'MCML_Data_FR_r')];
@@ -11,7 +11,8 @@ path=LD; %path
     z=csvread(filename_Z);  %axial position[mm]
 
 %-------Inistiations-
-k=1;
+m=1;%index for figures
+k=1; %index for the protocols
 dT=zeros( 1000, 1000 , length(t) );
 prop=[0 0 g p c k 0];           %anisotropy factor;tissue density,
                                 %specific heat,thermal diffusivity
@@ -20,7 +21,7 @@ for i = 1: length(L);
     for j=1:length(NA)
         
         
-    fig=figure(k);          %make figure
+            %make figure
      %--------Data Collection--------------
 
         %read in fluence rate
@@ -36,18 +37,19 @@ for i = 1: length(L);
          prop(7)=w_L(j);    %1:e^ radius [m]
 
       %--------Calculation--------------  
-      
+      for l=1:length(t)
+          fig=figure(m);  
         %calculate temperature raise
-         dT(:,:,k)=Traise_Data(prop,phi); 
-         
+         dT(:,:,k,l)=Traise_Data(prop,phi,t(l)); 
+      
       %--------Plot--------------
 
        % plot temperature raise (color) (K)                               
-         imagesc(r,z,dT(:,:,k)); c=colorbar; 
+         imagesc(r,z,dT(:,:,k,l)); c=colorbar; 
 
        %labels  
             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
-                ', NA=' num2str(n_NA) ', d=' num2str(n_d)]},...
+                ', NA=' num2str(n_NA) ', d=' num2str(n_d),'t:' num2str(t(l))]},...
                 'interpreter', 'LaTex');
             xlabel('r [mm]', 'interpreter', 'LaTex'); 
             ylabel('z [mm]', 'interpreter', 'LaTex');
@@ -61,7 +63,16 @@ for i = 1: length(L);
             elseif j==2
                 xlim([-1,1]);ylim([0,1.5]);
             end   
-
+          
+          m=m+1 ;
+           
+      end
+      csvwrite('tempIn',dT(:,:,k,1));
+      dT(493,2,k,:)
+      squeeze(dT(493,2,k,:))
+      fig=figure(m);
+       plot(t,squeeze(dT(500,1,k,:)));
+     m=m+1;
      k=k+1;
 
     end
