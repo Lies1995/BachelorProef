@@ -2,8 +2,8 @@
 %-------Setup-------
 
 Traise_Setup_Data;
-t1=linspace(0,0.00043,50);%times to evaluate[s] for NA=12
-t2=linspace(0,0.15,50); %times to evaluate[s] for NA=37
+t1=linspace(0,0.00015,50);%times to evaluate[s] for NA=12
+t2=linspace(0,0.05,50); %times to evaluate[s] for NA=37
 
 path=LD; %path
 
@@ -92,14 +92,14 @@ for i = 1: length(L);
             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
                 ', NA=' num2str(n_NA) ', d=' num2str(n_d)]},...
                 'interpreter', 'LaTex');
-            xlabel('z [mm]', 'interpreter', 'LaTex');
+            xlabel('t [s]', 'interpreter', 'LaTex');
             ylabel('dT[K]', 'interpreter', 'LaTex');
         elseif j==2
             plot(t2,squeeze(dT(2,500,k,:)));
             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
                 ', NA=' num2str(n_NA) ', d=' num2str(n_d)]},...
                 'interpreter', 'LaTex');
-            xlabel('z [mm]', 'interpreter', 'LaTex');
+            xlabel('t [s]', 'interpreter', 'LaTex');
             ylabel('dT[K]', 'interpreter', 'LaTex');
         end
         
