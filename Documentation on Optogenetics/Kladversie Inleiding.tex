@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Klad Inleiding BachelorProef}
+\author{ }
+\date{October 2015}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Inleiding}
+Optogenetica is een veelgebruikte methode in neurowetenschappen. De techniek laat toe om genetisch gemodificeerde neuronen te stimuleren met behulp van laserlicht. De neuronen werden zo gemodificeerd dat ze in hun membranen lichtgevoelige prote\’’{i}nen afkomstig van micro-organismen bevatten. Opsins, de lichtgevoelige prote\’’{i}nen, zetten lichtenergie om in elektrische energie, waardoor ze een actiepotentiaal kunnen genereren of onderdrukken. Wanneer de neuronen beschenen worden met laserlicht zullen ze geactiveerd of net geïnactiveerd worden afhankelijk van het type opsin dat gebruikt werd. 
+Bron: OptogeneticsInNeuralSystems
+
+Het is belangrijk bij het gebruik van optogenetica dat de lichtintensiteit in de hersenen niet te laag, maar ook niet te hoog is. Een te lage lichtintensiteit kan onvoldoende zijn om de opsins te stimuleren en een te hoge intensiteit kan de hersenen beschadigen. Belangrijk hierbij is de lokale opwarming van het hersenweefsel door absorptie van fotonen. 
+Bron: LightDistributionAndThermalEffectsInTheRateBrainUnderOptogeneticStimulation
+
+In dit project zal de temperatuurstijging in functie van tijd en ruimte gesimuleerd worden voor continue en gepulste stimulatie, door gebruik te maken van de bioheat equation. Deze vergelijking geeft de temperatuursstijging $\Delta T(t,z,r)$ van biologisch weefsel op tijd $t$ nadat het beschenen werd met laserlicht, op een diepte $z$ en radiele afstand $r$. De bioheat equation wordt hieronder gegeven: 
+
+\begin{equation}
+\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}-\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right].
+\end{equation}
+Hier is $\mu_a$ de absorptieco\"effici\"ent van het weefsel ($m^{-1}$), $\phi(z,r)$ de fluence rate van het laserlicht ($Wm^{-1}$), $k$ is de thermische conductiviteit ($Wm^{-1}^{\circ}C^{-1}$), $\rho$ is de dichtheid van het weefsel ($kg$ $m^{-3}$) en $c$ is de warmtecapaciteit ($J$ $kg^{-1}^{\circ}C^{-1}$).
+Bron: TimeConstantsLaserMedicine
+
+Alle parameters behalve de fluence rate zijn gegeven, deze laatste moet dus nog bepaald worden. Hiervoor wordt een Monte Carlo simulatie gebruikt. In de simulatie wordt het traject van  $1,000,000$ fotonen gesimuleerd, waarbij rekening gehouden wordt met verschillende laserparameters zoals numerieke apertuur, diameter en vorm van de laserstraal en weefselparameters zoals absorptieco\"effici\"ent, verstrooingsco\"effici\"ent en anisotropie van het weefsel. Er zullen $1,000,000$ toevalsbewegingen uitgevoerd worden, waarbij de staplengte en hoek afhankelijk zijn van de laser- en weefselparameters. 
+bron: MCML_CPU_Manual
+
+Door gebruik te maken van tijdsconstanten kan een benaderende oplossing van de bioheat equation gevonden worden:
+\begin{equation}
+\Delta T(t,z,r) = \frac{\tau \mu_{a}\phi(z,r)}{\rho c}(1-e^{-t/\tau}).
+\end{equation}
+Waarbij $\tau$ gelijk is aan:
+\begin{equation}
+\tau = \frac{\rho c}{k(2.4)^2}\left[\frac{r^2_0}{1+\left(\frac{r_0 \pi}{4.8z_0}\right)^2}\right]
+\end{equation}
+en $r_0$ en $z_0$ worden gegeven door:
+\begin{equation}
+z_0 = \frac{2}{\mu_a + (1-g)\mu_s} = \frac{2}{\mu_a+\mu_s'}
+\end{equation}
+\begin{equation}
+r_0 = w_L.
+\end{equation}
+Hier is $g$ de anisotropie van het weefsel, $\mu_s$ en $\mu_s'$ zijn respectievelijk de verstrooingsco\"effici\"ent en de gereduceerde verstrooingsco\"effici\"ent van het weefsel ($m^{-1} $). $w_L$ is de $1/e^2$ straal van de gausische laserstraal ($m$). 
+
+
+\end{document}
