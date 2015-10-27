@@ -1,0 +1,38 @@
+\documentclass{article}
+%\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+
+\title{Data voor de temperatuursverhoging simulatie}
+\author{Lies Deceuninck en Hannelore Verhoeven}
+\date{October 2015}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+In onderstaande tabel staan de data die we gebruikt hebben als input in de code.\\
+
+\begin{tabular}{c||c|c}
+ & $474 nm$ & $560 nm$\\ \hline
+$u_a$ [$m^{-1}$] & $51.1$ & $107.9$ \\
+$u_s$ [$m^{-1}$] & $12733$ & $9266$ \\
+$g$ & $0.88$ & $0.88$ \\
+$\rho$ [$\frac{kg}{m^3}$] & $1040$ & $1040$ \\
+$c$ [$\frac{J}{kgK}$] & $3650$ & $3650$ \\
+$k$ [$\frac{W}{mK}$] & $0.530$ & $0.530$ \\
+$W_L$ [$m$] & $0.0000045$ & $0.0001$ \\
+\end{tabular}
+\vspace{1cm}\\
+Hieronder is het resultaat voor de tijdsconstante tau.\\
+
+\begin{tabular}{c||c|c}
+& $\tau_{SM}$ [$10^{-2} ms$]& $\tau_{MM} [ms]$ \\ \hline
+$474 nm$ & $1.334524$ & $6.572070$ \\
+$560 nm$ & $1.334527$ & $6.579400$ \\
+\end{tabular}
+\\
+Hierin is geen rekening gehouden met beduidende cijfers. Wel is er afgerond volgens de gebruikelijke regels. 
+
+\end{document}
