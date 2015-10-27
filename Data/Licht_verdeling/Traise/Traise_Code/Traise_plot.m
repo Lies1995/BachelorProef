@@ -17,6 +17,7 @@ z=csvread(filename_Z);  %axial position[mm]
 %-----Inistiations---
 m=1; %index for the figures
 k=1; %index for the protocols
+tau=zeros(1,4);
 dT=zeros( 1000, 1000 , 4,length(t1) ); %1000X1000 data points, 4 protocols, t1 times to evaluate, 
 prop=[0 0 g p c k 0];           %anisotropy factor;tissue density,
 %specific heat,thermal diffusivity
@@ -37,19 +38,19 @@ for i = 1: length(L);
         prop(1)=u_a(i);    %absorption coefficient [m^-1]
         prop(2)=u_s(i);    %scattering coefficient [m^-1]
         prop(7)=w_L(j);    %1:e^ radius [m]
-        
+        prop
         %--------Calculation--------------
         if j==1
             for l=1:length(t1)
                 
                 %calculate temperature raise
-                dT(:,:,k,l)=Traise_Data(prop,phi,t1(l));
+                [dT(:,:,k,l),tau(k)]=Traise_Data(prop,phi,t1(l));
             end
         elseif j==2
             for l=1:length(t2)
                 
                 %calculate temperature raise
-                dT(:,:,k,l)=Traise_Data(prop,phi,t2(l));
+                [dT(:,:,k,l),tau(k)]=Traise_Data(prop,phi,t2(l));
             end
         end
         %--------Plot--------------
