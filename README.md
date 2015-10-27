@@ -31,6 +31,10 @@ Woensdag 21 oktober
 - [ ] temperatuursvergelijking bespreken--> parameters die erin staan kort uitlegge
 		(allemaal maar eerste versie)
 
+-[ ] tijdsconstanten doorsturen
+-[ ] betere simulatie in relevante gebied voor intensiteitsprofiel
+
+
 Lies: Nadenken over hoe de matlab code voor temperatuursverandering en eraan beginnnen
 Woensdag 21 oktober
 - [x] script voor 1 fluence rate om te zetten naar DT

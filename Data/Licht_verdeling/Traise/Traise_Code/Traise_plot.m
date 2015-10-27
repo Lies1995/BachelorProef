@@ -12,11 +12,12 @@ filename_R=[fullfile(path,'MCML_Data_FR_r')];
 filename_Z=[fullfile(path,'MCML_Data_FR_z')];
 r=csvread(filename_R);  %radial position[mm]
 z=csvread(filename_Z);  %axial position[mm]
+%tau=zeros(1,4);
 
 %-----Inistiations---
 m=1; %index for the figures
 k=1; %index for the protocols
-dT=zeros( 1000, 1000 , 4,length(t) );
+dT=zeros( 1000, 1000 , 4,length(t1) ); %1000X1000 data points, 4 protocols, t1 times to evaluate, 
 prop=[0 0 g p c k 0];           %anisotropy factor;tissue density,
 %specific heat,thermal diffusivity
 %-------PLOT---------
@@ -88,7 +89,7 @@ for i = 1: length(L);
         %  squeeze(dT(2,500,k,:))
         fig=figure(m);
         if j==1
-            plot(t1,squeeze(dT(2,500,k,:)));
+            plot(t1,squeeze(dT(2,500,k,:))); 
             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
                 ', NA=' num2str(n_NA) ', d=' num2str(n_d)]},...
                 'interpreter', 'LaTex');
