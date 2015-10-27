@@ -1,0 +1,44 @@
+####
+# Template of input files for Monte Carlo simulation (mcml).
+# Anything in a line after "#" is ignored as comments.
+# Space lines are also ignored.
+# Lengths are in cm, mua and mus are in 1/cm.
+####
+
+1.0								# file version
+2								# number of runs
+
+### Specify data for run 1
+L_474_NA_12.mco	A				# output filename, ASCII/Binary
+1000000							# No. of photons
+10E-4	10E-4					# dz, dr (Distance between two grid points)
+500	250	1					# No. of dz, dr & da. (how many grid points)
+
+2								# No. of fibers  [1st fiber for illumination, 2nd for collection]
+# r	NA	d						# one line for each fiber: radial, NA of fiber and distance between fiber and sample 
+0.00	0.12	0				# fiber 1. illumination (d: + above; - in sample) 
+0.00	0.00	0				# fiber 2. collection
+
+1								# No. of layers
+# n	mua	mus	g	d				# One line for each layer
+1.0								# n for medium above.
+1.4	0.511	127.33	0.88	10	# Parameters layer 1, d=thickness layer
+1.0								# n for medium below.
+
+### Specify data for run 2
+L_474_NA_37.mco	A				# output filename, ASCII/Binary
+1000000							# No. of photons
+10E-4	10E-4					# dz, dr (Distance between two grid points)
+500	250	1					# No. of dz, dr & da.(how many grid points)
+
+2								# No. of fibers  [1st fiber for illumination, 2nd for collection]
+# r	NA	d						# one line for each fiber: radial, NA of fiber and distance between fiber and sample 
+0.00	0.37	0				# fiber 1. illumination (d: + above; - in sample) 
+0.00	0.00	0				# fiber 2. collection
+
+1								# No. of layers
+# n	mua	mus	g	d				# One line for each layer
+1.0								# n for medium above.
+1.4	0.511	127.33	0.88	10	# layer 1 
+1.0								# n for medium below.
+
