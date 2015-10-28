@@ -54,9 +54,11 @@ Hannelore
 
 Lies
 - [ ] eerste kladversie inleiding  (woensdag 4 november)
-- [ ] gepulste stimulatie eerste kladversie in logboek zetten (woensdag 28 oktober)
+- [x] gepulste stimulatie eerste kladversie in logboek zetten (woensdag 28 oktober)
 - [ ] plot maken op 3 tijdstippen (zelf te kiezen) + tijdsverloop (woensdag 4 november )
 - [ ] 3tau aanduiden op plots (woensdag 28 oktober)
+- [x] logboek aanvullen
+
 
 Lies en Hannelore
 - [x] Eerste ontwerp van de matlab code op papier 
