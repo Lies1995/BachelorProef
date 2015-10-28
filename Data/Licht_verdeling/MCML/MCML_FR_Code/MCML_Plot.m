@@ -1,7 +1,8 @@
 
 %-------Setup-------
 MCML_Setup_Data
-file_path=LD;                                                %Choose what path to use
+file_path=LD; %Choose what path to use
+h=1 ;%1=big scale, 2= small scale
 %LD=Lies Deceuninck, HV=Hannelore Verhoeven
 
 % %-------PLOT-------
@@ -14,7 +15,7 @@ k=1;                                                        %Index for figures
         
     
              n_L=L(i); n_NA=NA(j); n_d=d(j);                %Specifying data
-             [r,z,fRate,filename]=MCML_Data(n_L,n_NA,n_d,file_path); %Calculation Fluence rate 
+             [r,z,fRate,filename]=MCML_Data(n_L,n_NA,n_d,file_path,h); %Calculation Fluence rate 
              
              fullfilename=[fullfile(file_path,'MCML','MCML_FR_Data',['MCML_Data_FR_' filename])];
              filename_r=[fullfile(file_path,'MCML','MCML_FR_Data','MCML_Data_FR_r')];
@@ -35,11 +36,11 @@ k=1;                                                        %Index for figures
                 c.Label.FontSize=20;
                 c.Label.Interpreter='latex';
                 
-                 if j==1 
-                   xlim([-0.3,0.3]);ylim([0,0.6]);
-               elseif j==2 
-                   xlim([-1,1]);ylim([0,1.5]);   
-               end
+%                  if j==1 
+%                    xlim([-0.3,0.3]);ylim([0,0.6]);
+%                elseif j==2 
+%                    xlim([-1,1]);ylim([0,1.5]);   
+%                end
                 
                 
              subplot(1,2,2)                                 %Plot Fluence Rate (height) (mW/mm^)
