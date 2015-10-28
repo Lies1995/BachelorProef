@@ -9,9 +9,14 @@ function [ dT, tau ] = Traise_Data(prop,phi,t)
 %6)k
 %7)w_L
 r_0=prop( 7 ); 
-z_0=2 / ( prop( 1 ) + (( 1 - prop( 3 ) )* prop( 2 )) ) ;
+z_0=2 / (prop(1) + ((1 - prop(3)) * prop(2))) ;
+x=prop(4)*prop(5);
+y=prop(6)*(2.4)^2;
+z=r_0*pi/(4.8*z_0);
 
-tau=( prop( 4 ) * prop( 5 ) / ( prop( 6 ) * 2.40 ^ 2 ) ) * ( r_0 ^ 2 / ( 1 + (r_0 ^ 2 / ( 1.5 * z_0 ) ^ 2) ) );
+
+tau=(x/y)*(r_0^2/(1+z^2));
+
 
 dT=(tau*prop(1)/(prop(4)*prop(5)))*(1-exp(-t/tau)).*phi;
 
