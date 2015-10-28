@@ -32,7 +32,7 @@ Woensdag 21 oktober
 		(allemaal maar eerste versie)
 
 -[x] tijdsconstanten doorsturen
--[x] data voor betere simulatie elevante gebied voor intensiteitsprofiel
+-[ ] data voor betere simulatie elevante gebied voor intensiteitsprofiel
 -[ ] betere simulatie in relevante gebied voor intensiteitsprofiel
 
 
@@ -46,4 +46,16 @@ Vrijdag 23 oktober
 - [x] integratie van plots op x aantal tijdstippen (x, verctor in begin file)
 - [x] schrijf appart documentje met alle data geordend voor de Traise
 
+
+
 - [ ] Furikov lezen (referentie vijf van artikel (2))--> omdat ze hier vaak naar refereren.
+
+Woensdag 28 oktober
+-[ ] Eerste ontwerp van de matlab code op papier (lies+ hannelore) 
+-[ ] implementeren in matlab
+-[ ] eerste kladversie inleiding aanvullen
+-[ ] plot maken op 3 tijdstippen (zelf te kiezen) + tijdsverloop
+-[ ] samen door code gepulste stimulatie
+-[ ] 3tau aanduiden op plots
+
+
