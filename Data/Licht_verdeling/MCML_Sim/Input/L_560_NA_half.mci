@@ -11,8 +11,8 @@
 ### Specify data for run 1
 L_560_NA_12.mco	A				# output filename, ASCII/Binary
 1000000							# No. of photons
-10E-4	10E-4					# dz, dr (Distance between two grid points)
-500	250	1					# No. of dz, dr & da. (how many grid points)
+10E-8	10E-8					# dz, dr (Distance between two grid points)
+1000	500	1					# No. of dz, dr & da. (how many grid points)
 
 2								# No. of fibers  [1st fiber for illumination, 2nd for collection]
 # r	NA	d						# one line for each fiber: radial, NA of fiber and distance between fiber and sample 
@@ -28,8 +28,8 @@ L_560_NA_12.mco	A				# output filename, ASCII/Binary
 ### Specify data for run 2
 L_560_NA_37.mco	A				# output filename, ASCII/Binary
 1000000							# No. of photons
-10E-4	10E-4					# dz, dr (Distance between two grid points)
-500	250	1					# No. of dz, dr & da.(how many grid points)
+10E-8	10E-8					# dz, dr (Distance between two grid points)
+1000	500	1					# No. of dz, dr & da.(how many grid points)
 
 2								# No. of fibers  [1st fiber for illumination, 2nd for collection]
 # r	NA	d						# one line for each fiber: radial, NA of fiber and distance between fiber and sample 
