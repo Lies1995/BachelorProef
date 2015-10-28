@@ -31,9 +31,8 @@ Woensdag 21 oktober
 - [x] temperatuursvergelijking bespreken--> parameters die erin staan kort uitlegge
 		(allemaal maar eerste versie)
 
--[x] tijdsconstanten doorsturen
--[ ] data voor betere simulatie elevante gebied voor intensiteitsprofiel
--[ ] betere simulatie in relevante gebied voor intensiteitsprofiel
+- [x] tijdsconstanten doorsturen
+
 
 
 Lies: Nadenken over hoe de matlab code voor temperatuursverandering en eraan beginnnen
@@ -46,16 +45,21 @@ Vrijdag 23 oktober
 - [x] integratie van plots op x aantal tijdstippen (x, verctor in begin file)
 - [x] schrijf appart documentje met alle data geordend voor de Traise
 
-
-
-- [ ] Furikov lezen (referentie vijf van artikel (2))--> omdat ze hier vaak naar refereren.
-
 Woensdag 28 oktober
--[ ] Eerste ontwerp van de matlab code op papier (lies+ hannelore) 
--[ ] implementeren in matlab
--[ ] eerste kladversie inleiding aanvullen
--[ ] plot maken op 3 tijdstippen (zelf te kiezen) + tijdsverloop
--[ ] samen door code gepulste stimulatie
--[ ] 3tau aanduiden op plots
+Hannelore
+- [ ] gepulste stimulatie implementeren in matlab (woensdag 4 november)
+- [ ] data voor betere simulatie elevante gebied voor intensiteitsprofiel (woensdag 28 oktober)
+- [ ] betere simulatie in relevante gebied voor intensiteitsprofiel (woensdag 28 oktober)
 
+
+Lies
+- [ ] eerste kladversie inleiding  (woensdag 4 november)
+- [ ] gepulste stimulatie eerste kladversie in logboek zetten (woensdag 28 oktober)
+- [ ] plot maken op 3 tijdstippen (zelf te kiezen) + tijdsverloop (woensdag 4 november )
+- [ ] 3tau aanduiden op plots (woensdag 28 oktober)
+
+Lies en Hannelore
+- [x] Eerste ontwerp van de matlab code op papier 
+- [ ] samen door code gepulste stimulatie (woensdag 4 november)
+- [ ] paper lezen over Introduction to Laser-Tissue Interactions (woensdag 4 november)
 
