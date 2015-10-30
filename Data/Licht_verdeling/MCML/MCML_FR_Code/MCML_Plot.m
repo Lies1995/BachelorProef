@@ -1,8 +1,8 @@
 
 %-------Setup-------
 MCML_Setup_Data
-file_path=LD; %Choose what path to use
-h=1 ;%1=big scale, 2= small scale
+file_path=HV; %Choose what path to use
+h=2 ;%1=big scale, 2= small scale
 %LD=Lies Deceuninck, HV=Hannelore Verhoeven
 
 % %-------PLOT-------
