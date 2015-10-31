@@ -64,4 +64,6 @@ Lies en Hannelore
 - [x] Eerste ontwerp van de matlab code op papier 
 - [ ] samen door code gepulste stimulatie (woensdag 4 november)
 - [ ] paper lezen over Introduction to Laser-Tissue Interactions (woensdag 4 november)
+- [ ] Vragen over de schaling
+
 
