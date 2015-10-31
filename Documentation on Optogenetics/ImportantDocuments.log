@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.7)  10 OCT 2015 18:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.7)  31 OCT 2015 10:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ImportantDocuments.tex
+**ImportantDocuments.tex -recorder
 (./ImportantDocuments.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
@@ -694,14 +694,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 80--88
 
  []
 
-LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/futs/b/n' tried instead on input line 102.
-
-LaTeX Warning: Citation `OptoGen' on page 2 undefined on input line 102.
-
-
-LaTeX Warning: Citation `Opsin' on page 2 undefined on input line 105.
-
 LaTeX Font Info:    Try loading font information for TS1+futs on input line 108
 .
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fourier/ts1futs.fd
@@ -728,6 +720,8 @@ Package marginnote Info: right page because not two side mode on input line 126
 .
 Package marginnote Info: xpos seems to be 356.55156pt,
 (marginnote)             \marginnoterightadjust ignored on input line 126.
+LaTeX Font Info:    Font shape `T1/futs/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/futs/b/n' tried instead on input line 126.
 
 
 LaTeX Warning: Citation `First' on page 3 undefined on input line 126.
@@ -744,7 +738,7 @@ Package marginnote Info: right page because not two side mode on input line 139
 .
 Package marginnote Info: xpos seems to be 296.50182pt,
 (marginnote)             \marginnoterightadjust ignored on input line 139.
-<gfx/scattering.png, id=13, 1277.77374pt x 638.385pt>
+<gfx/scattering.png, id=12, 1277.77374pt x 638.385pt>
 File: gfx/scattering.png Graphic file (type png)
  <use gfx/scattering.png>
 Package pdftex.def Info: gfx/scattering.png used on input line 147.
@@ -777,81 +771,77 @@ File: gfx/RatBrain.jpg Graphic file (type jpg)
 Package pdftex.def Info: gfx/RatBrain.jpg used on input line 160.
 (pdftex.def)             Requested size: 392.46527pt x 175.6558pt.
 Package marginnote Info: Margin note 4.1 is on absolute page 4
-(marginnote)              on input line 170.
-Package marginnote Info: right page because not two side mode on input line 170
+(marginnote)              on input line 174.
+Package marginnote Info: right page because not two side mode on input line 174
 .
 Package marginnote Info: xpos seems to be 377.51605pt,
-(marginnote)             \marginnoterightadjust ignored on input line 170.
+(marginnote)             \marginnoterightadjust ignored on input line 174.
 
-
-LaTeX Warning: Citation `Youtube' on page 4 undefined on input line 172.
-
-
-Underfull \hbox (badness 1946) in paragraph at lines 174--174
+Underfull \hbox (badness 1946) in paragraph at lines 178--178
 []|\T1/futs/m/n/10.95 The grad-ual loss in in-ten-sity
  []
 
 
-Underfull \hbox (badness 2435) in paragraph at lines 174--174
+Underfull \hbox (badness 2435) in paragraph at lines 178--178
 []|\T1/futs/m/n/10.95 Attenuation can be caused by the
  []
 
 
-Underfull \hbox (badness 6016) in paragraph at lines 176--176
+Underfull \hbox (badness 6016) in paragraph at lines 180--180
 []|\T1/futs/m/n/10.95 Optical fiber with only one
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--177
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\T1/futs/m/n/10.95 Multimode
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 177--177
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\T1/futs/m/n/10.95 Optical fiber with more
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 []|\T1/futs/m/n/10.95 Cutoff
  []
 
 
-Underfull \hbox (badness 3701) in paragraph at lines 178--178
+Underfull \hbox (badness 3701) in paragraph at lines 182--182
 []|\T1/futs/m/n/10.95 the wave-length above which
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 178--178
+Underfull \hbox (badness 1838) in paragraph at lines 182--182
 []|\T1/futs/m/n/10.95 propertie of a sin-gle mode op-ti-cal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--179
+Underfull \hbox (badness 10000) in paragraph at lines 183--183
 []|\T1/futs/m/n/10.95 Mode field
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--180
+Underfull \hbox (badness 10000) in paragraph at lines 184--184
 []|\T1/futs/m/n/10.95 Numerical
  []
 
 
-Underfull \hbox (badness 5519) in paragraph at lines 180--180
+Underfull \hbox (badness 5519) in paragraph at lines 184--184
 []|\T1/futs/m/n/10.95 the mea-sure of the an-gu-lar
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--182
+Underfull \hbox (badness 10000) in paragraph at lines 186--186
 []|\T1/futs/m/n/10.95 Acquisition
  []
 
 
-Overfull \hbox (8.34714pt too wide) in paragraph at lines 172--185
+Overfull \hbox (8.34714pt too wide) in paragraph at lines 176--189
 [] 
  []
 
-No file ImportantDocuments.bbl.
+(./ImportantDocuments.bbl
 
 Class scrartcl Warning: Usage of deprecated font command `\sl'!
 (scrartcl)              You should note, that in 1994 font command `\sl' has
@@ -864,9 +854,14 @@ Class scrartcl Warning: Usage of deprecated font command `\sl'!
 (scrartcl)              Note also, that KOMA-Script will remove the definition
 (scrartcl)              of `\sl' anytime until release of about version 3.20.
 (scrartcl)              But for now, KOMA-Script will replace deprecated `\sl'
-(scrartcl)              by `\normalfont \slshape ' on input line 192.
+(scrartcl)              by `\normalfont \slshape ' on input line 1.
 
 [4 <./gfx/RatBrain.jpg>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 13.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+))
 
 Class scrartcl Warning: Usage of deprecated font command `\sl'!
 (scrartcl)              You should note, that in 1994 font command `\sl' has
@@ -879,7 +874,7 @@ Class scrartcl Warning: Usage of deprecated font command `\sl'!
 (scrartcl)              Note also, that KOMA-Script will remove the definition
 (scrartcl)              of `\sl' anytime until release of about version 3.20.
 (scrartcl)              But for now, KOMA-Script will replace deprecated `\sl'
-(scrartcl)              by `\normalfont \slshape ' on input line 192.
+(scrartcl)              by `\normalfont \slshape ' on input line 196.
 
 [5] (./ImportantDocuments.aux)
 
@@ -887,24 +882,26 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6609 strings out of 493089
- 96350 string characters out of 6134842
- 231017 words of memory out of 5000000
- 9916 multiletter control sequences out of 15000+600000
- 103700 words of font info for 112 fonts, out of 8000000 for 9000
+ 6635 strings out of 493089
+ 97118 string characters out of 6134842
+ 232029 words of memory out of 5000000
+ 9936 multiletter control sequences out of 15000+600000
+ 104014 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,12n,47p,491b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/
-2015/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on ImportantDocuments.pdf (5 pages, 323623 bytes).
+ 47i,12n,47p,501b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/cm-super/sftt1095.pfb>
+Output written on ImportantDocuments.pdf (5 pages, 352661 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -26,17 +26,42 @@ Vrijdag 16 oktober
 
 Hannelore: netjes opschrijven wat we nu aan het doen zijn/gedaan hebben: 
 Woensdag 21 oktober
-- [ ] algemeen doel--> temperatuursvergelijking--> fluence rate nodig--> HOe?
-- [ ] monte carlo methode uitleggen (kort)
-- [ ] temperatuursvergelijking bespreken--> parameters die erin staan kort uitlegge
+- [x] algemeen doel--> temperatuursvergelijking--> fluence rate nodig--> HOe?
+- [x] monte carlo methode uitleggen (kort)
+- [x] temperatuursvergelijking bespreken--> parameters die erin staan kort uitlegge
 		(allemaal maar eerste versie)
+
+- [x] tijdsconstanten doorsturen
+
+
 
 Lies: Nadenken over hoe de matlab code voor temperatuursverandering en eraan beginnnen
 Woensdag 21 oktober
-- [ ] script voor 1 fluence rate om te zetten naar DT
+- [x] script voor 1 fluence rate om te zetten naar DT
+
 Vrijdag 23 oktober
-- [ ] script voor alle 4 om te zetten naar DT
-- [ ] integratie van plots op x aantal tijdstippen (x, verctor in begin file)
+- [x] script voor alle 4 om te zetten naar DT
+- [x] maak mooie afbeeldingen fluence rate (juiste schaling)
+- [x] integratie van plots op x aantal tijdstippen (x, verctor in begin file)
+- [x] schrijf appart documentje met alle data geordend voor de Traise
+
+Woensdag 28 oktober
+Hannelore
+- [ ] gepulste stimulatie implementeren in matlab (woensdag 4 november)
+- [ ] data voor betere simulatie elevante gebied voor intensiteitsprofiel (woensdag 28 oktober)
+- [ ] betere simulatie in relevante gebied voor intensiteitsprofiel (woensdag 28 oktober)
 
 
-- [ ] Furikov lezen (referentie vijf van artikel (2))--> omdat ze hier vaak naar refereren.
+Lies
+- [ ] eerste kladversie inleiding  (woensdag 4 november)
+- [x] gepulste stimulatie eerste kladversie in logboek zetten (woensdag 28 oktober)
+- [ ] plot maken op 3 tijdstippen (zelf te kiezen) + tijdsverloop (woensdag 4 november )
+- [ ] 3tau aanduiden op plots (woensdag 28 oktober)
+- [x] logboek aanvullen
+
+
+Lies en Hannelore
+- [x] Eerste ontwerp van de matlab code op papier 
+- [ ] samen door code gepulste stimulatie (woensdag 4 november)
+- [ ] paper lezen over Introduction to Laser-Tissue Interactions (woensdag 4 november)
+
