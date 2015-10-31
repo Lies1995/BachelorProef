@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.7)  31 OCT 2015 10:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.7)  31 OCT 2015 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -373,22 +373,6 @@ Overfull \hbox (12.90921pt too wide) in paragraph at lines 22--23
  r\OT1/cmr/m/n/10 )$
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.31 bron: MCML_
-                CPU_Manual
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.32 
-     
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
 [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -413,7 +397,7 @@ msfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy7.pfb>
-Output written on "Kladversie Inleiding.pdf" (2 pages, 114011 bytes).
+Output written on "Kladversie Inleiding.pdf" (2 pages, 114582 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
