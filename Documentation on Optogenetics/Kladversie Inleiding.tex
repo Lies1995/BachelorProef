@@ -7,7 +7,7 @@
 
 \usepackage{natbib}
 \usepackage{graphicx}
-
+\usepackage{gensymb}
 \begin{document}
 
 \maketitle
@@ -16,15 +16,24 @@
 Optogenetica is een veelgebruikte biologische techniek in neurowetenschappen. Het laat toe om de activiteit van genetisch gemodificeerde neuronen te controleren  met behulp van electromagnetische straling. De celmembranen van de neuronen bevatten lichtgevoelige prote\'inen afkomstig van micro-organismen. Deze prote\'inen, opsins, zetten lichtenergie om in elektrische energie waarmee vervolgens een actiepotentiaal in de cel gegenereerd of onderdrukt kan worden (zie figuur). %Wanneer de cellen vervolgens beschenen worden met laserlicht zullen ze geactiveerd of net geïnactiveerd worden afhankelijk van het type opsin dat gebruikt werd. 
 Bron: OptogeneticsInNeuralSystems
 
-Het is belangrijk bij het gebruik van optogenetica dat de lichtintensiteit in de hersenen niet te laag, maar ook niet te hoog is. Een te lage lichtintensiteit kan onvoldoende zijn om de opsins te stimuleren en een te hoge intensiteit kan de hersenen beschadigen. Belangrijk hierbij is de lokale opwarming van het hersenweefsel door absorptie van fotonen. 
-Bron: LightDistributionAndThermalEffectsInTheRateBrainUnderOptogeneticStimulation
+De drempel voor opsin stimulatie is $1 \frac{m W }{mm^-1}$ wat betreft de lichtintensiteit. \cite{30 van Barbara}Echter, te hoge intensiteiten of te lange blootstelling kunnen leiden tot significante temperatuursverhogingen van het hersenweefsel door locale absorptie van fotonen. Vanaf $1 \degree C$ stijging treedt te vermijden schade op. 
+%TODO voorbeelden van schade in het hersenweefsel
 
-In dit project zal de temperatuurstijging in functie van tijd en ruimte gesimuleerd worden voor continue en gepulste stimulatie, door gebruik te maken van de bioheat equation. Deze vergelijking geeft de temperatuursstijging $\Delta T(t,z,r)$ van biologisch weefsel op tijd $t$ nadat het beschenen werd met laserlicht, op een diepte $z$ en radiele afstand $r$. De bioheat equation wordt hieronder gegeven: 
+%Het is belangrijk bij het gebruik van optogenetica dat de lichtintensiteit in de hersenen niet te laag, maar ook niet te hoog is. Een te lage lichtintensiteit kan onvoldoende zijn om de opsins te stimuleren en een te hoge intensiteit kan de hersenen beschadigen. Belangrijk hierbij is de lokale opwarming van het hersenweefsel door absorptie van fotonen. 
+Bron: LightDistributionAndThermalEffects InTheRateBrainUnderOptogeneticStimulation
+
+Het doel van dit project is om deze temperatuurstijging in functie van de tijd en ruimte te simuleren, zowel voor een continue als gepulste stimulatie. De temperatuursstijging $\Delta T(t,z,r)$ van van het biologisch weefsel op tijd $t$ na stimulatie, op een diepte $z$ en radiele afstand $r$ voldoet aan de \emph{Bioheat Equation}, zie vergelijking \ref{eq:Bioheat}.
 
 \begin{equation}
 \frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}-\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right].
+\label{eq:Bioheat}
 \end{equation}
-Hier is $\mu_a$ de absorptieco\"effici\"ent van het weefsel ($m^{-1}$), $\phi(z,r)$ de fluence rate van het laserlicht ($Wm^{-1}$), $k$ is de thermische conductiviteit ($Wm^{-1}{\circ}C^{-1}$), $\rho$ is de dichtheid van het weefsel ($kg$ $m^{-3}$) en $c$ is de warmtecapaciteit ($J$ $kg^{-1}{\circ}C^{-1}$).
+
+Hier is $\mu_a$ de absorptieco\"effici\"ent van het weefsel ($m^{-1}$), $k$ is de thermische conductiviteit ($Wm^{-1}{\circ}C^{-1}$), $\rho$ is de dichtheid van het weefsel ($kg$ $m^{-3}$), $c$ is de warmtecapaciteit ($J$ $kg^{-1}{\circ}C^{-1}$) en 
+\begin{equation}
+	\phi(z,r)=\frac{NE_f}{At} \qquad (Wm^{-1})
+\end{equation}
+de hoeveelheid energie $NE_f$ dat door een eenheidsbol $A$ stroomt per tijdseenheid $t$ met $N$ het aantal fotonen met energie $E_f$.
 Bron: TimeConstantsLaserMedicine
 
 Alle parameters behalve de fluence rate zijn gegeven, deze laatste moet dus nog bepaald worden. Hiervoor wordt een Monte Carlo simulatie gebruikt. In de simulatie wordt het traject van  $1,000,000$ fotonen gesimuleerd, waarbij rekening gehouden wordt met verschillende laserparameters zoals numerieke apertuur, diameter en vorm van de laserstraal en weefselparameters zoals absorptieco\"effici\"ent, verstrooingsco\"effici\"ent en anisotropie van het weefsel. Er zullen $1,000,000$ toevalsbewegingen uitgevoerd worden, waarbij de staplengte en hoek afhankelijk zijn van de laser- en weefselparameters. 
