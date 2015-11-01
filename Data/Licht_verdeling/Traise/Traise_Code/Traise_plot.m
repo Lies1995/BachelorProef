@@ -5,7 +5,7 @@ Traise_Setup_Data
 
 t1=linspace(0,0.00015,50);%times to evaluate[s] for NA=12
 t2=linspace(0,0.05,50); %times to evaluate[s] for NA=37
-
+timesToPlot=[3 20 40];
 path=LD; %path
 
 %positions in tissue
@@ -29,9 +29,9 @@ for i = 1: length(L);
         %--------Data Collection--------------
         
         %read in fluence rate
-        n_L=L(i); n_NA=NA(j); n_d=d(j);
+        n_L=L(i); n_NA=NA(j);
         datafile_name = ['MCML_Data_FR_L_' num2str(n_L) '_NA_'...
-            num2str(n_NA) '_d_' num2str(n_d)];
+            num2str(n_NA) ];
         phi=csvread(fullfile(path,datafile_name)); %[kW/m^2]
         phi=phi.*10^3; %[W/m^2]
         
@@ -54,56 +54,114 @@ for i = 1: length(L);
                 [dT(:,:,k,l),tau(k)]=Traise_Data(prop,phi,t2(l));
             end
         end
-%         %--------Plot--------------
-%         fig=figure(m);
-%         % plot temperature raise (color) (K)
-%         
-%         imagesc(r,z,dT(:,:,k,3)); c=colorbar;
-%         
-%         %labels
-%         if j==1
-%             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
-%                 ', NA=' num2str(n_NA) ', d=' num2str(n_d),'t=' ...
-%                 num2str(t1(l))]},'interpreter', 'LaTex');
-%         elseif j==2
-%             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
-%                 ', NA=' num2str(n_NA) ', d=' num2str(n_d),'t='...
-%                 num2str(t2(l))]},'interpreter', 'LaTex');
-%         end
-%         xlabel('r [mm]', 'interpreter', 'LaTex');
-%         ylabel('z [mm]', 'interpreter', 'LaTex');
-%         c.Label.String= '$dT$ [$K$]';
-%         c.Label.FontSize=20;
-%         c.Label.Interpreter='latex';
-%         
-%         %scaling
-%         if j==1
-%             xlim([-0.3,0.3]);ylim([0,0.6]);
-%         elseif j==2
-%             xlim([-1,1]);ylim([0,1.5]);
-%         end
-%         
-%         
-%         m=m+1;
-%         
-%         
-%         fig=figure(m);
-%         if j==1
-%             plot(t1,squeeze(dT(2,500,k,:))); 
-%             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
-%                 ', NA=' num2str(n_NA) ', d=' num2str(n_d)]},...
-%                 'interpreter', 'LaTex');
-%             xlabel('t [s]', 'interpreter', 'LaTex');
-%             ylabel('dT[K]', 'interpreter', 'LaTex');
-%         elseif j==2
-%             plot(t2,squeeze(dT(2,500,k,:)));
-%             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
-%                 ', NA=' num2str(n_NA) ', d=' num2str(n_d)]},...
-%                 'interpreter', 'LaTex');
-%             xlabel('t [s]', 'interpreter', 'LaTex');
-%             ylabel('dT[K]', 'interpreter', 'LaTex');
-%         end
-%         
+        %--------Plot--------------
+        fig=figure(m);
+        set(fig, 'Position', [10 1000 1200 2000]);
+        % plot temperature raise (color) (K)
+        subplot(2,2,1)
+        imagesc(r,z,dT(:,:,k,timesToPlot(1))); c=colorbar;
+        
+        %labels
+        if j==1
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) ', t=' ...
+                num2str(t1(timesToPlot(1)))]},'interpreter', 'LaTex');
+        elseif j==2
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) '; t='...
+                num2str(t2(timesToPlot(1)))]},'interpreter', 'LaTex');
+        end
+        xlabel('r [mm]', 'interpreter', 'LaTex');
+        ylabel('z [mm]', 'interpreter', 'LaTex');
+        c.Label.String= '$dT$ [$K$]';
+        c.Label.FontSize=20;
+        c.Label.Interpreter='latex';
+        
+        %scaling
+        if j==1
+            xlim([-0.3,0.3]);ylim([0,0.6]);
+        elseif j==2
+            xlim([-1,1]);ylim([0,1.5]);
+        end
+        
+        subplot(2,2,2)
+        imagesc(r,z,dT(:,:,k,timesToPlot(2))); c=colorbar;
+        
+        %labels
+        if j==1
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) ', t=' ...
+                num2str(t1(timesToPlot(2)))]},'interpreter', 'LaTex');
+        elseif j==2
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) '; t='...
+                num2str(t2(timesToPlot(2)))]},'interpreter', 'LaTex');
+        end
+        xlabel('r [mm]', 'interpreter', 'LaTex');
+        ylabel('z [mm]', 'interpreter', 'LaTex');
+        c.Label.String= '$dT$ [$K$]';
+        c.Label.FontSize=20;
+        c.Label.Interpreter='latex';
+        
+        %scaling
+        if j==1
+            xlim([-0.3,0.3]);ylim([0,0.6]);
+        elseif j==2
+            xlim([-1,1]);ylim([0,1.5]);
+        end
+        
+         subplot(2,2,4)
+        imagesc(r,z,dT(:,:,k,timesToPlot(3))); c=colorbar;
+        
+        %labels
+        if j==1
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) ', t=' ...
+                num2str(t1(timesToPlot(3)))]},'interpreter', 'LaTex');
+        elseif j==2
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) '; t='...
+                num2str(t2(timesToPlot(3)))]},'interpreter', 'LaTex');
+        end
+        xlabel('r [mm]', 'interpreter', 'LaTex');
+        ylabel('z [mm]', 'interpreter', 'LaTex');
+        c.Label.String= '$dT$ [$K$]';
+        c.Label.FontSize=20;
+        c.Label.Interpreter='latex';
+        
+        %scaling
+        if j==1
+            xlim([-0.3,0.3]);ylim([0,0.6]);
+        elseif j==2
+            xlim([-1,1]);ylim([0,1.5]);
+        end
+        
+        
+        subplot(2,2,3)
+        if j==1
+            hold on
+            plot(t1,squeeze(dT(2,500,k,:))); 
+           [dtTau extratau]=Traise_Data(prop,phi,tau(k));
+            plot(tau(k),dtTau(2,500),'r*');
+            hold off
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) '$\tau$=' num2str(extratau)]},...
+                'interpreter', 'LaTex');
+            xlabel('t [s]', 'interpreter', 'LaTex');
+            ylabel('dT[K]', 'interpreter', 'LaTex');
+        elseif j==2
+            hold on
+            plot(t2,squeeze(dT(2,500,k,:)));
+            [dtTau extratau]=Traise_Data(prop,phi,tau(k));
+            plot(tau(k),dtTau(2,500),'r*');
+            hold off
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) , '$\tau$=' num2str(extratau)]},...
+                'interpreter', 'LaTex');
+            xlabel('t [s]', 'interpreter', 'LaTex');
+            ylabel('dT[K]', 'interpreter', 'LaTex');
+        end
+        
         m=m+1;
         k=k+1;
         
