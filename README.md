@@ -55,8 +55,8 @@ Hannelore
 Lies
 - [ ] eerste kladversie inleiding  (woensdag 4 november)
 - [x] gepulste stimulatie eerste kladversie in logboek zetten (woensdag 28 oktober)
-- [ ] plot maken op 3 tijdstippen (zelf te kiezen) + tijdsverloop (woensdag 4 november )
-- [ ] 3tau aanduiden op plots (woensdag 28 oktober)
+- [x] plot maken op 3 tijdstippen (zelf te kiezen) + tijdsverloop (woensdag 4 november )
+- [x] 3tau aanduiden op plots (woensdag 28 oktober)
 - [x] logboek aanvullen
 
 
