@@ -2,10 +2,10 @@
 Puls_Setup_Data
 
 path=HV;
-tL=0.005 ; %pulse length [s]
-freq=5 ; %frequency of the pulses [s^-1]
-time=0.05 ; %total time length 
-timesteps=50 ;%number of time steps
+tL= ; %pulse length [s]
+freq= ; %frequency of the pulses [s^-1]
+time= ; %total time length 
+timesteps= ;%number of time steps
 
 F=1/freq; %time between pulses [s]
 t= linspace(0,time,timesteps);
