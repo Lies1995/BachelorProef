@@ -9,8 +9,7 @@ timesteps= ;%number of time steps
 
 F=1/freq; %time between pulses [s]
 t= linspace(0,time,timesteps);
-stepsize=time/timesteps;%length of one time step
-% KLOPT DIT???
+stepsize=time/(timesteps-1);%length of one time step
 
 % %------Calculation of l------
 % l=floor(time/F)*2; %number of subsections for which a different function is needed
@@ -70,35 +69,35 @@ for i = 1: length(L);
 %             end
 %         end
           for l=1:length(t)
-              i=1; %index for the different subsections of te function
+              a=1; %index for the different subsections of the function
               b=1; %boolean representing the pulse: 1 -> pulse, 0 -> no pulse
               if(abs(tL-t(l))<=(stepsize/2))
                   if(b==1)
-                      i=i+1;
+                      a=a+1;
                       b=0;
                   end
-              
               elseif(rem(t-tL,F)<=(stepsize/2))
                   if(b==1)
-                      i=i+1;
+                      a=a+1;
                       b=0;
                   end
               elseif(rem(t,F)<=(stepsize/2))
                   if(b==0)
-                      i=i+1;
+                      a=a+1;
                       b=1;
+                  end
               end
               if(b==1)%b is true, there is a pulse at this moment
-                  if(i==1) %the first subsection doesn't need a dalende
-                      dT(:,:,k,l)=Stijgend(prop,phi,t(l),F,i);
-                  else %
-                      dT(:,:,k:l)=Stijgend(prop,phi,t(l),F,i);
-                      for d=0:floor(i/2-1)
+                  if(a==1) %the first subsection doesn't need a dalende
+                      dT(:,:,k,l)=Stijgend(prop,phi,t(l),F,a);
+                  else %stijdende + sum dalende
+                      dT(:,:,k:l)=Stijgend(prop,phi,t(l),F,a);
+                      for d=0:floor((a/2)-1)
                           dT(:,:,k,l)=dT(:,:,k,l)+ Dalend(prop,phi,t(l),F,tL,d);
                       end
                   end
-              else %b is false, no pulse at this moment
-                  for d=0:(i/2-1)
+              else %b is false, no pulse at this moment -> only dalende
+                  for d=0:((a/2)-1)
                       dT(:,:,k,l)=dT(:,:,k,l)+ Dalend(prop,phi,t(l),F,tL,d);
                   end
               end

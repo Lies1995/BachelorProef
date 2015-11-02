@@ -19,9 +19,9 @@ A=0;
 tau=(x/y)*(r_0^2/(1+z^2));
 
 if(rem(i,2)~=0)%i is oneven
-    A=floor(i/2);
+    C=floor(i/2);
 end
 
-dTs=(tau*prop(1)/(prop(4)*prop(5)))*(1-exp(-(t-A*F)/tau)).*phi;
+dTs=(tau*prop(1)/(prop(4)*prop(5)))*(1-exp(-(t-C*F)/tau)).*phi;
 end
 
