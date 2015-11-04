@@ -16,12 +16,8 @@ y=prop(6)*(2.4)^2;
 z=r_0*pi/(4.8*z_0);
 
 
-
 tau=(x/y)*(r_0^2/(1+z^2));
 
-%if(rem(i,2)~=0)%i is oneven
- %   C=floor(i/2);
-%end
 
 dTs=(tau*prop(1)/(prop(4)*prop(5)))*(1-exp(-(t-(h-1)*F)/tau))*phi(pos(2),pos(1));
 end

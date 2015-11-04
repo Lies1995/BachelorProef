@@ -19,7 +19,5 @@ tau=(x/y)*(r_0^2/(1+z^2));
 
 T0=(tau*prop(1)/(prop(4)*prop(5)))*(1-exp(-(tL)/tau)).*phi(pos(2),pos(1));
 dTd=T0*exp(-(t-tL-D*F)/tau);
-
-
 end
 
