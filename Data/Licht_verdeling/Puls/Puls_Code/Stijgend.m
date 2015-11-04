@@ -1,4 +1,4 @@
-function [ dTs ] = Stijgend( prop,phi,t,F,i )
+function [ dTs ] = Stijgend( pos,prop,phi,t,F,h)
 %UNTITLED5 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -14,14 +14,15 @@ z_0=2 / (prop(1) + ((1 - prop(3)) * prop(2))) ;
 x=prop(4)*prop(5);
 y=prop(6)*(2.4)^2;
 z=r_0*pi/(4.8*z_0);
-A=0;
+
+
 
 tau=(x/y)*(r_0^2/(1+z^2));
 
-if(rem(i,2)~=0)%i is oneven
-    C=floor(i/2);
-end
+%if(rem(i,2)~=0)%i is oneven
+ %   C=floor(i/2);
+%end
 
-dTs=(tau*prop(1)/(prop(4)*prop(5)))*(1-exp(-(t-C*F)/tau)).*phi;
+dTs=(tau*prop(1)/(prop(4)*prop(5)))*(1-exp(-(t-(h-1)*F)/tau))*phi(pos(2),pos(1));
 end
 

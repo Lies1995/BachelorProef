@@ -17,7 +17,7 @@
     u_a=[51.1 107.9];       % absorpion coefficient [m^-1]
     u_s=[12733 9266];       %scattering coefficient [m^-1]
     g=0.88;                 %anisotropy factor [unitless]
-    p=1040;                 %tissue density [kg/m^3] 
+    rho=1040;                 %tissue density [kg/m^3] 
     c=3650;                 %specific heat [J/(kg*K)]
     k_d=0.530;               %,thermal diffusivity [W/(m*K)]
     w_L= [0.0000045 0.0001];%1:e^ radius [m] 
