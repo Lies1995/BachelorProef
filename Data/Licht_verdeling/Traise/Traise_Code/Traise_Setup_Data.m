@@ -4,8 +4,8 @@ close all
     set(0,'DefaultAxesFontSize', 18)
 %File Path
     LD =[fullfile('/Users','LIesDeceuninck', 'Documents','Bachelorproef','Data','Licht_verdeling','MCML','MCML_FR_Data')];
-    %HV=fullfile('C:','Users','hannelore','Documents','2015-2016',...
-        %'Bachelorproef','Data','Licht_verdeling','MCML','MCML_FR_Data'); 
+    HV=[fullfile('C:','Users','hannelore','Documents','2015-2016',...
+        'Bachelorproef','Data','Licht_verdeling','MCML','MCML_FR_Data')]; 
 %------DATA--------
 
 %optical properties
