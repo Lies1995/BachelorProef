@@ -50,9 +50,6 @@ Woensdag 28 oktober
 Woensdag 4 November
 Hannelore
 - [x] gepulste stimulatie implementeren in matlab (woensdag 4 november)
-- [ ] data voor betere simulatie elevante gebied voor intensiteitsprofiel (woensdag 28 oktober)
-- [ ] betere simulatie in relevante gebied voor intensiteitsprofiel (woensdag 28 oktober)
-- [ ] plot voor de 4 protocols in gestimuleerde code
 
 Lies
 - [ ] eerste kladversie inleiding  (woensdag 4 november)
@@ -68,4 +65,20 @@ Lies en Hannelore
 - [ ] paper lezen over Introduction to Laser-Tissue Interactions (woensdag 4 november)
 - [ ] Vragen over de schaling
 
+Woensdag 4 november
+- [x] Nieuwe data voor originele schaling
+- [x] Nieuwe data voor halve schaling
+- [x] Nieuwe afbeeldingen voor originele schaling
+- [x] Nieuwe afbeeldingen voor halve schaling
+- [x] Resultaten+probleem doorsturen naar Barbara
+
+- [x] Mooie plot maken gepulste stimulatie (code)
+- [x] maak 2 afbeeldingen voor verschillende stimulatie protocols
+- [x] resultaten doorsturen naar Barbara+bedenkingen
+- [ ] Plot gepulste stimulatie voor elk protocol (code) (L,NA)--> 1 afbeelding met 4 subplots voor een gegeven 
+
+- [ ] data voor betere simulatie elevante gebied voor intensiteitsprofiel (woensdag 4 November)
+- [ ] betere simulatie in relevante gebied voor intensiteitsprofiel (woensdag 4 November)
+- [ ] plot voor de 4 protocols in gestimuleerde code
+stimulatie protocol
 
