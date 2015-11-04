@@ -3,17 +3,17 @@ Puls_Setup_Data
 format long
 
 %-------Fill in-----
-path=HV;
+path=LD;
 pos=[500 2]; %position in the tissue [r z]
 tL=0.0005 ; %pulse length [s]
 freq=10 ; %frequency of the pulses [s^-1]
-time=0.4 ; %total time length
+time=0.02 ; %total time length
 ntss=200; %number of time steps in a puls
-ntsd=5000; %number of time steps between pulses
+ntsd=500; %number of time steps between pulses
 
 %-----Initiations---
 
-F=1/freq; %time between pulses [s]
+F=2*tL; %time between pulses [s]
 t_w=floor(time/F); %number of timewindows
 
 t1=linspace(0,tL,ntss); %times to evaluate in one puls
@@ -81,18 +81,23 @@ for i = 1: length(L);
 
         
         
+        figure(m)
+         plot(squeeze(dT(1,:,k)),squeeze(dT(2,:,k)))
+         title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) ', $\nu$=' num2str(freq) ', $t_L$=' num2str(tL)...
+                ]},'interpreter', 'LaTex');
+        xlabel('t [s]', 'interpreter', 'LaTex'); 
+         ylabel('dT [K]', 'interpreter', 'LaTex')
+         
         m=m+1;
         k=k+1;
-        
-         plot(squeeze(dT(1,:,1)),squeeze(dT(2,:,1)));
- title({['Temperature rise $\lambda=$' char(n_L) ', NA=' ...
-                    char(n_NA) ', f=' char(freq) ', t_L=' char(tL)]},... 
-                'interpreter', 'LaTex');
- xlabel('t [s]', 'interpreter', 'LaTex'); 
- ylabel('dT [K]', 'interpreter', 'LaTex');
     end
+    
 end
 
- plot(squeeze(dT(1,:,1)),squeeze(dT(2,:,1)));
+%  plot(squeeze(dT(1,:,1)),squeeze(dT(2,:,1)));
+%   title('bla');
+%  xlabel('t [s]', 'interpreter', 'LaTex'); 
+%  ylabel('dT [K]', 'interpreter', 'LaTex');
 %  dT(:,:,2)
 
