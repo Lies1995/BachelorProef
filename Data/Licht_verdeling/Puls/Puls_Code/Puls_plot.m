@@ -15,9 +15,10 @@ ntsd=5000; %number of time steps between pulses
 
 F=1/freq; %time between pulses [s]
 t_w=floor(time/F); %number of timewindows
+
 t1=linspace(0,tL,ntss); %times to evaluate in one puls
 t2=linspace(tL+t1(2),F-t1(2),ntsd); %times to evaluate between pulses
-dT=zeros(2, (length(t1)+length(t2))*t_w , 4);
+dT=zeros(2, (length(t1)+length(t2))*t_w , 4); %datacollection vector
 
 m=1; %index for the figures
 k=1; %index for the protocols
@@ -83,7 +84,15 @@ for i = 1: length(L);
         m=m+1;
         k=k+1;
         
+         plot(squeeze(dT(1,:,1)),squeeze(dT(2,:,1)));
+ title({['Temperature rise $\lambda=$' char(n_L) ', NA=' ...
+                    char(n_NA) ', f=' char(freq) ', t_L=' char(tL)]},... 
+                'interpreter', 'LaTex');
+ xlabel('t [s]', 'interpreter', 'LaTex'); 
+ ylabel('dT [K]', 'interpreter', 'LaTex');
     end
 end
- plot(squeeze(dT(1,:,1)),squeeze(dT(2,:,1)));
- dT(:,:,2)
+
+              
+                
+ dT(:,:,2);
