@@ -3,8 +3,8 @@ Puls_Setup_Data
 format long
 
 %-------Fill in-----
-path=LD;
-pos=[500 2]; %position in the tissue
+path=HV;
+pos=[500 2]; %position in the tissue [r z]
 tL=0.0005 ; %pulse length [s]
 freq=10 ; %frequency of the pulses [s^-1]
 time=0.4 ; %total time length
@@ -68,7 +68,7 @@ for i = 1: length(L);
                 
                 for l=(h-1)*(length(t1)+length(t2))+length(t1)+1: (h-1)*(length(t1)+length(t2))+length(t1)+length(t2)
                     dT(1,l,k)=t2(l-((h-1)*(length(t1)+length(t2))+length(t1)));
-                    for p=1:h %sum over all dalende
+                    for p=1:h %sum over previous dalende
                         dT(2,l,k)=dT(2,l,k)+Dalend(pos, prop, phi, t2(l-((h-1)*(length(t1)+length(t2))+length(t1))) , F, tL,p-1);
                     end
                 end
@@ -86,4 +86,4 @@ for i = 1: length(L);
     end
 end
  plot(squeeze(dT(1,:,1)),squeeze(dT(2,:,1)));
- dT(:,:,2)
+%  dT(:,:,2)
