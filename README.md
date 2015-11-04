@@ -46,11 +46,13 @@ Vrijdag 23 oktober
 - [x] schrijf appart documentje met alle data geordend voor de Traise
 
 Woensdag 28 oktober
+
+Woensdag 4 November
 Hannelore
-- [ ] gepulste stimulatie implementeren in matlab (woensdag 4 november)
+- [x] gepulste stimulatie implementeren in matlab (woensdag 4 november)
 - [ ] data voor betere simulatie elevante gebied voor intensiteitsprofiel (woensdag 28 oktober)
 - [ ] betere simulatie in relevante gebied voor intensiteitsprofiel (woensdag 28 oktober)
-
+- [ ] plot voor de 4 protocols in gestimuleerde code
 
 Lies
 - [ ] eerste kladversie inleiding  (woensdag 4 november)
@@ -62,7 +64,7 @@ Lies
 
 Lies en Hannelore
 - [x] Eerste ontwerp van de matlab code op papier 
-- [ ] samen door code gepulste stimulatie (woensdag 4 november)
+- [x] samen door code gepulste stimulatie (woensdag 4 november)
 - [ ] paper lezen over Introduction to Laser-Tissue Interactions (woensdag 4 november)
 - [ ] Vragen over de schaling
 

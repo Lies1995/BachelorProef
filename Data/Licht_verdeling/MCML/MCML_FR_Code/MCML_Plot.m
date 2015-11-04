@@ -39,20 +39,20 @@ k=1;                                                        %Index for figures
                 c.Label.String= '$\phi$ [$\frac{mW}{mm^2}$]';
                 c.Label.FontSize=20;
                 c.Label.Interpreter='latex';
-                if h==1
-                    if j==1
-                        xlim([-0.3,0.3]);ylim([0,0.6]);
-                    elseif j==2
-                        xlim([-1,1]);ylim([0,1.5]);
-                    end
-                elseif h==3
-                    
-                    if j==1
-                        xlim([-0.1,0.1]);ylim([0,0.3]);
-                    elseif j==2
-                        xlim([-1,1]);ylim([0,1.5]);
-                    end
-                end
+%                 if h==1
+%                     if j==1
+%                         xlim([-0.3,0.3]);ylim([0,0.6]);
+%                     elseif j==2
+%                         xlim([-1,1]);ylim([0,1.5]);
+%                     end
+%                 elseif h==3
+%                     
+%                     if j==1
+%                         xlim([-0.1,0.1]);ylim([0,0.3]);
+%                     elseif j==2
+%                         xlim([-1,1]);ylim([0,1.5]);
+%                     end
+%                 end
                 
              subplot(1,2,2)                                 %Plot Fluence Rate (height) (mW/mm^)
              plot(z,fRate(:,501)) 
