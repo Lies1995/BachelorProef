@@ -5,9 +5,9 @@ format long
 %-------Fill in-----
 path=LD;
 pos=[500 2]; %position in the tissue [r z]
-tL=0.0005 ; %pulse length [s]
-freq=10 ; %frequency of the pulses [s^-1]
-time=0.02 ; %total time length
+tL=0.00003; %pulse length [s]
+freq=1/(2*tL) ; %frequency of the pulses [s^-1]
+time=0.0005; %total time length
 ntss=200; %number of time steps in a puls
 ntsd=500; %number of time steps between pulses
 
@@ -88,7 +88,7 @@ for i = 1: length(L);
                 ]},'interpreter', 'LaTex');
         xlabel('t [s]', 'interpreter', 'LaTex'); 
          ylabel('dT [K]', 'interpreter', 'LaTex')
-         
+         grid on
         m=m+1;
         k=k+1;
     end
