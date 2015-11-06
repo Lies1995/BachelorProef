@@ -15,6 +15,7 @@ function [R_Fig,z, Data_Fig, file_name] = MCML_Data(L,NA,path,h)
                 end
                 [r,z,Data] = MCML_read_F(file_Frz);               %Read data, [mm,mm,/mm^2]                            
                 R_Fig = [-r(end:-1:1), r];                                  
-                Data_Fig = [Data(:,end:-1:1) Data]*1;        % * # mW @ tip
+                Data_Fig = [Data(:,end:-1:1) Data]*1;        % * # mW/mm^2 @ tip
+                  %say data_Fig is actually W/mm^2                                          
 end
 

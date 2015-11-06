@@ -22,7 +22,7 @@ function [r,z,Data] = MCML_read_F(MCML_file_MCO)
     Data = reshape(Data,z_length,r_length);
     Data(end,:) = 0;
     Data(:,end) = 0;
-    Data = Data./100; %% /cm^2-> /mm^2
+   Data = Data./100; %% /cm^2-> /mm^2
 
 end
 
