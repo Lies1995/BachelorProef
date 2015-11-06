@@ -2,6 +2,8 @@
     close all
     % Change default text font size
         set(0,'DefaultAxesFontSize', 18)
+        set(0,'defaulttextinterpreter','latex')
+        
     %File Path
         LD =[fullfile('/Users','LIesDeceuninck', 'Documents','Bachelorproef',...
             'Data','Licht_verdeling','MCML','MCML_FR_Data')];

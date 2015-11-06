@@ -4,9 +4,11 @@ format long
 Traise_Setup_Data
 
 t1=linspace(0,0.00015,50);%times to evaluate[s] for NA=12
-t2=linspace(0,0.05,50); %times to evaluate[s] for NA=37
+t2=linspace(0,1,50); %times to evaluate[s] for NA=37
 timesToPlot=[3 20 40];
 path=LD; %path
+PL=0;%Laser Power [W] (default 0)
+IL=350000;%irradiance [W/m^2] (default 1)
 
 %positions in tissue
 filename_R=[fullfile(path,'MCML_Data_FR_r')];
@@ -30,15 +32,18 @@ for i = 1: length(L);
         
         %read in fluence rate
         n_L=L(i); n_NA=NA(j);
-        datafile_name = ['MCML_Data_FR_L_' num2str(n_L) '_NA_'...
+        datafile_name = ['MCML_Data_FRU_L_' num2str(n_L) '_NA_'...
             num2str(n_NA) ];
-        phi=csvread(fullfile(path,datafile_name)); %[kW/m^2]
-        phi=phi.*10^3; %[W/m^2]
-        
+        psi=csvread(fullfile(path,datafile_name)); %[W/m^2]
+       
         %define tissue properties
         prop(1)=u_a(i);    %absorption coefficient [m^-1]
         prop(2)=u_s(i) ;   %scattering coefficient [m^-1]
         prop(7)=w_L(j);   %1:e^ radius [m]
+        if ne(PL,0) == 1
+        IL=PL/((pi*prop(7)^2)/2);
+        end
+        phi=IL.*psi;%actual fluence rate corresponding to the used peak irradiance
         
         %--------Calculation--------------
         if j==1
