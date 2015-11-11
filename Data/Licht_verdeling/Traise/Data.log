@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.7)  28 OCT 2015 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.10.7)  11 NOV 2015 11:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -669,51 +669,88 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 54.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 58.
+(Font)              scaled to size 10.07397pt on input line 63.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 58.
+(Font)              scaled to size 7.63599pt on input line 63.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 58.
+(Font)              scaled to size 5.51999pt on input line 63.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 10.07397pt on input line 58.
+(Font)              scaled to size 10.07397pt on input line 63.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.63599pt on input line 58.
+(Font)              scaled to size 7.63599pt on input line 63.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 58.
+(Font)              scaled to size 5.51999pt on input line 63.
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
  []
 
 Package marginnote Info: Margin note 1.1 is on absolute page 1
-(marginnote)              on input line 87.
-Package marginnote Info: right page because not two side mode on input line 87.
+(marginnote)              on input line 93.
+Package marginnote Info: right page because not two side mode on input line 93.
 
 Package marginnote Info: xpos seems to be 96.7634pt,
-(marginnote)             \marginnoterightadjust ignored on input line 87.
+(marginnote)             \marginnoterightadjust ignored on input line 93.
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-(./Data.aux) ) 
+LaTeX Font Info:    Try loading font information for TS1+futs on input line 112
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fourier/ts1futs.fd
+File: ts1futs.fd 2004/03/26 Fontinst v1.926 font definitions for TS1/futs.
+)
+Overfull \hbox (13.63593pt too wide) in paragraph at lines 112--115
+\T1/futs/m/n/10.95 sorp-tie van fo-to-nen. Door con-duc-tie wordt hun en-ergie 
+ver-spreid over het (oneindige)
+ []
+
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 126.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 126.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 126.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 11.03998pt on input line 126.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 8.27998pt on input line 126.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.43999pt on input line 126.
+
+Class scrartcl Warning: Usage of deprecated font command `\sl'!
+(scrartcl)              You should note, that in 1994 font command `\sl' has
+(scrartcl)              been defined for compatiblitiy to Script 2.0 only.
+(scrartcl)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrartcl)              shouldn't use such commands any longer and within
+(scrartcl)              KOMA-Script usage of `\sl' is definitely deprecated.
+(scrartcl)              See `fntguide.pdf' for more information about
+(scrartcl)              recommended font commands.
+(scrartcl)              Note also, that KOMA-Script will remove the definition
+(scrartcl)              of `\sl' anytime until release of about version 3.20.
+(scrartcl)              But for now, KOMA-Script will replace deprecated `\sl'
+(scrartcl)              by `\normalfont \slshape ' on input line 134.
+
+[2] (./Data.aux) ) 
 Here is how much of TeX's memory you used:
- 6529 strings out of 493089
- 95092 string characters out of 6134842
- 230870 words of memory out of 5000000
- 9863 multiletter control sequences out of 15000+600000
- 68707 words of font info for 91 fonts, out of 8000000 for 9000
+ 6607 strings out of 493089
+ 96158 string characters out of 6134842
+ 230896 words of memory out of 5000000
+ 9920 multiletter control sequences out of 15000+600000
+ 118689 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 47i,11n,47p,237b,227s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}<
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
-Output written on Data.pdf (1 page, 44674 bytes).
+ 47i,11n,47p,397b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.e
+nc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-mex.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-mlit.
+pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/fourier/fourier-ms.p
+fb></usr/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb>
+Output written on Data.pdf (2 pages, 50641 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
- 20 compressed objects within 1 object stream
+ 32 PDF objects out of 1000 (max. 8388607)
+ 22 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

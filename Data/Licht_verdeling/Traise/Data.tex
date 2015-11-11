@@ -51,6 +51,11 @@
 \begin{document}
 
 \maketitle % Print the title
+\section{Bekomen Data uit Trise plot} % (fold)
+\label{sec:data}
+
+% section section_name (end)
+
 In tabel \ref{tab:const} staan de data die we gebruikt hebben als input in de code.\\
 \begin{table}[h!]
 \caption{Gebruikte constanten}
@@ -75,6 +80,7 @@ In tabel \ref{tab:tau} staan de bekomen resultaten voor de tijdsconstante tau (z
 \tau = \frac{\rho c}{k(2.4)^2}\left[\frac{r^2_0}{1+\left(\frac{r_0 \pi}{4.8z_0}\right)^2}\right]
 \end{equation}
 \begin{subequations}
+
 met constanten
 \begin{align}
         z_0 &= \frac{2}{\mu_a + (1-g)\mu_s} = \frac{2}{\mu_a+\mu_s'}\\
@@ -96,5 +102,33 @@ $560 nm$ & $2.517975$ & $12.414704$ \\
 \end{table}
 
 Hierin is geen rekening gehouden met beduidende cijfers. Wel is er afgerond volgens de gebruikelijke regels. 
+\section{Interpretaties resultaten} % (fold)
+\label{sec:int-res}
+
+\subsection{Saturatie} % (fold)
+\label{sub:saturatie}
+\emph{Waarom is er saturatie aan het einde van de stimulatie (zowel continue als gepulste)}
+\begin{itemize}
+	\item continue stimulaite:\\
+	bij stimulaitie worden de moleculen geexiteerd naar hoger energie niveau door absorptie van fotonen.
+	Door conductie wordt hun energie verspreid over het (oneindige) weefsel. --> energieverlies
+	\begin{equation}
+		\text{Je krijgt } x \text{ je geeft } \frac{-1}{2}x \text{ af netto stijging } \rightarrow  \frac{1}{2}x
+	\end{equation}
+	Door continue energie toevoer en energie verlies wordt uiteindelijk een evenwicht bereikt.Constante stijging van de temperatuur-->saturatie 
+	Dit is uiteraard op een hoger energie nieveau (temperatuur) dan initieel 
+	\item gepulste stimulatie \\
+	Eenderzijds tijdens de puls krijg je na $x$ aantal tijd (ongeveer 4 keer $\tau$ ) om wille van bovenstaande redenen. Wanneer de puls stopt daalt de temperatuurstijging met dezelfde tijdsconstante. Wanneer de volgende puls start is er niet triviale bijdrage van vorige puls. Zo voelt elke puls bijdragen van de voorgaande pulsen. De temperatuursstijging is hoger dan bij de eerste puls.
+	Echter, omdat een dalende exponentiele (afhankelijk de tijdsconstante) (snel) naar 0 gaat, wordt de bijdrage voor de volgende pulsen uiteindelijk triviaal. Hierdoor voelt elke puls enkel de bijdrage van $x$-aantal pulsen ervoor. Dit is een constante bijdrage waardoor de temperatuursstijging satureerd. 
+
+\end{itemize}
+% subsection saturatie (end)
+\subsection{Van wat hangt de tijdsconstante $\tau$ af} % (fold)
+
+De golflengthe $\lambda$ bepaald de absorptiecoefficient $\mu_a$ en scatteringcoefficient $\mu_s$, m.a.w $z_0$ in $\tau$. De diameter $d$ van de fiber is $2w_L=d$.
+Omdat $z_0^{474nm}=0.0013 m^-1$ en $z_0^{560nm}=0.0016 m^-1$ in dezelfde grote orde zitten en de stralen $r_0$ grote orde $10^2$ verschillen zie tabel \ref{tab:const}. Door te kijken naar vergelijking \ref{eq:tau} zien we dat $\tau$ dus voornamelijk veranderd door de grote veranderingen in $r_0$, dus de diameter heeft meer invloed dan de golflengte.
+
+% subsection van_wat_hangt_ (end)
+
 
 \end{document}
