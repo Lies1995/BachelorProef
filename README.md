@@ -63,7 +63,7 @@ Lies en Hannelore
 - [x] Eerste ontwerp van de matlab code op papier 
 - [x] samen door code gepulste stimulatie (woensdag 4 november)
 - [ ] paper lezen over Introduction to Laser-Tissue Interactions (woensdag 4 november)
-- [ ] Vragen over de schaling
+- [x] Vragen over de schaling
 
 Woensdag 4 november
 - [x] Nieuwe data voor originele schaling
@@ -77,8 +77,17 @@ Woensdag 4 november
 - [x] resultaten doorsturen naar Barbara+bedenkingen
 - [ ] Plot gepulste stimulatie voor elk protocol (code) (L,NA)--> 1 afbeelding met 4 subplots voor een gegeven 
 
+Langs gaan bij Barbara
 - [ ] data voor betere simulatie elevante gebied voor intensiteitsprofiel (woensdag 4 November)
 - [ ] betere simulatie in relevante gebied voor intensiteitsprofiel (woensdag 4 November)
-- [ ] plot voor de 4 protocols in gestimuleerde code
-stimulatie protocol
+- [x] plot voor de 4 protocols in gestimuleerde code
 
+stimulatie protocol
+- [ ] Uitzoeken wat het verschil is tussen frzc en Arz zie pagina 104 in handleiding
+
+Woensdag 
+- [ ] lies legt hannelore uit
+- [ ] interpretaties mail barbara overlopen
+- [ ] grote planning maken (tot einde)
+- [ ] simulatie met 10^-3
+- [ ] vraagje over de eenheden in de .FRZC file /cm^3 ipv /cm^2
