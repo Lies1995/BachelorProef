@@ -75,7 +75,7 @@ Woensdag 4 november
 - [x] Mooie plot maken gepulste stimulatie (code)
 - [x] maak 2 afbeeldingen voor verschillende stimulatie protocols
 - [x] resultaten doorsturen naar Barbara+bedenkingen
-- [ ] Plot gepulste stimulatie voor elk protocol (code) (L,NA)--> 1 afbeelding met 4 subplots voor een gegeven 
+- [x] Plot gepulste stimulatie voor elk protocol (code) (L,NA)--> 1 afbeelding met 4 subplots voor een gegeven 
 
 Langs gaan bij Barbara
 - [ ] data voor betere simulatie elevante gebied voor intensiteitsprofiel (woensdag 4 November)
@@ -83,11 +83,30 @@ Langs gaan bij Barbara
 - [x] plot voor de 4 protocols in gestimuleerde code
 
 stimulatie protocol
-- [ ] Uitzoeken wat het verschil is tussen frzc en Arz zie pagina 104 in handleiding
+- [x] Uitzoeken wat het verschil is tussen frzc en Arz zie pagina 104 in handleiding
 
 Woensdag 
-- [ ] lies legt hannelore uit
-- [ ] interpretaties mail barbara overlopen
+- [x] lies legt hannelore uit
+- [x] interpretaties mail barbara overlopen
 - [ ] grote planning maken (tot einde)
-- [ ] simulatie met 10^-3
+- [x] simulatie met 10^-3
+
+Vragen aan Barbara
+- [ ] techniek om intensiteit in te voeren correct? (zie logboek)
 - [ ] vraagje over de eenheden in de .FRZC file /cm^3 ipv /cm^2
+- [ ] voor SM onze theorie niet nuttig (over 3 tau)
+- [ ] checken input beam 10^-3
+- [ ] foutenanalyse checken (zie logboek)
+- [ ] conductie op microscopisch vlak
+
+Uiteindelijke Planning
+
+We hebben fouten op de parameters--> fout Fluence Rate
+-- [ ] plots maken voor dt_max in functie van frequentie/pulslengte/irradiantie MAANDAG/DINSDAG Lies
+-- [ ] afbeeldingen voor fluence rate en temperatuur voor 3 tijdstippen dezelfde schaling hebben MAANDAG/DINSDAG  Hannelore
+-- [ ] pulsen plotten in gepulste stimulatie MAANDAG/DINSDAG  Hannelore
+- [ ] tussentijdse presentatie WOENSDAG
+- [ ] foutenanalyse DONDERDAG
+- [ ] verslag VRIJDAG verder plannen 
+- [ ] filmpje maken
+- [ ] presentatie
