@@ -92,12 +92,14 @@ Woensdag
 - [x] simulatie met 10^-3
 
 Vragen aan Barbara
-- [ ] techniek om intensiteit in te voeren correct? (zie logboek)
-- [ ] vraagje over de eenheden in de .FRZC file /cm^3 ipv /cm^2
-- [ ] voor SM onze theorie niet nuttig (over 3 tau)
-- [ ] checken input beam 10^-3
-- [ ] foutenanalyse checken (zie logboek)
-- [ ] conductie op microscopisch vlak
+- [x] techniek om intensiteit in te voeren correct? (zie logboek)
+- [x] vraagje over de eenheden in de .FRZC file /cm^3 ipv /cm^2
+- [x] voor SM onze theorie niet nuttig (over 3 tau)
+- [x] checken input beam 10^-3 (unitless)
+- [x] foutenanalyse checken (zie logboek)--> contourlijnen voor de fouten 
+- [x] conductie op microscopisch vlak
+tau bij SM is klein omdat tau_r klein is
+
 
 Uiteindelijke Planning
 
