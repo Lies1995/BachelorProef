@@ -3,9 +3,10 @@
 MCML_Setup_Data
 file_path=LD; %Choose what path to use
 PL=0.001;%Laser Power [W] (default 0)
-IL=350000;%irradiance [W/m^2] (default 1)
+IL=1;%irradiance [W/m^2] (default 1)
 h=1 ;%1=big scale, 2= small scale
-w_L= [0.0000045 0.0001];%1:e^ radius [m] 
+w_L= [0.0000045 0.0001];%1:e^ radius [m]
+v = [1,1];%contourline plot in [mW/mm^2]
 %LD=Lies Deceuninck, HV=Hannelore Verhoeven
 
 % %-------PLOT-------
@@ -33,7 +34,7 @@ k=1;                                                        %Index for figures
                
              
                 if ne(PL,0) == 1
-                    1
+                    
                     IL=PL/((pi*w_L(j)^2)/2);
                 end
                 phi=IL.*psi;%actual fluence rate corresponding to the used peak irradiance [W/m^2]
@@ -41,14 +42,19 @@ k=1;                                                        %Index for figures
              subplot(1,2,1)    
              
              %Plot Fluence Rate (color) (mW/mm^)
-             imagesc(r,z,phi); c=colorbar;                  
+            
+            imagesc(r,z,phi.*10^-3); c=colorbar; 
+            hold on
+            contour(r,z,phi.*10^-3,v,'color','k')
+              
                 title({'Fluence Rate';['$\lambda=$' char(n_L) ', NA=' ...
                     char(n_NA) ', power=' num2str(PL) ]},'interpreter', 'LaTex');
                 xlabel('r [mm]', 'interpreter', 'LaTex'); 
                 ylabel('z [mm]', 'interpreter', 'LaTex');
-                c.Label.String= '$\phi$ [$\frac{W}{m^2}$]';
+                c.Label.String= '$\phi$ [$\frac{mW}{mm^2}$]';
                 c.Label.FontSize=20;
                 c.Label.Interpreter='latex';
+             
 %                 if h==1
 %                     if j==1
 %                         xlim([-0.3,0.3]);ylim([0,0.6]);
@@ -65,11 +71,11 @@ k=1;                                                        %Index for figures
 %                 end
                 
              subplot(1,2,2)                                 %Plot Fluence Rate (height) (mW/mm^)
-             plot(z,phi(:,501)) 
+             plot(z,phi(:,501).*10^-3) 
                 title({'Fluence Rate at r=0';['$\lambda=$' char(n_L) ', NA=' ...
                     char(n_NA) ', power=' num2str(PL)]},'interpreter', 'LaTex');
                 xlabel('z [mm]', 'interpreter', 'LaTex'); 
-                ylabel('$\phi$ [$\frac{W}{m^2}$]', 'interpreter', 'LaTex'); 
+                ylabel('$\phi$ [$\frac{mW}{mm^2}$]', 'interpreter', 'LaTex'); 
 
 %                 if h==1
 %                     if j==1

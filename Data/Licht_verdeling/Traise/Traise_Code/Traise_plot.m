@@ -4,8 +4,8 @@ format long
 Traise_Setup_Data
 
 t1=linspace(0,0.00015,50);%times to evaluate[s] for NA=12
-t2=linspace(0,1,50); %times to evaluate[s] for NA=37
-timesToPlot=[3 20 40];
+t2=linspace(0,0.1,50); %times to evaluate[s] for NA=37
+timesToPlot=[2 8 40];
 path=LD; %path
 PL=0;%Laser Power [W] (default 0)
 IL=350000;%irradiance [W/m^2] (default 1)
@@ -63,8 +63,12 @@ for i = 1: length(L);
         fig=figure(m);
         set(fig, 'Position', [10 1000 1200 2000]);
         % plot temperature raise (color) (K)
+        %------------------------------------------------------------------
         subplot(2,2,1)
         imagesc(r,z,dT(:,:,k,timesToPlot(1))); c=colorbar;
+        if j==1 caxis([0 0.00003])
+        elseif j==2 caxis([0 0.15])
+        end
         
         %labels
         if j==1
@@ -88,11 +92,12 @@ for i = 1: length(L);
         elseif j==2
             xlim([-1,1]);ylim([0,1.5]);
         end
-        
+        %------------------------------------------------------------------    
         subplot(2,2,2)
         imagesc(r,z,dT(:,:,k,timesToPlot(2))); c=colorbar;
-        
-        %labels
+        if j==1 caxis([0 0.00003])
+                elseif j==2 caxis([0 0.15])
+                end
         if j==1
             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
                 ', NA=' num2str(n_NA) ', t=' ...
@@ -114,10 +119,12 @@ for i = 1: length(L);
         elseif j==2
             xlim([-1,1]);ylim([0,1.5]);
         end
-        
+        %------------------------------------------------------------------        
          subplot(2,2,4)
         imagesc(r,z,dT(:,:,k,timesToPlot(3))); c=colorbar;
-        
+            if j==1 caxis([0 0.00003])
+                    elseif j==2 caxis([0 0.15])
+                    end
         %labels
         if j==1
             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
@@ -141,7 +148,7 @@ for i = 1: length(L);
             xlim([-1,1]);ylim([0,1.5]);
         end
         
-        
+        %------------------------------------------------------------------
         subplot(2,2,3)
         if j==1
             hold on
