@@ -26,7 +26,7 @@
 \usepackage{lmodern} % Allows including images
 \usepackage{booktabs}
 \usepackage{textpos}
-\usepackage{media9}
+%\usepackage{media9}
 \usepackage{url}
 %\usepackage{multimedia}
 \usepackage[font={scriptsize,it}]{caption}
@@ -135,22 +135,59 @@
 	\end{frame}
 
 %------------------------------------------------
-\subsection{Interaction of EM with tissue} % (fold)%Hannelore
+\subsection{Interaction of EM radiation with tissue} % (fold)%Hannelore
 \label{sub:EM}
 %------------------------------------------------
 
-    \begin{frame}{Title}
+		
+		\begin{frame}{Different types of interactions}
         \footlineextra{Bron:}
 
     \end{frame}
+		
+    \begin{frame}{Photothermal effects}
+        \footlineextra{Bron:\cite{laser}}
+				\begin{figure}[tb]
+    \centering
+    \includegraphics[width=10cm]{images/interaction.png}
+    
+    \label{fig:interaction}
+\end{figure}
+			
+    \end{frame}
+		
+		\begin{frame}{Effects of temperature rise}
+        \footlineextra{Bron:}
+				
+				\begin{itemize}
+						\item 37^{\circ}C$: normal body temperature
+						\item at $\sim 38^{\circ}C-38.5^{\circ}C$: no irreversible changes
+						\item at $\sim 41^{\circ}C$: conformational changes of proteins
+						\item from $\sim 45^{\circ}C$: collagen breaks apart, tissue coagulation and blood clots form
+						\item at 100^{\circ}C$: water boils
+				\end{itemize}
+
+    \end{frame}		
 
 %------------------------------------------------
 %------------------------------------------------
 \section{Theory: bioheat equation}
 %------------------------------------------------
 %------------------------------------------------
-   \begin{frame}{Title}%Bioheat equation%Hannelore
-        \footlineextra{Bron:}
+   \begin{frame}{Bioheat equation}%Bioheat equation%Hannelore
+        \footlineextra{Bron:\cite{Gemert}}
+				\begin{equation*}
+				\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}+\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta 				T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right]
+				\label{eq:bioheat}
+				\end{equation*}
+\begin{description}
+	\item[] $\Delta T$ temperature rise
+  \item[] $\mu_a$ tissue-absorption coefficient ($m^{-1}$)
+  \item[] $k$ thermal conductivity ($Wm^{-1}^{\circ}C^{-1}$)
+  \item[] $\rho$ tissue density ($kg$ $m^{-3}$)
+	\item[] $c$ heat capacity ($J$ $kg^{-1}^{\circ}C^{-1}$)
+	\item[] $\phi(z,r)$ fluence rate of the laser light
+\end{description}				
 
     \end{frame}
 
@@ -161,7 +198,7 @@
 
     \begin{frame}{Title}
       \footlineextra{Bron:}
-
+			
     \end{frame}
 
 %------------------------------------------------
@@ -169,10 +206,24 @@
 \label{sub:solution}
 %------------------------------------------------
 
-    \begin{frame}{Title}
-      \footlineextra{Bron:}
-
+    \begin{frame}{Solution of the bioheat equation}
+      \footlineextra{Bron:\cite{Gemert}}
+			\begin{equation*}
+			\Delta T(t,z,r) = \frac{\tau \mu_a\phi(z,r)}{\rho c}(1-e^{-\frac{t}{\tau}})
+			\label{eq:solutionBHeq}
+			\end{equation*}
+			
     \end{frame}
+		
+		\begin{frame}{Comparison with exact (numerical) result}
+			\begin{figure}[tb]
+    \centering
+    \includegraphics[width=10cm]{images/comparison.png}
+    
+    \label{fig:comparison}
+		\end{figure}
+		
+		\end{frame}
 
 %------------------------------------------------
 %------------------------------------------------
@@ -227,6 +278,13 @@
 , Department of Physics and Astronomy and Department of Biosystems, University of Leuven; Donders Institute, Radboud University
 \newblock  \emph{Light distribution and thermal effects in the rat brain under optogenetic stimulation}
 \newblock Journal of BioPhotonics, 2015, 1-10\\
+
+\bibitem[B. Cox]{laser} (2013) Ben Cox
+\newblock \emph{Introduction to Laser-Tissue Interactions}
+
+\bibitem[M. Gemert]{Gemert} (1989) Martin J.C. van Gemert, The University of Texas at Austin
+\newblock \emph{Time constants in thermal laser medicine}
+
 
 \end{thebibliography}
 
