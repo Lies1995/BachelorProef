@@ -104,8 +104,10 @@ tau bij SM is klein omdat tau_r klein is
 Uiteindelijke Planning
 
 We hebben fouten op de parameters--> fout Fluence Rate
--- [ ] plots maken voor dt_max in functie van frequentie/pulslengte/irradiantie MAANDAG/DINSDAG Lies
--- [ ] afbeeldingen voor fluence rate en temperatuur voor 3 tijdstippen dezelfde schaling hebben MAANDAG/DINSDAG  Hannelore
+- [ ] plots maken voor dt_max in functie van frequentie/pulslengte/irradiantie /DINSDAG Lies
+- [ ] code aanpassen om een contourplot te maken vor verschillende fluence rates DINSDAG Lies
+- [x] Contourplot op temperatuursplots voor verschillende stijgingen
+- [x] afbeeldingen voor fluence rate en temperatuur voor 3 tijdstippen dezelfde schaling hebben MAANDAG/DINSDAG  Hannelore
 -- [ ] pulsen plotten in gepulste stimulatie MAANDAG/DINSDAG  Hannelore
 - [ ] tussentijdse presentatie WOENSDAG
 - [ ] foutenanalyse DONDERDAG
