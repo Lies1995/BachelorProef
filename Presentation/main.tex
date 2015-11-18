@@ -67,7 +67,7 @@
 \makeatother
 
 \title[Katholieke Universiteit Leuven]{\large Temperature changes in the rat brain during optogenetic stimulations }
-\author{Lies Deceuninck \\ Hannelore Verhoeven} % Your name
+\author[L. Deceuninck, H. Verhoeven]{Lies Deceuninck \\Hannelore Verhoeven} % Your name
 
 \date{}
 
@@ -96,7 +96,7 @@
 \footlineextra{Source:\cite{Barbara}}
 \begin{columns}[c]
 
-\column{.5\textwidth} % Left column and width
+\column{.4\textwidth} % Left column and width
     \tableofcontents
 
     \column{.5\textwidth} % Right column and width
@@ -132,13 +132,25 @@
 	\begin{frame}{Opsins}
 
 		\footlineextra{Bron:\cite{Opsin}}
-
+        \begin{center}
+        \begin{overprint}
+        \only<1>{
         \begin{figure}[tb]
             \centering
-            \includegraphics[width=10cm]{images/Opsins}
-            \label{fig:Opsins}
+            \includegraphics[width=11cm]{images/Opsins1.png}
+            \label{fig:Opsins}1
         \end{figure}
-
+            }
+            \pause
+            \only<2>{
+            \begin{figure}[tb]
+            \centering
+            \includegraphics[width=11cm]{images/Opsins2.png}
+            \label{fig:Opsins2}
+            \end{figure}
+            }
+            \end{overprint}
+        \end{center}
 	\end{frame}
 
 
@@ -166,6 +178,7 @@
 		
     \begin{frame}{Photothermal effects}
     \footlineextra{Bron:\cite{laser}}
+      \centering 37$^{\circ}C:$ normal body temperature
     \begin{columns}[c]
 
         \column{.6\textwidth} 
@@ -175,15 +188,13 @@
             \label{fig:interaction}
             \end{figure}
 
-        \column{.4\textwidth} 
+        \column{.5\textwidth} 
             \begin{itemize}
             \small
-                \item 37$^{\circ}C:$ \\
-                normal body temperature
                 \item at $\sim 38^{\circ}C-38.5^{\circ}C:$\\
                 no irreversible changes
                 \item at $\sim 41^{\circ}C:$\\ conformational changes of proteins
-                \item from $\sim 45^{\circ}C:$\\ collagen breaks apart, tissue coagulation and blood clots form
+                \item from $\sim 45^{\circ}C:$\\ collagen breaking, tissue coagulation, blood clots
                 \item at 100$^{\circ}C:$\\
                 water boils
              \end{itemize}
@@ -271,6 +282,7 @@
     \end{frame}
 		
 		\begin{frame}{Comparison with exact (numerical) result}
+\footlineextra{Bron:\cite{Gemert}}
 			\begin{figure}[tb]
     \centering
     \includegraphics[width=10cm]{images/comparison.png}
@@ -324,7 +336,7 @@
 %Bedankt: Hannelore
 \section{}
 \begin{frame}{Referenties}
-
+\tiny
 
 \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
 \setbeamertemplate{bibliography item}[article]
