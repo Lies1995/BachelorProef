@@ -14,7 +14,7 @@
 \setbeamerfont{title}{size=\Large}
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 \useoutertheme{infolines}
-\usefonttheme[⟨onlylarge⟩]{structuresmallcapsserif}
+%\usefonttheme[⟨onlylarge⟩]{structuresmallcapsserif}
 
 
 }
@@ -129,10 +129,30 @@
 \label{sub:optogenetics}%lies
 %------------------------------------------------
 
-	\begin{frame}{Title}
-		\footlineextra{Bron:}
+	\begin{frame}{Opsins}
+
+		\footlineextra{Bron:\cite{Opsin}}
+
+        \begin{figure}[tb]
+            \centering
+            \includegraphics[width=10cm]{images/Opsins}
+            \label{fig:Opsins}
+        \end{figure}
 
 	\end{frame}
+
+
+    \begin{frame}{Control neuron activity}
+        \footlineextra{Bron:\cite{act_inh}}
+
+        \begin{figure}[tb]
+            \centering
+            \includegraphics[width=12cm]{images/act_inh.png}
+            \label{fig:act_inh}
+        \end{figure}
+
+    \end{frame}
+
 
 %------------------------------------------------
 \subsection{Interaction of EM with tissue} % (fold)%Hannelore
@@ -159,11 +179,40 @@
 \label{sub:FRate}
 %------------------------------------------------
 
-    \begin{frame}{Title}
-      \footlineextra{Bron:}
+    \begin{frame}{Fluence Rate $\phi(r,z)$[$\frac{W}{m^2}$]}
+      \footlineextra{Bron:\cite{laser} and \cite{MCML} }
+
+        \begin{columns}[c]
+
+        \column{.5\textwidth} % Leuveft column and width
+            \begin{itemize}
+                \item Laser properties \\%afbeelding +uitleg optical fiber
+                Power, Energy,..\\
+                \item Tissue properties\\
+                $\mu_a$, $\mu_s$, $g$
+
+            \end{itemize}
+
+        \column{.5\textwidth} 
+           % \begin{figure}[tb]
+            %    \centering
+             %   \includegraphics[width=5cm]{}%picture of one photon
+              %  \label{fig:MCML1} 
+            %\end{figure}
+        \end{columns}
+
+        %\begin{figure}[tb]
+         %   \centering
+          %  \includegraphics[width=6cm]{images/MCML1photon.png}%picture of one photon
+           %  \label{fig:MCML1} 
+        %\end{figure}
 
     \end{frame}
 
+    \begin{frame}{Simulation with MCML$^{\ast}$}
+      \footlineextra{Monte Carlo Multi Layer \\Bron:\cite{MCML}}
+    %4 afbeeldingen fluence rate power 1mW
+    \end{frame}
 %------------------------------------------------
 \subsection{Solution} % (fold)%Hannelore
 \label{sub:solution}
@@ -227,6 +276,20 @@
 , Department of Physics and Astronomy and Department of Biosystems, University of Leuven; Donders Institute, Radboud University
 \newblock  \emph{Light distribution and thermal effects in the rat brain under optogenetic stimulation}
 \newblock Journal of BioPhotonics, 2015, 1-10\\
+
+\bibitem[F.Zhang et al.]{Opsin} (2015)Feng Zhang , Viviana Gradinaru , Antoine R Adamantidis , Remy Durand , Raag D Airan , Luis de Lecea and Karl Deisseroth
+\newblock  \emph{Optogenetic interrogation of neural circuits: technology for probing mammalian brain structures}
+\newblock Nature Protocols, 2010,\textbf{5} 439–456\\
+
+\bibitem[JJ Sun et al.]{act_inh} (2015)JJ Sun, Kloosterman Lab at NERF"
+\newblock  \emph{Optogenetic Experiments}
+\newblock Imec, 2014\\
+
+\bibitem[Lihong Wang and Steven L. Jacques ]{MCML} (1992)Lihong Wang, Ph. D.
+Steven L. Jacques, Ph. D.,
+Laser Biology Research Laboratory 
+\newblock  \emph{Monte Carlo Modeling of Light Transport in Multi-layered Tissues in Standard C}
+\newblock University of Texas M. D. Anderson Cancer Center 1992\\
 
 \end{thebibliography}
 
