@@ -1,0 +1,63 @@
+
+First: Optogenetics
+studying neuron activity --> control the neuron activity
+a) excite a cell -->474nm
+b) deactivate a cell (withouth damaging)-->560nm
+explain this ...
+
+BUT EM has interactions with matter--> tissue (some examples) can be used for studiing and many organisms need ligth to survive (photosynthesis) BUT is also causes damage (e.g savety procedures for working in a lab with lasers)
+Many kinds of interactions with tissue : 5 categories (use the mindmap p. 7)
+When does what effect occur: 
+depends on...
+..
+...
+use the figure 3 on p9
+our protocols: (show on figure)
+Irradiance for Opsins= 1W/mm^2
+exposure time necessary for Opsin activation: \approx ms
+--> Mostly Photothermal effects
+SO, interested in temperature rise
+
+we need to model the temperature rise in the tissue
+--> bioheat equation (explain)
+*allemaal constanten (eigenschappen van het weefsel)+phi
+Phi hangt af van eenderzijds:
+--> weefselparameter
+--> welke soort stimulatie: 
+In Optogenetics werken we met Optical fibers--> (uitleggen numerical aperture)
+UITleggen wat phi is en hoe we er aan komen: plot laten zien
+--> nu kunnen we de diffvgl oplossen
+
+Hoe? seperation of variables  (zie paper)
+hier maak je verschillende aannames die fouten gaan geven op het model
+wanneer die vergeleken wordt met non conduction model+numerieke oplossing --> maar geldig tot "Tau"
+------------------------------------------------
+Dus wij hebben met onze MCML fluence rate en weefsel parameter uit paper x dT volgens deze methode gesimuleed
+toon de oplossing met daar onder 1 plot voor 3 tijdstippen+ dT(z)
+overeenkomst met de mathematische formule (!saturatie!)
+Wat is essentieel: tijdsconstante:
+Nieuwe dia, tau bestaat uit 2 delen (tauR, tauZ)--> ivlloed door golflengte/NA
+verschillende  protocols
+Conclusie voor continue stimulatie maken: 
+Opnieuw het gebied waarin stimulatie gebeurt plotten op de dT grafieken
+--> Conclusie: Ons model kan gebruikt worden om de maximale temperatuursstijgn te moddeleren (tot \approx 3tau)
+
+Echter: vaker gebruikt met een gepulste stimulatie protocol. --> grafiek build up
+om de theorie uit te leggen
+--> we hebben gemoddeleeerd met matlab en dit zijn de resultaten
+--> bespreken in functie van dus de tijdsconstanten
+Conclusie:
+-->wat opvalt: altijd de afwisseling tussen stijgin en daling--> geen constante temperatuur of zware buid up van stijgingen 
+-->opnieuw kan voor elk protocol de maximale temperatuursstijgin beplaad worden ! ALLEEN het model is niet geldig voor de SM, hier moet dus een andere theorie/oplossing voor gevonden worden!
+--> we hebben het vergeleken met waarden berekend met 'non' conduction model (zie papar Barbara) --> wij altijd iets lager: wat we verwachten
+
+Foutenanalyse:
+--> ons model heeft zowiso een fout!
+--> fout op de weefelsparameter--> moet worden doorgerekend op de dT (vooral op fluence rate: Hoe dit doen...)
+zo krijgen we een fouten marge op de fluence rate en dan de vraag stellen naar publiek hoe we de fout door het model kunnen doorrekenen / of we het moeten quantificeren of niet..
+Conclusie:
+Nu kunnen we in ieder geval al zeggen dat:
+bij continue stimulatie: x graden stijging
+bij gepulste stimulatie: x graden stijding bij enkele protocols
+--> over het algemeen zeker  niet meer dan 1 graden stijging: ons model voorspelt niet veel schade
+
