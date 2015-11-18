@@ -159,35 +159,39 @@
 \label{sub:EM}
 %------------------------------------------------
 
-		
-		\begin{frame}{Different types of interactions}
+	\begin{frame}{Different types of interactions}
         \footlineextra{Bron:}
 
     \end{frame}
 		
     \begin{frame}{Photothermal effects}
-        \footlineextra{Bron:\cite{laser}}
-				\begin{figure}[tb]
-    \centering
-    \includegraphics[width=10cm]{images/interaction.png}
-    
-    \label{fig:interaction}
-\end{figure}
+    \footlineextra{Bron:\cite{laser}}
+    \begin{columns}[c]
+
+        \column{.6\textwidth} 
+            \begin{figure}[tb]
+            \centering
+            \includegraphics[width=7cm]{images/interaction.png}
+            \label{fig:interaction}
+            \end{figure}
+
+        \column{.4\textwidth} 
+            \begin{itemize}
+            \small
+                \item 37$^{\circ}C:$ \\
+                normal body temperature
+                \item at $\sim 38^{\circ}C-38.5^{\circ}C:$\\
+                no irreversible changes
+                \item at $\sim 41^{\circ}C:$\\ conformational changes of proteins
+                \item from $\sim 45^{\circ}C:$\\ collagen breaks apart, tissue coagulation and blood clots form
+                \item at 100$^{\circ}C:$\\
+                water boils
+             \end{itemize}
+
+    \end{columns}
 			
     \end{frame}
 		
-		\begin{frame}{Effects of temperature rise}
-        \footlineextra{Bron:}
-				
-				\begin{itemize}
-						\item 37^{\circ}C$: normal body temperature
-						\item at $\sim 38^{\circ}C-38.5^{\circ}C$: no irreversible changes
-						\item at $\sim 41^{\circ}C$: conformational changes of proteins
-						\item from $\sim 45^{\circ}C$: collagen breaks apart, tissue coagulation and blood clots form
-						\item at 100^{\circ}C$: water boils
-				\end{itemize}
-
-    \end{frame}		
 
 %------------------------------------------------
 %------------------------------------------------
@@ -196,6 +200,7 @@
 %------------------------------------------------
    \begin{frame}{Bioheat equation}%Bioheat equation%Hannelore
         \footlineextra{Bron:\cite{Gemert}}
+
 				\begin{equation*}
 				\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}+\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta 				T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right]
 				\label{eq:bioheat}
