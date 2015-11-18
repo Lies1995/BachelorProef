@@ -1,0 +1,235 @@
+%voeg 'backroundtitleslede' voor titleslidebackround
+%voeg 'backround' toe voor al de rest
+
+
+
+\documentclass[mathserif,11pt]{beamer}
+
+\mode<presentation> {
+\usetheme{Singapore}
+\usecolortheme{seagull}
+%\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+\setbeamerfont{frametitle}{size=\Large}
+\setbeamerfont{title}{size=\Large}
+\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+\useoutertheme{infolines}
+\usefonttheme[⟨onlylarge⟩]{structuresmallcapsserif}
+
+
+}
+
+
+%\usepackage{animate}
+\usepackage{graphicx}
+%\usepackage{movie15}
+\usepackage{lmodern} % Allows including images
+\usepackage{booktabs}
+\usepackage{textpos}
+\usepackage{media9}
+\usepackage{url}
+%\usepackage{multimedia}
+\usepackage[font={scriptsize,it}]{caption}
+\usepackage{subfigure}
+\usepackage[export]{adjustbox}
+\usepackage{color,xcolor,ucs}
+\usepackage{geometry}
+\usefonttheme{serif}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\makeatletter
+\newcommand{\footlineextra}[1]{\gdef\insertfootlineextra{#1}}
+\newbox\footlineextrabox
+
+
+\defbeamertemplate*{footline extra}{default}{
+    \begin{beamercolorbox}[ht=2.25ex,dp=1ex,leftskip=\Gm@lmargin]{footline extra}
+    \insertfootlineextra
+    %\par\vspace{2.5pt}
+    \end{beamercolorbox}
+}
+
+\addtobeamertemplate{footline}{%
+    \setbox\footlineextrabox=\vbox{\usebeamertemplate*{footline extra}}
+    \vskip -\ht\footlineextrabox
+    \vskip -\dp\footlineextrabox
+    \box\footlineextrabox%
+}
+{}
+
+
+\let\beamer@original@frame=\frame
+\def\frame{\gdef\insertfootlineextra{}\beamer@original@frame}
+\footlineextra{}
+\makeatother
+
+\title[Katholieke Universiteit Leuven]{\large Temperature changes in the rat brain during optogenetic stimulations }
+\author{Lies Deceuninck \\ Hannelore Verhoeven} % Your name
+
+\date{}
+
+\begin{document}
+
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/backroundtitleslide}}
+\begin{frame}
+\begin{columns}[c]
+
+\column{.62\textwidth} % Left column and width
+    
+
+    \column{.45\textwidth} % Right column and width
+    \vspace{4.1cm}
+    \titlepage % Print the title page as the first slide
+
+
+	\end{columns}
+
+\end{frame}
+
+\usebackgroundtemplate{}
+
+\begin{frame}
+\frametitle{Overview} 
+\footlineextra{Source:\cite{Barbara}}
+\begin{columns}[c]
+
+\column{.5\textwidth} % Left column and width
+    \tableofcontents
+
+    \column{.5\textwidth} % Right column and width
+    % Print the title page as the first slide
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=5cm]{images/ratBrain.png}
+    
+    \label{fig:ratBrain}
+\end{figure}
+
+    \end{columns}
+
+% Table of contents slide, comment this block out to remove it
+ % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+
+\end{frame}
+
+%-------------
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+%------------------------------------------------
+\section{Introduction} 
+\label{sec:introduction}
+%------------------------------------------------
+%------------------------------------------------
+\subsection{Optogenetics} % (fold)
+\label{sub:optogenetics}
+%------------------------------------------------
+
+	\begin{frame}{Title}
+		\footlineextra{Bron:}
+
+	\end{frame}
+
+%------------------------------------------------
+\subsection{Interaction of EM with tissue} % (fold)
+\label{sub:EM}
+%------------------------------------------------
+
+    \begin{frame}{Title}
+        \footlineextra{Bron:}
+
+    \end{frame}
+
+%------------------------------------------------
+%------------------------------------------------
+\section{Theory: bioheat equation}
+%------------------------------------------------
+%------------------------------------------------
+   \begin{frame}{Title}%Bioheat equation
+        \footlineextra{Bron:}
+
+    \end{frame}
+
+%------------------------------------------------
+\subsection{Fluence Rate} % (fold)
+\label{sub:FRate}
+%------------------------------------------------
+
+    \begin{frame}{Title}
+      \footlineextra{Bron:}
+
+    \end{frame}
+
+%------------------------------------------------
+\subsection{Solution} % (fold)
+\label{sub:solution}
+%------------------------------------------------
+
+    \begin{frame}{Title}
+      \footlineextra{Bron:}
+
+    \end{frame}
+
+%------------------------------------------------
+%------------------------------------------------
+\section{Results}
+%------------------------------------------------
+%------------------------------------------------
+\subsection{Continuous stimulation} % (fold)
+\label{sub:continuous_stimulation}
+%------------------------------------------------
+    \begin{frame}{Title}
+      \footlineextra{Bron:}
+
+    \end{frame}
+
+%------------------------------------------------  
+\subsection{Pulsed stimulation} % (fold)
+\label{sub:Pulsed stimulation}
+%------------------------------------------------
+    \begin{frame}{Title}
+      \footlineextra{Bron:}
+
+    \end{frame}
+
+%------------------------------------------------  
+%------------------------------------------------
+\section{Error analysis}
+%------------------------------------------------
+%------------------------------------------------
+    \begin{frame}{Title}
+      \footlineextra{Bron:}
+
+    \end{frame}
+%------------------------------------------------ 
+%------------------------------------------------
+\section{Conclusion}
+%------------------------------------------------
+%------------------------------------------------
+    \begin{frame}{Title}
+      \footlineextra{Bron:}
+
+    \end{frame}
+%------------------------------------------------
+
+\section{}
+\begin{frame}{Referenties}
+
+
+\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+\setbeamertemplate{bibliography item}[article]
+
+\bibitem[B. Gysbrachts et al.]{Barbara} (2015) Barbara Gysbrechts, Ling Wang, Nghia Nguyen Do Trong, Henrique Cabral, Zaneta Navratilova, Francesco Battaglia, Wouter Saeys, and Carmen Bartic
+, Department of Physics and Astronomy and Department of Biosystems, University of Leuven; Donders Institute, Radboud University
+\newblock  \emph{Light distribution and thermal effects in the rat brain under optogenetic stimulation}
+\newblock Journal of BioPhotonics, 2015, 1-10\\
+
+\end{thebibliography}
+
+\end{frame}
+
+\end{document}
