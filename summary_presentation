@@ -1,8 +1,27 @@
 
 First: Optogenetics
+INLEIDING SLIDE
+Studie the rat brain--> activity of the neurons
+as the term optogenetics reveals: the technique uses EM radiation to stimulate the neurons in the brain--> how does this work?
+DIA 1
+In nature, many organisms need light to survive. In certain prokaryotes membranes consist light sensitive proteïns  (opsins) that maintain the membrane potential (each cellmembrane has an rest potential human= 76mV) by transferring charged particles over the cellmembrane
+1) positive
+2) negative
+Because proteins--> encoded by DNA;
+so, insert the code in the neurons --> this protein get expressed in the infected cells.
+--> this is exactly what we need
+since, a neuron that fires is a neuron which sends an electrical singal--> change of membrane potential 
+DIA 2
+
 studying neuron activity --> control the neuron activity
-a) excite a cell -->474nm
-b) deactivate a cell (withouth damaging)-->560nm
+a) excite a cell 
+b) deactivate a cell 
+use two different opsins, see the results for these neurons after stimulation at different wavelengths
+works!! :)
+but how can we understand this? very simple
+--> an neuron that sends a singnal 'fires' this is an electrical signal--> an change in membrane potential
+so :
+DIA 3 (same as dia 1)
 explain this ...
 
 BUT EM has interactions with matter--> tissue (some examples) can be used for studiing and many organisms need ligth to survive (photosynthesis) BUT is also causes damage (e.g savety procedures for working in a lab with lasers)
