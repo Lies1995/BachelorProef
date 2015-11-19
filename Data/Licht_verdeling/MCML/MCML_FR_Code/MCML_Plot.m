@@ -15,7 +15,7 @@ k=1;                                                        %Index for figures
     for j=1:length(NA)
         
         fig=figure(k);                                      %make figure k
-        set(fig, 'Position', [10 1000 1400 500]);
+        set(fig, 'Position', [10 1000 600 500]);
         
     
 
@@ -39,7 +39,7 @@ k=1;                                                        %Index for figures
                 end
                 phi=IL.*psi;%actual fluence rate corresponding to the used peak irradiance [W/m^2]
             
-             subplot(1,2,1)    
+             %subplot(1,2,1)    
              
              %Plot Fluence Rate (color) (mW/mm^)
             
@@ -47,35 +47,23 @@ k=1;                                                        %Index for figures
             hold on
             contour(r,z,phi.*10^-3,v,'color','k')
               
-                title({'Fluence Rate';['$\lambda=$' char(n_L) ', NA=' ...
-                    char(n_NA) ', power=' num2str(PL) ]},'interpreter', 'LaTex');
+                title({['$\lambda=$' char(n_L) 'nm, NA=0.' ...
+                    char(n_NA) ', P=' num2str(PL) 'W' ]},'interpreter', 'LaTex');
                 xlabel('r [mm]', 'interpreter', 'LaTex'); 
                 ylabel('z [mm]', 'interpreter', 'LaTex');
                 c.Label.String= '$\phi$ [$\frac{mW}{mm^2}$]';
                 c.Label.FontSize=20;
                 c.Label.Interpreter='latex';
              
-%                 if h==1
-%                     if j==1
-%                         xlim([-0.3,0.3]);ylim([0,0.6]);
-%                     elseif j==2
-%                         xlim([-1,1]);ylim([0,1.5]);
-%                     end
-%                 elseif h==3
-%                     
-%                     if j==1
-%                         xlim([-0.1,0.1]);ylim([0,0.3]);
-%                     elseif j==2
-%                         xlim([-1,1]);ylim([0,1.5]);
-%                     end
-%                 end
+                        xlim([-1,1]);ylim([0,1.5]);
                 
-             subplot(1,2,2)                                 %Plot Fluence Rate (height) (mW/mm^)
-             plot(z,phi(:,501).*10^-3) 
-                title({'Fluence Rate at r=0';['$\lambda=$' char(n_L) ', NA=' ...
-                    char(n_NA) ', power=' num2str(PL)]},'interpreter', 'LaTex');
-                xlabel('z [mm]', 'interpreter', 'LaTex'); 
-                ylabel('$\phi$ [$\frac{mW}{mm^2}$]', 'interpreter', 'LaTex'); 
+                
+%              subplot(1,2,2)                                 %Plot Fluence Rate (height) (mW/mm^)
+%              plot(z,phi(:,501).*10^-3) 
+%                 title({'Fluence Rate at r=0';['$\lambda=$' char(n_L) ', NA=' ...
+%                     char(n_NA) ', power=' num2str(PL)]},'interpreter', 'LaTex');
+%                 xlabel('z [mm]', 'interpreter', 'LaTex'); 
+%                 ylabel('$\phi$ [$\frac{mW}{mm^2}$]', 'interpreter', 'LaTex'); 
 
 %                 if h==1
 %                     if j==1
