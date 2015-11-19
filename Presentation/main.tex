@@ -138,7 +138,7 @@
         \begin{figure}[tb]
             \centering
             \includegraphics[width=11cm]{images/Opsins1.png}
-            \label{fig:Opsins}1
+            \label{fig:Opsins}
         \end{figure}
             }
             \pause
@@ -172,12 +172,16 @@
 %------------------------------------------------
 
 	\begin{frame}{Different types of interactions}
-        \footlineextra{Bron:}
-
+        \footlineextra{Bron:\cite{laser}}
+			\begin{figure}[tb]
+				\centering
+				\includegraphics[width=11cm]{images/mindmap.png}
+				\label{fig:mindmap}
+			\end{figure}
     \end{frame}
 		
     \begin{frame}{Photothermal effects}
-    \footlineextra{Bron:\cite{laser}}
+    \footlineextra{Source:\cite{laser}}
       \centering 37$^{\circ}C:$ normal body temperature
     \begin{columns}[c]
 
@@ -212,18 +216,19 @@
    \begin{frame}{Bioheat equation}%Bioheat equation%Hannelore
         \footlineextra{Bron:\cite{Gemert}}
 
-				\begin{equation*}
+			\begin{equation*}
 				\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}+\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta 				T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right]
-				\label{eq:bioheat}
-				\end{equation*}
-\begin{description}
-	\item[] $\Delta T$ temperature rise
-  \item[] $\mu_a$ tissue-absorption coefficient ($m^{-1}$)
-  \item[] $k$ thermal conductivity ($Wm^{-1}^{\circ}C^{-1}$)
-  \item[] $\rho$ tissue density ($kg$ $m^{-3}$)
-	\item[] $c$ heat capacity ($J$ $kg^{-1}^{\circ}C^{-1}$)
-	\item[] $\phi(z,r)$ fluence rate of the laser light
-\end{description}				
+			\label{eq:bioheat}
+			\end{equation*}
+
+			\begin{description}
+				\item[] $\Delta T$ temperature rise
+			  	\item[] $\mu_a$ tissue-absorption coefficient ($m^{-1}$)
+			  	\item[] $k$ thermal conductivity ($Wm^{-1}^{\circ}C^{-1}$)
+			 	\item[] $\rho$ tissue density ($kg$ $m^{-3}$)
+				\item[] $c$ heat capacity ($J$ $kg^{-1}^{\circ}C^{-1}$)
+				\item[] $\phi(z,r)$ fluence rate of the laser light
+			\end{description}				
 
     \end{frame}
 
@@ -237,27 +242,29 @@
 
         \begin{columns}[c]
 
-        \column{.5\textwidth} % Leuveft column and width
+        \column{.3\textwidth} % Leuveft column and width
             \begin{itemize}
-                \item Laser properties \\%afbeelding +uitleg optical fiber
+            \small
+            	\item Laser properties \\%afbeelding +uitleg optical fiber
                 Power, Energy,..\\
                 \item Tissue properties\\
                 $\mu_a$, $\mu_s$, $g$
-
             \end{itemize}
 
-        \column{.5\textwidth} 
-           % \begin{figure}[tb]
-            %    \centering
-             %   \includegraphics[width=5cm]{}%picture of one photon
-              %  \label{fig:MCML1} 
-            %\end{figure}
+        \column{.7\textwidth} 
+            \begin{figure}[tb]
+                \centering
+                \includegraphics[width=5.5cm]{images/anisotropy.png}%picture of one photon
+            \label{fig:aniso} 
+            \end{figure}
         \end{columns}
 
-        %\begin{figure}[tb]
-         %   \centering
-          %  \includegraphics[width=6cm]{images/MCML1photon.png}%picture of one photon
-           %  \label{fig:MCML1} 
+		\vspace{0.1cm}
+
+       % \begin{figure}[tb]
+        %    \centering
+         %   \includegraphics[width=6cm]{images/MCML1photon.png}%picture of one photon
+        %\label{fig:MCML1} 
         %\end{figure}
 
 
@@ -266,6 +273,11 @@
     \begin{frame}{Simulation with MCML$^{\ast}$}
       \footlineextra{Monte Carlo Multi Layer \\Bron:\cite{MCML}}
     %4 afbeeldingen fluence rate power 1mW
+    \begin{figure}[tb]
+            \centering
+            \includegraphics[width=10cm, height=7.5cm]{images/FR.png}%picture of one photon
+             \label{fig:MCML1} 
+        \end{figure}
     \end{frame}
 %------------------------------------------------
 \subsection{Solution} % (fold)%Hannelore
