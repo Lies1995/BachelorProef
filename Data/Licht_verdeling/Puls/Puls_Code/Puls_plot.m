@@ -5,13 +5,13 @@ format long
 %-------Fill in-----
 path=LD;
 pos=[2 500]; %position in the tissue [z r]
-tL=0.020; %pulse length [s]
-freq=8; %frequency of the pulses [s^-1]
-time=0.4; %total time length
+tL=0.001; %pulse length [s]
+freq=40; %frequency of the pulses [s^-1]
+time=0.2; %total time length
 ntss=400; %number of time steps in a puls
 ntsd=500; %number of time steps between pulses
 PL=1;%Laser Power [W] (default 1)
-IL=5000;%irradiance [W/m^2] (default 1)
+IL=46000;%irradiance [W/m^2] (default 1)
 %-----Initiations---
 
 F=1/freq; %time between pulses [s]
@@ -97,39 +97,40 @@ for i = 1: length(L);
     
 end
 fig=figure
-set(fig, 'Position', [10 1000 1000 750]);
-subplot(2,2,1)
-plot(squeeze(dT(1,:,1)),squeeze(dT(2,:,1)))
-xlabel('t [s]', 'interpreter', 'LaTex');
-ylabel('dT [K]', 'interpreter', 'LaTex');
-h=legend(['$\lambda=$' num2str(L(1))...
-    ', NA=' num2str(NA(1))]);
-set(h,'Interpreter','latex')
-set(h,'Box','off')
-grid on
+%set(fig, 'Position', [10 1000 1000 750]);
+% subplot(2,2,1)
+% plot(squeeze(dT(1,:,1)),squeeze(dT(2,:,1)))
+% xlabel('t [s]', 'interpreter', 'LaTex');
+% ylabel('dT [K]', 'interpreter', 'LaTex');
+% h=legend(['$\lambda=$' num2str(L(1))...
+%     ', NA=' num2str(NA(1))]);
+% set(h,'Interpreter','latex')
+% set(h,'Box','off')
+% grid on
 
-subplot(2,2,2)
-plot(squeeze(dT(1,:,2)),squeeze(dT(2,:,2)))
-xlabel('t [s]', 'interpreter', 'LaTex');
-ylabel('dT [K]', 'interpreter', 'LaTex');
-set(gca,'yaxislocation','right');
-h=legend(['$\lambda=$' num2str(L(1))...
-    ', NA=' num2str(NA(2))]);
-set(h,'Interpreter','latex')
-set(h,'Box','off')
-grid on
+%subplot(2,2,3)
+% plot(squeeze(dT(1,:,2)),squeeze(dT(2,:,2)))
+% ylim([0 0.0010]);
+% xlabel('t [s]', 'interpreter', 'LaTex');
+% ylabel('dT [K]', 'interpreter', 'LaTex');
+% set(gca,'yaxislocation','right');
+% h=legend(['$\lambda=$' num2str(L(1))...
+%     ', NA=' num2str(NA(2))]);
+% set(h,'Interpreter','latex')
+% set(h,'Box','off')
+% grid on
 
-subplot(2,2,3)
-plot(squeeze(dT(1,:,3)),squeeze(dT(2,:,3)))
-
-xlabel('t [s]', 'interpreter', 'LaTex');
-ylabel('dT [K]', 'interpreter', 'LaTex');
-h=legend(['$\lambda=$' num2str(L(2))...
-    ', NA=' num2str(NA(1))]);
-set(h,'Interpreter','latex')
-set(h,'Box','off')
-grid on
-subplot(2,2,4)
+% subplot(2,2,2)
+% plot(squeeze(dT(1,:,3)),squeeze(dT(2,:,3)))
+% 
+% xlabel('t [s]', 'interpreter', 'LaTex');
+% ylabel('dT [K]', 'interpreter', 'LaTex');
+% h=legend(['$\lambda=$' num2str(L(2))...
+%     ', NA=' num2str(NA(1))]);
+% set(h,'Interpreter','latex')
+% set(h,'Box','off')
+% grid on
+%subplot(2,2,4)
 plot(squeeze(dT(1,:,4)),squeeze(dT(2,:,4)))
 
 xlabel('t [s]', 'interpreter', 'LaTex');
@@ -140,13 +141,13 @@ h=legend(['$\lambda=$' num2str(L(2))...
 set(h,'Interpreter','latex')
 set(h,'Box','off')
 grid on
-
-shg;
-p=mtit('Temperature increase for Pulsed stimulation for' ,...
-    'fontsize',24,'interpreter', 'LaTex',...
-    'xoff',0,'yoff',.05);
-
-p=mtit( ['$\nu$=' num2str(freq) ' Hz , $t_L$=' num2str(tL) ' s , $I$=' num2str(IL) '$ \frac{W}{m^2}$'],...
-    'fontsize',24,'interpreter', 'LaTex',...
-    'xoff',0,'yoff',.015);
+% 
+% shg;
+% p=mtit('Temperature increase for Pulsed stimulation for' ,...
+%     'fontsize',24,'interpreter', 'LaTex',...
+%     'xoff',0,'yoff',.05);
+% 
+% p=mtit( ['$\nu$=' num2str(freq) ' Hz , $t_L$=' num2str(tL) ' s , $I$=' num2str(IL) '$ \frac{W}{m^2}$'],...
+%     'fontsize',24,'interpreter', 'LaTex',...
+%     'xoff',0,'yoff',.015);
 
