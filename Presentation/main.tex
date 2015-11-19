@@ -314,20 +314,17 @@
 		
 		\begin{frame}{Time constant $\tau$}
       \footlineextra{Bron:}
-			\begin{equation}
-			\tau = \frac{\rho c}{k(2.4)^2}\left[\frac{r^2_0}{1+\left(\frac{r_0 \pi}{4.8z_0}\right)^2}\right]
-			\end{equation}
+			\begin{equation*}
+			\tau = \left ( \frac{1}{\tau_r}+\frac{1}{\tau_z} \right )^{-1}
+			\end{equation*}
 			
-			\begin{table}
-			\centering
-			\caption{Bekomen tijdsconstanten $\tau$ voor elk protocol}
-			\begin{tabular}{c||c|c}
-			& $\tau_{SM}$ [$10^{-2} ms$]& $\tau_{MM} [ms]$ \\ \hline
-			$474 nm$ & $2.517970$ & $12.401371$ \\
-			$560 nm$ & $2.517975$ & $12.414704$ \\
-			\end{tabular}
-			\label{tab:tau}
-			\end{table}
+			\begin{equation*}
+			\frac{1}{\tau_r} = \frac{k}{\rho c} \left( \frac{2.4}{\omega_L} \right )^2 \sim \frac{1}{diameter^2}
+			\end{equation*}
+			
+			\begin{equation*}
+			\frac{1}{\tau_z} = \frac{k}{\rho c} \left( \frac{\pi (\mu_a+\mu_s')}{4} \right )^2 \sim wavelength^2
+			\end{equation*}
 
     \end{frame}
 
@@ -347,8 +344,21 @@
 %------------------------------------------------
     \begin{frame}{Title}
       \footlineextra{Bron:}
+			\begin{figure}[tb]
+			\centering
+			\includegraphics[width=6cm]{images/scat.png}
+    
+			\label{fig:comparison}
+			\end{figure}
+			
+			\begin{figure}[tb]
+			\centering
+			\includegraphics[width=6cm]{images/absorp.png}
+    
+			\label{fig:comparison}
+			\end{figure}
 
-    \end{frame}
+			\end{frame}
 %------------------------------------------------ 
 %------------------------------------------------
 \section{Conclusion}%lies
