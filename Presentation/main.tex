@@ -131,7 +131,7 @@
 
 	\begin{frame}{Opsins}
 
-		\footlineextra{Bron:\cite{Opsin}}
+		\footlineextra{Source:\cite{Opsin}}
         \begin{center}
         \begin{overprint}
         \only<1>{
@@ -155,7 +155,7 @@
 
 
     \begin{frame}{Control neuron activity}
-        \footlineextra{Bron:\cite{act_inh}}
+        \footlineextra{Source:\cite{act_inh}}
 
         \begin{figure}[tb]
             \centering
@@ -172,7 +172,7 @@
 %------------------------------------------------
 
 	\begin{frame}{Different types of interactions}
-        \footlineextra{Bron:\cite{laser}}
+        \footlineextra{Source:\cite{laser}}
 			\begin{figure}[tb]
 				\centering
 				\includegraphics[width=11cm]{images/mindmap.png}
@@ -213,7 +213,7 @@
 %------------------------------------------------
 %------------------------------------------------
    \begin{frame}{Bioheat equation}%Bioheat equation%Hannelore
-        \footlineextra{Bron:\cite{Gemert}}
+        \footlineextra{Source:\cite{Gemert}}
 
 			\begin{equation*}
 				\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}+\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta 				T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right]
@@ -237,7 +237,7 @@
 %------------------------------------------------
 
     \begin{frame}{Fluence Rate $\phi(r,z)$[$\frac{W}{m^2}$]}
-      \footlineextra{Bron:\cite{laser} and \cite{MCML} }
+      \footlineextra{Source:\cite{laser} and \cite{MCML} }
 
         \begin{columns}[c]
 
@@ -270,7 +270,7 @@
     \end{frame}
 
     \begin{frame}{Simulation with MCML$^{\ast}$}
-      \footlineextra{Monte Carlo Multi Layer \\Bron:\cite{MCML}}
+      \footlineextra{Monte Carlo Multi Layer \\Source:\cite{MCML}}
     %4 afbeeldingen fluence rate power 1mW
     \begin{figure}[tb]
             \centering
@@ -284,7 +284,7 @@
 %------------------------------------------------
 
     \begin{frame}{Solution of the bioheat equation}
-      \footlineextra{Bron:\cite{Gemert}}
+      \footlineextra{Source:\cite{Gemert}}
 			\begin{equation*}
 			\Delta T(t,z,r) = \frac{\tau \mu_a\phi(z,r)}{\rho c}(1-e^{-\frac{t}{\tau}})
 			\label{eq:solutionBHeq}
@@ -308,7 +308,7 @@
 \label{sub:continuous_stimulation}
 %------------------------------------------------
     \begin{frame}{Continuous stimulation}
-      \footlineextra{Bron:}
+      \footlineextra{Source:}
         \begin{columns}[c]
         \column{.7\textwidth} % Leuveft column and width
             \begin{figure}[tb]
@@ -340,41 +340,85 @@
 \subsection{Pulsed stimulation} % (fold)
 \label{sub:Pulsed stimulation} %Lies
 %------------------------------------------------
-    \begin{frame}{Title}
-      \footlineextra{Bron:}
-
+    \begin{frame}{Pulsed stimulation}
+      %\footlineextra{Source:}
+      \begin{center}
+      \begin{overprint}
+    \only<1>{
+        \begin{figure}[tb]
+            \centering
+            \includegraphics[width=10cm]{images/puls1.png}
+            \label{fig:puls1}
+        \end{figure}
+        }
+        \pause
+    \only<2>{
+        \begin{figure}[tb] 
+            \centering
+            \includegraphics[width=10cm]{images/puls2.png}
+            \label{fig:puls2}
+        \end{figure}
+        }
+        \pause
+    \only<3>{
+        \begin{figure}[tb]
+            \centering
+            \includegraphics[width=10cm]{images/puls3.png}
+            \label{fig:puls3}
+        \end{figure}   
+        }
+        \pause
+    \only<4>{
+        \begin{figure}[tb]
+            \centering
+            \includegraphics[width=10cm]{images/puls4.png}
+            \label{fig:puls4}
+        \end{figure}   
+        }
+\end{overprint}
+\end{center}
     \end{frame}
+    \begin{frame}{Results}
+    \centering
+        $\nu=40$, pulse length $t_L=0.001$ and the Irradiance $I=46\frac{mW}{mm^2}$
 
+    \begin{figure}[tb]
+        \centering
+        \includegraphics[width=12cm]{images/pulsplot.png}
+        \label{fig:pulsplot}
+    \end{figure}
+    \end{frame}
+ 
 %------------------------------------------------  
 %------------------------------------------------
 \section{Error analysis} %Hannelore
 %------------------------------------------------
 %------------------------------------------------
     \begin{frame}{Error analysis}
-      \footlineextra{Bron:}
-      
-			\begin{figure}[tb]
+      \footlineextra{Source:}
+      \begin{columns}
+      \column{.5\textwidth} 		
+      	\begin{figure}[tb]
 			\centering
-			\includegraphics[width=5cm,height=4cm]{images/scat.png}
-    
+			\includegraphics[width=6cm,height=4cm]{images/scat.png}
 			\label{fig:comparison}
 			\end{figure}
-			
+		\column{.5\textwidth} 	
 			\begin{figure}[tb]
 			\centering
-			\includegraphics[width=6cm]{images/absorp.png}
-    
+			\includegraphics[width=6cm,height=4cm]{images/absorp.png}
 			\label{fig:comparison}
 			\end{figure}
-
+        \end{columns}
 			\end{frame}
+
 %------------------------------------------------ 
 %------------------------------------------------
 \section{Conclusion}%lies
 %------------------------------------------------
 %------------------------------------------------
     \begin{frame}{Title}
-      \footlineextra{Bron:}
+      \footlineextra{Source:}
 
     \end{frame}
 %------------------------------------------------
