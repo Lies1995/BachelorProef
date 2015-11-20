@@ -269,7 +269,7 @@
 
     \end{frame}
 
-    \begin{frame}{Simulation with MCML$^{\ast}$ for  $\phi(r,z)$[$\frac{W}{m^2}$]}
+    \begin{frame}{Simulation with MCML$^{\ast}$ for  $\phi(r,z)$[$\frac{mW}{mm^2}$]}
       \footlineextra{*Monte Carlo Multi Layer \\ Source:\cite{MCML}}
     %4 afbeeldingen fluence rate power 1mW
     \begin{figure}[tb]
@@ -307,8 +307,8 @@
 \subsection{Continuous stimulation} % (fold) %Hannelore
 \label{sub:continuous_stimulation}
 %------------------------------------------------
-    \begin{frame}{Continuous stimulation}
-      \footlineextra{Source:}
+    \begin{frame}{Continuous stimulation ($I=1\frac{mW}{mm^2}$)}
+      
         \begin{columns}[c]
         \column{.7\textwidth} % Leuveft column and width
             \begin{figure}[tb]
@@ -323,13 +323,6 @@
             \tau = \left ( \frac{1}{\tau_r}+\frac{1}{\tau_z} \right )^{-1} 
             \end{equation*}
             
-            \begin{equation*}
-            \frac{1}{\tau_r} = \frac{k}{\rho c} \left( \frac{2.4}{\omega_L} \right )^2 
-            \end{equation*}
-            
-            \begin{equation*}
-            \frac{1}{\tau_z} = \frac{k}{\rho c} \left( \frac{\pi (\mu_a+\mu_s')}{4} \right )^2 
-            \end{equation*}
         \end{columns}
 
     
@@ -380,7 +373,8 @@
     \end{frame}
     \begin{frame}{Results}
     \centering
-        $\nu=40 Hz$, pulse length $t_L=0.001 s$ and the Irradiance $I=46\frac{mW}{mm^2}$
+        $\nu=40 Hz$, pulse length $t_L=0.001 s$, \\
+        Irradiance $I=46\frac{mW}{mm^2}$ and $NA=0.37$
 
     \begin{figure}[tb]
         \centering
@@ -395,7 +389,7 @@
 %------------------------------------------------
 %------------------------------------------------
     \begin{frame}{Error analysis}
-<<<<<<< HEAD
+
       \footlineextra{Source: \cite{Barbara}}
 
 		\begin{equation*}
@@ -404,7 +398,7 @@
 		\begin{equation*}
 		\phi(\mu_a,\mu_s,g)
 		\end{equation*}
-      \footlineextra{Source:}
+      
 
       \begin{columns}
       \column{.5\textwidth} 		
@@ -427,8 +421,30 @@
 \section{Conclusion}%lies
 %------------------------------------------------
 %------------------------------------------------
-    \begin{frame}{Title}
-      \footlineextra{Source:}
+    \begin{frame}{Conclusion}
+      \footlineextra{Source:\cite{Barbara}}
+\begin{columns}[c]
+
+\column{.4\textwidth} % Left column and width
+   
+   \begin{itemize}
+       \item Stimulated Volume
+       \item Maximum temperature rise
+       \item Error due to the model
+       \item animation temperature rise
+   \end{itemize}
+
+    \column{.5\textwidth} % Right column and width
+    % Print the title page as the first slide
+\begin{figure}[tb]
+    \centering
+    \includegraphics[width=5cm]{images/ratBrain.png}
+    
+    \label{fig:ratBrain}
+\end{figure}
+
+    \end{columns}
+
 
     \end{frame}
 %------------------------------------------------
