@@ -2,110 +2,78 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[
-10pt, % Main document font size
-a4paper, % Paper type, use 'letterpaper' for US Letter paper
-oneside, % One page layout (no page indentation)
-%twoside, % Two page layout (page indentation for binding and different headers)
-headinclude,footinclude, % Extra spacing for the header and footer
-]{scrartcl}
+\documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed left
 
-\input{structure.tex} % Include the structure.tex file which specified the document structure and layout
+\usepackage[english]{babel} % Specify a different language here - english by default
 
-\hyphenation{Fortran hy-phen-ation} % Specify custom hyphenation points in words with dashes where you would like hyphenation to occur, or alternatively, don't put any dashes in a word to stop hyphenation altogether
+\usepackage{lipsum} % Required to insert dummy text. To be removed otherwise
 
 %----------------------------------------------------------------------------------------
-%	TITLE AND AUTHOR(S)
+%	COLUMNS
 %----------------------------------------------------------------------------------------
 
-\title{\normalfont\spacedallcaps{Temperatuursveranderingen in rat hersenen door optogenetische stimulatie}} % The article title
-
-\author{\spacedlowsmallcaps{Lies Deceuninck \& Hannelore Verhoeven\textsuperscript{1}}} % The article author(s) - author affiliations need to be specified in the AUTHOR AFFILIATIONS block
-
-\date{} % An optional date to appear under the author(s)
+\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
 
 %----------------------------------------------------------------------------------------
-
-\begin{document}
-
-%----------------------------------------------------------------------------------------
-%	HEADERS
+%	COLORS
 %----------------------------------------------------------------------------------------
 
-\renewcommand{\sectionmark}[1]{\markright{\spacedlowsmallcaps{#1}}} % The header for all pages (oneside) or for even pages (twoside)
-%\renewcommand{\subsectionmark}[1]{\markright{\thesubsection~#1}} % Uncomment when using the twoside option - this modifies the header on odd pages
-\lehead{\mbox{\llap{\small\thepage\kern1em\color{halfgray} \vline}\color{halfgray}\hspace{0.5em}\rightmark\hfil}} % The header style
-
-\pagestyle{scrheadings} % Enable the headers specified in this block
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
 
 %----------------------------------------------------------------------------------------
-%	TABLE OF CONTENTS & LISTS OF FIGURES AND TABLES
+%	HYPERLINKS
 %----------------------------------------------------------------------------------------
 
-\maketitle % Print the title/author/date block
+\usepackage{hyperref} % Required for hyperlinks
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={Title},pdfauthor={Author}}
 
-\setcounter{tocdepth}{2} % Set the depth of the table of contents to show sections and subsections only
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
 
-\tableofcontents % Print the table of contents
+\JournalInfo{Journal, Vol. XXI, No. 1, 1-5, 2013} % Journal information
+\Archive{Additional note} % Additional notes (e.g. copyright, DOI, review/research article)
 
-\listoffigures % Print the list of figures
+\PaperTitle{Temperatuursveranderingen in rat hersenen tijdens optogenetische experimenten} % Article title
 
-\listoftables % Print the list of tables
+\Authors{Hannelore Verhoeven, Lies deceuninck\textsuperscript{2}} % Authors
+\affiliation{\textsuperscript{1}\textit{Fysica Departement, Katholieke Universiteit Leuven}}
+
+
+\Keywords{Keyword1 --- Keyword2 --- Keyword3} % Keywords - if you don't want any simply remove all the text between the curly brackets
+\newcommand{\keywordname}{Keywords} % Defines the keywords heading name
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\section*{Abstract} % This section will not appear in the table of contents due to the star (\section*)
-
-
-%----------------------------------------------------------------------------------------
-%	AUTHOR AFFILIATIONS
-%----------------------------------------------------------------------------------------
-
-
-{\let\thefootnote\relax\footnotetext{\textsuperscript{1} \textit{Departement van fysica, Katholieke Universiteit Leuven, Leuven }}}
+\input{content/abstract}
 
 %----------------------------------------------------------------------------------------
 
-\newpage % Start the article content on the second page, remove this if you have a longer abstract that goes onto the second page
+\begin{document}
+
+\flushbottom % Makes all text pages the same height
+
+\maketitle % Print the title and abstract box
+
+\tableofcontents % Print the contents section
+
+\thispagestyle{empty} % Removes page numbering from the first page
 
 %----------------------------------------------------------------------------------------
-%	INTRODUCTION
+%	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
-
-\section{Introduction}
-\marginnote{typeset text here...}[1cm]
- 
-%	METHODS
-%----------------------------------------------------------------------------------------
-
-\section{Methods}
-bla \cite{ThermEff}
-%------------------------------------------------
-
-\subsection{Paragraphs}
-
-%------------------------------------------------
-
-\subsection{Math}
-
+\input{content/inleiding}
 
 %----------------------------------------------------------------------------------------
-%	RESULTS AND DISCUSSION
+%	REFERENCE LIST
 %----------------------------------------------------------------------------------------
-
-\section{Results and Discussion}
-
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
-
-\renewcommand{\refname}{\spacedlowsmallcaps{References}} % For modifying the bibliography heading
-
+\phantomsection
 \bibliographystyle{unsrt}
-
-\bibliography{sample.bib} % The file containing the bibliography
+\bibliography{biblio.bib}
 
 %----------------------------------------------------------------------------------------
 
