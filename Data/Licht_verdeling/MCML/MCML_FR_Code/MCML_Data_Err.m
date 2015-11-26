@@ -10,9 +10,9 @@ function [R_Fig,z, Data_Fig, file_name] = MCML_Data_Err(L,NA,l,path)
                 if l==1
                     file_Frz = [fullfile(path,'MCML_Sim','Output',[file_name '.Frzc'])];
                 elseif l==2
-                    file_Frz = [fullfile(path,'MCML_Sim','Output-mu_a+1sigma',[file_name '.Frzc'])];
+                    file_Frz = [fullfile(path,'MCML_Sim','Output-mu_s+1sigma',[file_name '.Frzc'])];
                 elseif l==3
-                    file_Frz = [fullfile(path,'MCML_Sim','Output-mu_a-1sigma',[file_name '.Frzc'])];
+                    file_Frz = [fullfile(path,'MCML_Sim','Output-mu_s-1sigma',[file_name '.Frzc'])];
                 end
                 [r,z,Data] = MCML_read_F(file_Frz);               %Read data, [mm,mm,/mm^2]                            
                 R_Fig = [-r(end:-1:1), r];                                  

@@ -1,5 +1,5 @@
 MCML_Setup_Data
-file_path=LD; %Choose what path to use
+file_path=HV; %Choose what path to use
 PL=0.001;%Laser Power [W] (default 0)
 IL=1;%irradiance [W/m^2] (default 1)
 h=1 ;%1=big scale, 2= small scale
@@ -41,7 +41,7 @@ for i = 1: length(L);
         ylim([0 1.5])
         legend('psi(r,z)','+sigma','-sigma')
         set(gca,'ydir','rev')
-        
+        grid minor
         
         k=k+1;
         
