@@ -118,7 +118,7 @@ Hannelore
 - [ ] fout op psi vinden (en de contour plot)--> voor alle 4 de protocols
 - [ ] fout op tau (schrijf in Data)
 Lies
-- [ ] door het overzicht gaan en systematisch de afbeeldingen maken
-- [ ] zoeken voor welke Power P continue stimulatie wordt gebruikt
+- [x] door het overzicht gaan en systematisch de afbeeldingen maken
+- [x] zoeken voor welke Power P continue stimulatie wordt gebruikt
 - [ ] nadenken over fout op gepulste stimulatie
 

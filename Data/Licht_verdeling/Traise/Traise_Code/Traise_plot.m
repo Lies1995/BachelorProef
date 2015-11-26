@@ -3,13 +3,13 @@
 format long
 Traise_Setup_Data
 
-t1=linspace(0,0.000075,50);%times to evaluate[s] for NA=12
-t2=linspace(0,0.035,50); %times to evaluate[s] for NA=37
-timesToPlot=[2 8 40];
+t1=linspace(0,0.00008,50);%times to evaluate[s] for NA=12
+t2=linspace(0,0.040,50); %times to evaluate[s] for NA=37
+timesToPlot=[2 16 47];
 path=LD; %path
-PL=0;%Laser Power [W] (default 0)
+PL=0.001;%Laser Power [W] (default 0)
 IL=100000;%irradiance [W/m^2] (default 1)
-
+v=[1000, 1000];
 %positions in tissue
 filename_R=[fullfile(path,'MCML_Data_FR_r')];
 filename_Z=[fullfile(path,'MCML_Data_FR_z')];
@@ -43,7 +43,7 @@ for i = 1: length(L);
         if ne(PL,0) == 1
         IL=PL/((pi*prop(7)^2)/2);
         end
-        phi=IL.*psi;%actual fluence rate corresponding to the used peak irradiance
+        phi=IL.*psi;%actual fluence rate corresponding to the used peak irradiance [W/m^2]
         
         %--------Calculation--------------
         if j==1
@@ -61,71 +61,90 @@ for i = 1: length(L);
         end
         %--------Plot--------------
         fig=figure(m);
-        set(fig, 'Position', [10 1000 1200 2000]);
+        set(fig, 'Position', [10 1000 3000 400]);
         % plot temperature raise (color) (K)
         %------------------------------------------------------------------
        
-        %subplot(2,2,1)
-        %imagesc(r,z,dT(:,:,k,timesToPlot(1))); c=colorbar;
-        %if j==1 caxis([0 0.00003])
-        %elseif j==2 caxis([0 0.15])
-        %end
+        subplot(1,3,1)
+      
+        imagesc(r,z,dT(:,:,k,timesToPlot(1))); c=colorbar;
+         if j==1 
+             caxis([0 0.002]);
+        elseif j==2 
+            caxis([0 0.025]);
+         end
+
+        %   hold on
+        %contour(r,z,phi,v,'color','k');
+       
         
         %labels
-%         if j==1
-%             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
-%                 ', NA=' num2str(n_NA) ', t=' ...
-%                 num2str(t1(timesToPlot(1)))]},'interpreter', 'LaTex');
-%         elseif j==2
-%             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
-%                 ', NA=' num2str(n_NA) '; t='...
-%                 num2str(t2(timesToPlot(1)))]},'interpreter', 'LaTex');
-%         end
-%         xlabel('r [mm]', 'interpreter', 'LaTex');
-%         ylabel('z [mm]', 'interpreter', 'LaTex');
-%         c.Label.String= '$dT$ [$K$]';
-%         c.Label.FontSize=20;
-%         c.Label.Interpreter='latex';
-%         
+        if j==1
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) ', t=' ...
+                num2str(t1(timesToPlot(1)))]},'interpreter', 'LaTex');
+        elseif j==2
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) '; t='...
+                num2str(t2(timesToPlot(1)))]},'interpreter', 'LaTex');
+        end
+        xlabel('r [mm]', 'interpreter', 'LaTex');
+        ylabel('z [mm]', 'interpreter', 'LaTex');
+        c.Label.String= '$dT$ [$K$]';
+       % c.Label.FontSize=20;
+        c.Label.Interpreter='latex';
+        
 %         %scaling
-%         if j==1
-%             xlim([-0.3,0.3]);ylim([0,0.6]);
-%         elseif j==2
-%             xlim([-1,1]);ylim([0,1.5]);
-%         end
+       if j==1
+           xlim([-0.5,0.5]);ylim([0,1]);
+        elseif j==2
+           xlim([-0.5,0.5]);ylim([0,1]);
+        end
+%hold off
 %         %------------------------------------------------------------------    
-%         subplot(2,2,2)
-%         imagesc(r,z,dT(:,:,k,timesToPlot(2))); c=colorbar;
-%         if j==1 caxis([0 0.00003])
-%                 elseif j==2 caxis([0 0.15])
-%                 end
-%         if j==1
-%             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
-%                 ', NA=' num2str(n_NA) ', t=' ...
-%                 num2str(t1(timesToPlot(2)))]},'interpreter', 'LaTex');
-%         elseif j==2
-%             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
-%                 ', NA=' num2str(n_NA) '; t='...
-%                 num2str(t2(timesToPlot(2)))]},'interpreter', 'LaTex');
-%         end
-%         xlabel('r [mm]', 'interpreter', 'LaTex');
-%         ylabel('z [mm]', 'interpreter', 'LaTex');
-%         c.Label.String= '$dT$ [$K$]';
-%         c.Label.FontSize=20;
-%         c.Label.Interpreter='latex';
-%         
-%         %scaling
-%         if j==1
-%             xlim([-0.3,0.3]);ylim([0,0.6]);
-%         elseif j==2
-%             xlim([-1,1]);ylim([0,1.5]);
-%         end
-%         %------------------------------------------------------------------        
-%          subplot(2,2,4)
+        subplot(1,3,2)
+         imagesc(r,z,dT(:,:,k,timesToPlot(2))); c=colorbar;
+          if j==1 
+             caxis([0 0.002]);
+        elseif j==2 
+            caxis([0 0.025]);
+         end
+
+%        %hold on
+       %contour(r,z,phi,v,'color','k');
+        if j==1
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) ', t=' ...
+                num2str(t1(timesToPlot(2)))]},'interpreter', 'LaTex');
+        elseif j==2
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) '; t='...
+                num2str(t2(timesToPlot(2)))]},'interpreter', 'LaTex');
+        end
+        xlabel('r [mm]', 'interpreter', 'LaTex');
+        ylabel('z [mm]', 'interpreter', 'LaTex');
+        c.Label.String= '$dT$ [$K$]';
+        c.Label.FontSize=20;
+        c.Label.Interpreter='latex';
+      
+        %scaling
+       if j==1
+           xlim([-0.5,0.5]);ylim([0,1]);
+        elseif j==2
+           xlim([-0.5,0.5]);ylim([0,1]);
+        end
+%hold off
+        %------------------------------------------------------------------        
+         subplot(1,3,3)
         imagesc(r,z,dT(:,:,k,timesToPlot(3))); c=colorbar;
-            if j==1 caxis([0 0.0000065])
-                   elseif j==2 caxis([0 0.04])
-                    end
+         if j==1 
+             caxis([0 0.002]);
+        elseif j==2 
+            caxis([0 0.025]);
+         end
+%          hold on
+  % contour(r,z,phi,v,'color','k');
+        %hold off
         %labels
         if j==1
             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
@@ -141,14 +160,13 @@ for i = 1: length(L);
         c.Label.String= '$dT$ [$K$]';
         c.Label.FontSize=20;
         c.Label.Interpreter='latex';
-        
         %scaling
-        %if j==1
-            xlim([-0.5,0.5]);ylim([0,1]);
-        %elseif j==2
-         %   xlim([-1,1]);ylim([0,1.5]);
-        %end
-        
+        if j==1
+           xlim([-0.5,0.5]);ylim([0,1]);
+        elseif j==2
+           xlim([-0.5,0.5]);ylim([0,1]);
+        end
+% hold off
         %------------------------------------------------------------------
 %         subplot(2,2,3)
 %         if j==1
