@@ -1,0 +1,71 @@
+Overzicht verslag
+
+Inleiding
+--> optogenetica
+--> hoe laserlicht naar hersenen--> optische vezels, SM+MM
+--> voor welke protocols we hier zullen onderzoeken
+--> interacties E.M met weefsel
+--> bij optogenetische experimenten voor thermal effect belangrijk
+DOEL: dT weten voor optogenetische experimenten 
+Afbeeldingen:
+-opsins
+-bollen grafiek
+
+theoretische achtergrond
+--> Bioheat equation, oplossing ervan--> geldig tot 3tau
+--> uitleggen wat alle parameters betekenen (fluence rate)
+--> continue stimulatie oplossing (saturatie)
+--> gepulste oplossing uitleggen (met afbeelding), (saturatie)
+--> afbeeldingen van wat we verwachten
+--> tau introduceren+ radiale en axiale component 
+-continuous stimulation 
+-pulsed stimulation
+Methode
+--> terug opnieuw bioheat equation + oplossing continue en gepulste
+--> bespreken hoe we aan alle parameters komen; absorptie en scattering coefficient afbeeldingen, waarden voor de c, p, k,.. 
+--> Fluence rate, uitleggen hoe we hier aan komen (MCML programma), kort uitleggen wat het doet
+--> Matlabcode kort toelichten (code zelf in bijlage)
+-absorptie+scattering
+-foton random walk
+
+Resultaten en Discussie
+-->MCML resultaten.
+	uitleggen dat phi=I*psi, dan uit MCML programma krijgen we psi
+	--> psi contour plot 1 mw/mm^2+ fouten +-1sigma
+	--> plots van phi voor P=1mW (voor de 4 protocols) (ook met de fouten)
+	--> hierop contourlijnen op 1mW/mm^2
+	--> bespreken, oppervlakte+ verschil SM & MM
+	--> resolutie verhoging bespreken+ schalingsprobleem
+
+--> temperatuursverandering continu
+! zoeken bij welke P de continue stimulatie gebruikt wordt!
+	-->voor 1 protocol (1 wavelength en sm/mm): P=1mW de dT op 3 tijdstippen tonen 
+		(kleurenplot+ contour lijn op 1mW/mm^2), de andere in bijlage voor P=1mW (geen fouten)
+	-->afbeelding op r=0,z=0 dT(t), 1 voor de SM, 1 voor de MM voor P=1mW (hier wel, 3 grafieken (1 echte, 1 op +sigma, 1 op -sigma))
+	-->tabel met de tijdsconstanten tau (+fouten)
+	*bespreken: 
+	kleurenplots: verspreiding van de warmte (in tijd en ruimte), variatie temperatuur in het gestimuleerde gebied
+	quantitatieve gegevens: -tau, -de saturatietemperatuur 
+
+--> temperatuursverandering gepulste
+	beginnen met te zeggen dat deze methode voor SM niet nuttig is
+	al de rest is voor MM
+	--> 1 voorbeeld afbeelding voor 1 protocol (voor de 2 golflengten)
+	--> tabel maken voor de verschillende protocols en de initiele dT en uiteindelijke dT
+	*Bespreken:
+	grafiek: initiele en uiteindelijke dT aflezen + afkoeling tussen de twee pulsen
+	tabel: hieruit verband tussen frequentie/Irradiantie/pulslengte
+
+Foutenanalyse
+	op tau--> altijd hetzelfde
+	op psi--> door te laten varieren, dan contour plot maken , kiezen welke combinatie van u_a en u_s maximale/minimale uitwijking geeft op psi. Dan hebben we 3 psi matrices. 1 echt, 1 op -sigma, 1 op +sigma.
+	Om de fout op een specifieke plaatst te weten is het gewoon nummerjtes halen uit de matrices.
+	Fouten op phi kan dan berekend worden met doorwerkingsregel
+	op dT--> 
+	continue stimulatie: waar dT maximaal is (0,0) de fluencerate nemen+ zijn fouten en dan de doorwerkingsregel
+	gepulste stimulatie:
+Conclusie
+
+
+
+
