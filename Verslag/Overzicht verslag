@@ -7,8 +7,8 @@ Inleiding
 --> interacties E.M met weefsel
 --> bij optogenetische experimenten voor thermal effect belangrijk
 DOEL: dT weten voor optogenetische experimenten 
-Afbeeldingen:
--opsins
+AFBEELDINGEN
+-opsins #TODO: kleuren aanpassen
 -bollen grafiek
 
 theoretische achtergrond
@@ -18,6 +18,7 @@ theoretische achtergrond
 --> gepulste oplossing uitleggen (met afbeelding), (saturatie)
 --> afbeeldingen van wat we verwachten
 --> tau introduceren+ radiale en axiale component 
+AFBEELDINGEN
 -continuous stimulation 
 -pulsed stimulation
 Methode
@@ -25,13 +26,14 @@ Methode
 --> bespreken hoe we aan alle parameters komen; absorptie en scattering coefficient afbeeldingen, waarden voor de c, p, k,.. 
 --> Fluence rate, uitleggen hoe we hier aan komen (MCML programma), kort uitleggen wat het doet
 --> Matlabcode kort toelichten (code zelf in bijlage)
+AFBEELDINGEN
 -absorptie+scattering
 -foton random walk
 
 Resultaten en Discussie
--->MCML resultaten.
+-->MCML resultaten.#TODO
 	uitleggen dat phi=I*psi, dan uit MCML programma krijgen we psi
-	--> psi contour plot 1 mw/mm^2+ fouten +-1sigma
+	--> psi contour plot 1 mw/mm^2+ fouten +-1sigma---> dit moet eigenlijk niet, dat hebben wij gewoon nodig
 	--> plots van phi voor P=1mW (voor de 4 protocols) (ook met de fouten)
 	--> hierop contourlijnen op 1mW/mm^2
 	--> bespreken, oppervlakte+ verschil SM & MM
@@ -41,8 +43,23 @@ Resultaten en Discussie
 ! zoeken bij welke P de continue stimulatie gebruikt wordt!
 	-->voor 1 protocol (1 wavelength en sm/mm): P=1mW de dT op 3 tijdstippen tonen 
 		(kleurenplot+ contour lijn op 1mW/mm^2), de andere in bijlage voor P=1mW (geen fouten)
-	-->afbeelding op r=0,z=0 dT(t), 1 voor de SM, 1 voor de MM voor P=1mW (hier wel, 3 grafieken (1 echte, 1 op +sigma, 1 op -sigma))
+			COmments:
+			*contourlijnen lukken niet--> door schaling problemen
+			*Gekozen protocol: 560nm, MM, P=0.001W, times: t1=0.001,t2=tau, t3=3tau
+			Voor de andere zelfde
+			AFBEELDING: 
+			dT_560_MM.png
+			dT_Overig_Bijlage.png
+
+
+	-->afbeelding op r=0,z=0 dT(t), 1 voor de SM, 1 voor de MM voor P=1mW (hier wel, 3 grafieken (1 echte, 1 op +sigma, 1 op -sigma)), voor zelfde protocol als hierboven: P=0.001W
+			Comments:
+			*hoe krijgen we de fouten op dT er in? De formule voor dT--> doorwerkingsregel op toepassen,
+			functie schrijven en zo de fout op elke component van element dT(2,500,t) vinden. Dit opslaan en dan gewoon optellen bij dT--> dit is dTsigma, deze in stippellijnen erbij plotten
 	-->tabel met de tijdsconstanten tau (+fouten)
+	-->4 afbeeldingen (kleurenplots) met dT voor de 4 protocols voor P=1mW
+			AFBEELDING:
+			4dT.png
 	*bespreken: 
 	kleurenplots: verspreiding van de warmte (in tijd en ruimte), variatie temperatuur in het gestimuleerde gebied
 	quantitatieve gegevens: -tau, -de saturatietemperatuur 
@@ -55,6 +72,8 @@ Resultaten en Discussie
 	*Bespreken:
 	grafiek: initiele en uiteindelijke dT aflezen + afkoeling tussen de twee pulsen
 	tabel: hieruit verband tussen frequentie/Irradiantie/pulslengte
+		AFBEELDING:
+		pulsplot.png
 
 Foutenanalyse
 	op tau--> altijd hetzelfde
@@ -65,6 +84,29 @@ Foutenanalyse
 	continue stimulatie: waar dT maximaal is (0,0) de fluencerate nemen+ zijn fouten en dan de doorwerkingsregel
 	gepulste stimulatie:
 Conclusie
+
+Color scheme:
+third:
+RGB:255,190,48
+HEX:FFBE30
+
+second:
+RGB:178,122,0
+HEX:B27A00
+
+head: (complementary)
+RGB: 48, 121, 255
+HEX:3079FF
+
+second:
+RGB: 74,138,255
+HEX:4A8AFF
+
+third:
+RGB: 18,75,178
+HEX: 124BB2
+
+
 
 
 
