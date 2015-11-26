@@ -110,7 +110,15 @@ We hebben fouten op de parameters--> fout Fluence Rate
 - [x] afbeeldingen voor fluence rate en temperatuur voor 3 tijdstippen dezelfde schaling hebben MAANDAG/DINSDAG  Hannelore
 - [ ] pulsen plotten in gepulste stimulatie MAANDAG/DINSDAG  Hannelore
 - [x] tussentijdse presentatie WOENSDAG
-- [ ] foutenanalyse DONDERDAG
-- [ ] verslag VRIJDAG verder plannen 
-- [ ] filmpje maken
-- [ ] presentatie
+
+
+Planning voor verslag:
+Tegen Vrijdag 27/11
+Hannelore
+- [ ] fout op psi vinden (en de contour plot)--> voor alle 4 de protocols
+- [ ] fout op tau (schrijf in Data)
+Lies
+- [ ] door het overzicht gaan en systematisch de afbeeldingen maken
+- [ ] zoeken voor welke Power P continue stimulatie wordt gebruikt
+- [ ] nadenken over fout op gepulste stimulatie
+
