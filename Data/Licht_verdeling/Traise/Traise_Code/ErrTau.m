@@ -1,0 +1,20 @@
+g=0.88;                 %anisotropy factor [unitless]
+p=1040;                 %tissue density [kg/m^3] 
+c=3650;                 %specific heat [J/(kg*K)]
+k=0.530;               %,thermal diffusivity [W/(m*K)]
+w_L= [0.0000045 0.0001];%1:e^ radius [m] 
+mua = [051.1,107.9];
+mus = [12733,9266];
+Dmua = [34.9, 52.5];
+Dmus = [3267,3492];
+
+for i=1:2 %L
+    for j=1:2 %NA
+        
+Dzo=sqrt(4/(mua(i)+(1-g)*mus(i))^4*(Dmua(i))^2+(4*(1-g)^2)/(mua(i)+(1-g)*mus(i))^4*(Dmus(i))^2);
+
+zo = 2/(mua(i)+(1-g)*mus(i));
+
+Dtau =sqrt( (   (p*c*w_L(j)^2)/(k*2.4^2)*  1/(1+(w_L(j)*pi/(4.8*zo))^2)^2*2*(w_L(j)*pi/(4.8*zo))*(w_L(j)*pi/(4.8*zo^2))  )^2 +Dzo^2   )
+    end
+end
