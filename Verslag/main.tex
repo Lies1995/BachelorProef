@@ -5,8 +5,11 @@
 \documentclass[fleqn,10pt]{SelfArx} % Document font size and equations flushed left
 
 \usepackage[english]{babel} % Specify a different language here - english by default
-
-\usepackage{lipsum} % Required to insert dummy text. To be removed otherwise
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+ % Required to insert dummy text. To be removed otherwise
 
 %----------------------------------------------------------------------------------------
 %	COLUMNS
@@ -19,8 +22,8 @@
 %	COLORS
 %----------------------------------------------------------------------------------------
 
-\definecolor{color1}{RGB}{18,75,178} % Color of the article title and sections
-\definecolor{color2}{RGB}{74,138,255} % Color of the boxes behind the abstract and headings
+\definecolor{color1}{RGB}{53, 42, 134} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,0,20} % Color of the boxes behind the abstract and headings
 
 %----------------------------------------------------------------------------------------
 %	HYPERLINKS
@@ -67,7 +70,8 @@
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
 \input{content/inleiding}
-
+\input{content/theorie}
+\input{content/MatenMet}
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
 %----------------------------------------------------------------------------------------

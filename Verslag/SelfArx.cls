@@ -30,8 +30,8 @@
 %	FONTS
 %----------------------------------------------------------------------
 
-\RequirePackage{times}      % Loads the Times-Roman Fonts
-\RequirePackage{mathptmx}   % Loads the Times-Roman Math Fonts
+%\RequirePackage{times}      % Loads the Times-Roman Fonts
+%\RequirePackage{mathptmx}   % Loads the Times-Roman Math Fonts
 
 %----------------------------------------------------------------------
 %	VARIOUS USEFUL PACKAGES
