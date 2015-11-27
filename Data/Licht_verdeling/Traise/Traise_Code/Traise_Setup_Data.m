@@ -3,9 +3,9 @@ close all
 % Change default text font size
     set(0,'DefaultAxesFontSize', 18)
 %File Path
-    LD =[fullfile('/Users','LIesDeceuninck', 'Documents','Bachelorproef','Data','Licht_verdeling','MCML','MCML_FR_Data')];
+    LD =[fullfile('/Users','LIesDeceuninck', 'Documents','Bachelorproef','Data','Licht_verdeling','Traise','Traise_Data')];
     HV=[fullfile('C:','Users','hannelore','Documents','2015-2016','BachelorProef2015',...
-        'Bachelorproef','Data','Licht_verdeling','MCML','MCML_FR_Data')]; 
+        'Bachelorproef','Data','Licht_verdeling','Traise','Traise_Data')]; 
 %------DATA--------
 
 %optical properties

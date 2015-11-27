@@ -32,7 +32,7 @@ for i = 1: length(L);
         
         %read in fluence rate
         n_L=L(i); n_NA=NA(j);
-        datafile_name = ['MCML_Data_FRU_L_' num2str(n_L) '_NA_'...
+        datafile_name = ['Traise_Data_FRU_L_' num2str(n_L) '_NA_'...
             num2str(n_NA) ];
         psi=csvread(fullfile(path,datafile_name)); %[W/m^2]
        
