@@ -21,6 +21,8 @@ m=1; %index for the figures
 k=1; %index for the protocols
 tau=zeros(1,length(L)*length(NA)); %time constants for each protocol
 dT=zeros( 1000, 1000 , 4,length(t1) ); %1000X1000 data points, 4 protocols, t1 times to evaluate, 
+dTplus=zeros(4,length(t1));
+dTminus=zeros(4,length(t1));
 prop=[0 0 g p c k_d 0] ;         %anisotropy factor;tissue density,
 %specific heat,thermal diffusivity
 %-------PLOT---------
@@ -31,10 +33,15 @@ for i = 1: length(L);
         
         %read in fluence rate
         n_L=L(i); n_NA=NA(j);
-        datafile_name = ['MCML_Data_FRU_L_' num2str(n_L) '_NA_'...
+        datafile_name = ['Traise_Data_FRU_L_' num2str(n_L) '_NA_'...
             num2str(n_NA) ];
-        psi=csvread(fullfile(path,datafile_name)); %[W/m^2]
-       
+        datafile_name_plus = ['Traise_Data_FRU_L_' num2str(n_L) '_NA_' ...
+            num2str(n_NA) '+sigma' ];
+        datafile_name_minus = ['Traise_Data_FRU_L_' num2str(n_L) '_NA_' ...
+            num2str(n_NA) '-sigma' ];
+        psi=csvread(fullfile(path,datafile_name)); %[W/m^2]%data in MCML_DATA
+        psiplus=csvread(fullfile(path,datafile_name_plus));
+        psiminus=csvread(fullfile(path,datafile_name_plus));
         %define tissue properties
         prop(1)=u_a(i);    %absorption coefficient [m^-1]
         prop(2)=u_s(i) ;   %scattering coefficient [m^-1]
@@ -43,19 +50,30 @@ for i = 1: length(L);
         IL=PL/((pi*prop(7)^2)/2);
         end
         phi=IL.*psi;%actual fluence rate corresponding to the used peak irradiance [W/m^2]
-        
+        phiplus=IL.*psiplus;
+        phiminus=IL.*psiminus;
         %--------Calculation--------------
+        du_a_plus=[34.9, 55.9];
+        du_a_minus=[34.9, 52.];
+        dtauSM_plus=[0.0003157 0.00057878];
+        dtauSM_minus=[0.0003157 0.00056764];
+        dtauMM_plus=[0.0522 0.0241];
+        dtauMM_minus=[0.0522 0.0241];
         if j==1
             for l=1:length(t1)
                 
                 %calculate temperature raise
                 [dT(:,:,k,l),tau(k)]=Traise_Data(prop,phi,t1(l));
+                dTplus(k,l)=dT(2,500,k,l)+dTError(phiplus(2,500),phi,dtauSM_plus(i),tau(k),du_a_plus(i),u_a(i),t1(l));
+                dTminus(k,l)=dT(2,500,k,l)-dTError(phiminus(2,500),phi, dtauSM_minus(i),tau(k),du_a_minus(i),u_a(i),t1(l));
             end
         elseif j==2
             for l=1:length(t2)
                 
                 %calculate temperature raise
                 [dT(:,:,k,l),tau(k)]=Traise_Data(prop,phi,t2(l));
+                 dTplus(k,l)=dT(2,500,k,l)+dTError(phiplus(2,500),phi,dtauMM_plus(i),tau(k),du_a_plus(i),u_a(i),t2(l));
+                 dTminus(k,l)=dT(2,500,k,l)-dTError(phiminus(2,500),phi,dtauMM_minus(i),tau(k),du_a_minus(i),u_a(i),t2(l));
             end
         end
         m=m+1;
@@ -65,15 +83,15 @@ for i = 1: length(L);
 end
 figure(1)
 hold on
-            plot(t1,squeeze(dT(2,500,1,:)),'Color',hex2rgb('124BB2'));
-            %plot(t1,dTsigma1,'--','color','k')
-            %plot(t1,dT-sigma1,'--','color','k')
+            plot(t1,squeeze(dT(2,500,1,:)),'Color',hex2rgb('352A86'));
+            %plot(t1,dTplus(1,:),'--','color',hex2rgb('124BB2'))
+            %plot(t1,dTminus(1,:),'--','color',hex2rgb('124BB2'))
            %[dtTau1 extratau]=Traise_Data([u_a(1) u_s(1) g p c k_d w_L(1)],phi,tau(1));
             plot(tau(1),0,'r*');
             
-            plot(t1,squeeze(dT(2,500,3,:)),'Color',hex2rgb('B27A00'));
-            %plot(t1,dTsigma3,'--','color','b')
-            %plot(t1,dT-sigma3,'--','color','b')
+            plot(t1,squeeze(dT(2,500,3,:)),'Color',hex2rgb('f1b94a'));
+            % plot(t1,dTplus(3,:),'--','color',hex2rgb('B27A00'))
+            %plot(t1,dTminus(3,:),'--','color',hex2rgb('B27A00'))
           % [dtTau3 extratau]=Traise_Data([u_a(2) u_s(2) g p c k_d w_L(1)],phi,tau(3));
             plot(tau(3),0,'b*');
             hold off
@@ -82,18 +100,23 @@ hold on
             ylabel('dT[K]', 'interpreter', 'LaTex');
 figure(2)
 hold on
-            plot(t2,squeeze(dT(2,500,2,:)),'Color',hex2rgb('124BB2'));
-            %plot(t2,dTsigma2,'--','color','k')
-            %plot(t2,dT-sigma2,'--','color','k')
+            plot(t2,squeeze(dT(2,500,2,:)),'Color',hex2rgb('352A86'));
+          % plot(t2,dTplus(2,:),'--','color',hex2rgb('124BB2'))
+           % plot(t2,dTminus(2,:),'--','color',hex2rgb('124BB2'))
           % [dtTau2 extratau]=Traise_Data([u_a(1) u_s(1) g p c k_d w_L(2)],phi,tau(2));
             plot(tau(2),0,'r*');
             
-            plot(t2,squeeze(dT(2,500,4,:)),'Color',hex2rgb('B27A00')); 
-            %plot(t2,dTsigma4,'--','color','b')
-            %plot(t2,dT-sigma4,'--','color','b')
+            plot(t2,squeeze(dT(2,500,4,:)),'Color',hex2rgb('f1b94a')); 
+          %  plot(t2,dTplus(4,:),'--','color',hex2rgb('B27A00'))
+           % plot(t2,dTminus(4,:),'--','color',hex2rgb('B27A00'))
            %[dtTau4 extratau]=Traise_Data([u_a(2) u_s(2) g p c k_d w_L(2)],phi,tau(4));
             plot(tau(4),0,'b*');
             hold off
            
             xlabel('t [s]', 'interpreter', 'LaTex');
             ylabel('dT[K]', 'interpreter', 'LaTex');
+            
+            
+            
+            
+            
