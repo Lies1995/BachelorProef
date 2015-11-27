@@ -1,6 +1,6 @@
 Overzicht verslag
 
-Inleiding
+Inleiding LIES
 --> optogenetica
 --> hoe laserlicht naar hersenen--> optische vezels, SM+MM
 --> voor welke protocols we hier zullen onderzoeken
@@ -11,7 +11,7 @@ AFBEELDINGEN
 -opsins #TODO: kleuren aanpassen
 -bollen grafiek
 
-theoretische achtergrond
+theoretische achtergrond HANNELORE
 --> Bioheat equation, oplossing ervan--> geldig tot 3tau
 --> uitleggen wat alle parameters betekenen (fluence rate)
 --> continue stimulatie oplossing (saturatie)
@@ -21,7 +21,7 @@ theoretische achtergrond
 AFBEELDINGEN
 -continuous stimulation 
 -pulsed stimulation
-Methode
+Methode LIES
 --> terug opnieuw bioheat equation + oplossing continue en gepulste
 --> bespreken hoe we aan alle parameters komen; absorptie en scattering coefficient afbeeldingen, waarden voor de c, p, k,.. 
 --> Fluence rate, uitleggen hoe we hier aan komen (MCML programma), kort uitleggen wat het doet
@@ -31,7 +31,7 @@ AFBEELDINGEN
 -foton random walk
 
 Resultaten en Discussie
--->MCML resultaten.#TODO
+-->MCML resultaten.#TODO LIES
 	uitleggen dat phi=I*psi, dan uit MCML programma krijgen we psi
 	--> psi contour plot 1 mw/mm^2+ fouten +-1sigma---> dit moet eigenlijk niet, dat hebben wij gewoon nodig
 	--> plots van phi voor P=1mW (voor de 4 protocols) (ook met de fouten)
@@ -39,7 +39,7 @@ Resultaten en Discussie
 	--> bespreken, oppervlakte+ verschil SM & MM
 	--> resolutie verhoging bespreken+ schalingsprobleem
 
---> temperatuursverandering continu
+--> temperatuursverandering continu HANNELORE
 ! zoeken bij welke P de continue stimulatie gebruikt wordt!
 	-->voor 1 protocol (1 wavelength en sm/mm): P=1mW de dT op 3 tijdstippen tonen 
 		(kleurenplot+ contour lijn op 1mW/mm^2), de andere in bijlage voor P=1mW (geen fouten)
@@ -55,14 +55,17 @@ Resultaten en Discussie
 	-->afbeelding op r=0,z=0 dT(t), 1 voor de SM, 1 voor de MM voor P=1mW (hier wel, 3 grafieken (1 echte, 1 op +sigma, 1 op -sigma)), voor zelfde protocol als hierboven: P=0.001W
 			Comments:
 			*hoe krijgen we de fouten op dT er in? De formule voor dT--> doorwerkingsregel op toepassen,
-			functie schrijven en zo de fout op elke component van element dT(2,500,t) vinden. Dit opslaan en dan gewoon optellen bij dT--> dit is dTsigma, deze in stippellijnen erbij plotten
+			functie schrijven en zo de fout op elke component van element dT(2,500,t) vinden. Dit opslaan en dan gewoon optellen bij dT--> dit is dTsigma, deze in stippellijnen erbij plotten-->niet nuttig!
 	-->tabel met de tijdsconstanten tau (+fouten)
 	-->4 afbeeldingen (kleurenplots) met dT voor de 4 protocols voor P=1mW
 			AFBEELDING:
+			dT_tijd_MM.png
+			dT_tijd_SM.png
 			4dT.png
+
 	*bespreken: 
 	kleurenplots: verspreiding van de warmte (in tijd en ruimte), variatie temperatuur in het gestimuleerde gebied
-	quantitatieve gegevens: -tau, -de saturatietemperatuur 
+	quantitatieve gegevens: -tau, -de saturatietemperatuur -->op tau de temperatuur bespreken+fout erop
 
 --> temperatuursverandering gepulste
 	beginnen met te zeggen dat deze methode voor SM niet nuttig is
@@ -86,26 +89,26 @@ Foutenanalyse
 Conclusie
 
 Color scheme:
-third:
-RGB:255,190,48
-HEX:FFBE30
 
-second:
-RGB:178,122,0
-HEX:B27A00
+head: (complementary) %darkblue
+RGB: 53, 42, 134
+HEX:352A86
 
-head: (complementary)
-RGB: 48, 121, 255
-HEX:3079FF
+second: %lightblue
+RGB: 20, 133,212
+HEX:1485d4
 
-second:
-RGB: 74,138,255
-HEX:4A8AFF
+third:%green
+RGB: 77, 188, 146
+HEX: 4dbc92
 
-third:
-RGB: 18,75,178
-HEX: 124BB2
+fourth %yellow
+RGB: 241,185,74
+HEX: f1b94a
 
+fifth %superyellow
+RGB: 249,251,14
+HEX:f9fb0e
 
 
 
