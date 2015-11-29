@@ -24,3 +24,73 @@
 
 
 
+\subsection{De bioheat vergelijking}
+De temperatuurstijging in hersenweefsel kan bepaald worden met behulp van de bioheat vergelijking:
+\begin{equation}
+\label {eq:bioheat}
+\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}+\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta 				T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right].
+\end{equation}
+Met $\Delta T$ de temperatuurstijging, $\mu_a$ de absorptieco\"effi\"ent van het weefsel [$m^{-1}$], $k$ de thermische geleidbaarheid [$Wm^{-1}^{\circ}C^{-1}$], $\rho$ de dichtheid van het weefsel [$kg$ $m^{-3}$], $c$ de warmtecapaciteit [$J$ $kg^{-1}^{\circ}C^{-1}$] en $\phi(z,r)$ de fluence rate van het laserlicht [$Wm^{-2}$]. Al deze parameters zijn gekend van voorgaande experimenten, behalve de fluence rate. Deze laatste zal berekend worden met behulp van een Monte Carlo methode, zie sectie \ref{}. 
+\\
+Het rechterlid van de bioheat vergelijking bestaat uit twee delen. Het eerste deel stelt de temperatuurstijging voor in het weefsel ten gevolge van absorptie van fotonen. Het tweede deel van het rechterlid toont de temperatuurdaling door warmtegeleiding. 
+\subsection{Oplossing van de bioheat vergelijking}
+De bioheat vergelijking werd opgelost door Martin J.C. van Gemert met de methode van scheiding van variabelen. De oplossing wordt gegeven door: 
+\begin{equation}
+\Delta T(t,z,r) = \frac{\tau \mu_a\phi(z,r)}{\rho c}(1-e^{-\frac{t}{\tau}}).
+\label{eq:solBH}
+\end{equation}
+Hierbij werd een tijdsconstante $\tau$ ingevoerd, deze geeft een maat voor hoe snel de temperatuur in het weefsel zal stijgen ten gevolge van interactie met elektromagnetische straling. 
+\begin{equation}
+\tau = \left( \frac{1}{\tau_z}+\frac{1}{\tau_r}\right)^{-1}
+\end{equation}
+Met $\tau_z$ de axiale en $\tau_r$ de radiale component van $\tau$. 
+\begin{equation}
+\frac{1}{\tau_z}=\frac{k}{\rho c}\left( \frac{\pi (\mu_a+(1-g)\mu_s)}{4}\right) ^{2}
+\end{equation}
+\begin{equation}
+\frac{1}{\tau_r} =\frac{k}{\rho c} \left(\frac{2.4}{w_L}\right)^{2}
+\end{equation}
+Men kan zien dat de axiale component van $\tau$ bepaald wordt door weefselparameters $(\mu_a$, $g$ en $\mu_s)$ en de radiale component door de gebruikte optische vezel ($w_L$ is de straal van de vezel).
+\\
+
+\\
+Bij het opstellen van oplossing (\ref{eq:solBH}) werden een aantal benaderingen gemaakt, zodat een analytische oplossing mogelijk was. Dit werd gedaan omdat een analytische oplossing meer inzicht geeft in het probleem dan een numerieke oplossing. Deze benaderingen hebben wel tot gevolg dat de oplossing niet meer exact is. In figuur \ref{fig:comparison} wordt de oplossing gevonden door tijdsconstante analyse (\ref{eq:solBH}) vergeleken met een exacte numerieke oplossing en een oplossing die uitgaat van geen warmtegeleiding. Men ziet dat de temperatuur voor de oplossing zonder warmtegeleiding naar oneindig gaat, wat logisch is aangezien geleiding de temperatuur laat afnemen. Geen warmtegeleiding zorgt ervoor dat de temperatuur onbeperkt kan toenemen. Bovendien is te zien dat de oplossing met tijdsconstanten slecht voor een korte tijdsduur overeenkomt met de exacte numerieke oplossing. Vanaf een tijdsduur van langer dan ongeveer drie keer de tijdsconstante, wijkt oplossing (\ref{eq:solBH}) te sterk af van de exacte oplossing. De rede hiervoor is dat $\tau$ eigenlijk temperatuur afhankelijk is omdat de absorptieco\"effici\"ent en de brekeningsco\"effici\"ent afhankelijk zijn van de temperatuur. Hierdoor zal de benaderende oplossing slechts bruikbaar zijn voor laserstimulaties korter dan $3\tau$.
+\begin{figure}[tb]
+                \centering
+                \includegraphics[width=11cm]{gfx/comparison.png}
+    
+                \label{fig:comparison}
+		  \end{figure}
+\\
+
+\\			
+Vergelijking (\ref{eq:solBH}) kan nu gebruikt worden om de temperatuurstijging te meten in hersenweefsel door continue en gepulste lasterstimulatie.
+ 
+\subsection{Continue stimulatie}
+Voor de continue stimulatie wordt verwacht dat de temperatuur in het begin snel stijgt en dat er na een bepaalde tijd saturatie optreedt, zoals te zien is op figuur \ref{fig:continue}. Dit komt omdat er enerzijds opwarming zal zijn door absorptie, maar anderzijds ook afkoeling door warmtegeleiding. In het begin zal de absorptie groter zijn dan de geleiding, waardoor de temperatuur sterk stijgt. Na een tijd echter zal de geleiding steeds groter worden, tot ze even groot is als de absorptie en er saturatie optreedt. 
+
+\subsection{Gepulste stimulatie}
+Om de fysiologische omstandigheden in de neuronen zo goed mogelijk te benaderen, wordt vaak gebruik gemaakt van gepulste stimulatie. Tijdens een puls verwacht men een exponentiele stijging van de temperatuur zoals bij de continue stimulatie. Tussen twee pulsen zal de temperatuur exponentiel dalen, met dezelfde tijdsconstante als dat de temperatuur steeg. Wanneer er nu een volgende puls start zal de temperatuurstijging ten gevolge van de vorige puls nog niet helemaal naar nul gezakt zijn, deze zal er dus bij opgeteld moeten worden. Bij de puls die daarop volgt moet dan de temperatuurstijging van de twee vorige pulsen meegeteld worden. De temperatuurstijging tijdens een puls kan dus telkens geschreven worden als een som van een stijgende functie en allemaal dalende functies ten gevolge van de voorgaande pulsen. De temperatuurstijging tussen twee pulsen is dan een som van enkel dalende functies. 
+\begin{equation}
+\Delta T(t) = \left\{\begin{array}{l l} 
+\Delta T_s(t) & \text{ voor }0<t<t_L \\
+\Delta T_d(t-t_L) & \text{ voor }t_L<t<F\\ 
+\Delta T_d(t-t_L) + \Delta T_s(t-F) & \text{ voor }F<t<F+t_L \\
+\Delta T_d(t-t_L) + \Delta T_d(t-F-t_L) & \text{ voor }F+t_L<t<2F\\
+\Delta T_d(t-t_L) + \Delta T_d(t-F-t_L) + \Delta T_s(t-2F) & \text{ voor }2F<t<2F+t_L\\
+...
+\end{array}
+\label{eq:sompuls}
+\end{equation}
+Waarbij $t_L$ de lengte van een puls is, $F$ de tijd tussen twee pulsen en $T_s(t)$ en $T_d(t)$ stijgende en dalende exponentiele functies zijn, respectievelijk gegeven door: 
+\begin{equation}
+\Delta T_s(t) = \frac{\tau \mu_a \phi (z,r)}{\rho c} (1-e^{-\frac{t}{\tau}})
+\end{equation}
+\begin{equation}
+\Delta T_d(t) = \frac{\tau \mu_a \phi (z,r)}{\rho c} (1-e^{-\frac{t_L}{\tau}}) e^{-\frac{t}{\tau}}
+\end{equation}
+Bij de gepulste stimulatie kan er op twee manieren saturatie optreden. Enerzijds zal er, wanneer een puls lang genoeg duurt, saturatie optreden binnen in een puls, net zoals bij de continue stimulatie. Anderzijds zal na een bepaalde tijd de bijdrage van de eerste puls naar nul gezakt zijn. Bij de daarop volgende puls zal ook de bijdrage van de tweede puls niet meer relevant zijn. Vanaf dat moment zal er dus telkens een gelijk aantal dalende functies zijn die een niet-triviale bijdrage leveren, waardoor de daaropvolgende pieken telkens even hoog zullen zijn. Dit is duidelijk te zien op figuur \ref{fig:puls}. Men kan zien dat de vierde en de vijfde piek even hoog zijn, dit komt omdat de bijdrage van de eerste puls bij de vierde piek reeds naar nul gezakt is. 
+
+
+
+
