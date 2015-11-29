@@ -1,5 +1,28 @@
-\section{Resultate } % (fold)
-\label{sec:resultate_}
+\section{Resultaten} % (fold)
+\label{sec:resultaten}
+Simulaties voor de temperatuursverandering in weefsel met de tijdsconstanten methode worden uitgevoerd voor de hippocampus regio in het rat brein. Er wordt gefocusd op protocols voor golflengten $474nm$ en $560nm$ en voor zowel een single-mode ($d=0.009nm$, NA=$0.12$)als multi-mode ($d=0.300nm$, NA=$0.37$) optische vezel. Deze twee golflengte omdat een veel gebruikt opsin $ChR2$ optimaal werkt bij een golflengt $\approx 470nm$ en er een hoge piek is bij de absorptieco\"effici\"ent voor een golflengte vaan $560nm$. Dit is ideaal om de invloed van de absorptie op de temperatuursverandering na te gaan.  
 \subsection{Energieverdeling} % (fold)
 \label{sub:energieverdeling}
-Het \emph{Monte-Carlo multi layer} programma geeft $\psi(r,z)$, de fluence rate corresponderend met een eenheid irradiantie $I=1\frac{W}{m^2}$
+Het \emph{Monte-Carlo multi layer} programma geeft $\psi(r,z)$, de fluence rate corresponderend met een eenheid irradiantie $I=1\frac{W}{m^2}$. Om vervolgens de eigenlijke fluence rate $\phi(r,z)$ voor een bepaald stimulatie protocol te bekomen wordt vergelijking \ref{} gebruikt. Figuur \ref{} geeft $\phi(r,z)$ weer voor een stimulatie van laserlicht met een power van $1mW$ en voor de vier verschillende protocols waarop gefocusd wordt in dit onderzoek. 
+De contourlijn op $1\frac{mW}{mm^2}$ geeft het maximale oppervlak aan waarin opsin stimulatie kan optreden, zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}.  
+\begin{figure}[tb]%#TODO; eenheden +andere schaling
+  	\centering
+  	\includegraphics[width=10cm]{gfx/FR_P1mW.png}
+  	\caption{Caption here}
+  	\label{fig:FR}
+  \end{figure}  
+Een aantal dingen die onmiddellijk opvallen bij de vergelijking van de energieverdeling voor de verschillende protocols. Wanneer de twee golflengten vergeleken worden valt op dat voor $474nm$ de energie meer radiaal verspreidt wordt, terwijl bij de $560nm$ vooral in de axiale riching verdeeld wordt. Een hoge absorptie zorgt dus voor minder verspreiding in de radiale richting en meer in axiale richting. 
+
+De energieverdelingen voor de verschillende optische vezels (NA=$0.12$ en NA=$0.37$) verschillend vooral wat betreft de energieverspreiding. Bij een single-mode (NA=$0.12$) is de meeste energie geconcentreerd rond de oorsprong terwijl bij de multi-mode een meer homogene verdeling van de energie plaatsvindt. Dit is wat te verwachten was. Een kleine NA betekent een kleine verspreidings hoek waaronder het laserlicht aangevoerd wordt naar het weefsel. Alle energie wordt op een kleine plek geconcentreerd en dus het grootste deel van de energie wordt op dezelfde plek geabsorbeerd. Wanneer de energie echter vanaf het begin meer gespreid wordt aangevoerd (multi-mode) zal deze zich meer evenredig verspreiden over het oppervlak. De maximale energieconcentratie bij de SM is dus een factor $10^2$ groter. 
+
+Er is een poging ondernomen om de resolutie van de afbeeldingen van $\phi(r,z)$ te verbeteren. Vooral bij de simulaties voor de SM zou dit nuttig zijn. Als invoer in het MCML-programma moet je naast de thermische en weefsel eigenschappen ook het aantal afgevuurde fotonen en het gebied specifici\"eren. Het gebied waarin de fotonen mogen wandelen is een rooster met allemaal roosterpunten. Het aantal moet dus gespecifici\"eerd worden en de roosterafstand. 
+Een eerste mogelijkheid is het verhogen van het aantal afgevuurde fotonen. Dit vraagt echter veel rekenvermogen, dus gepast technologisch materiaal is hiervoor vereist.
+Een tweede mogelijkheid is een zelfde aantal fotonen afvuren maar het gebied verkleinen, dus de roosterafstand verkleinen. Echter moet opgepast worden dat het gebied niet te klein is, de fotonen mogen niet in de buurt van de rand komen omdat daar geen rekening mee is gehouden in de code. Dit is een aantal keer geprobeerd maar er trad elke een probleem op met de schaling. Het gebied in een richting (axiaal of radiaal) is gelijk aan het aantal roosterpunten vermenigvuldigd met de roosterafstand. De eersta schaling was $1000$ roosterpunten in de axiale richting en $500$ in de radiale. De roosterafstand was twee keer $10^-4 cm$. De afmetingen van het gebied waarin de fluence rate gesimuleerd moet worden is: $0.1cmx0.05cm$. Echter krijgen we uit de data van het programma afmetingen van $1cmxO.5cm$. Wanneer nu de rooster afstand gehalveerd word, waren de afmetingen wel wat verwacht was, namelijk $0.5cmx0.25cm$. Het eigenaardige is vooral dat er twee keer exact dezelfde code wordt gebruikt, zowel het MCML simulatie programma als de matlab code die de data-files inleest, omzet en grafisch weergeeft. Dit is een probleem waar niet onmiddellijk een oplosing voor gevonden kon worden omdat de code voor het MCML programma niet beschikbaar is. De simulaties zijn verschillende keren herhaald met steed hetzelfde eigenaardige resultaat. Echter wordt niet uitgesloten dat het eventueel toch ergens een menselijke fout is in de inleescode. Indien betere resolutie van de fluence rate noodzakelijk is dit iets wat de moeite waard is om na te kijken. 
+Verder is er ook een typfout bij de eenheden in de resulterende data file gevonden. Bij het omzetten van de fotonendistributie naar een fysische grootheid zijn er verschillende mogelijkheden. 
+\begin{itemize}
+	\item .Frzc, Fluence rate [$W\cdot cm^-2$]
+	\item .Arz, Absorptie [$W\cdot cm^-3$]
+	\item \ldots
+\end{itemize}
+De extensie die hier nodig is, is de .Frzc en in deze datafile staat als eenheid bij de fluence rate [$W\cdot cm^-3$]. Aangezien een andere extensie deze eenheid al heeft, is dit een verwarrende fout die uit de code gehaald moet worden. 
+
