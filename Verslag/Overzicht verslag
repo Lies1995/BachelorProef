@@ -1,9 +1,10 @@
 Overzicht verslag
+#TODO: waar referenties afbeeldingen? --> in caption of in de tekst waar we naar de afbeelding refereren?
 
 Inleiding LIES
 --> optogenetica
 --> hoe laserlicht naar hersenen--> optische vezels, SM+MM
---> voor welke protocols we hier zullen onderzoeken
+%--> voor welke protocols we hier zullen onderzoeken
 --> interacties E.M met weefsel
 --> bij optogenetische experimenten voor thermal effect belangrijk
 DOEL: dT weten voor optogenetische experimenten 
@@ -30,7 +31,7 @@ AFBEELDINGEN
 -absorptie+scattering
 -foton random walk
 
-Resultaten en Discussie
+Resultaten en Discussie --> hier uitleggen waarom we de protocols gebruiken en dan referen naar de bijhorende sectie
 -->MCML resultaten.#TODO LIES
 	uitleggen dat phi=I*psi, dan uit MCML programma krijgen we psi
 	--> psi contour plot 1 mw/mm^2+ fouten +-1sigma---> dit moet eigenlijk niet, dat hebben wij gewoon nodig
