@@ -84,14 +84,14 @@ end
 figure(1)
 hold on
             plot(t1,squeeze(dT(2,500,1,:)),'Color',hex2rgb('352A86'));
-            %plot(t1,dTplus(1,:),'--','color',hex2rgb('124BB2'))
-            %plot(t1,dTminus(1,:),'--','color',hex2rgb('124BB2'))
+            plot(t1,dTplus(1,:),'--','color',hex2rgb('124BB2'))
+            plot(t1,dTminus(1,:),'--','color',hex2rgb('124BB2'))
            %[dtTau1 extratau]=Traise_Data([u_a(1) u_s(1) g p c k_d w_L(1)],phi,tau(1));
             plot(tau(1),0,'r*');
             
             plot(t1,squeeze(dT(2,500,3,:)),'Color',hex2rgb('f1b94a'));
-            % plot(t1,dTplus(3,:),'--','color',hex2rgb('B27A00'))
-            %plot(t1,dTminus(3,:),'--','color',hex2rgb('B27A00'))
+            plot(t1,dTplus(3,:),'--','color',hex2rgb('B27A00'))
+            plot(t1,dTminus(3,:),'--','color',hex2rgb('B27A00'))
           % [dtTau3 extratau]=Traise_Data([u_a(2) u_s(2) g p c k_d w_L(1)],phi,tau(3));
             plot(tau(3),0,'b*');
             hold off
@@ -101,14 +101,14 @@ hold on
 figure(2)
 hold on
             plot(t2,squeeze(dT(2,500,2,:)),'Color',hex2rgb('352A86'));
-          % plot(t2,dTplus(2,:),'--','color',hex2rgb('124BB2'))
-           % plot(t2,dTminus(2,:),'--','color',hex2rgb('124BB2'))
+            plot(t2,dTplus(2,:),'--','color',hex2rgb('124BB2'))
+            plot(t2,dTminus(2,:),'--','color',hex2rgb('124BB2'))
           % [dtTau2 extratau]=Traise_Data([u_a(1) u_s(1) g p c k_d w_L(2)],phi,tau(2));
             plot(tau(2),0,'r*');
             
             plot(t2,squeeze(dT(2,500,4,:)),'Color',hex2rgb('f1b94a')); 
-          %  plot(t2,dTplus(4,:),'--','color',hex2rgb('B27A00'))
-           % plot(t2,dTminus(4,:),'--','color',hex2rgb('B27A00'))
+            plot(t2,dTplus(4,:),'--','color',hex2rgb('B27A00'))
+            plot(t2,dTminus(4,:),'--','color',hex2rgb('B27A00'))
            %[dtTau4 extratau]=Traise_Data([u_a(2) u_s(2) g p c k_d w_L(2)],phi,tau(4));
             plot(tau(4),0,'b*');
             hold off
