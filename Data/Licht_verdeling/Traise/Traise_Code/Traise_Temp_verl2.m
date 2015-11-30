@@ -54,26 +54,35 @@ for i = 1: length(L);
         phiminus=IL.*psiminus;
         %--------Calculation--------------
         du_a_plus=[34.9, 55.9];
-        du_a_minus=[34.9, 52.];
-        dtauSM_plus=[0.0003157 0.00057878];
-        dtauSM_minus=[0.0003157 0.00056764];
-        dtauMM_plus=[0.0522 0.0241];
-        dtauMM_minus=[0.0522 0.0241];
+        du_a_minus=[-34.9, -52.5];
+        du_s_plus=[3267, 3558];
+        du_s_minus=[-3267, -3492];
         if j==1
             for l=1:length(t1)
                 
                 %calculate temperature raise
                 [dT(:,:,k,l),tau(k)]=Traise_Data(prop,phi,t1(l));
-                dTplus(k,l)=dT(2,500,k,l)+dTError(phiplus(2,500),phi,dtauSM_plus(i),tau(k),du_a_plus(i),u_a(i),t1(l));
-                dTminus(k,l)=dT(2,500,k,l)-dTError(phiminus(2,500),phi, dtauSM_minus(i),tau(k),du_a_minus(i),u_a(i),t1(l));
+                if i==1
+                dTplus(k,l)=dTError2(phiplus(2,500),du_a_plus(i),du_s_minus(i),prop,t1(l));
+                dTminus(k,l)=dTError2(phiminus(2,500),du_a_minus(i),du_s_plus(i),prop,t1(l));
+                elseif i==2
+                dTplus(k,l)=dTError2(phiplus(2,500),du_a_plus(i),du_s_plus(i),prop,t1(l));
+                dTminus(k,l)=dTError2(phiminus(2,500),du_a_minus(i),du_s_minus(i),prop,t1(l));
+                end
             end
         elseif j==2
             for l=1:length(t2)
                 
                 %calculate temperature raise
                 [dT(:,:,k,l),tau(k)]=Traise_Data(prop,phi,t2(l));
-                 dTplus(k,l)=dT(2,500,k,l)+dTError(phiplus(2,500),phi,dtauMM_plus(i),tau(k),du_a_plus(i),u_a(i),t2(l));
-                 dTminus(k,l)=dT(2,500,k,l)-dTError(phiminus(2,500),phi,dtauMM_minus(i),tau(k),du_a_minus(i),u_a(i),t2(l));
+                if i==1
+                 dTplus(k,l)=dTError2(phiplus(2,500),du_a_plus(i),du_s_minus(i),prop,t2(l));
+                 dTminus(k,l)=dTError2(phiminus(2,500),du_a_minus(i),du_s_plus(i),prop,t2(l));
+                elseif i==2
+                 dTplus(k,l)=dTError2(phiplus(2,500),du_a_plus(i),du_s_plus(i),prop,t2(l));
+                 dTminus(k,l)=dTError2(phiminus(2,500),du_a_minus(i),du_s_minus(i),prop,t2(l));
+                end
+                
             end
         end
         m=m+1;
