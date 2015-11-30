@@ -1,7 +1,7 @@
 Overzicht verslag
 #TODO: waar referenties afbeeldingen? --> in caption of in de tekst waar we naar de afbeelding refereren?
 
-Inleiding LIES
+Inleiding LIES !!LED!!!
 --> optogenetica
 --> hoe laserlicht naar hersenen--> optische vezels, SM+MM
 %--> voor welke protocols we hier zullen onderzoeken
@@ -12,7 +12,7 @@ AFBEELDINGEN
 -opsins #TODO: kleuren aanpassen
 -bollen grafiek
 
-theoretische achtergrond HANNELORE
+theoretische achtergrond HANNELORE, !!Benaderingen!!!+ kijken of ze geldig zijn (de aanames)
 --> Bioheat equation, oplossing ervan--> geldig tot 3tau
 --> uitleggen wat alle parameters betekenen (fluence rate)
 --> continue stimulatie oplossing (saturatie)
@@ -25,8 +25,8 @@ AFBEELDINGEN
 Methode LIES
 --> terug opnieuw bioheat equation + oplossing continue en gepulste
 --> bespreken hoe we aan alle parameters komen; absorptie en scattering coefficient afbeeldingen, waarden voor de c, p, k,.. 
---> Fluence rate, uitleggen hoe we hier aan komen (MCML programma), kort uitleggen wat het doet
---> Matlabcode kort toelichten (code zelf in bijlage)
+--> Fluence rate, uitleggen hoe we hier aan komen (MCML programma), kort uitleggen wat het doet-->licht voorplanting
+--> Matlabcode kort toelichten (code zelf in bijlage)--> temperatuurs
 AFBEELDINGEN
 -absorptie+scattering
 -foton random walk
@@ -79,7 +79,7 @@ Resultaten en Discussie --> hier uitleggen waarom we de protocols gebruiken en d
 		AFBEELDING:
 		pulsplot.png
 
-Foutenanalyse
+-->Foutenanalyse
 	op tau--> altijd hetzelfde
 	op psi--> door te laten varieren, dan contour plot maken , kiezen welke combinatie van u_a en u_s maximale/minimale uitwijking geeft op psi. Dan hebben we 3 psi matrices. 1 echt, 1 op -sigma, 1 op +sigma.
 	Om de fout op een specifieke plaatst te weten is het gewoon nummerjtes halen uit de matrices.
