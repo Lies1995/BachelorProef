@@ -1,4 +1,4 @@
-\section{Resultaten} % (fold)
+\section{Resultaten en Discussie} % (fold)
 \label{sec:resultaten}
 Simulaties voor de temperatuursverandering in weefsel met de tijdsconstanten methode worden uitgevoerd voor de hippocampus regio in het rat brein. Er wordt gefocusd op protocols voor golflengten $474nm$ en $560nm$ en voor zowel een single-mode ($d=0.009nm$, NA=$0.12$)als multi-mode ($d=0.300nm$, NA=$0.37$) optische vezel. Deze twee golflengte omdat een veel gebruikt opsin $ChR2$ optimaal werkt bij een golflengt $\approx 470nm$ en er een hoge piek is bij de absorptieco\"effici\"ent voor een golflengte vaan $560nm$. Dit is ideaal om de invloed van de absorptie op de temperatuursverandering na te gaan.  
 \subsection{Energieverdeling} % (fold)
@@ -26,3 +26,54 @@ Verder is er ook een typfout bij de eenheden in de resulterende data file gevond
 \end{itemize}
 De extensie die hier nodig is, is de .Frzc en in deze datafile staat als eenheid bij de fluence rate [$W\cdot cm^-3$]. Aangezien een andere extensie deze eenheid al heeft, is dit een verwarrende fout die uit de code gehaald moet worden. 
 
+\subsection{Temperatuurstijging bij continue stimulatie}
+De resultaten voor de fluence rate bekomen met de monte carlo simulatie werden gebruikt om de temperatuurstijging voor continue stimulatie te bepalen. Dit werd gedaan voor alle vier de protocols, telkens bij een vermogen van $1mW$. Er kunnen nu verschillende figuren gemaakt worden.
+Als eerste werden er kleurenplots gemaakt die de tijdsevolutie van de temperatuursverandering weergeven. De resultaten voor \’{e}\’{e}n van de protocols, namelijk $\lambda = 560nm$ en multi-mode, staan afgebeeld in figuur \ref{fig:dT_560_MM}, die voor de andere protocols kan men vinden in de bijlage (figuur \ref{fig:dT_Overig_Bijlage}. De temperatuurstijging werd telkens geplot op drie verschillende tijdstippen. Een eerste tijdstip werd gekozen vlak nadat het laserlicht op het weefsel begint te schijnen in dit geval $t=0.001s$. Als tweede tijdstip werd telkens $t=\tau $ gekozen en als laatste tijdstip werd $t=3\tau$, dit tijdstip is de uiterste grens waarop ons model geldig is. Op dit laatste tijdstip is de temperatuur reeds gesatureerd, zodat de rechtse afbeelding telkens de finale temperatuurstijging weergeeft. Op deze afbeeldingen is duidelijk de evolutie van de temperatuursverandering zichtbaar. In het begin is de maximale temperatuurstijging lager en is de verandering minder verspreidt. Naarmate de tijd vordert wordt de maximale temperatuur groter en verspreidt de temperatuurstijging zich verder doorheen het weefsel. De fouten op deze figuren werden wel berekend, maar niet afgebeeldt omdat dat de figuren te ingewikkeld zou maken.  
+% figuur
+% label{fig:dT_560_MM}
+\begin{figure}[tb]
+  	\centering
+  	\includegraphics[width=10cm]{gfx/dT_560_MM.png}
+  	\caption{Caption here}
+  	\label{fig:dT_560_MM}
+  \end{figure} 
+\\
+Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstijging van het hersenweefsel geplot in functie van de tijd op $z=0$ en $r=0$, telkens voor de twee verschillende golflengtes. Op de grafieken werd telkens $t=\tau$ aangeduid met een stippellijn. Aangezien de tijdsconstante voor eenzelfde vezel (SM of MM) zeer weinig van elkaar verschillen (zie later) kon er per afbeelding \’{e}\’{e}n stippellijn getekend worden. Merk op dat opnieuw de fouten niet geplot werden. De rede hiervoor is dat doordat de fout tijdsafhankelijk is, ze zeer snel, zeer groot wordt, waardoor de grafieken onduidelijk worden. Wanneer men naar de vorm van de grafieken kijkt, is te zien dat de temperatuurstijging inderdaad vrij snel zal satureren. Anderzijds is het opvallend dat de temperatuurstijging voor $560nm$ veel groter is dan voor $474nm$. Dit komt omdat de absorptie co\”effici\”ent van het weefsel een piek vertoont rond $550nm$. Rond $550nm$ zal de absorptie van fotonen door het weefsel veel groter zijn omwille van absorptie door hemoglobine. \cite{ ThermEff } Hierdoor zal de absorptie co\”effici\”ent bij $560nm$ groter zijn dan bij $474nm$ en aangezien absorptie verantwoordelijk is voor temperatuurstijging, verklaart dit de grotere temperatuursverandering bij $560nm$.
+%figuur
+% label{fig:dT_tijd_SM}
+%label{fig:dT_tijd_MM}
+\begin{figure}[tb]
+  	\centering
+  	\includegraphics[width=10cm]{gfx/dT_tijd_SM.png}
+  	\caption{Caption here}
+  	\label{fig:dT_tijd_SM}
+  \end{figure} 
+	
+	\begin{figure}[tb]
+  	\centering
+  	\includegraphics[width=10cm]{gfx/dT_tijd_MM.png}
+  	\caption{Caption here}
+  	\label{fig:dT_tijd_MM}
+  \end{figure} 
+\\
+Zoals daarnet al werd vermeld, is er een zeer klein verschil tussen de tijdsconstanten voor eenzelfde vezel. Dit kan men zien in tabel \ref{table:tau}. Voor verschillende golflengten is $\tau$ min of meer gelijk. De rede hiervoor is dat de waarde van de optische parameters (deze zijn afhankelijk van de golflengte) weinig invloed heeft op $\tau$. Ze heffen elkaar als het ware op. Anderzijds heeft de gebruikte vezel een zeer grote invloed op de waarde van $\tau$. De rede hiervoor is dat de tijdsconstante zeer sterk afhankelijk is van de straal van de optische vezel ($w_L$). Men kan zien dat voor de muli-mode vezel de tijdsconstanten veel groter zijn dan voor single-mode. De rede hiervoor is vrij eenvoudig intui\”tief te verklaren. Een SM vezel is smaller, waardoor alle energie zich in een klein en smal gebied bevindt. Hierdoor kan de temperatuur makkelijker en dus sneller stijgen, wat leidt tot een kleine $\tau$. Voor de MM vezel is dezelfde energie over een groter gebied verspreidt, waardoor de temperatuur trager zal stijgen. Dit geeft een grotere waarde voor de tijdsconstante. 
+% tabel met tau
+\begin{table}
+\centering
+\caption{Bekomen tijdsconstanten $\tau$ voor elk protocol}
+\begin{tabular}{c||c|c}
+& $\tau_{SM}$ [$10^{-2} ms$]& $\tau_{MM} [ms]$ \\ \hline
+$474 nm$ & $2.517970$ & $12.401371$ \\
+$560 nm$ & $2.517975$ & $12.414704$ \\
+\end{tabular}
+\label{tab:tau}
+\end{table}
+
+Tot slot kunnen we de kleurenplots voor de vier protocols met elkaar vergelijken. Afbeelding \ref{fig:4dT} geeft de temperatuurstijging weer voor de verschillende protocols, telkens op een tijdstip waarop de temperatuur reeds gesatureerd is. Men kan een aantal zaken opmerken. Ten eerste komt de vorm sterk overeen met die van de afbeeldingen voor de fluence rate. Dat is logisch aangezien in een gebied met een hoge fluence rate de temperatuur sterk zal stijgen en in een gebied met een lage fluence rate, zal de temperatuur minder sterk stijgen. Ook is te zien dat de temperatuursverandering voor $560nm$ telkens groter en verder verspreid is dan voor $474nm$. Dit komt, zoals eerder al vermeld, door de hogere absorptie bij $560nm$. 
+
+\begin{figure}[tb]
+  	\centering
+  	\includegraphics[width=10cm]{gfx/4dT.png}
+  	\caption{Caption here}
+  	\label{fig:4dT}
+  \end{figure} 
