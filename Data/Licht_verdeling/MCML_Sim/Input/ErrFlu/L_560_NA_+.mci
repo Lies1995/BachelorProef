@@ -22,7 +22,7 @@ L_560_NA_12.mco	A				# output filename, ASCII/Binary
 1								# No. of layers
 # n	mua	mus	g	d				# One line for each layer
 1.0								# n for medium above.
-1.4	1.638	128.24	0.88	10	# Parameters layer 1, d=thickness layer
+1.4	1.638	57.74	0.88	10	# Parameters layer 1, d=thickness layer
 1.0								# n for medium below.
 
 ### Specify data for run 2
@@ -39,6 +39,6 @@ L_560_NA_37.mco	A				# output filename, ASCII/Binary
 1								# No. of layers
 # n	mua	mus	g	d				# One line for each layer
 1.0								# n for medium above.
-1.4	1.638	128.24	0.88	10	# layer 1 
+1.4	1.638	57.74	0.88	10	# layer 1 
 1.0								# n for medium below.
 
