@@ -25,8 +25,8 @@ for i = 1: length(L);
             filename_r=[fullfile(file_path,'FR_r')];
             filename_z=[fullfile(file_path,'FR_z')];
             csvwrite(fullfilename,psi); %[W/m^2]
-            csvwrite(filename_r, r);%[mm^2]
-            csvwrite(filename_z, z);%[mm^]
+            csvwrite(filename_r, r);%[mm]
+            csvwrite(filename_z, z);%[mm]
         end
         %------Plot--------
         %Change units
@@ -38,9 +38,9 @@ for i = 1: length(L);
         %imagesc(r,z,dF(:,:,1));c=colorbar; 
         
         %Contourlines
-        [C, h]=contour(r,z,dF(:,:,1),v,'color','k');
-        [Cplus, hpuls]=contour(r,z,dF(:,:,2),v,'+','color','k');
-        [Cminus, hminus]=contour(r,z,dF(:,:,3),v,'-','color','k');
+        [C, h]=contour(r,z,dF(:,:,1),v,'color',hex2rgb('352A86'));
+        [Cplus, hpuls]=contour(r,z,dF(:,:,2),v,'color',hex2rgb('4dbc92'));
+        [Cminus, hminus]=contour(r,z,dF(:,:,3),v,'color',hex2rgb('f1b94a'));
         
         title({'Fluence Rate';['$\lambda=$' num2str(n_L) ', NA=' ...
             num2str(n_NA) ', Input Irradiance=' num2str(IL) ]},...
