@@ -21,8 +21,8 @@ for i = 1: length(L);
             [r,z,fRate,filename]=MCML_Data_Err(n_L,n_NA,l,file_path); %Calculation Fluence rate  [mm mm mW/mm^2]
             fRate=fRate.*10^3; %[W/m^2]
             psi=fRate.*((pi*w_L(j)^2)/2).*10^3; %fluence rate corresponding to unit peak irradiance [W/m^2]
-            %fullfilename=[fullfile(file_path,'Traise','Traise_Data',['Traise_Data_FRU_' filename])];
-            %csvwrite(fullfilename,psi);
+            fullfilename=[fullfile(file_path,'Traise','Traise_Data',['Traise_Data_FRU_' filename])];
+            csvwrite(fullfilename,psi);
              if ne(PL,0) == 1
                     
                     IL=PL/((pi*w_L(j)^2)/2);

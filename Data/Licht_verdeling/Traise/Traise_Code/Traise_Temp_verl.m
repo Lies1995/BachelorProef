@@ -36,9 +36,9 @@ for i = 1: length(L);
         datafile_name = ['Traise_Data_FRU_L_' num2str(n_L) '_NA_'...
             num2str(n_NA) ];
         datafile_name_plus = ['Traise_Data_FRU_L_' num2str(n_L) '_NA_' ...
-            num2str(n_NA) '+sigma2' ];
+            num2str(n_NA) '+sigma' ];
         datafile_name_minus = ['Traise_Data_FRU_L_' num2str(n_L) '_NA_' ...
-            num2str(n_NA) '-sigma2' ];
+            num2str(n_NA) '-sigma' ];
         psi=csvread(fullfile(path,datafile_name)); %[W/m^2]
         psiplus=csvread(fullfile(path,datafile_name_plus));
         psiminus=csvread(fullfile(path,datafile_name_minus));

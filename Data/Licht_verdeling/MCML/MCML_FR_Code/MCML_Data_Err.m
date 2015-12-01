@@ -11,11 +11,11 @@ function [R_Fig,z, Data_Fig, file_name2] = MCML_Data_Err(L,NA,l,path)
                      file_name2 = ['L_' char(L) '_NA_' char(NA) ] ;
                     file_Frz = [fullfile(path,'MCML_Sim','Output',[file_name '.Frzc'])] ;
                 elseif l==2
-                     file_name2 = ['L_' char(L) '_NA_' char(NA) '+sigma2']; 
-                    file_Frz = [fullfile(path,'MCML_Sim','Output-mu_s+1sigma',[file_name '.Frzc'])];
+                     file_name2 = ['L_' char(L) '_NA_' char(NA) '+sigma']; 
+                    file_Frz = [fullfile(path,'MCML_Sim','Output+sigma',[file_name '.Frzc'])];
                 elseif l==3
-                     file_name2 = ['L_' char(L) '_NA_' char(NA) '-sigma2']; 
-                    file_Frz = [fullfile(path,'MCML_Sim','Output-mu_s-1sigma',[file_name '.Frzc'])];
+                     file_name2 = ['L_' char(L) '_NA_' char(NA) '-sigma']; 
+                    file_Frz = [fullfile(path,'MCML_Sim','Output-sigma',[file_name '.Frzc'])];
                 end
                 [r,z,Data] = MCML_read_F(file_Frz);               %Read data, [mm,mm,/mm^2]                            
                 R_Fig = [-r(end:-1:1), r];                                  
