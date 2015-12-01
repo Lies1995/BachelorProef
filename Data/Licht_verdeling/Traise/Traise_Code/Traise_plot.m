@@ -6,7 +6,7 @@ Traise_Setup_Data
 t1=linspace(0,0.00008,50);%times to evaluate[s] for NA=12
 t2=linspace(0,0.040,50); %times to evaluate[s] for NA=37
 timesToPlot=[2 16 47];
-path=LD; %path
+path=HV; %path
 PL=0.001;%Laser Power [W] (default 0)
 IL=100000;%irradiance [W/m^2] (default 1)
 v=[1000, 1000];
@@ -52,12 +52,14 @@ for i = 1: length(L);
                 
                 %calculate temperature raise
                 [dT(:,:,k,l),tau(k)]=Traise_Data(prop,phi,t1(l));
+                tau(k)
             end
         elseif j==2
             for l=1:length(t2)
                 
                 %calculate temperature raise
                 [dT(:,:,k,l),tau(k)]=Traise_Data(prop,phi,t2(l));
+                tau(k)
             end
         end
         %--------Plot--------------
