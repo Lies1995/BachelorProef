@@ -58,14 +58,14 @@ for i = 1: length(L);
         
         %scaling
         if j==1
-            xlim([-0.25,0.25]);ylim([0,0.6]);
+            xlim([-0.5,0.5]);ylim([0,1]);
         elseif j==2
             xlim([-0.5,0.5]);ylim([0,1]);
         end
         if i==1 && j==1
-            caxis([0 0.001]);
+            caxis([0 0.002]);
         elseif i==1 && j==2
-            caxis([0 0.012]);
+            caxis([0 0.025]);
         elseif i==2 && j==1
             caxis([0 0.002]);
         elseif i==2 && j==2
@@ -95,20 +95,19 @@ for i = 1: length(L);
         imagesc(r,z,dT(:,:,k,timesToPlot(2))); c=colorbar;
          %scaling
         if j==1
-            xlim([-0.25,0.25]);ylim([0,0.6]);
+            xlim([-0.5,0.5]);ylim([0,1]);
         elseif j==2
             xlim([-0.5,0.5]);ylim([0,1]);
         end
         if i==1 && j==1
-            caxis([0 0.001]);
+            caxis([0 0.002]);
         elseif i==1 && j==2
-            caxis([0 0.012]);
+            caxis([0 0.025]);
         elseif i==2 && j==1
             caxis([0 0.002]);
         elseif i==2 && j==2
             caxis([0 0.025]);
         end
-
         %labels
         if j==1
             title({'Temperature increase';['$\lambda=$' num2str(n_L)...
@@ -131,14 +130,14 @@ for i = 1: length(L);
         imagesc(r,z,dT(:,:,k,timesToPlot(3))); c=colorbar;
           %scaling
         if j==1
-            xlim([-0.25,0.25]);ylim([0,0.6]);
+            xlim([-0.5,0.5]);ylim([0,1]);
         elseif j==2
             xlim([-0.5,0.5]);ylim([0,1]);
         end
         if i==1 && j==1
-            caxis([0 0.001]);
+            caxis([0 0.002]);
         elseif i==1 && j==2
-            caxis([0 0.012]);
+            caxis([0 0.025]);
         elseif i==2 && j==1
             caxis([0 0.002]);
         elseif i==2 && j==2
