@@ -11,29 +11,33 @@
 		\begin{subfigure}[b]{.5\textwidth}
 			\centering
 			\includegraphics[width=7cm]{gfx/exp.png}
-			\caption{Caption here}
+			\caption{Temperatuurstijging bij continue laserstimulatie.}
 			\label{fig:continue}
 		\end{subfigure}%
 		\\
 		\begin{subfigure}[b]{.5\textwidth}
 			\centering
 			\includegraphics[width=7cm]{gfx/puls.png}
-			\caption{Caption here}
+			\caption{Temperatuurstijging bij gepulste laserstimulatie.}
 			\label{fig:puls}
 		\end{subfigure}%
-	\caption{two subfigures}
+	\caption{}
 	\label{fig:two}
 \end{figure}
 
 \subsection{De bioheat vergelijking}
 De temperatuurstijging in hersenweefsel kan bepaald worden met behulp van de bioheat vergelijking:
-\small
+\footnotesize
 \begin{equation}
 \label {eq:bioheat}
-\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}+\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta 				T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right].
+\begin{split}
+\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = & \frac{\mu_{a}\phi(z,r)}{\rho c} +\\
+ & \frac{k}{\rho c}\left[ \frac{\partial^2{\Delta 				T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right].
+\end{split}
+%\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}+\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta 				T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right].
 \end{equation}
 \normalsize
-Met $\Delta T$ de temperatuurstijging, $\mu_a$ de absorptieco\"effi\"ent van het weefsel [$m^{-1}$], $k$ de thermische geleidbaarheid [$Wm^{-1}^{\circ}C^{-1}$], $\rho$ de dichtheid van het weefsel [$kg$ $m^{-3}$], $c$ de warmtecapaciteit [$J$ $kg^{-1}^{\circ}C^{-1}$] en $\phi(z,r)$ de fluence rate van het laserlicht [$Wm^{-2}$]. Al deze parameters zijn gekend van voorgaande experimenten, behalve de fluence rate. Deze laatste zal berekend worden met behulp van een Monte Carlo methode, zie sectie \ref{sec:methode}. 
+Met $\Delta T$ de temperatuurstijging [$^{\circ}C$], $\mu_a$ de absorptieco\"effi\"ent van het weefsel [$m^{-1}$], $k$ de thermische geleidbaarheid [$Wm^{-1}^{\circ}C^{-1}$], $\rho$ de dichtheid van het weefsel [$kg$ $m^{-3}$], $c$ de warmtecapaciteit [$J$ $kg^{-1}^{\circ}C^{-1}$] en $\phi(z,r)$ de fluence rate van het laserlicht [$Wm^{-2}$]. Al deze parameters zijn gekend van voorgaande experimenten, behalve de fluence rate. Deze laatste zal berekend worden met behulp van een Monte Carlo methode, zie sectie \ref{sec:methode}. 
 
 Het rechterlid van de bioheat vergelijking bestaat uit twee delen. Het eerste deel stelt de temperatuurstijging voor in het weefsel ten gevolge van absorptie van fotonen. Het tweede deel van het rechterlid toont de temperatuurstijging door warmtegeleiding. Aangezien deze laatste term negatief is, stelt ze dus een temperatuurdaling voor ten gevolge van warmtegeleiding.
 \subsection{Oplossing van de bioheat vergelijking}
@@ -44,6 +48,7 @@ De bioheat vergelijking werd opgelost door Martin J.C. van Gemert met de methode
 \end{equation}
 Dit model zal verder gebruikt worden om de temperatuurstijging in hersenweefsel te bepalen.
 Voor de oplossing werd een tijdsconstante $\tau$ ingevoerd, deze geeft een maat voor hoe snel de temperatuur in het weefsel zal stijgen ten gevolge van interactie met elektromagnetische straling. 
+De tijdsconstante $\tau$ ziet er als volgt uit: 
 \begin{equation}
 \tau = \left( \frac{1}{\tau_z}+\frac{1}{\tau_r}\right)^{-1}
 \end{equation}
@@ -54,9 +59,9 @@ Met $\tau_z$ de axiale en $\tau_r$ de radiale component van $\tau$.
 \begin{equation}
 \frac{1}{\tau_r} =\frac{k}{\rho c} \left(\frac{2.4}{w_L}\right)^{2}
 \end{equation}
-Men kan zien dat de axiale component van $\tau$ bepaald wordt door weefselparameters $(\mu_a$, $g$ en $\mu_s)$ en de radiale component door de gebruikte optische vezel ($w_L$ is de straal van de vezel).
+Men kan zien dat de axiale component van $\tau$ bepaald wordt door weefselparameters $(\mu_a$, $g$ en $\mu_s)$ en de radiale component door de gebruikte optische vezel ($w_L$ is de straal van de vezel). Aangezien de weefselparameters $\mu_a$ en $\mu_s$ afhankelijk zijn van de golflengte, zal een verandering van golflengte enkel een invloed hebben op de axiale component van $\tau$. Anderzijds zal het gebruiken van een andere vezel enkel een invloed hebben op de radiale component van $\tau$. Dit laatste kan men eenvoudig intuitief verklaren. Een SM vezel is veel smaller dan een MM vezel ($w_L=0.00045cm$ t.o.v. $w_L=0.01cm$). Hierdoor komt bij een SM vezel alle energie op een smalle ruimte terecht, waardoor de warmte zich makkelijk in radiale richting kan verspreiden. Dit geeft een kleine $\tau_r$. Bij een MM vezel daarentegen is de energie over een veel groter gebied verspreidt, waardoor de warmte zich niet zo goed kan verspreiden in radiale richting. Dit leidt tot een grote $\tau_r$.   
 
-Bij het opstellen van model (\ref{eq:solBH}) werden een aantal benaderingen gemaakt, zodat een analytische oplossing mogelijk was. Dit werd gedaan omdat een analytische oplossing meer inzicht geeft in het probleem dan een numerieke oplossing. Deze benaderingen hebben wel tot gevolg dat de oplossing niet meer exact is. In figuur \ref{fig:comparison} wordt de oplossing gevonden door tijdsconstante analyse (\ref{eq:solBH}) vergeleken met een exacte numerieke oplossing en een oplossing die uitgaat van geen warmtegeleiding. Men ziet dat de temperatuur voor de oplossing zonder warmtegeleiding naar oneindig gaat, wat logisch is aangezien geleiding de temperatuur laat afnemen. Geen warmtegeleiding zorgt ervoor dat de temperatuur onbeperkt kan toenemen. De exacte oplossing en die met tijdsconstanten zullen satureren, weliswaar op een andere temperatuur. Op de figuur is te zien dat de oplossing met tijdsconstanten slecht voor een korte tijdsduur overeenkomt met de exacte numerieke oplossing. Vanaf een tijdsduur van langer dan ongeveer drie keer de tijdsconstante, wijkt oplossing (\ref{eq:solBH}) te sterk af van de exacte oplossing. De rede hiervoor is dat $\tau$ eigenlijk temperatuur afhankelijk is omdat de absorptieco\"effici\"ent en de brekeningsco\"effici\"ent, die beide voorkomen in de vergelijking van $\tau$, afhankelijk zijn van de temperatuur. In het gebruikte model wordt $\tau$ als een constante gezien en wordt dus geen rekening gehouden met de tijdsafhankelijkheid van $\tau$. Hierdoor zal de benaderende oplossing slechts bruikbaar zijn voor laserstimulaties korter dan $3\tau$.
+Bij het opstellen van model (\ref{eq:solBH}) werden een aantal benaderingen gemaakt, zodat een analytische oplossing mogelijk was. Dit werd gedaan omdat een analytische oplossing meer inzicht geeft in het probleem dan een numerieke oplossing. Deze benaderingen hebben wel tot gevolg dat de oplossing niet meer exact is. In figuur \ref{fig:comparison} wordt de oplossing gevonden door tijdsconstante analyse (\ref{eq:solBH}) vergeleken met een exacte numerieke oplossing en een oplossing die uitgaat van geen warmtegeleiding. Men ziet dat de temperatuur voor de oplossing zonder warmtegeleiding naar oneindig gaat, geleiding is immers de enige factor die de temperatuur kan laten afnemen. Geen warmtegeleiding zorgt er dus voor dat de temperatuur onbeperkt kan toenemen. De exacte oplossing en die met tijdsconstanten zullen satureren, weliswaar op een andere temperatuur. Op de figuur is te zien dat de oplossing met tijdsconstanten slecht voor een korte tijdsduur overeenkomt met de exacte numerieke oplossing. Vanaf een tijdsduur van langer dan ongeveer drie keer de tijdsconstante, wijkt oplossing (\ref{eq:solBH}) te sterk af van de exacte oplossing. De rede hiervoor is dat $\tau$ eigenlijk temperatuur afhankelijk is omdat de absorptieco\"effici\"ent en de brekeningsco\"effici\"ent, die beide voorkomen in de vergelijking van $\tau$, afhankelijk zijn van de temperatuur. In het gebruikte model wordt $\tau$ als een constante gezien en wordt dus geen rekening gehouden met de tijdsafhankelijkheid. Hierdoor zal de benaderende oplossing slechts bruikbaar zijn voor laserstimulaties korter dan $3\tau$.
 
 \begin{figure}[tb]
   	\centering
@@ -68,10 +73,10 @@ Bij het opstellen van model (\ref{eq:solBH}) werden een aantal benaderingen gema
 Het model met de tijdsconstanten (\ref{eq:solBH}) kan nu gebruikt worden om de temperatuurstijging te meten in hersenweefsel door continue en gepulste lasterstimulatie.
  
 \subsection{Continue stimulatie}
-Voor de continue stimulatie wordt verwacht dat de temperatuur in het begin snel stijgt en dat er na een bepaalde tijd saturatie optreedt, zoals te zien is op figuur \ref{fig:continue}. Dit komt omdat er enerzijds opwarming zal zijn door absorptie, maar anderzijds ook afkoeling door warmtegeleiding. In het begin zal de absorptie groter zijn dan de geleiding, waardoor de temperatuur sterk stijgt. Na een tijd echter zal de geleiding steeds groter worden, tot ze even groot is als de absorptie en er saturatie optreedt. 
+Voor de continue stimulatie zal de temperatuur in het begin snel stijgt en dat er na een bepaalde tijd saturatie optreedt, zoals te zien is op figuur \ref{fig:continue}. Dit komt omdat er enerzijds opwarming zal zijn door absorptie, maar anderzijds ook afkoeling door warmtegeleiding. In het begin zal de absorptie groter zijn dan de geleiding, waardoor de temperatuur sterk stijgt. Na een tijd echter zal de geleiding steeds groter worden, tot ze even groot is als de absorptie en er saturatie optreedt. 
 
 \subsection{Gepulste stimulatie}
-Om de fysiologische omstandigheden in de neuronen zo goed mogelijk te benaderen, wordt vaak gebruik gemaakt van gepulste stimulatie. Tijdens een puls verwacht men een exponentiele stijging van de temperatuur zoals bij de continue stimulatie. Tussen twee pulsen zal de temperatuur exponentiel dalen, met dezelfde tijdsconstante als dat de temperatuur steeg. Bij de volgende puls zal de temperatuur opnieuw stijgen. Er moet echter rekening gehouden worden met het feit dat de temperatuurstijging ten gevolge van de vorige puls nog niet helemaal naar nul gezakt is, deze zal er dus bij opgeteld moeten worden. Bij de puls die daarop volgt moet dan de temperatuurstijging van de twee vorige pulsen meegeteld worden. De temperatuurstijging tijdens een puls kan dus telkens geschreven worden als een som van een stijgende functie en allemaal dalende functies ten gevolge van de voorgaande pulsen. De temperatuurstijging tussen twee pulsen is dan een som van enkel dalende functies. Op figuur \ref{fig:puls4} staan de pulsen getekend met telkens de bijhorende temperatuurstijging. Op figuur \ref{fig:puls} kan men een typische vorm zien, die men krijgt wanneer de contributies van de verschillende pulsen wordt opgeteld.
+Om de fysiologische omstandigheden in de neuronen zo goed mogelijk te benaderen, wordt vaak gebruik gemaakt van gepulste stimulatie. Tijdens een puls verwacht men, zoals bij de continue stimulatie, een exponentiele stijging van de temperatuur. Tussen twee pulsen zal de temperatuur exponentiel dalen, met dezelfde tijdsconstante als dat de temperatuur steeg. Bij de volgende puls zal de temperatuur opnieuw stijgen. Er moet echter rekening gehouden worden met het feit dat de temperatuurstijging ten gevolge van de vorige puls nog niet helemaal naar nul gezakt is, deze zal er dus bij opgeteld moeten worden. Bij de puls die daarop volgt, moet dan de temperatuurstijging van de twee vorige pulsen meegeteld worden. De temperatuurstijging tijdens een puls kan dus telkens geschreven worden als een som van een stijgende functie en allemaal dalende functies ten gevolge van de voorgaande pulsen. De temperatuurstijging tussen twee pulsen is dan een som van enkel dalende functies. Op figuur \ref{fig:puls4} staan de pulsen getekend met telkens de bijhorende temperatuurstijging. Op figuur \ref{fig:puls} kan men een typische vorm zien, die men krijgt wanneer de contributies van de verschillende pulsen worden opgeteld.
 
 \begin{figure}[tb]
   	\centering
