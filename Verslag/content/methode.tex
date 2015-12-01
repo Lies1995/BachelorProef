@@ -51,3 +51,34 @@ Een programma geschreven door Ph. D studenten van de universiteit van Texas \emp
 
 Om de temperatuursveranderingen te moddelleren volgens de benaderende oplossing besproken in paragraaf \ref{sec:theoretische_achtergrond} werd een matlab code geschreven, zowel voor de continue als voor de gepulste stimulatie protocols, zie hiervoor de bijlage. 
 %#TODO: code toelichten, afhankelijk van hoevel we al hebben
+%STUK OVER GEPULSTE STIMULATIE
+%\footnotesize
+\begin{equation}
+\Delta T(t) = \left\{\begin{array}{l l} 
+\Delta T_1(t) & \text{ voor }0<t<t_L  \\
+\Delta T_2(t) & \text{ voor }t_L<t<F \\ 
+\Delta T_3(t) & \text{ voor }F<t<F+t_L \\
+\Delta T_4(t) & \text{ voor }F+t_L<t<2F\\
+\Delta T_5(t) & \text{ voor }2F<t<2F+t_L \\
+\ldots
+\end{array}
+\label{eq:sompuls}
+\end{equation}
+Met
+\begin{equation*} 
+\begin{array}{l}
+\Delta T_1(t)= \Delta T_s(t) \\
+\Delta T_2(t)= \Delta T_d(t-t_L) \\
+\Delta T_3(t)= \Delta T_d(t-t_L) + \Delta T_s(t-F) \\
+\Delta T_4(t)= \Delta T_d(t-t_L) + \Delta T_d(t-F-t_L)\\
+\Delta T_4(t)= \Delta T_d(t-t_L) + \Delta T_d(t-F-t_L) + \Delta T_s(t-2F)
+\end{array}
+\end{equation*}
+%\normalsize
+Waarbij $t_L$ de lengte van een puls is, $F$ de tijd tussen twee pulsen en $T_s(t)$ en $T_d(t)$ stijgende en dalende exponentiele functies zijn, respectievelijk gegeven door: 
+\begin{equation}
+\Delta T_s(t) = \frac{\tau \mu_a \phi (z,r)}{\rho c} (1-e^{-\frac{t}{\tau}})
+\end{equation}
+\begin{equation}
+\Delta T_d(t) = \frac{\tau \mu_a \phi (z,r)}{\rho c} (1-e^{-\frac{t_L}{\tau}}) e^{-\frac{t}{\tau}}
+\end{equation}
