@@ -5,6 +5,7 @@
 %psi en phi link uitleggen
 %meer in detail op tau ingaan
 %latex in orde krijgen
+%pulsen uitleggen
 \begin{figure}[h!]
 	\centering
 		\begin{subfigure}[b]{.5\textwidth}
@@ -70,37 +71,15 @@ Het model met de tijdsconstanten (\ref{eq:solBH}) kan nu gebruikt worden om de t
 Voor de continue stimulatie wordt verwacht dat de temperatuur in het begin snel stijgt en dat er na een bepaalde tijd saturatie optreedt, zoals te zien is op figuur \ref{fig:continue}. Dit komt omdat er enerzijds opwarming zal zijn door absorptie, maar anderzijds ook afkoeling door warmtegeleiding. In het begin zal de absorptie groter zijn dan de geleiding, waardoor de temperatuur sterk stijgt. Na een tijd echter zal de geleiding steeds groter worden, tot ze even groot is als de absorptie en er saturatie optreedt. 
 
 \subsection{Gepulste stimulatie}
-Om de fysiologische omstandigheden in de neuronen zo goed mogelijk te benaderen, wordt vaak gebruik gemaakt van gepulste stimulatie. Tijdens een puls verwacht men een exponentiele stijging van de temperatuur zoals bij de continue stimulatie. Tussen twee pulsen zal de temperatuur exponentiel dalen, met dezelfde tijdsconstante als dat de temperatuur steeg. Wanneer er nu een volgende puls start zal de temperatuurstijging ten gevolge van de vorige puls nog niet helemaal naar nul gezakt zijn, deze zal er dus bij opgeteld moeten worden. Bij de puls die daarop volgt moet dan de temperatuurstijging van de twee vorige pulsen meegeteld worden. De temperatuurstijging tijdens een puls kan dus telkens geschreven worden als een som van een stijgende functie en allemaal dalende functies ten gevolge van de voorgaande pulsen. De temperatuurstijging tussen twee pulsen is dan een som van enkel dalende functies. 
-%\footnotesize
-\begin{equation}
-\Delta T(t) = \left\{\begin{array}{l l} 
-\Delta T_1(t) & \text{ voor }0<t<t_L  \\
-\Delta T_2(t) & \text{ voor }t_L<t<F \\ 
-\Delta T_3(t) & \text{ voor }F<t<F+t_L \\
-\Delta T_4(t) & \text{ voor }F+t_L<t<2F\\
-\Delta T_5(t) & \text{ voor }2F<t<2F+t_L \\
-\ldots
-\end{array}
-\label{eq:sompuls}
-\end{equation}
-Met
-\begin{equation*} 
-\begin{array}{l}
-\Delta T_1(t)= \Delta T_s(t) \\
-\Delta T_2(t)= \Delta T_d(t-t_L) \\
-\Delta T_3(t)= \Delta T_d(t-t_L) + \Delta T_s(t-F) \\
-\Delta T_4(t)= \Delta T_d(t-t_L) + \Delta T_d(t-F-t_L)\\
-\Delta T_4(t)= \Delta T_d(t-t_L) + \Delta T_d(t-F-t_L) + \Delta T_s(t-2F)
-\end{array}
-\end{equation*}
-%\normalsize
-Waarbij $t_L$ de lengte van een puls is, $F$ de tijd tussen twee pulsen en $T_s(t)$ en $T_d(t)$ stijgende en dalende exponentiele functies zijn, respectievelijk gegeven door: 
-\begin{equation}
-\Delta T_s(t) = \frac{\tau \mu_a \phi (z,r)}{\rho c} (1-e^{-\frac{t}{\tau}})
-\end{equation}
-\begin{equation}
-\Delta T_d(t) = \frac{\tau \mu_a \phi (z,r)}{\rho c} (1-e^{-\frac{t_L}{\tau}}) e^{-\frac{t}{\tau}}
-\end{equation}
+Om de fysiologische omstandigheden in de neuronen zo goed mogelijk te benaderen, wordt vaak gebruik gemaakt van gepulste stimulatie. Tijdens een puls verwacht men een exponentiele stijging van de temperatuur zoals bij de continue stimulatie. Tussen twee pulsen zal de temperatuur exponentiel dalen, met dezelfde tijdsconstante als dat de temperatuur steeg. Bij de volgende puls zal de temperatuur opnieuw stijgen. Er moet echter rekening gehouden worden met het feit dat de temperatuurstijging ten gevolge van de vorige puls nog niet helemaal naar nul gezakt is, deze zal er dus bij opgeteld moeten worden. Bij de puls die daarop volgt moet dan de temperatuurstijging van de twee vorige pulsen meegeteld worden. De temperatuurstijging tijdens een puls kan dus telkens geschreven worden als een som van een stijgende functie en allemaal dalende functies ten gevolge van de voorgaande pulsen. De temperatuurstijging tussen twee pulsen is dan een som van enkel dalende functies. Op figuur \ref{fig:puls4} staan de pulsen getekend met telkens de bijhorende temperatuurstijging. Op figuur \ref{fig:puls} kan men een typische vorm zien, die men krijgt wanneer de contributies van de verschillende pulsen wordt opgeteld.
+
+\begin{figure}[tb]
+  	\centering
+  	\includegraphics[width=8.7cm]{gfx/puls4.png}
+  	\caption{caption }
+  	\label{fig:puls4}
+  \end{figure} 
+
 Bij de gepulste stimulatie kan er op twee manieren saturatie optreden. Enerzijds zal er, wanneer een puls lang genoeg duurt, saturatie optreden binnen in een puls, net zoals bij de continue stimulatie. Anderzijds zal na een bepaalde tijd de bijdrage van de eerste puls naar nul gezakt zijn. Bij de daarop volgende puls zal ook de bijdrage van de tweede puls niet meer relevant zijn. Vanaf dat moment zal er dus telkens een gelijk aantal dalende functies zijn die een niet-triviale bijdrage leveren, waardoor de daaropvolgende pieken telkens even hoog zullen zijn. Dit is duidelijk te zien op figuur \ref{fig:puls}. Men kan zien dat de vierde en de vijfde piek even hoog zijn, dit komt omdat de bijdrage van de eerste puls bij de vierde piek reeds naar nul gezakt is. 
 
 
