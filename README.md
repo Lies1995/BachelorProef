@@ -129,6 +129,12 @@ Hannelore
 - [ ] Foutenanalyse
 Lies
 - [x] Volume berekening
+- [ ] afbeelding FR (4 protocols) opnieuw maken
+- [ ] afbeelding dT 560nm op 3 tijdstippen
+- [ ] afbeelding dT andere protocols op 3 tijdstipen
+- [ ] afbeelding 4 protocols op tijdstip 3tau 
+- [ ] afbeeldingen dT continue+fouten
+- [ ] code + mapjes opruimen
 - [ ] iets schrijven over ChR2
 - [ ] Waarom continue en gepulste simulatie
 - [ ] Matlab code bespreking

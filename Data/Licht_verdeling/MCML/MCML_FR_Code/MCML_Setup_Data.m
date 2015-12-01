@@ -3,9 +3,9 @@
     % Change default text font size
         set(0,'DefaultAxesFontSize', 18)
     %File Path
-        LD = '/Users/LIesDeceuninck/Documents/BachelorProef/Data/Licht_verdeling';
+        LD = '/Users/LIesDeceuninck/Documents/BachelorProef/Data/Licht_verdeling/Code/Data';
         
-        HV= 'C:\Users\hannelore\Documents\2015-2016\BachelorProef2015\BachelorProef\Data\Licht_verdeling';                                  
+        HV= 'C:\Users\hannelore\Documents\2015-2016\BachelorProef2015\BachelorProef\Data\Licht_verdeling\Code\Data';                                  
 %------DATA--------
     %Wavelengths(nm)
         L = {'474';'560'}; 

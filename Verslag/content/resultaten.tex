@@ -7,12 +7,18 @@ Simulaties voor de temperatuursverandering in weefsel met de tijdsconstanten met
 \label{sub:energieverdeling}
 Het \emph{Monte-Carlo multi layer} programma geeft $\psi(r,z)$, de lichtverdeling corresponderend met een eenheid irradiantie $I=1\frac{W}{m^2}$. Om vervolgens de eigenlijke lichtverdeling $\phi(r,z)$ voor een bepaald stimulatie protocol te bekomen wordt vergelijking \ref{} gebruikt. Figuur \ref{} geeft $\phi(r,z)$ weer voor een stimulatie van laserlicht met een power van $1mW$ en voor de vier verschillende protocols waarop gefocusd wordt in dit onderzoek. 
 De contourlijn op $1\frac{mW}{mm^2}$ geeft het maximale oppervlak aan waarin opsin stimulatie kan optreden, zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}.  
-\begin{figure}[tb]%#TODO; eenheden +andere schaling
+%\onecolumn
+%\begin{wrapfigure}{r}{0.01\textwidth}
+%\begin{minipage}{\textwidth}
+\begin{figure*}[!ht]%#TODO; eenheden +andere schaling
   	\centering
-  	\includegraphics[width=10cm]{gfx/FR_P1mW.png}
+  	\includegraphics[width=\textwidth]{gfx/FR_P1mW.png}
   	\caption{Caption here}
   	\label{fig:FR}
-  \end{figure}  
+  \end{figure*}
+%\end{minipage} 
+ % \end{wrapfigure} 
+  %\twocolumn
 Een aantal dingen die onmiddellijk opvallen bij de vergelijking van de energieverdeling voor de verschillende protocols. Wanneer de twee golflengten vergeleken worden valt op dat voor $474nm$ de energie meer radiaal verspreidt wordt, terwijl bij de $560nm$ vooral in de axiale riching verdeeld wordt. Een hoge absorptie zorgt dus voor minder verspreiding in de radiale richting en meer in axiale richting. 
 
 De energieverdelingen voor de verschillende optische vezels (NA=$0.12$ en NA=$0.37$) verschillend vooral wat betreft de energieverspreiding. Bij een single-mode (NA=$0.12$) is de meeste energie geconcentreerd rond de oorsprong terwijl bij de multi-mode een meer homogene verdeling van de energie plaatsvindt. Dit is wat te verwachten was. Een kleine NA betekent een kleine verspreidings hoek waaronder het laserlicht aangevoerd wordt naar het weefsel. Alle energie wordt op een kleine plek geconcentreerd en dus het grootste deel van de energie wordt op dezelfde plek geabsorbeerd. Wanneer de energie echter vanaf het begin meer gespreid wordt aangevoerd (multi-mode) zal deze zich meer evenredig verspreiden over het oppervlak. De maximale energieconcentratie bij de SM is dus een factor $10^2$ groter. 
@@ -34,12 +40,12 @@ De resultaten voor de lichtverdeling bekomen met de Monte-Carlo simulatie werden
 Als eerste werden er kleurenplots gemaakt die de tijdsevolutie van de temperatuursverandering weergeven. De resultaten voor \'{e}\'{e}n van de protocols, namelijk $\lambda = 560nm$ en multi-mode, staan afgebeeld in figuur \ref{fig:dT_560_MM}, die voor de andere protocols kan men vinden in de bijlage (figuur \ref{fig:dT_Overig_Bijlage}). De temperatuurstijging werd telkens geplot op drie verschillende tijdstippen. Een eerste tijdstip werd gekozen vlak nadat het laserlicht op het weefsel begint te schijnen, in dit geval $t=0.001s$. Als tweede tijdstip werd telkens $t=\tau $ gekozen en als laatste tijdstip werd $t=3\tau$, dit tijdstip is de uiterste grens waarop ons model geldig is. Op dit laatste tijdstip is de temperatuur reeds gesatureerd, zodat de rechtse afbeelding telkens de finale temperatuurstijging weergeeft. Op deze afbeeldingen is duidelijk de evolutie van de temperatuursverandering zichtbaar. In het begin is de maximale temperatuurstijging lager en is de verandering minder verspreidt. Naarmate de tijd vordert wordt de maximale temperatuur groter en verspreidt de temperatuurstijging zich verder doorheen het weefsel. De fouten op deze figuren werden wel berekend, maar niet afgebeeldt omdat dat de figuren te ingewikkeld zou maken.  
 % figuur
 % label{fig:dT_560_MM}
-\begin{figure}[tb]
+\begin{figure*}[tb]
   	\centering
-  	\includegraphics[width=10cm]{gfx/dT_560_MM.png}
+  	\includegraphics[width=\textwidth]{gfx/dT_560_MM.png}
   	\caption{Caption here}
   	\label{fig:dT_560_MM}
-  \end{figure} 
+  \end{figure*} 
 \\
 Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstijging van het hersenweefsel geplot in functie van de tijd op $z=0$ en $r=0$, telkens voor de twee verschillende golflengtes. Op de grafieken werd telkens $t=\tau$ aangeduid met een stippellijn. Aangezien de tijdsconstante voor eenzelfde vezel (SM of MM) zeer weinig van elkaar verschillen (zie later) kon er per afbeelding \’{e}\’{e}n stippellijn getekend worden. Wanneer men naar de vorm van de grafieken kijkt, is te zien dat de temperatuurstijging inderdaad vrij snel zal satureren. Anderzijds is het opvallend dat de temperatuurstijging voor $560nm$ veel groter is dan voor $474nm$. Dit komt omdat de absorptie co\”effici\”ent van het weefsel een piek vertoont rond $550nm$. Rond $550nm$ zal de absorptie van fotonen door het weefsel veel groter zijn omwille van absorptie door hemoglobine. \cite{ ThermEff } Hierdoor zal de absorptie co\”effici\”ent bij $560nm$ groter zijn dan bij $474nm$ en aangezien absorptie verantwoordelijk is voor temperatuurstijging, verklaart dit de grotere temperatuursverandering bij $560nm$.
 %figuur
@@ -59,7 +65,16 @@ Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstij
   	\label{fig:dT_tijd_MM}
   \end{figure} 
 \\
+
 Zoals daarnet al werd vermeld, is er een zeer klein verschil tussen de tijdsconstanten voor eenzelfde vezel. Dit kan men zien in tabel \ref{tab:tau}. Voor verschillende golflengten is $\tau$ min of meer gelijk. De rede hiervoor is dat de waarde van de optische parameters (deze zijn afhankelijk van de golflengte) weinig invloed heeft op $\tau$. Ze heffen elkaar als het ware op. Anderzijds heeft de gebruikte vezel een zeer grote invloed op de waarde van $\tau$. De rede hiervoor is dat de tijdsconstante zeer sterk afhankelijk is van de straal van de optische vezel ($w_L$). Men kan zien dat voor de muli-mode vezel de tijdsconstanten veel groter zijn dan voor single-mode. De rede hiervoor is vrij eenvoudig intui\”tief te verklaren. Een SM vezel is smaller, waardoor alle energie zich in een klein en smal gebied bevindt. Hierdoor kan de temperatuur makkelijker en dus sneller stijgen, wat leidt tot een kleine $\tau$. Voor de MM vezel is dezelfde energie over een groter gebied verspreidt, waardoor de temperatuur trager zal stijgen. Dit geeft een grotere waarde voor de tijdsconstante. 
+ 
+\begin{figure*}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gfx/4dT.png}
+    \caption{Caption here}
+    \label{fig:4dT}
+  \end{figure*}
+
 % tabel met tau
 \begin{table}
 \centering
@@ -74,12 +89,6 @@ $560 nm$ & $2.5\pm 0.7$ & $1.2 \pm 0.4$ \\
 
 Tot slot kunnen we de kleurenplots voor de vier protocols met elkaar vergelijken. Afbeelding \ref{fig:4dT} geeft de temperatuurstijging weer voor de verschillende protocols, telkens op $3\tau$, wat de uiterste grens van de geldigheid van het model is. Men kan een aantal zaken opmerken. Ten eerste komt de vorm sterk overeen met die van de afbeeldingen voor de lichtverdeling. Dat komt omdat in een gebied met een hoge lichtverdeling de temperatuur sterk zal stijgen en in een gebied met een lage lichtverdeling, zal de temperatuur minder sterk stijgen. Ook is te zien dat de temperatuursverandering voor $560nm$ telkens groter en verder verspreid is dan voor $474nm$. Dit komt, zoals eerder al vermeld werd, door de hogere absorptie bij $560nm$. 
 
-\begin{figure}[tb]
-  	\centering
-  	\includegraphics[width=10cm]{gfx/4dT.png}
-  	\caption{Caption here}
-  	\label{fig:4dT}
-  \end{figure} 
 	
 	\subsection{Temperatuurstijging bij gepulste stimulatie}
 Met behulp van matlab werd de temperatuurstijging voor gepulste stimulatie berekend voor verschillende stimulatie protocols (zie tabel \ref{tab:Tmax}). Dit werd echter enkel gedaan voor multi-mode vezels. De rede hiervoor is dat voor single-mode vezels de limiet van geldigheid van het gebruikte model overschreden wordt. Omdat $\tau$ voor SM zo klein is (orde $10^{-2}ms$), is de pulslengte telkens veel langer dan $3\tau$, wat de grens was voor de geldigheid van het model. 
@@ -112,3 +121,4 @@ Irradiantie{[}mW/mm^2{]} & Puls lengte {[}ms{]} & Frequentie {[}Hz{]} & \multico
 5                 & 20                   & 8                   & 0.777               &1.62                    
 \end{tabular}
 \end{table}
+

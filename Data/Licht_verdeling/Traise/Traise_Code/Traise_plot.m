@@ -43,6 +43,7 @@ for i = 1: length(L);
         if ne(PL,0) == 1
         IL=PL/((pi*prop(7)^2)/2);
         end
+        IL
         phi=IL.*psi;%actual fluence rate corresponding to the used peak irradiance [W/m^2]
         
         %--------Calculation--------------
@@ -62,18 +63,22 @@ for i = 1: length(L);
             end
         end
         %--------Plot--------------
-        fig=figure(m);
-        set(fig, 'Position', [10 1000 3000 400]);
+        
+        %set(fig, 'Position', [10 1000 3000 400]);
         % plot temperature raise (color) (K)
         %------------------------------------------------------------------
        
-        subplot(1,3,1)
-      
+       % subplot(1,3,1)
+      fig=figure(m);
         imagesc(r,z,dT(:,:,k,timesToPlot(1))); c=colorbar;
-         if j==1 
-             caxis([0 0.002]);
-        elseif j==2 
-            caxis([0 0.025]);
+         if i==1 && j==1
+             caxis([0 0.001]);
+         elseif i==1 && j==2
+             caxis([0 0.012]);
+        elseif i==2 && j==1
+            caxis([0 0.002]);
+         elseif i==2 && j==2
+             caxis([0 0.025]);
          end
 
         %   hold on
@@ -98,18 +103,23 @@ for i = 1: length(L);
         
 %         %scaling
        if j==1
-           xlim([-0.5,0.5]);ylim([0,1]);
+           xlim([-0.25,0.25]);ylim([0,0.6]);
         elseif j==2
            xlim([-0.5,0.5]);ylim([0,1]);
         end
 %hold off
 %         %------------------------------------------------------------------    
-        subplot(1,3,2)
+m=m+1  ;     
+fig=figure(m);
          imagesc(r,z,dT(:,:,k,timesToPlot(2))); c=colorbar;
-          if j==1 
-             caxis([0 0.002]);
-        elseif j==2 
-            caxis([0 0.025]);
+          if i==1 && j==1
+             caxis([0 0.001]);
+         elseif i==1 && j==2
+             caxis([0 0.012]);
+        elseif i==2 && j==1
+            caxis([0 0.002]);
+         elseif i==2 && j==2
+             caxis([0 0.025]);
          end
 
 %        %hold on
@@ -130,19 +140,25 @@ for i = 1: length(L);
         c.Label.Interpreter='latex';
       
         %scaling
-       if j==1
-           xlim([-0.5,0.5]);ylim([0,1]);
+        if j==1
+           xlim([-0.25,0.25]);ylim([0,0.6]);
         elseif j==2
            xlim([-0.5,0.5]);ylim([0,1]);
         end
 %hold off
         %------------------------------------------------------------------        
-         subplot(1,3,3)
+         %subplot(1,3,3)
+         m=m+1       
+fig=figure(m);
         imagesc(r,z,dT(:,:,k,timesToPlot(3))); c=colorbar;
-         if j==1 
-             caxis([0 0.002]);
-        elseif j==2 
-            caxis([0 0.025]);
+         if i==1 && j==1
+             caxis([0 0.001]);
+         elseif i==1 && j==2
+             caxis([0 0.012]);
+        elseif i==2 && j==1
+            caxis([0 0.002]);
+         elseif i==2 && j==2
+             caxis([0 0.025]);
          end
 %          hold on
   % contour(r,z,phi,v,'color','k');
@@ -164,7 +180,7 @@ for i = 1: length(L);
         c.Label.Interpreter='latex';
         %scaling
         if j==1
-           xlim([-0.5,0.5]);ylim([0,1]);
+           xlim([-0.25,0.25]);ylim([0,0.6]);
         elseif j==2
            xlim([-0.5,0.5]);ylim([0,1]);
         end
