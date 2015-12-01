@@ -3,8 +3,8 @@ function [R_Fig,z, Data_Fig, file_name] = MCML_Data(L,NA,path,protocol_name,l)
 %   Reads the data file by using the function read_F
 %   The data file is chosen by the protocol; protocol_name and the error
 %   l=1 No error
-%   l=2 -sigma u_a, +sigma u_s --> both make volume bigger: OutputMCML+
-%   l=3 +sigma u_a, -sigma u_s --> bothe make volume smaller: OutputMCML-
+%   l=2 +sigma u_a, +sigma u_s
+%   l=3 -sigma u_a, -sigma u_s 
 %   path is the loaction of the data files
 %   Puts the data in the right configuration to use it in MCML_plot    
 
@@ -12,11 +12,11 @@ function [R_Fig,z, Data_Fig, file_name] = MCML_Data(L,NA,path,protocol_name,l)
          file_name = ['L_' num2str(L) '_NA_' num2str(NA) ] ;
         file_Frz = [fullfile(path,'OutputMCML',[protocol_name '.Frzc'])] ;
     elseif l==2
-         file_name = ['L_' num2str(L) '_NA_' num2str(NA) '-u_a']; 
-        file_Frz = [fullfile(path,'OutputMCML+',[protocol_name '.Frzc'])];
+         file_name = ['L_' num2str(L) '_NA_' num2str(NA) '+u_a+u_s']; 
+        file_Frz = [fullfile(path,'Output+',[protocol_name '.Frzc'])];
     elseif l==3
-         file_name = ['L_' num2str(L) '_NA_' num2str(NA) '+u_a']; 
-        file_Frz = [fullfile(path,'OutputMCML-',[protocol_name '.Frzc'])];
+         file_name = ['L_' num2str(L) '_NA_' num2str(NA) '-u_a-u_s']; 
+        file_Frz = [fullfile(path,'Output-',[protocol_name '.Frzc'])];
     end
     [r,z,Data] = MCML_read_F(file_Frz);               %Read data, [mm,mm,/mm^2]                            
     R_Fig = [-r(end:-1:1), r];                                  

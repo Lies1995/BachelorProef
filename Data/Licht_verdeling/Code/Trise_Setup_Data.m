@@ -5,7 +5,8 @@ close all
 %File Path
     LD =[fullfile('/Users','LIesDeceuninck', 'Documents','Bachelorproef','Data','Licht_verdeling','Code','Data')];
     HV=[fullfile('C:','Users','hannelore','Documents','2015-2016','BachelorProef2015',...
-        'Bachelorproef','Data','Licht_verdeling','Code','Data')]; 
+        'Bachelorproef','Data','Licht_verdeling','Code','Data')];
+    path=LD;
 %------DATA--------
 
 %Optical properties
@@ -25,27 +26,31 @@ close all
     du_a_minus=[-34.9, -52.5];
     du_s_plus=[3267, 3558];
     du_s_minus=[-3267, -3492];
-        
-t1=linspace(0,0.000075,50);%times to evaluate[s] for NA=12
-t2=linspace(0,0.040,50); %times to evaluate[s] for NA=37
-timesToPlot=[2 16 47];
-path=LD; %path
-PL=0.001;%Laser Power [W] (default 0)
-IL=100000;%irradiance [W/m^2] (default 1)
-v=[1000, 1000];
-%positions in tissue
-filename_R=[fullfile(path,'FR_r')];
-filename_Z=[fullfile(path,'FR_z')];
-r=csvread(filename_R);  %radial position[mm]
-z=csvread(filename_Z);  %axial position[mm]
-%tau=zeros(1,4);
-
+%Times to evaluate[s]       
+    t1=linspace(0,0.000075,50);
+    t2=linspace(0,0.040,50);
+%Time indices to plot
+    timesToPlot=[2 16 47];
+%Laser Power [W] (default 0)
+    PL=0.001;
+%Irradiance [W/m^2] (default 1)
+    IL=1;
+ %positions in tissue
+    filename_R=[fullfile(path,'FR_r')];
+    filename_Z=[fullfile(path,'FR_z')];
+    r=csvread(filename_R);  %radial position[mm]
+    z=csvread(filename_Z);  %axial position[mm]
 %-----Inistiations---
-m=1; %index for the figures
-k=1; %index for the protocols
-tau=zeros(1,length(L)*length(NA)); %time constants for each protocol
-dT=zeros( 1000, 1000 , 4,length(t1) ); %1000X1000 data points, 4 protocols, t1 times to evaluate, 
-dTplus=zeros(4,length(t1));
-dTminus=zeros(4,length(t1));
-prop=[0 0 g p c k_d 0] ;         %anisotropy factor;tissue density,
-%specific heat,thermal diffusivity
+    %Tissue properties
+    prop=[0 0 g p c k_d 0] ;%anisotropy factor;tissue density,
+                            %specific heat,thermal diffusivity
+    %Vector to store timeconstants
+    tau=zeros(1,length(L)*length(NA)); 
+    %Vector to store Temperature increases
+    dT=zeros(1000,1000,4,length(t1)); 
+    dTplus=zeros(4,length(t1));
+    dTminus=zeros(4,length(t1));
+    k=1%index for protocols
+    m=1%index for figures    
+
+

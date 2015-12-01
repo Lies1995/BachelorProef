@@ -35,21 +35,21 @@ for i = 1: length(L);
         fig=figure(k); 
         hold on
         %Colorgraph
-        imagesc(r,z,dF(:,:,1));c=colorbar; 
+        %imagesc(r,z,dF(:,:,1));c=colorbar; 
         
         %Contourlines
-        [C, h]=contour(r,z,dF(:,:,1),v,'color','w');
-        [Cplus, hpuls]=contour(r,z,dF(:,:,2),v,'--','color','w');
-        [Cminus, hminus]=contour(r,z,dF(:,:,3),v,':','color','w');
+        [C, h]=contour(r,z,dF(:,:,1),v,'color','k');
+        [Cplus, hpuls]=contour(r,z,dF(:,:,2),v,'+','color','k');
+        [Cminus, hminus]=contour(r,z,dF(:,:,3),v,'-','color','k');
         
         title({'Fluence Rate';['$\lambda=$' num2str(n_L) ', NA=' ...
             num2str(n_NA) ', Input Irradiance=' num2str(IL) ]},...
             'interpreter', 'LaTex');
         xlabel('r [mm]', 'interpreter', 'LaTex');
         ylabel('z [mm]', 'interpreter', 'LaTex');
-        c.Label.String= '$\phi(r,z)$ [$mW \cdot mm^{-2}$]';
-        c.Label.Interpreter='latex';
-        c.Label.FontSize=20;
+       % c.Label.String= '$\phi(r,z)$ [$mW \cdot mm^{-2}$]';
+        %c.Label.Interpreter='latex';
+        %c.Label.FontSize=20;
         
         xlim([-0.6 0.6])
         ylim([0 1.5])
