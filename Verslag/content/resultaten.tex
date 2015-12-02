@@ -54,7 +54,7 @@ Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstij
 \begin{figure}[h!]
   	\centering
 
-  	\includegraphics[width=8cm]{gfx/dT_tijd_SM.png}
+  	\includegraphics[width=8.5cm]{gfx/dT_tijd_SM.png}
   	\caption{Temperatuurstijging met fouten op $z=0$ en $r=0$ voor SM.}
 
   	\label{fig:dT_tijd_SM}
@@ -62,7 +62,7 @@ Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstij
 	
 	\begin{figure}[h!]
   	\centering
-  	\includegraphics[width=8.7cm]{gfx/dT_tijd_MM.png}
+  	\includegraphics[width=8.5cm]{gfx/dT_tijd_MM.png}
   	\caption{Temperatuurstijging met fouten op $z=0$ en $r=0$ voor MM.}
   	\label{fig:dT_tijd_MM}
   \end{figure} 
@@ -95,7 +95,7 @@ Tot slot kunnen we de kleurenplots voor de vier protocols met elkaar vergelijken
 	\subsection{Temperatuurstijging bij gepulste stimulatie}
 Met behulp van matlab werd de temperatuurstijging voor gepulste stimulatie berekend voor verschillende stimulatie protocols (zie tabel \ref{tab:Tmax}). Dit werd echter enkel gedaan voor multi-mode vezels. De rede hiervoor is dat voor single-mode vezels de limiet van geldigheid van het gebruikte model overschreden wordt. Omdat $\tau$ voor SM zo klein is (orde $10^{-2}ms$), is de pulslengte telkens veel langer dan $3\tau$, wat de grens was voor de geldigheid van het model. 
 
-In figuur \ref{fig:pulsplot} staat de temperatuurstijging afgebeeld voor een multi-mode vezel bij gepulste stimulatie met een frequentie van $40Hz$, een pulslengte van $0.001s$ en een irradiantie van $46mW/mm^2$. Men herkent duidelijk de kenmerkende vorm voor gepulste stimulatie (zie figuur \ref{fig:puls}). De pulslengte is hier echter zo kort ten opzichte van $\tau$ dat de stijgende exponenti\"ele functie vrijwel recht lijkt. Ook ziet men dat de temperatuur al satureert bij de tweede puls omdat de contributie van de eerste puls triviaal geworden is wanneer de derde puls start. Tot slot is te zien dat de temperatuurstijging voor $474nm$ lager is dan die voor $560nm$. De rede hiervoor is net zoals bij de continue stimulatie dat de absorptie hoger is bij $560nm.$
+In figuur \ref{fig:pulsplot} staat de temperatuurstijging afgebeeld voor een multi-mode vezel bij gepulste stimulatie met een frequentie van $40Hz$, een pulslengte van $0.001s$ en een irradiantie van $46mW/mm^2$. Er werden hier geen fouten berekend. Men herkent duidelijk de kenmerkende vorm voor gepulste stimulatie (zie figuur \ref{fig:puls}). De pulslengte is hier echter zo kort ten opzichte van $\tau$ dat de stijgende exponenti\"ele functie vrijwel recht lijkt. Ook ziet men dat de temperatuur al satureert bij de tweede puls omdat de contributie van de eerste puls triviaal geworden is wanneer de derde puls start. Tot slot is te zien dat de temperatuurstijging voor $474nm$ lager is dan die voor $560nm$. De rede hiervoor is net zoals bij de continue stimulatie dat de absorptie hoger is bij $560nm.$
 %figuur uitleggen
 %figuur toevoegen  
 \begin{figure*}[!ht]
@@ -105,7 +105,9 @@ In figuur \ref{fig:pulsplot} staat de temperatuurstijging afgebeeld voor een mul
     \label{fig:pulsplot}
   \end{figure*}  
 
-In tabel \ref{tab:Tmax} vindt men de resultaten voor de maximale temperatuurstijging voor verschillende stimulatie protocols. Hierop werden geen fouten berekend. Uit deze tabel kan men de invloed van de irradiantie, pulslengte en frequentie op $\Delta T_{max}$ afleiden. Wanneer deze stijgen, zal de maximale temperatuur ook stijgen. Dit is evident aangezien er meer fotonen in het weefsel worden gebracht en er dus ook meer fotonen geabsorbeerd kunnen worden, zodat de temperatuur meer stijgt. Bij een hoger frequentie heeft het weefsel ook minder tijd om de temperatuur terug te laten zakken, waardoor de contributies van voorgaande pulsen groter zijn. Men zien dat de gevonden maximale temperatuurstijgingen ruim onder de $0.5^{\circ}C$ blijven, wat als ondergrens wordt genomen voor mogelijke schade aan het weefsel. Binnen dit model kan dus besloten worden dat gepulste stimulatie met de gegeven protocols waarschijnlijk geen weefselschade zal opleveren. Het is echter wel mogelijk dat wanneer de fouten berekend zouden worden, de temperatuurstijging toch hoger blijkt dan $0.5^{\circ}C$. Belangrijk hierbij is op te merken dat het gebruikte model een lagere temperatuurstijging voorspelt dan er in werkelijkheid is (zie figuur \ref{fig:comparison}). De mogelijkheid bestaat dus dat met het model een temperatuurstijging berekend wordt die niet schadelijk is, maar dat de werkelijke temperatuurstijging hoger is en mogelijks wel schadelijke gevolgen heeft. 
+In tabel \ref{tab:Tmax} vindt men de resultaten voor de maximale temperatuurstijging voor verschillende stimulatie protocols. Hierop werden geen fouten berekend. Uit deze tabel kan men de invloed van de irradiantie, pulslengte en frequentie op $\Delta T_{max}$ afleiden. Wanneer deze stijgen, zal de maximale temperatuur ook stijgen. Dit is evident aangezien er meer fotonen in het weefsel worden gebracht en er dus ook meer fotonen geabsorbeerd kunnen worden, zodat de temperatuur meer stijgt. Bij een hoger frequentie heeft het weefsel ook minder tijd om de temperatuur terug te laten zakken, waardoor de contributies van voorgaande pulsen groter zijn. 
+Opnieuw is te zien dat de temperatuurstijging bij $560nm$ hoger is.
+Men zien dat de gevonden maximale temperatuurstijgingen ruim onder de $0.5^{\circ}C$ blijven, wat als ondergrens wordt genomen voor mogelijke schade aan het weefsel. Binnen dit model kan dus besloten worden dat gepulste stimulatie met de gegeven protocols waarschijnlijk geen weefselschade zal opleveren. Het is echter wel mogelijk dat wanneer de fouten berekend zouden worden, de temperatuurstijging toch hoger blijkt dan $0.5^{\circ}C$. Belangrijk hierbij is op te merken dat het gebruikte model een lagere temperatuurstijging voorspelt dan er in werkelijkheid is (zie figuur \ref{fig:comparison}). De mogelijkheid bestaat dus dat met het model een temperatuurstijging berekend wordt die niet schadelijk is, maar dat de werkelijke temperatuurstijging hoger is en mogelijks wel schadelijke gevolgen heeft. 
 	
 \begin{table*}[]
 \centering
