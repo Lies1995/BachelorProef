@@ -96,15 +96,15 @@ Met behulp van matlab werd de temperatuurstijging voor gepulste stimulatie berek
 %figuur uitleggen
 %figuur toevoegen    
 
-In tabel \ref{tab:Tmax} vindt men de resultaten voor de maximale temperatuurstijging voor verschillende stimulatie protocols. Hierop werden geen fouten berekend. Men kan zien dat de gevonden maximale temperatuurstijgingen ruim onder de $0.5^{\circ}C$ blijven, wat als ondergrens wordt genomen voor mogelijke schade aan het weefsel. Binnen dit model kan dus besloten worden dat gepulste stimulatie met de gegeven protocols waarschijnlijk geen weefselschade zal opleveren. Het is echter wel mogelijk dat wanneer de fouten berekend zouden worden, de temperatuurstijging toch hoger blijkt dan $0.5^{\circ}C$. Belangrijk hierbij is op te merken dat het gebruikte model een lagere temperatuurstijging voorspelt dan er in werkelijkheid is (zie figuur \ref{fig:comparison}). De mogelijkheid bestaat dus dat met het model een temperatuurstijging berekend wordt die niet schadelijk is, maar dat de werkelijke temperatuurstijging hoger is en mogelijks wel schadelijke gevolgen heeft. 
+In tabel \ref{tab:Tmax} vindt men de resultaten voor de maximale temperatuurstijging voor verschillende stimulatie protocols. Hierop werden geen fouten berekend. Uit deze tabel kan men de invloed van de irradiantie, pulslengte en frequentie op $\Delta T_{max}$ afleiden. Wanneer deze stijgen, zal de maximale temperatuur ook stijgen. Dit is evident aangezien er meer fotonen in het weefsel worden gebracht en er dus ook meer fotonen geabsorbeerd kunnen worden, zodat de temperatuur meer stijgt. Bij een hoger frequentie heeft het weefsel ook minder tijd om de temperatuur terug te laten zakken, waardoor de contributies van voorgaande pulsen groter zijn. Men zien dat de gevonden maximale temperatuurstijgingen ruim onder de $0.5^{\circ}C$ blijven, wat als ondergrens wordt genomen voor mogelijke schade aan het weefsel. Binnen dit model kan dus besloten worden dat gepulste stimulatie met de gegeven protocols waarschijnlijk geen weefselschade zal opleveren. Het is echter wel mogelijk dat wanneer de fouten berekend zouden worden, de temperatuurstijging toch hoger blijkt dan $0.5^{\circ}C$. Belangrijk hierbij is op te merken dat het gebruikte model een lagere temperatuurstijging voorspelt dan er in werkelijkheid is (zie figuur \ref{fig:comparison}). De mogelijkheid bestaat dus dat met het model een temperatuurstijging berekend wordt die niet schadelijk is, maar dat de werkelijke temperatuurstijging hoger is en mogelijks wel schadelijke gevolgen heeft. 
 	
-\begin{table}[]
+\begin{table*}[]
 \centering
 \caption{Maximale temperatuurstijging bij gepulste stimulatie met een MM vezel voor verschillende protocols.}
 \label{tab:Tmax}
 \begin{tabular}{l|l|l||l|l}
 \hline
-Irradiantie{[}mW/mm^2{]} & Puls lengte {[}ms{]} & Frequentie {[}Hz{]} & \multicolumn{2}{c}{Maximale $\Delta T$}{[}m^{\circ}C{]} \\
+Irradiantie{[}mW/mm^2{]} & Pulslengte {[}ms{]} & Frequentie {[}Hz{]} & \multicolumn{2}{c}{Maximale $\Delta T$}{[}m^{\circ}C{]} \\
                   &                      &                     & \lambda = 474nm     & \lambda = 560nm     \\ 
 \hline
 \hline
@@ -120,5 +120,5 @@ Irradiantie{[}mW/mm^2{]} & Puls lengte {[}ms{]} & Frequentie {[}Hz{]} & \multico
                   &                      & 45                  & 0.642               &1.34                     \\
 5                 & 20                   & 8                   & 0.777               &1.62                    
 \end{tabular}
-\end{table}
+\end{table*}
 
