@@ -40,7 +40,7 @@ De resultaten voor de lichtverdeling bekomen met de Monte-Carlo simulatie werden
 Als eerste werden er kleurenplots gemaakt die de tijdsevolutie van de temperatuursverandering weergeven. De resultaten voor \'{e}\'{e}n van de protocols, namelijk $\lambda = 560nm$ en multi-mode, staan afgebeeld in figuur \ref{fig:dT_560_MM}, die voor de andere protocols kan men vinden in de bijlage (figuur \ref{fig:dT_Overig_Bijlage}). De temperatuurstijging werd telkens geplot op drie verschillende tijdstippen. Een eerste tijdstip werd gekozen vlak nadat het laserlicht op het weefsel begint te schijnen, in dit geval $t=0.001s$. Als tweede tijdstip werd telkens $t=\tau $ gekozen en als laatste tijdstip werd $t=3\tau$, dit tijdstip is de uiterste grens waarop ons model geldig is. Op dit laatste tijdstip is de temperatuur reeds gesatureerd, zodat de rechtse afbeelding telkens de finale temperatuurstijging weergeeft. Op deze afbeeldingen is duidelijk de evolutie van de temperatuursverandering zichtbaar. In het begin is de maximale temperatuurstijging lager en is de verandering minder verspreidt. Naarmate de tijd vordert wordt de maximale temperatuur groter en verspreidt de temperatuurstijging zich verder doorheen het weefsel. De fouten op deze figuren werden wel berekend, maar niet afgebeeldt omdat dat de figuren te ingewikkeld zou maken.  
 % figuur
 % label{fig:dT_560_MM}
-\begin{figure*}[tb]
+\begin{figure*}[!ht]
   	\centering
   	\includegraphics[width=\textwidth]{gfx/dT_560_MM.png}
   	\caption{Caption here}
@@ -68,9 +68,9 @@ Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstij
 
 Zoals daarnet al werd vermeld, is er een zeer klein verschil tussen de tijdsconstanten voor eenzelfde vezel. Dit kan men zien in tabel \ref{tab:tau}. Voor verschillende golflengten is $\tau$ min of meer gelijk. De rede hiervoor is dat de waarde van de optische parameters (deze zijn afhankelijk van de golflengte) weinig invloed heeft op $\tau$. Ze heffen elkaar als het ware op. Anderzijds heeft de gebruikte vezel een zeer grote invloed op de waarde van $\tau$. De rede hiervoor is dat de tijdsconstante zeer sterk afhankelijk is van de straal van de optische vezel ($w_L$). Men kan zien dat voor de muli-mode vezel de tijdsconstanten veel groter zijn dan voor single-mode. De rede hiervoor is vrij eenvoudig intui\”tief te verklaren. Een SM vezel is smaller, waardoor alle energie zich in een klein en smal gebied bevindt. Hierdoor kan de temperatuur makkelijker en dus sneller stijgen, wat leidt tot een kleine $\tau$. Voor de MM vezel is dezelfde energie over een groter gebied verspreidt, waardoor de temperatuur trager zal stijgen. Dit geeft een grotere waarde voor de tijdsconstante. 
  
-\begin{figure*}[h!]
+\begin{figure*}[!ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{gfx/4dT.png}
+    \includegraphics[width=\textwidth]{gfx/4dT.png}
     \caption{Caption here}
     \label{fig:4dT}
   \end{figure*}
