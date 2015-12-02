@@ -126,10 +126,27 @@ Tegen Dinsdag 01/12
 Hannelore
 - [x] resultaten van gepulste stimulatie
 - [ ] aannames voor het model
-- [ ] Foutenanalyse
+- [x] Foutenanalyse
 Lies
 - [x] Volume berekening
 - [ ] iets schrijven over ChR2
 - [ ] Waarom continue en gepulste simulatie
 - [ ] Matlab code bespreking
 
+tegen Donderdag 16u
+Lies
+- [ ] alle afbeeldingen
+- [ ] Inleiding:ChR2, continue/gepulste
+- [ ] Methode: link+matlabcode
+Hannelore
+- [ ] Tau
+- [ ] Conclusie
+- [ ] Afbeeldingen in het document
+
+TODO general
+- [ ] Aannames bespreken
+- [ ] Resultaten: Gestimuleerd volume bespreken
+- [ ] Theorie: phi/psi+uitreiden
+- [ ] Consistentie verslag
+		-LED
+		-overal welk protocol
