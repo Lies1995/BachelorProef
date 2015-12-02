@@ -1,24 +1,27 @@
 \section{Inleiding} % (fold)
 \label{sec:inleiding}
 Neurowetenschap houdt zich bezig met de werking van het zenuwstelsel. Momenteel is er over de hele wereld veel onderzoek op de hersenen en begrijpt men elk jaar meer over de werking van het menselijk brein. Vaak gebruikte proefdieren voor neurologische proeven zijn apen, ratten, muizen, vissen,\ldots. In dit onderzoek specifici\"eren we ons op het rattenbrein.\\
-Om de werking van het hersenen te begrijpen is een eerste grote en noodzakelijke stap het controleren van de activiteit van de hersencellen, \emph{neuronen}.  Neuronen zijn cellen die voordurend signalen ontvangen en versturenen door ons hele lichaam. Wanneer de activiteit kan geinhibeerd worden of een neuron kan gestimuleerd worden om signalen te sturen kan de functie van die cel achterhaald worden. Bijvoorbeeld, wanneer een neuron geinhibeerd wordt tijdens een test waarbij het proefdier moet onthouden waar een beloning ligt, en hij achteraf niet meer weet waar de beloning lag, kan worden afgeleidt dat deze cel verantwoordelijk is voor ruimtelijke orientatie. Activiteit controle van de hercencellen is dus essenti\"eel in neurologisch onderzoek en er zijn dan ook heel wat technieken voor ontwikkeld.
+Om de werking van het hersenen te begrijpen is een eerste grote en noodzakelijke stap het controleren van de activiteit van de hersencellen, \emph{neuronen}.  Neuronen zijn cellen die voordurend signalen ontvangen en versturenen door ons hele lichaam. Wanneer de activiteit geinhibeerd kan worden of een neuron gestimuleerd kan worden om signalen te sturen, kan de functie van die cel achterhaald worden. Bijvoorbeeld, wanneer een neuron geinhibeerd wordt tijdens een test waarbij het proefdier moet onthouden waar een beloning ligt, en hij achteraf niet meer weet waar de beloning lag, kan worden afgeleid dat deze cel verantwoordelijk is voor ruimtelijke orientatie. 
+%Te lange zin. Mogelijke aanpassing 
+%Men kan bijvoorbeeld een bepaald neuron inhiberen tijdens een test waarbij het proefdier moet onhouden waar een beloning ligt. Als het dier achteraf niet meer weet waar de beloning lag, kan daaruit afgeleid worden dat deze cel verantwoordelijk is voor ruimtelijke ori\"entatie.
+Activiteit controle van de hercencellen is dus essenti\"eel in neurologisch onderzoek en er zijn dan ook heel wat technieken voor ontwikkeld.
 
-Een eerste mogelijkheid is elektrische stimulatie van de neuronen met electroden. Omdat de signalen tussen neuronen van elektrische aard zijn is dit een logische techniek. Een tweede mogelijkheid is het gebruik van electromagnetische straling om neuronen te activeren of inhiberen.  Hierbij worden de neuronen genitsch gemanipuleerd zodat ze lichtgevoelig worden, \emph{Optogenetica}. Helaas interageert electromagnetische straling met weefsels en kan het dus nog andere reacties induceren \footnote{zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}}.
- Een belangrijk effect is de temperatuursopwarming en dat is het onderwerp van dit onderzoek. 
+Een eerste mogelijkheid is elektrische stimulatie van de neuronen met electroden. Omdat de signalen tussen neuronen van elektrische aard zijn is dit een logische techniek. Een tweede mogelijkheid is het gebruik van electromagnetische straling om neuronen te activeren of te inhiberen.  Hierbij worden de neuronen genetisch gemanipuleerd zodat ze lichtgevoelig worden, \emph{Optogenetica}. Helaas interageert electromagnetische straling met weefsels en kan het dus nog andere reacties induceren \footnote{zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}}.
+ Een belangrijk effect is de temperatuurstijging en dat is het onderwerp van dit onderzoek. 
 
 \subsection{Optogenetica} % (fold)#TODO waarom optogenetica?
 \label{sub:optogenetica}
 Eerder werd al gezegd dat de signalen tussen neuronen van elektrische aard waren. Hoe werkt dit nu precies? 
-Neuronen hebben net zoals alle andere cellen in ons lichaam een plasmamembraan die de scheiding vormt tussen het intercellulair en extracellulair medium. Dit bestaat uit een dubbellaag van fosfolipieden en membraanprote\"inen, zie figuur \ref{fig:Opsins}. 
+Neuronen hebben net zoals alle andere cellen in ons lichaam een plasmamembraan die de scheiding vormt tussen het intercellulair en extracellulair milieu. Dit plasmamembraan bestaat uit een dubbellaag van fosfolipieden en membraanprote\"inen, zie figuur \ref{fig:Opsins}. 
 Deze laatste functioneren als doorgangskanalen voor moleculen en zijn dan ook verantwoordlijk voor de communicatie van cellen onder elkaar. Een belangrijke soort van membraanprote\"inen zijn ionenkanalen die specifiek ionen transporteren. Door dit transport ontstaat er een potentiaal over het plasmamembraan. Een cel in rust heeft een membraanpotentiaal van ongeveer $-70mV$. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=8cm]{gfx/Opsins.png}
-	\caption{Schematische weergave van een plasmamembraan met lichtgevoelige ionenkanalen of opsins (membraanprote\"inen).ChR2 is een veelgebruikt voorbeeld van een $Na^+$ kanaal en NpHR van een $Cl^-$ kanaal. De eerste werkt optimaal bij stimulatie van $470nm$ en te tweede bij $560nm$.}
+	\caption{Schematische weergave van een plasmamembraan met lichtgevoelige ionenkanalen of opsins (membraanprote\"inen).ChR2 is een veelgebruikt voorbeeld van een $Na^+$ kanaal en NpHR van een $Cl^-$ kanaal. Het eerste werkt optimaal bij stimulatie van $470nm$ en het tweede bij $560nm$.}
 	\label{fig:Opsins}
 \end{figure}
 
-Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen in de cel te transporteren. Dit gebeurt eerst traag tot een bepaalde \emph{treshold} potentiaal ($\approx 40-55mV$)bereikt wordt. 
+Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen in de cel te transporteren. Dit gebeurt eerst traag tot een bepaalde \emph{threshold} potentiaal ($\approx 40-55mV$) bereikt wordt. 
 Op dat moment openen de ionenkanalen volledig en stijgt de membraanpotentiaal exponentieel.
 \begin{figure}[h!]
 	\centering
@@ -28,13 +31,17 @@ Op dat moment openen de ionenkanalen volledig en stijgt de membraanpotentiaal ex
 	\label{fig:two}
 \end{figure}
 
-Dit neuron signaal wordt een  actie potentiaal genoemd. Belangrijk om op te merken is dat de actie potentiaal automatisch gegenereerd wordt eens de tresholdpotentiaal bereikt is. 
-Om de celactiviteit te inhiberen kan het omgekeerde gebeuren; de membraanpotentiaal naar beneden brengen door negatieve ionen de transporteren en het bereiken van de tresholdpotentiaal bemoeilijken. 
+Dit neuron signaal wordt een  actie potentiaal genoemd. Belangrijk om op te merken is dat de actie potentiaal automatisch gegenereerd wordt eens de thresholdpotentiaal bereikt is. 
+Om de celactiviteit te inhiberen kan het omgekeerde gebeuren; de membraanpotentiaal naar beneden brengen door negatieve ionen de transporteren en zo het bereiken van de tresholdpotentiaal bemoeilijken. 
 Het controleren van neuron activiteit is dus hetzelfde als het controleren van de activiteit van de ionenkanalen in de cel.
 
-Veel microorganismen zijn prachtig ge\"evolueerd naar organismen die licht kunnen oogsten. Licht gevoelige prote\"inen absorberen de de straling en gebruiken de energie om de membraanpotentialen te onderhouden of om een geschikte levensomgevingen te identificeren \cite{Opsin}. Een belangrijke soort van deze lichtgevoelige prote\"inen, \emph{Opsins}, zijn transmembrane rodopsines. Ze zorgen voor het transport van ionen over het plasmamembraan en doen dit na stimulatie met electromagnetische straling van een specifieke golflengte (zie figuur \ref{fig:Opsins}). Ook hebben ze zeer snelle kinetische eigenschappen en worden ze gecodeerd door slechts \'e\'en gen. Dat maakt ze zeer interessant voor gebruik in optogenetische experimenten. 
+Veel micro-organismen zijn prachtig ge\"evolueerd naar organismen die licht kunnen oogsten.
+% Beetje een vreemde zin misschien.
+Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de membraanpotentialen te onderhouden of om een geschikte levensomgevingen te identificeren \cite{Opsin}. Een belangrijke soort van deze lichtgevoelige prote\"inen, \emph{Opsins}, zijn transmembrane rodopsines. Ze zorgen voor het transport van ionen over het plasmamembraan en doen dit na stimulatie met electromagnetische straling van een specifieke golflengte (zie figuur \ref{fig:Opsins}). Ook hebben ze zeer snelle kinetische eigenschappen en worden ze gecodeerd door slechts \'e\'en gen. Dat maakt ze zeer interessant voor gebruik in optogenetische experimenten. 
 
-De laatste jaren is veel vooruitgang gemaakt in de genetica en kan men cellen genetisch modificeren. Dit betekent dat de opsins tot expressie gebracht kunnen worden in ge\"infecteerde cellen. Wanneer deze cellen nu met licht van de juiste golflengte bestraald worden zullen de opsins ionen transporteren en kan de activiteit van de neuronen be\"invloedt worden. Met behulp van fluorescentie technieken is precies te achterhalen welke neuronen geactiveerd of geinhibeerd zijn en kan de functie van de neuronen bestudeerd worden.
+De laatste jaren is veel vooruitgang gemaakt in de genetica en kan men cellen genetisch modificeren. Dit betekent dat de opsins tot expressie gebracht kunnen worden in ge\"infecteerde cellen. 
+%Waarom geinfecteerde cellen? 
+Wanneer deze cellen nu met licht van de juiste golflengte bestraald worden, zullen de opsins ionen transporteren en kan de activiteit van de neuronen be\"invloed worden. Met behulp van fluorescentie technieken is precies te achterhalen welke neuronen geactiveerd of geinhibeerd zijn en kan de functie van de neuronen bestudeerd worden.
 
 \subsection{De levering van straling naar het brein} % (fold)
 \label{sub:de_levering_van_straling_naar_het_brein}
@@ -45,7 +52,7 @@ Om het brein te stimuleren met elektromagnetische straling gebruikt men vaak opt
  	\caption{(a) Dwarsdoorsnede van een optische vezel (b) lengtedoorsnede van een multi-mode (MM) vezel met kern diameter $d$ (c) lengtedoorsnede van een single-mode (SM) vezel met kern diameter $d$}
  	\label{fig:OptFib}
  \end{figure} 
-De brekingsindex van een materiaal is gedefinieerd als de verhouding van de sinusssen van de hoek $\theta_1$ van inval en de brekingshoek $\theta_2$ wanneer licht vanuit het vacuum invalt.%#TODO afbeelding
+De brekingsindex van een materiaal is gedefinieerd als de verhouding van de sinusssen van de hoek $\theta_1$ van inval en de brekingshoek $\theta_2$ wanneer licht vanuit het vacu\"um invalt.%#TODO afbeelding
 $$n=\frac{\text{sin}\theta_1}{\text{sin}\theta_2}$$
 De reflectie aan het scheidingsvlak wordt beschreven door de wet van Snell.
 $$n_1\text{sin}\phi_1=n_2\text{sin}\phi_2$$
@@ -56,13 +63,17 @@ Een belangrijke eigenschap van een optische vezel is de numerieke apertuur NA.
 \begin{equation}
 	\text{NA}=n_0\cdot\text{sin}\alpha=\sqrt{n_1^2+n_2^2}
 \end{equation}
-$\alpha$ is de spreidingshoek van de uitgaande straling in vacuum/lucht (zie figuur).%#TODO
+$\alpha$ is de spreidingshoek van de uitgaande straling in vacu\"um/lucht (zie figuur). %#TODO
 Ook wordt een onderscheidt gemaakt tussen \emph{multi-mode} en \emph{single-mode} vezels (zie figuur \ref{fig:OptFib}). 
-Een vezel met een kleinere kerndiameter $d$, en bijgevolg ook kleinere numerieke apertuur NA, kan slechts \'e\'en lichtstraal of mode\footnote{lichte mode refereert naar een oplossing van de Maxwell vergelijkingen} begeleiden. De diameter is dan meestal gelijkaardig aan de golflengte van de staling. Een multi-mode vezel heeft een grotere diameter $d$ en numerieke apertuur NA zodat meerdere modes tegelijk begeleid kunnen worden. Beide vezels worden gebruikt in optogenetische experimenten. 
+Een vezel met een kleinere kerndiameter $d$ en bijgevolg ook kleinere numerieke apertuur NA, kan slechts \'e\'en lichtstraal of mode\footnote{lichte mode refereert naar een oplossing van de Maxwell vergelijkingen} begeleiden. De diameter is dan meestal gelijkaardig aan de golflengte van de staling. 
+% bedoel je met gelijkaardig, even groot of van de zelfde grote orde als? Want dan zou ik denk ik dat gebruiken. 
+Een multi-mode vezel heeft een grotere diameter $d$ en numerieke apertuur NA zodat meerdere modes tegelijk begeleid kunnen worden. Beide vezels worden gebruikt in optogenetische experimenten. 
 
 \subsection{Interactie van weefsel met straling}
 \label{sub:interactie_van_weefsel_met_elektromagnetische_straling}
-Er zijn verschillende soorten interacties van straling met weefsel die kunnen voorkomen afhankelijk van de energie, intensiteit en blootstellingsperiode van de straling. De moleculen in het weefsel absorberen de fotonen en de mogelijke effecten worden opgedeeld in vijf categorie\"en\cite{laser} (zie figuur \ref{fig:interaction}). De combinatie van zeer hoge intensiteit en korte blootstellings tijd (hoge irradiantie) zorgt voor volledige ionisatie van de moleculen, wat resulteerd in een kettingreactie en plasmavorming. Langere blootstellingstijd zorgt dan voor de mechanische effecten die samen gaan met plasmavorming zoals schokgolven, bubbel vorming,\ldots. Ze worden gegroeppeerd onder de naam fotodisruptie. Dit maakt het weefsel kapot vind dus een toepassing in de geneeskunde voor bijvoorbeeld het verwijderen van nierstenen. Bij lagere irradianties worden de elektronen ge\"exiteerd.  Foto-ablatie (zie figuur \ref{fig:interaction}) zorgt voor dissociatie van de moleculen. De electronen absorberen hoog energetische fotonen en verplaatsen van een bindende naar een niet bindende orbitaal. Elektronen van moleculen kunnen ook verplaatsen van een bindend orbitaal naar een ander bindend orbitaal (op een hoger energie niveau). Een ge\"exiteerd molecule zal andere chemische bindingen ondergaan, vaak met apoptose (geprogrammeerde celdood) tot gevolg. Deze fotochemische reacties treden op bij lage irradiantie en lange blootstellings tijd. Wanneer de moleculen de energie van de fotonen absorberen\footnote{licht absorberende moleculen noemt men chromoforen}, wordt deze omgezet in warmte via moleculaire vibraties en botsingen. 
+Er zijn verschillende soorten interacties van straling met weefsel die kunnen voorkomen afhankelijk van de energie, intensiteit en blootstellingsperiode van de straling. De moleculen in het weefsel absorberen de fotonen en de mogelijke effecten worden opgedeeld in vijf categorie\"en\cite{laser} (zie figuur \ref{fig:interaction}). De combinatie van zeer hoge intensiteit en korte blootstellings tijd (hoge irradiantie) zorgt voor volledige ionisatie van de moleculen, wat resulteert in een kettingreactie en plasmavorming. Langere blootstellingstijd zorgt dan voor de mechanische effecten die samen gaan met plasmavorming zoals schokgolven, bubbel vorming,\ldots. Ze worden gegroepeerd onder de naam fotodisruptie. Dit maakt het weefsel kapot vindt dus een toepassing in de geneeskunde voor bijvoorbeeld het verwijderen van nierstenen.
+% Hierbij wordt het weefsel kapot gemaakt en dit vindt toepassingen in de geneeskunde voor bijvoorbeeld het verwijderen van nierstelen.
+Bij lagere irradianties worden de elektronen ge\"exiteerd.  Foto-ablatie (zie figuur \ref{fig:interaction}) zorgt voor dissociatie van de moleculen. De electronen absorberen hoog energetische fotonen en verplaatsen zich van een bindende naar een niet bindende orbitaal. Elektronen van moleculen kunnen zich ook verplaatsen van een bindend orbitaal naar een ander bindend orbitaal (op een hoger energieniveau). Een ge\"exiteerd molecule zal andere chemische bindingen ondergaan, vaak met apoptose (geprogrammeerde celdood) tot gevolg. Deze fotochemische reacties treden op bij lage irradiantie en lange blootstellings tijd. Wanneer de moleculen de energie van de fotonen absorberen\footnote{licht absorberende moleculen noemt men chromoforen}, wordt deze omgezet in warmte via moleculaire vibraties en botsingen. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=8cm]{gfx/interaction.png}
@@ -70,7 +81,7 @@ Er zijn verschillende soorten interacties van straling met weefsel die kunnen vo
 	\label{fig:interaction}
 \end{figure}
 
-De drempel irradiantie nodig voor opsin activatie in optogenetische experimenten vari\"eert van opsin tot opsin, ongeveer $\geq 1 \frac{mW}{mm^2}$, en de nodige blootstellingstijd is in de milliseconde range. Uit figuur \ref{fig:interaction} blijkt dus dat bij optogenetische experimenten vooral \emph{fotothermische} effecten zullen optreden. De schade aan het weefsel hangt af van de temperatuursstijging en de duur van de opwarming. Tabel \ref{tab:tempeffect} geeft een overzicht.
+De drempel irradiantie nodig voor opsin activatie in optogenetische experimenten vari\"eert van opsin tot opsin, ongeveer $\geq 1 \frac{mW}{mm^2}$, en de nodige blootstellingstijd is in de milliseconde range. Uit figuur \ref{fig:interaction} blijkt dus dat bij optogenetische experimenten vooral \emph{fotothermische} effecten zullen optreden. De schade aan het weefsel hangt af van de temperatuursstijging en de duur van de opwarming. Tabel \ref{tab:tempeffect} geeft een overzicht van thermische effecten in weefsel.
 \begin{table}[tb]
 	\caption{Temperatuureffecten in weefsel}
 	\label{tab:tempeffect}
@@ -90,9 +101,12 @@ De drempel irradiantie nodig voor opsin activatie in optogenetische experimenten
 	\hline
 	\end{tabular}
 \end{table}
-Over vanaf wanneer er precies onomkeerbare schade optreedt is wat discussie. Sommige zeggen al vanaf $0.5^{\circ} C$, andere pas vanaf $1.5^{\circ}C$. In ieder geval denatureren prote\"inen al zeer snel, maar het lichaam is daar tot op zeker hoogte tegen beschermd. In het cytoplasma van de cel zijn er de zogenaamde \emph{Chaperonne-eiwitten}. Deze helpen bij de opvouwing van de prote\"inen en houden de prote\"inen in vorm tijdens stress situaties zoals een te hoge temperatuur. Chaperonne prote\"inen die voornamelijk de tweede functie hebben worden ookwel \emph{stress prote\"inen} of \emph{heat-shock proteins} (Hsps) genoemd\cite{Chaperons}. Vanaf echter $41^{\circ}C$ is dit mechanisme niet meer voldoende en zal permanente denaturatie optreden. Hogere temperatuursstijgingen geven aanleiding tot afbraak van het weefsel.
+Over vanaf wanneer er precies onomkeerbare schade optreedt is wat discussie.
+% Deze zin klink voor mij een beetje raar, ik zou eerder iets anders schrijven, maar ik heb daar niet echt een goede rede voor.Bijvoorbeeld
+% Er is wat discussie over vanaf wanneer er precies onomkeerbare schade optreedt.  
+Sommige zeggen al vanaf $0.5^{\circ} C$, andere pas vanaf $1.5^{\circ}C$. In ieder geval denatureren prote\"inen al zeer snel, maar het lichaam is daar tot op zeker hoogte tegen beschermd. In het cytoplasma van de cel zijn er de zogenaamde \emph{Chaperonne-eiwitten}. Deze helpen bij de opvouwing van de prote\"inen en houden de prote\"inen in vorm tijdens stress situaties zoals een te hoge temperatuur. Chaperonne prote\"inen die voornamelijk de tweede functie hebben worden ook wel \emph{stress prote\"inen} of \emph{heat-shock proteins} (Hsps) genoemd\cite{Chaperons}. Echter vanaf $41^{\circ}C$ is dit mechanisme niet meer voldoende en zal permanente denaturatie optreden. Hogere temperatuurstijgingen geven aanleiding tot afbraak van het weefsel.
 
-Het is duidelijk dat significante temperatuursstijgingen in de hersenen door elektromagnetische straling vermeden moeten worden. Daarom is het belangrijk om een duidelijk model op te stellen voor de temperatuursstijging in het weefsel en dit voor verschillende stimulatie protocols; energie, intensiteit, pulsfrequentie,\ldots van de laserbeam. 
+Het is duidelijk dat significante temperatuursstijgingen in de hersenen door elektromagnetische straling vermeden moeten worden. Daarom is het belangrijk om een duidelijk model op te stellen voor de temperatuurstijging in het weefsel en dit voor verschillende stimulatie protocols; energie, intensiteit, pulsfrequentie,\ldots van de laserbeam. 
 
 
 
