@@ -11,11 +11,12 @@ Dmus = [3267,3492];
 for i=1:2 %L
     for j=1:2 %NA
         
-Dzo=sqrt(4/(mua(i)+(1-g)*mus(i))^4*(Dmua(i))^2+(4*(1-g)^2)/(mua(i)+(1-g)*mus(i))^4*(Dmus(i))^2);
+Dzo=sqrt( 4/(mua(i)+(1-g)*mus(i))^4*(Dmua(i))^2+(4*(1-g)^2)/(mua(i)+(1-g)*mus(i))^4*(Dmus(i))^2 );
 
 zo = 2/(mua(i)+(1-g)*mus(i));
 
-Dtau =sqrt( (   (p*c*w_L(j)^2)/(k*2.4^2)*  1/(1+(w_L(j)*pi/(4.8*zo))^2)^2*2*(w_L(j)*pi/(4.8*zo))*(w_L(j)*pi/(4.8*zo^2))  )^2 +Dzo^2   )
-dtau=sqrt(8*c*pi^2*p*w_L(j)^4*zo/(k*(pi^2*w_L(j)^2+23.04*zo^2)^2))*sqrt(Dzo)
+%Dtau =sqrt( (   (p*c*w_L(j)^2)/(k*2.4^2)*  1/(1+(w_L(j)*pi/(4.8*zo))^2)^2*2*(w_L(j)*pi/(4.8*zo))*(w_L(j)*pi/(4.8*zo^2))  )^2 +Dzo^2   )
+%dtau=8*c*pi^2*p*w_L(j)^4*zo/(k*(pi^2*w_L(j)^2+23.04*zo^2))*(Dzo)
+deltatau=sqrt((8*c*pi^2*p*w_L(j)^3*zo/(k*(pi^2*w_L(j)^2+23.04*zo^2)^2))^2*Dzo^2)
     end
 end

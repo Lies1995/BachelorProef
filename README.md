@@ -126,7 +126,8 @@ Tegen Dinsdag 01/12
 Hannelore
 - [x] resultaten van gepulste stimulatie
 - [ ] aannames voor het model
-- [ ] Foutenanalyse
+- [x] Foutenanalyse
+- [ ] fout op tau
 Lies
 - [x] Volume berekening
 - [ ] iets schrijven over ChR2
