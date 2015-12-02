@@ -46,8 +46,8 @@
 %	MARGINS	
 %----------------------------------------------------------------------
 	  	  
-\RequirePackage[left=2cm,%
-right=2cm,%
+\RequirePackage[left=1.5cm,%
+right=1.5cm,%
 top=2.25cm,%
 bottom=2.25cm,%
 headheight=11pt,%
