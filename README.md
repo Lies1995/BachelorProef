@@ -127,6 +127,7 @@ Hannelore
 - [x] resultaten van gepulste stimulatie
 - [ ] aannames voor het model
 - [x] Foutenanalyse
+
 Lies
 - [x] Volume berekening
 - [ ] iets schrijven over ChR2

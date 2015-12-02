@@ -80,9 +80,9 @@ Zoals daarnet al werd vermeld, is er een zeer klein verschil tussen de tijdscons
 \centering
 \caption{Bekomen tijdsconstanten $\tau$ voor elk protocol}
 \begin{tabular}{c||c|c}
-& $\tau_{SM}$ [$10^{-2} ms$]& $\tau_{MM} [$10^{}ms$]$ \\ \hline
-$474 nm$ & $2.5\pm 0.8$ & $1.2\pm 0.4$ \\
-$560 nm$ & $2.5\pm 0.7$ & $1.2 \pm 0.4$ \\
+& $\tau_{SM}$ [$10^{-2} ms$]& $\tau_{MM} [$ms$]$ \\ \hline
+$474 nm$ & $2.517870\pm 0.000007$ & $12.414\pm 0.016$ \\
+$560 nm$ & $2.517975\pm 0.000006$ & $12.415\pm 0.014$ \\
 \end{tabular}
 \label{tab:tau}
 \end{table}
@@ -123,3 +123,26 @@ Irradiantie{[}mW/mm^2{]} & Pulslengte {[}ms{]} & Frequentie {[}Hz{]} & \multicol
 \end{table*}
 
 \subsection{Foutenanalyse}
+Het is belangrijk om bij het berekenen van de temperatuurstijging rekening te houden met de fouten op de parameters die gebruikt worden. Er moet dus een foutenanalyse gedaan worden om zo de fouten op $\Delta T$ te berekenen. De temperatuurstijging is afhankelijk van volgende parameters $\Delta T(\mu_a,\mu_s, g,\rho, c, k, w_L, \phi)$ met $\phi(\mu_a, \mu_s, g)$. Aangezien de fouten op de absorptieco\"effici\"ent $\mu_a$ en gereduceerde verstrooiingsco\"effici\"ent $\mu_s'$ zeer groot zijn (zie figuur \ref{fig:AbsEnScat}), worden de fouten op de andere parameters verwaarloosd. De fouten op $\mu_a$ en $\mu_s'$ kunnen uit deze grafiek afgelezen worden. Vervolgens kan door $g$ constant te nemen, de fout op $\mu_s'$ eenvouding omgezet worden in een fout op $\mu_s$, daar $\mu_s'=(1-g)\mu_s$. Omdat de lichtverdeling bepaald werd met een Monte-Carlo methode, kan de fout hierop niet berekend worden met behulp van de doorwerkingsregel. De doorwerkingsregel voor een grootheid $Z$, berekend uit N onafhankelijke grootheden $X_1,X_2,\ldots,X_N$ met $Z=f(X_1,X_2,\ldots,X_N)$ wordt gegeven door:
+\footnotesize
+\begin{equation}
+(\Delta Z)^2 = \left(\frac {\partial f}{\partial X_1}\right)^2(\Delta X_1)^2 +\left(\frac {\partial f}{\partial X_2}\right)^2(\Delta X_2)^2+ \cdots
+\end{equation}
+\normalsize
+De fout op de temperatuurstijging werd als volgt berekend: De twee parameters waarop fouten gekend zijn ($\mu_a$ en $\mu_s$), werden elk afzonderlijk gevarieerd binnen hun foutenmarges. Door telkens de temperatuurstijging te berekenen met $\mu_a \pm \sigma$ of $\mu_s \pm \sigma$ kon achterhaald worden wat de invloed was van elke parameter op de temperatuurstijging. Uit deze analyse bleek dat de absorptieco\"effici\"ent een zeer grote invloed had op $\Delta T$, namelijk een grotere absorptie zorgt voor een grotere temperatuurstijging en omgekeerd, een kleinere absorptie zorgt voor een kleinere temperatuurstijging. De verstrooiingsco\"effici\"ent bleek zeer weinig invloed te hebben op de grootte van de temperatuurstijging. Toch was te zien dat grotere verstrooiing zorgde voor een iets grotere temperatuurstijging en dat een kleinere verstrooiing een iets kleinere temperatuurstijging tot gevolg had. Vervolgens werd $\Delta T$ opnieuw berekend, met $\mu_a + \sigma$ en $\mu_s + \sigma$ om als bovengrens van de fout op $\Delta T$ te gebruiken en met $\mu_a - \sigma$ en $\mu_s - \sigma$ om de ondergrens van de fout op $\Delta T$ te gebruiken. De fout op de temperatuurstijging werd enkel berekend voor continue stimulatie. Aangezien gepulste stimulatie vaker gebruikt wordt, is het zeer interessant om ook hier de fouten op te berekenen. Dat werd hier echter niet gedaan. 
+
+Er werd ook een iets wiskundige methode gebruikt om de fouten te berekenen. Hierbij werd de fout op de lichtverdeling berekend met bovenvermelde methode. Vervolgens werd de fout op de temperatuurstijging berekend door gebruik te maken van de doorwerkingsregel. De resultaten hiervan staan afgebeeld in figuur \ref{}. Zoals men kan zien is de fout exponentieel afhankelijk van de tijd. Hierdoor zal $\Delta T - \sigma$ na een bepaalde tijd onder $0$ gaan. Dit is niet fysisch en daarom wordt de eerste methode geprefereerd.  
+
+De fout op $\tau$ kon met de doorwerkingsregel berekend worden: 
+\begin{equation}
+\Delta \tau = \sqrt{\left(\frac{8c\pi^2\rho w_L^4 z_0}{k(\pi^2 w_L^2+23.04 z_0^2)^2}\right)^2(\Delta z_0)^2}
+\end{equation}
+met de fout op $z_0$:
+\begin{equation}
+\begin{split}
+\Delta z_0 = &\sqrt{\left(\frac{2}{(\mu_a+(1-g)\mu_s)^2}\right)^2(\Delta \mu_a)^2}\\
+& \overline{+\left(\frac{2(1-g)}{(\mu_a +(1-g)\mu_s)^2}\right)^2(\Delta \mu_s)^2}
+\end{split}
+\end{equation}
+
+Aangezien de absorptie en gereduceerde verstrooiing de enige parameters zijn waar een significante fout op is, kan de nauwkeurigheid van $\Delta T$ verhoogt worden door de nauwkeurigheid van deze parameters te verhogen. Hiervoor zijn verdere experimentele verbeteringen nodig. 
