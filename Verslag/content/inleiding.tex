@@ -1,26 +1,29 @@
 \section{Inleiding} % (fold)
 \label{sec:inleiding}
-Neurowetenschap houdt zich bezig met de werking van het zenuwstelsel. Momenteel is er over de hele wereld veel onderzoek op de hersenen en begrijpt men elk jaar meer over de werking van het menselijk brein. Vaak gebruikte proefdieren voor neurologische proeven zijn apen, ratten, muizen, vissen,\ldots. In dit onderzoek specifici\"eren we ons op het rattenbrein.\\
-Om de werking van het hersenen te begrijpen is een eerste grote en noodzakelijke stap het controleren van de activiteit van de hersencellen, \emph{neuronen}.  Neuronen zijn cellen die voordurend signalen ontvangen en versturenen door ons hele lichaam. Wanneer de activiteit geinhibeerd kan worden of een neuron gestimuleerd kan worden om signalen te sturen, kan de functie van die cel achterhaald worden. Bijvoorbeeld, tijdens een experiment, waarbij het proefdier moet onhouden waar een beloning ligt,worden enkele neuronen geinhibeerd. Als het proefdier achteraf niet meer weet waar de beloning lag, kan daaruit afgeleid worden dat deze cel verantwoordelijk is voor ruimtelijke ori\"en
-Activiteit controle van de hercencellen is dus essenti\"eel in neurologisch onderzoek en er zijn dan ook heel wat technieken voor ontwikkeld.
+Neurowetenschap houdt zich bezig met de werking van het zenuwstelsel. Vaak gebruikte proefdieren voor neurologische proeven zijn apen, ratten, muizen, vissen,\ldots. Dit onderzoek focust op ratten hersenen (zie figuur \ref{fig:ratbrein}).\\
+Om de werking van het hersenen te begrijpen is het noodzakelijk de activiteit van de hersencellen,  
+\emph{neuronen}, te controleren.  Neuronen zijn cellen die voordurend signalen ontvangen en versturenen doorheen het hele lichaam. Wanneer de activiteit ge\"inhibeerd kan worden of een neuron artifici\"eel gestimuleerd kan worden om signalen te sturen, kan de functie van die cel achterhaald worden. Bijvoorbeeld, tijdens een experiment, waarbij het proefdier moet onhouden waar een beloning ligt, worden enkele neuronen geinhibeerd. Als het proefdier de volgende keer niet meer weet waar de beloning ligt, kan afgeleid worden dat deze neuronen verantwoordelijk zijn voor ruimtelijke ori\"entatie.
+Activiteit controle van de hercencellen is dus essenti\"eel in neurologisch onderzoek en verscheidene technieken hiervoor zijn reeds ontwikkeld.
 
-Een eerste mogelijkheid is elektrische stimulatie van de neuronen met electroden. Omdat de signalen tussen neuronen van elektrische aard zijn is dit een voor de hand liggeggende techniek. Een tweede mogelijkheid is het gebruik van electromagnetische straling om neuronen te activeren of te inhiberen.  Hierbij worden de neuronen genetisch gemanipuleerd zodat ze lichtgevoelig worden, \emph{Optogenetica}. Helaas interageert electromagnetische straling met weefsels en kan het dus nog andere reacties induceren \footnote{zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}}.
+Een eerste mogelijkheid is elektrische stimulatie van de neuronen met electroden. Omdat de signalen tussen neuronen van elektrische aard zijn is dit een voor de hand liggende techniek. Een tweede mogelijkheid is het gebruik van electromagnetische straling om neuronen te activeren of te inhiberen.  Hierbij worden de neuronen genetisch gemanipuleerd zodat ze lichtgevoelig worden, \emph{optogenetica}. Helaas interageert electromagnetische straling met weefsels en kan het dus nog andere reacties induceren \footnote{zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}}.
  Een belangrijk effect is de temperatuurstijging en dat is het onderwerp van dit onderzoek. 
 
 \subsection{Optogenetica} % (fold)#TODO waarom optogenetica?
 \label{sub:optogenetica}
-Eerder werd al gezegd dat de signalen tussen neuronen van elektrische aard waren. Hoe werkt dit nu precies? 
-Neuronen hebben net zoals alle andere cellen in ons lichaam een plasmamembraan die de scheiding vormt tussen het intercellulair en extracellulair milieu. Dit plasmamembraan bestaat uit een dubbellaag van fosfolipieden en membraanprote\"inen, zie figuur \ref{fig:Opsins}. 
-Deze laatste functioneren als doorgangskanalen voor moleculen en zijn dan ook verantwoordlijk voor de communicatie van cellen onder elkaar. Een belangrijke soort van membraanprote\"inen zijn ionenkanalen die specifiek ionen transporteren. Door dit transport ontstaat er een potentiaal over het plasmamembraan. Een cel in rust heeft een membraanpotentiaal van ongeveer $-70mV$. 
+Neuronen hebben net zoals alle andere cellen in ons lichaam een plasmamembraan die de scheiding vormt tussen het intercellulair en extracellulair milieu. Dit plasmamembraan bestaat uit een dubbellaag van fosfolipiden en membraanprote\"inen, zie figuur \ref{fig:Opsins}. 
+Deze laatste functioneren als doorgangskanalen voor moleculen en zijn dan ook verantwoordelijk voor de communicatie van cellen onder elkaar. Een belangrijke soort membraanprote\"inen zijn ionenkanalen. Door het transport van ionen ontstaat er een potentiaal over het plasmamembraan. Een cel in rust heeft een membraanpotentiaal van ongeveer $-70mV$. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=8cm]{gfx/Opsins.png}
-	\caption{Schematische weergave van een plasmamembraan met lichtgevoelige ionenkanalen of opsins (membraanprote\"inen).ChR2 is een veelgebruikt voorbeeld van een $Na^+$ kanaal en NpHR van een $Cl^-$ kanaal. Het eerste werkt optimaal bij stimulatie van $470nm$ en het tweede bij $560nm$.}
+	\caption{Schematische weergave van een plasmamembraan met lichtgevoelige ionenkanalen of opsins (membraanprote\"inen). ChR2 is een veelgebruikt voorbeeld van een $Na^+$ kanaal en NpHR van een $Cl^-$ kanaal. Het eerste werkt optimaal bij stimulatie van $470nm$ en het tweede bij $560nm$.}
 	\label{fig:Opsins}
 \end{figure}
 
-Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen in de cel te transporteren. Dit gebeurt eerst traag tot een bepaalde \emph{threshold} potentiaal ($\approx 40-55mV$) bereikt wordt. 
-Op dat moment openen de ionenkanalen volledig en stijgt de membraanpotentiaal exponentieel.
+Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen van buiten de cel naar binnen in de cel te transporteren. Enkele ionenkanalen openen en gelijkdelijk aan stijgt de membraanpotentiaal. Op het moment dat een drempel potentiaal ($\approx 40-55mV$)  bereikt wordt openen de ionenkanalen volledig en stijgt de membraanpotentiaal exponentieel.
+Dit neuron signaal wordt een  actie potentiaal genoemd (zie figuur \ref{fig:ratbrein}). Belangrijk om op te merken is dat de actie potentiaal automatisch gegenereerd wordt eens de drempel potentiaal bereikt is (\emph{all or nothing principle}). 
+De celactiviteit inhiberen gebeurt alsvolgt. Een natuurlijk signaal zorgt voor een stijging tot aan de drempel potentiaal. Vervolgens wordt automatisch wordt een actie potentiaal gegenereerd. Wanneer nu de rust membraanpotentiaal verlaagd wordt, door transport van negatieve ionen, is een natuurlijk signaal niet meer voldoende om tot aan de drempel potentiaal te geraken. Bijgevolg wordt geen actie potentiaal gegenereerd en is de activiteit van de neuron ge\"inhibeerd. 
+Het controleren van neuron activiteit is dus hetzelfde als het controleren van de activiteit van de ionenkanalen in de cel.
+
 \begin{figure}[h!]
 	\centering
 			\includegraphics[width=9cm]{gfx/ratbrein.png}
@@ -29,17 +32,18 @@ Op dat moment openen de ionenkanalen volledig en stijgt de membraanpotentiaal ex
 	\label{fig:two}
 \end{figure}
 
-Dit neuron signaal wordt een  actie potentiaal genoemd. Belangrijk om op te merken is dat de actie potentiaal automatisch gegenereerd wordt eens de thresholdpotentiaal bereikt is. 
-Om de celactiviteit te inhiberen kan het omgekeerde gebeuren; de membraanpotentiaal naar beneden brengen door negatieve ionen de transporteren en zo het bereiken van de tresholdpotentiaal bemoeilijken. 
-Het controleren van neuron activiteit is dus hetzelfde als het controleren van de activiteit van de ionenkanalen in de cel.
+Enkele micro-organismen zijn prachtig ge\"evolueerd naar organismen die licht kunnen gebruiken als energiebron.
+Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de membraanpotentialen te onderhouden of om een geschikte levensomgevingen te identificeren \cite{Opsin}. Een belangrijke soort van deze lichtgevoelige prote\"inen, \emph{opsins}, zijn transmembrane rodopsines. Ze zorgen voor het transport van ionen over het plasmamembraan en doen dit na stimulatie met electromagnetische straling van een specifieke golflengte (zie figuur \ref{fig:Opsins}). Ook hebben ze zeer snelle kinetische eigenschappen en worden ze gecodeerd door slechts \'e\'en gen. Dat maakt ze zeer interessant voor gebruik in optogenetische experimenten. 
 
-Veel micro-organismen zijn prachtig ge\"evolueerd naar organismen die licht kunnen oogsten.
-% Beetje een vreemde zin misschien.
-Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de membraanpotentialen te onderhouden of om een geschikte levensomgevingen te identificeren \cite{Opsin}. Een belangrijke soort van deze lichtgevoelige prote\"inen, \emph{Opsins}, zijn transmembrane rodopsines. Ze zorgen voor het transport van ionen over het plasmamembraan en doen dit na stimulatie met electromagnetische straling van een specifieke golflengte (zie figuur \ref{fig:Opsins}). Ook hebben ze zeer snelle kinetische eigenschappen en worden ze gecodeerd door slechts \'e\'en gen. Dat maakt ze zeer interessant voor gebruik in optogenetische experimenten. 
-
-De laatste jaren is veel vooruitgang gemaakt in de genetica en kan men cellen genetisch modificeren. Dit betekent dat de opsins tot expressie gebracht kunnen worden in ge\"infecteerde cellen. 
-%Waarom geinfecteerde cellen? 
-Wanneer deze cellen nu met licht van de juiste golflengte bestraald worden, zullen de opsins ionen transporteren en kan de activiteit van de neuronen be\"invloed worden. Met behulp van fluorescentie technieken is precies te achterhalen welke neuronen geactiveerd of geinhibeerd zijn en kan de functie van de neuronen bestudeerd worden.
+Door genetische modificatie kunnen opsins tot expressie gebracht worden in de neuronen. De cellen worden ge\"infecteerd met onschadelijke virussen (vectors) die het gen, dat codeert voor het gewenste prote\"ine, bevatten. 
+Wanneer deze cellen vervolgens met licht van de juiste golflengte bestraald worden, zullen de opsins ionen transporteren en kan de activiteit van de neuronen be\"invloed worden. Vaak wordt aan het prote\"ine een fluorescent molecule toegevoegd. Hierdoor kan precies nagegaan worden welke cellen het prote\"ine tot expressie gebracht hebben. De activiteit van deze neuronen is nu controleerbaar en hun functie kan bestudeerd worden. 
+In figuur is twee keer een opname van rat hersenen en een vergroting op \'e\'en neuron te zien. Op de linker figuur heeft de cel een activatie opsin (\emph{ChR2}, Channelrodopsine) tot expressie gebracht. De grafiek eronder toont dat met de juiste stimulatie de neuron verschillende actie potentialen genereerd. De rechter afbeelding toont een neuron die \emph{eArchT3.0}, een inhibitie opsin, tot expressie bracht. De opname van de activiteit na stimulatie met een golflengte van $560nm$ toont de werking van het prote\"ine \cite{Nerf}.
+\begin{figure*}[tb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{gfx/act_inh.png}
+	\caption{Opnames van rat hersenen. Links een cel met ChR2 (activatie) en recht een cel met eArchT3.0 (inhibitie). Eronder een opname van de activiteit na stimulatie met juiste golflengte.}
+	\label{fig:act_inh}
+\end{figure*}
 
 \subsection{De levering van straling naar het brein} % (fold)
 \label{sub:de_levering_van_straling_naar_het_brein}
