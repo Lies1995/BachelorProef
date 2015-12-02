@@ -5,7 +5,7 @@
 Simulaties voor de temperatuursverandering in weefsel met de tijdsconstanten methode worden uitgevoerd voor de hippocampus regio in het rat brein. Er wordt gefocusd op protocols voor golflengten $474nm$ en $560nm$ en voor zowel een single-mode ($d=0.009nm$, NA=$0.12$)als multi-mode ($d=0.300nm$, NA=$0.37$) optische vezel. Deze twee golflengte omdat een veel gebruikt opsin $ChR2$ optimaal werkt bij een golflengt $\approx 470nm$ en er een hoge piek is bij de absorptieco\"effici\"ent voor een golflengte vaan $560nm$. Dit is ideaal om de invloed van de absorptie op de temperatuursverandering na te gaan.  
 \subsection{Energieverdeling} % (fold)
 \label{sub:energieverdeling}
-Het \emph{Monte-Carlo multi layer} programma geeft $\psi(r,z)$, de lichtverdeling corresponderend met een eenheid irradiantie $I=1\frac{W}{m^2}$. Om vervolgens de eigenlijke lichtverdeling $\phi(r,z)$ voor een bepaald stimulatie protocol te bekomen wordt vergelijking \ref{} gebruikt. Figuur \ref{} geeft $\phi(r,z)$ weer voor een stimulatie van laserlicht met een power van $1mW$ en voor de vier verschillende protocols waarop gefocusd wordt in dit onderzoek. 
+Het \emph{Monte-Carlo multi layer} programma geeft $\psi(r,z)$, de lichtverdeling corresponderend met een eenheid irradiantie $I=1\frac{W}{m^2}$. Om vervolgens de eigenlijke lichtverdeling $\phi(r,z)$ voor een bepaald stimulatie protocol te bekomen wordt vergelijking \ref{} gebruikt. Figuur \ref{fig:FR} geeft $\phi(r,z)$ weer voor een stimulatie van laserlicht met een power van $1mW$ en voor de vier verschillende protocols waarop gefocusd wordt in dit onderzoek. 
 De contourlijn op $1\frac{mW}{mm^2}$ geeft het maximale oppervlak aan waarin opsin stimulatie kan optreden, zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}.  
 %\onecolumn
 %\begin{wrapfigure}{r}{0.01\textwidth}
@@ -13,19 +13,19 @@ De contourlijn op $1\frac{mW}{mm^2}$ geeft het maximale oppervlak aan waarin ops
 \begin{figure*}[!ht]%#TODO; eenheden +andere schaling
   	\centering
   	\includegraphics[width=\textwidth]{gfx/FR_P1mW.png}
-  	\caption{Caption here}
+  	\caption{Lichtverdeling voor een vermogen van $1mW$ voor de 4 verschillende protocols. De volle contourlijn ligt op $1\frac{mW}{mm^2}$. De stippelijn en streepjeslijn tonen dezelfde contour, maar dan voor $\phi \pm \sigma$ (zie paragraaf \ref{subsec:fout}). }
   	\label{fig:FR}
   \end{figure*}
 %\end{minipage} 
  % \end{wrapfigure} 
   %\twocolumn
-Een aantal dingen die onmiddellijk opvallen bij de vergelijking van de energieverdeling voor de verschillende protocols. Wanneer de twee golflengten vergeleken worden valt op dat voor $474nm$ de energie meer radiaal verspreidt wordt, terwijl bij de $560nm$ vooral in de axiale riching verdeeld wordt. Een hoge absorptie zorgt dus voor minder verspreiding in de radiale richting en meer in axiale richting. 
+Er zijn een aantal dingen die onmiddellijk opvallen bij de vergelijking van de energieverdeling voor de verschillende protocols. Wanneer de twee golflengten vergeleken worden valt op dat voor $474nm$ de energie meer radiaal verspreidt wordt, terwijl bij de $560nm$ vooral in de axiale riching verdeeld wordt. Een hoge absorptie zorgt dus voor minder verspreiding in de radiale richting en meer in axiale richting. 
 
-De energieverdelingen voor de verschillende optische vezels (NA=$0.12$ en NA=$0.37$) verschillend vooral wat betreft de energieverspreiding. Bij een single-mode (NA=$0.12$) is de meeste energie geconcentreerd rond de oorsprong terwijl bij de multi-mode een meer homogene verdeling van de energie plaatsvindt. Dit is wat te verwachten was. Een kleine NA betekent een kleine verspreidings hoek waaronder het laserlicht aangevoerd wordt naar het weefsel. Alle energie wordt op een kleine plek geconcentreerd en dus het grootste deel van de energie wordt op dezelfde plek geabsorbeerd. Wanneer de energie echter vanaf het begin meer gespreid wordt aangevoerd (multi-mode) zal deze zich meer evenredig verspreiden over het oppervlak. De maximale energieconcentratie bij de SM is dus een factor $10^2$ groter. 
+De energieverdelingen voor de verschillende optische vezels (NA=$0.12$ en NA=$0.37$) verschillen vooral wat betreft de energieverspreiding. Bij een single-mode (NA=$0.12$) is de meeste energie geconcentreerd rond de oorsprong, terwijl bij de multi-mode een meer homogene verdeling van de energie plaatsvindt. Dit is wat te verwachten was. Een kleine NA betekent een kleine verspreidingshoek waaronder het laserlicht aangevoerd wordt naar het weefsel. Alle energie wordt op een kleine plek geconcentreerd en dus het grootste deel van de energie wordt op dezelfde plek geabsorbeerd. Wanneer de energie echter vanaf het begin meer gespreid wordt aangevoerd (multi-mode) zal deze zich meer evenredig verspreiden over het oppervlak. De maximale energieconcentratie bij de SM is dus een factor $10^2$ groter. 
 
 Er is een poging ondernomen om de resolutie van de afbeeldingen van $\phi(r,z)$ te verbeteren. Vooral bij de simulaties voor de SM zou dit nuttig zijn. Als invoer in het MCML-programma moet je naast de thermische en weefsel eigenschappen ook het aantal afgevuurde fotonen en het gebied specifici\"eren. Het gebied waarin de fotonen mogen wandelen is een rooster met allemaal roosterpunten. Het aantal moet dus gespecifici\"eerd worden en de roosterafstand. 
 Een eerste mogelijkheid is het verhogen van het aantal afgevuurde fotonen. Dit vraagt echter veel rekenvermogen, dus gepast technologisch materiaal is hiervoor vereist.
-Een tweede mogelijkheid is een zelfde aantal fotonen afvuren maar het gebied verkleinen, dus de roosterafstand verkleinen. Echter moet opgepast worden dat het gebied niet te klein is, de fotonen mogen niet in de buurt van de rand komen omdat daar geen rekening mee is gehouden in de code. Dit is een aantal keer geprobeerd maar er trad elke een probleem op met de schaling. Het gebied in een richting (axiaal of radiaal) is gelijk aan het aantal roosterpunten vermenigvuldigd met de roosterafstand. De eersta schaling was $1000$ roosterpunten in de axiale richting en $500$ in de radiale. De roosterafstand was twee keer $10^-4 cm$. De afmetingen van het gebied waarin de lichtverdeling gesimuleerd moet worden is: $0.1cmx0.05cm$. Echter krijgen we uit de data van het programma afmetingen van $1cmxO.5cm$. Wanneer nu de rooster afstand gehalveerd word, waren de afmetingen wel wat verwacht was, namelijk $0.5cmx0.25cm$. Het eigenaardige is vooral dat er twee keer exact dezelfde code wordt gebruikt, zowel het MCML simulatie programma als de matlab code die de data-files inleest, omzet en grafisch weergeeft. Dit is een probleem waar niet onmiddellijk een oplosing voor gevonden kon worden omdat de code voor het MCML programma niet beschikbaar is. De simulaties zijn verschillende keren herhaald met steed hetzelfde eigenaardige resultaat. Echter wordt niet uitgesloten dat het eventueel toch ergens een menselijke fout is in de inleescode. Indien betere resolutie van de lichtverdeling noodzakelijk is dit iets wat de moeite waard is om na te kijken. 
+Een tweede mogelijkheid is een zelfde aantal fotonen afvuren maar het gebied verkleinen, dus de roosterafstand verkleinen. Echter moet opgepast worden dat het gebied niet te klein is, de fotonen mogen niet in de buurt van de rand komen omdat daar geen rekening mee is gehouden in de code. Dit is een aantal keer geprobeerd maar er trad elke een probleem op met de schaling. Het gebied in een richting (axiaal of radiaal) is gelijk aan het aantal roosterpunten vermenigvuldigd met de roosterafstand. De eersta schaling was $1000$ roosterpunten in de axiale richting en $500$ in de radiale. De roosterafstand was twee keer $10^-4 cm$. De afmetingen van het gebied waarin de lichtverdeling gesimuleerd moet worden is: $0.1cm$ x $0.05cm$. Echter krijgen we uit de data van het programma afmetingen van $1cm$ x $O.5cm$. Wanneer nu de rooster afstand gehalveerd word, waren de afmetingen wel wat verwacht was, namelijk $0.5cm$ x $0.25cm$. Het eigenaardige is vooral dat er twee keer exact dezelfde code wordt gebruikt, zowel het MCML simulatie programma als de matlab code die de data-files inleest, omzet en grafisch weergeeft. Dit is een probleem waar niet onmiddellijk een oplosing voor gevonden kon worden omdat de code voor het MCML programma niet beschikbaar is. De simulaties zijn verschillende keren herhaald met steed hetzelfde eigenaardige resultaat. Echter wordt niet uitgesloten dat het eventueel toch ergens een menselijke fout is in de inleescode. Indien betere resolutie van de lichtverdeling noodzakelijk is dit iets wat de moeite waard is om na te kijken. 
 Verder is er ook een typfout bij de eenheden in de resulterende data file gevonden. Bij het omzetten van de fotonendistributie naar een fysische grootheid zijn er verschillende mogelijkheden. 
 \begin{itemize}
 	\item .Frzc, Fluence rate [$W\cdot cm^-2$]
@@ -43,7 +43,7 @@ Als eerste werden er kleurenplots gemaakt die de tijdsevolutie van de temperatuu
 \begin{figure*}[!ht]
   	\centering
   	\includegraphics[width=\textwidth]{gfx/dT_560_MM.png}
-  	\caption{Caption here}
+  	\caption{Temperatuurstijging voor continue stimulatie bij $\lambda =560nm$ en MM op 3 verschillende tijdstippen.}
   	\label{fig:dT_560_MM}
   \end{figure*} 
 \\
@@ -53,15 +53,15 @@ Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstij
 %label{fig:dT_tijd_MM}
 \begin{figure}[tb]
   	\centering
-  	\includegraphics[width=10cm]{gfx/dT_tijd_SM.png}
-  	\caption{Caption here}
+  	\includegraphics[width=8cm]{gfx/dT_tijd_SM.png}
+  	\caption{Temperatuurstijging met fouten op $z=0$ en $r=0$ voor SM.}
   	\label{fig:dT_tijd_SM}
   \end{figure} 
 	
 	\begin{figure}[tb]
   	\centering
-  	\includegraphics[width=10cm]{gfx/dT_tijd_MM.png}
-  	\caption{Caption here}
+  	\includegraphics[width=8.7cm]{gfx/dT_tijd_MM.png}
+  	\caption{Temperatuurstijging met fouten op $z=0$ en $r=0$ voor MM.}
   	\label{fig:dT_tijd_MM}
   \end{figure} 
 \\
@@ -71,14 +71,14 @@ Zoals daarnet al werd vermeld, is er een zeer klein verschil tussen de tijdscons
 \begin{figure*}[!ht]
     \centering
     \includegraphics[width=\textwidth]{gfx/4dT.png}
-    \caption{Caption here}
+    \caption{Temperatuurstijging voor de 4 protocols om $t=3\tau$.}
     \label{fig:4dT}
   \end{figure*}
 
 % tabel met tau
 \begin{table}
 \centering
-\caption{Bekomen tijdsconstanten $\tau$ voor elk protocol}
+\caption{Bekomen tijdsconstanten $\tau$ voor elk protocol.}
 \begin{tabular}{c||c|c}
 & $\tau_{SM}$ [$10^{-2} ms$]& $\tau_{MM} [$ms$]$ \\ \hline
 $474 nm$ & $2.517870\pm 0.000007$ & $12.414\pm 0.016$ \\
@@ -93,8 +93,15 @@ Tot slot kunnen we de kleurenplots voor de vier protocols met elkaar vergelijken
 	\subsection{Temperatuurstijging bij gepulste stimulatie}
 Met behulp van matlab werd de temperatuurstijging voor gepulste stimulatie berekend voor verschillende stimulatie protocols (zie tabel \ref{tab:Tmax}). Dit werd echter enkel gedaan voor multi-mode vezels. De rede hiervoor is dat voor single-mode vezels de limiet van geldigheid van het gebruikte model overschreden wordt. Omdat $\tau$ voor SM zo klein is (orde $10^{-2}ms$), is de pulslengte telkens veel langer dan $3\tau$, wat de grens was voor de geldigheid van het model. 
 
+In figuur \ref{fig:pulsplot} staat de temperatuurstijging afgebeeld voor een multi-mode vezel bij gepulste stimulatie met een frequentie van $40Hz$, een pulslengte van $0.001s$ en een irradiantie van $46mW/mm^2$. Men herkent duidelijk de kenmerkende vorm voor gepulste stimulatie (zie figuur \ref{fig:puls}). De pulslengte is hier echter zo kort ten opzichte van $\tau$ dat de stijgende exponenti\"ele functie vrijwel recht lijkt. Ook ziet men dat de temperatuur al satureert bij de tweede puls omdat de contributie van de eerste puls triviaal geworden is wanneer de derde puls start. Tot slot is te zien dat de temperatuurstijging voor $474nm$ lager is dan die voor $560nm$. De rede hiervoor is net zoals bij de continue stimulatie dat de absorptie hoger is bij $560nm.$
 %figuur uitleggen
-%figuur toevoegen    
+%figuur toevoegen  
+\begin{figure*}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/pulsplot.png}
+    \caption{Temperatuurstijging voor gepulste stimulatie met een frequentie van $40Hz$, een pulslengte van $0.001s$ en een irradiantie van $46mW/mm^2$ op $z=0$ en $r=0$ voor een MM vezel.}
+    \label{fig:pulsplot}
+  \end{figure*}  
 
 In tabel \ref{tab:Tmax} vindt men de resultaten voor de maximale temperatuurstijging voor verschillende stimulatie protocols. Hierop werden geen fouten berekend. Uit deze tabel kan men de invloed van de irradiantie, pulslengte en frequentie op $\Delta T_{max}$ afleiden. Wanneer deze stijgen, zal de maximale temperatuur ook stijgen. Dit is evident aangezien er meer fotonen in het weefsel worden gebracht en er dus ook meer fotonen geabsorbeerd kunnen worden, zodat de temperatuur meer stijgt. Bij een hoger frequentie heeft het weefsel ook minder tijd om de temperatuur terug te laten zakken, waardoor de contributies van voorgaande pulsen groter zijn. Men zien dat de gevonden maximale temperatuurstijgingen ruim onder de $0.5^{\circ}C$ blijven, wat als ondergrens wordt genomen voor mogelijke schade aan het weefsel. Binnen dit model kan dus besloten worden dat gepulste stimulatie met de gegeven protocols waarschijnlijk geen weefselschade zal opleveren. Het is echter wel mogelijk dat wanneer de fouten berekend zouden worden, de temperatuurstijging toch hoger blijkt dan $0.5^{\circ}C$. Belangrijk hierbij is op te merken dat het gebruikte model een lagere temperatuurstijging voorspelt dan er in werkelijkheid is (zie figuur \ref{fig:comparison}). De mogelijkheid bestaat dus dat met het model een temperatuurstijging berekend wordt die niet schadelijk is, maar dat de werkelijke temperatuurstijging hoger is en mogelijks wel schadelijke gevolgen heeft. 
 	
@@ -123,6 +130,7 @@ Irradiantie{[}mW/mm^2{]} & Pulslengte {[}ms{]} & Frequentie {[}Hz{]} & \multicol
 \end{table*}
 
 \subsection{Foutenanalyse}
+\label{subsec:fout}
 Het is belangrijk om bij het berekenen van de temperatuurstijging rekening te houden met de fouten op de parameters die gebruikt worden. Er moet dus een foutenanalyse gedaan worden om zo de fouten op $\Delta T$ te berekenen. De temperatuurstijging is afhankelijk van volgende parameters $\Delta T(\mu_a,\mu_s, g,\rho, c, k, w_L, \phi)$ met $\phi(\mu_a, \mu_s, g)$. Aangezien de fouten op de absorptieco\"effici\"ent $\mu_a$ en gereduceerde verstrooiingsco\"effici\"ent $\mu_s'$ zeer groot zijn (zie figuur \ref{fig:AbsEnScat}), worden de fouten op de andere parameters verwaarloosd. De fouten op $\mu_a$ en $\mu_s'$ kunnen uit deze grafiek afgelezen worden. Vervolgens kan door $g$ constant te nemen, de fout op $\mu_s'$ eenvouding omgezet worden in een fout op $\mu_s$, daar $\mu_s'=(1-g)\mu_s$. Omdat de lichtverdeling bepaald werd met een Monte-Carlo methode, kan de fout hierop niet berekend worden met behulp van de doorwerkingsregel. De doorwerkingsregel voor een grootheid $Z$, berekend uit N onafhankelijke grootheden $X_1,X_2,\ldots,X_N$ met $Z=f(X_1,X_2,\ldots,X_N)$ wordt gegeven door:
 \footnotesize
 \begin{equation}
