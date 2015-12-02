@@ -35,21 +35,21 @@ for i = 1: length(L);
         fig=figure(k); 
         hold on
         %Colorgraph
-        %imagesc(r,z,dF(:,:,1));c=colorbar; 
+        imagesc(r,z,dF(:,:,1));c=colorbar; 
         
         %Contourlines
-        [C, h]=contour(r,z,dF(:,:,1),v,'color',hex2rgb('352A86'));
-        [Cplus, hpuls]=contour(r,z,dF(:,:,2),v,'color',hex2rgb('4dbc92'));
-        [Cminus, hminus]=contour(r,z,dF(:,:,3),v,'color',hex2rgb('f1b94a'));
+        [C, h]=contour(r,z,dF(:,:,1),v,'color','w');
+        [Cplus, hpuls]=contour(r,z,dF(:,:,2),v,'--','color','w');
+        [Cminus, hminus]=contour(r,z,dF(:,:,3),v,':','color','w');
         
         title({'Fluence Rate';['$\lambda=$' num2str(n_L) ', NA=' ...
             num2str(n_NA) ', Input Irradiance=' num2str(IL) ]},...
             'interpreter', 'LaTex');
         xlabel('r [mm]', 'interpreter', 'LaTex');
         ylabel('z [mm]', 'interpreter', 'LaTex');
-       % c.Label.String= '$\phi(r,z)$ [$mW \cdot mm^{-2}$]';
-        %c.Label.Interpreter='latex';
-        %c.Label.FontSize=20;
+        c.Label.String= '$\phi(r,z)$ [$mW \cdot mm^{-2}$]';
+        c.Label.Interpreter='latex';
+        c.Label.FontSize=20;
         
         xlim([-0.6 0.6])
         ylim([0 1.5])
@@ -68,7 +68,8 @@ for i = 1: length(L);
         elseif j==2
             [y_0,Iy_0]=max(C(2,2:length(C(1,:))));
             [y_0plus,Iy_0plus]=max(Cplus(2,2:length(Cplus(1,:))));
-            [y_0minus,Iy_0minus]=max(Cminus(2,2:length(Cminus(1,:))));
+            s=find(Cminus(1,:)==1,2)
+            [y_0minus,Iy_0minus]=max(Cminus(2,2:s(length(s))-1));
         end
         %Rotate the graph 90degrees
         x=C(2,2:Iy_0);
