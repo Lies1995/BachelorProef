@@ -1,20 +1,9 @@
 \section{Methode} % (fold)
 \label{sec:methode}
    \begin{figure*}[h!]
-	\centering
-		\begin{subfigure}[b]{.5\textwidth}
-			\centering
-			\includegraphics[width=7cm]{gfx/Absorp.png}
-			\caption{Caption here}
-			\label{fig:abs}
-		\end{subfigure}
-		\begin{subfigure}[b]{.5\textwidth}
-			\centering
-			\includegraphics[width=7cm]{gfx/Scat.png}
-			\caption{Caption here}
-			\label{fig:scat}
-		\end{subfigure}%
-	\caption{}
+		\centering
+		\includegraphics[width=\textwidth]{gfx/Scat.png}
+		\caption{Caption here}
 	\label{fig:AbsEnScat}
 \end{figure*} 
  
@@ -50,7 +39,7 @@ Een programma geschreven door Ph. D studenten van de universiteit van Texas \emp
 Om de temperatuursveranderingen te moddelleren volgens de benaderende oplossing besproken in paragraaf \ref{sec:theoretische_achtergrond} werd een matlab code geschreven, zowel voor de continue als voor de gepulste stimulatie protocols, zie hiervoor de bijlage. 
 %#TODO: code toelichten, afhankelijk van hoevel we al hebben
 %STUK OVER GEPULSTE STIMULATIE
-%\footnotesize
+\footnotesize
 \begin{equation}
 \Delta T(t) = \left\{\begin{array}{l l} 
 \Delta T_1(t) & \text{ voor }0<t<t_L  \\
@@ -69,10 +58,10 @@ Met
 \Delta T_2(t)= \Delta T_d(t-t_L) \\
 \Delta T_3(t)= \Delta T_d(t-t_L) + \Delta T_s(t-F) \\
 \Delta T_4(t)= \Delta T_d(t-t_L) + \Delta T_d(t-F-t_L)\\
-\Delta T_4(t)= \Delta T_d(t-t_L) + \Delta T_d(t-F-t_L) + \Delta T_s(t-2F)
+\Delta T_5(t)= \Delta T_d(t-t_L) + \Delta T_d(t-F-t_L) + \Delta T_s(t-2F)
 \end{array}
 \end{equation*}
-%\normalsize
+\normalsize
 Waarbij $t_L$ de lengte van een puls is, $F$ de tijd tussen twee pulsen en $T_s(t)$ en $T_d(t)$ stijgende en dalende exponentiele functies zijn, respectievelijk gegeven door: 
 \begin{equation}
 \Delta T_s(t) = \frac{\tau \mu_a \phi (z,r)}{\rho c} (1-e^{-\frac{t}{\tau}})
