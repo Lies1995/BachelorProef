@@ -2,28 +2,23 @@
 \label{sec:inleiding}
 Neurowetenschap houdt zich bezig met de werking van het zenuwstelsel. Vaak gebruikte proefdieren voor neurologische proeven zijn apen, ratten, muizen, vissen,\ldots. Dit onderzoek focust op ratten hersenen (zie figuur \ref{fig:ratbrein}).\\
 Om de werking van het hersenen te begrijpen is het noodzakelijk de activiteit van de hersencellen,  
-\emph{neuronen}, te controleren.  Neuronen zijn cellen die voordurend signalen ontvangen en versturenen doorheen het hele lichaam. Wanneer de activiteit ge\"inhibeerd kan worden of een neuron artifici\"eel gestimuleerd kan worden om signalen te sturen, kan de functie van die cel achterhaald worden. Bijvoorbeeld, tijdens een experiment, waarbij het proefdier moet onhouden waar een beloning ligt, worden enkele neuronen geinhibeerd. Als het proefdier de volgende keer niet meer weet waar de beloning ligt, kan afgeleid worden dat deze neuronen verantwoordelijk zijn voor ruimtelijke ori\"entatie.
+\emph{neuronen}, te controleren.  Neuronen zijn cellen die voordurend signalen ontvangen en versturenen doorheen het hele lichaam. Wanneer de activiteit ge\"inhibeerd kan worden of een neuron artifici\"eel gestimuleerd kan worden om signalen te sturen, is het mogelijk de functie van die cel te achterhalen. Bijvoorbeeld, tijdens een experiment, waarbij het proefdier moet onhouden waar een beloning ligt, worden enkele neuronen geinhibeerd. Als het proefdier de volgende keer niet meer weet waar de beloning ligt, kan afgeleid worden dat deze neuronen verantwoordelijk zijn voor ruimtelijke ori\"entatie.
 Activiteit controle van de hercencellen is dus essenti\"eel in neurologisch onderzoek en verscheidene technieken hiervoor zijn reeds ontwikkeld.
 
 Een eerste mogelijkheid is elektrische stimulatie van de neuronen met electroden. Omdat de signalen tussen neuronen van elektrische aard zijn is dit een voor de hand liggende techniek. Een tweede mogelijkheid is het gebruik van electromagnetische straling om neuronen te activeren of te inhiberen.  Hierbij worden de neuronen genetisch gemanipuleerd zodat ze lichtgevoelig worden, \emph{optogenetica}. Helaas interageert electromagnetische straling met weefsels en kan het dus nog andere reacties induceren \footnote{zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}}.
  Een belangrijk effect is de temperatuurstijging en dat is het onderwerp van dit onderzoek. 
 
 \subsection{Optogenetica} % (fold)#TODO waarom optogenetica?
-\label{sub:optogenetica}
-Neuronen hebben net zoals alle andere cellen in ons lichaam een plasmamembraan die de scheiding vormt tussen het intercellulair en extracellulair milieu. Dit plasmamembraan bestaat uit een dubbellaag van fosfolipiden en membraanprote\"inen, zie figuur \ref{fig:Opsins}. 
-Deze laatste functioneren als doorgangskanalen voor moleculen en zijn dan ook verantwoordelijk voor de communicatie van cellen onder elkaar. Een belangrijke soort membraanprote\"inen zijn ionenkanalen. Door het transport van ionen ontstaat er een potentiaal over het plasmamembraan. Een cel in rust heeft een membraanpotentiaal van ongeveer $-70mV$. 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=8cm]{gfx/Opsins.png}
 	\caption{Schematische weergave van een plasmamembraan met lichtgevoelige ionenkanalen of opsins (membraanprote\"inen). ChR2 is een veelgebruikt voorbeeld van een $Na^+$ kanaal en NpHR van een $Cl^-$ kanaal. Het eerste werkt optimaal bij stimulatie van $470nm$ en het tweede bij $560nm$.}
 	\label{fig:Opsins}
 \end{figure}
-
-Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen van buiten de cel naar binnen in de cel te transporteren. Enkele ionenkanalen openen en gelijkdelijk aan stijgt de membraanpotentiaal. Op het moment dat een drempel potentiaal ($\approx 40-55mV$)  bereikt wordt openen de ionenkanalen volledig en stijgt de membraanpotentiaal exponentieel.
-Dit neuron signaal wordt een  actie potentiaal genoemd (zie figuur \ref{fig:ratbrein}). Belangrijk om op te merken is dat de actie potentiaal automatisch gegenereerd wordt eens de drempel potentiaal bereikt is (\emph{all or nothing principle}). 
-De celactiviteit inhiberen gebeurt alsvolgt. Een natuurlijk signaal zorgt voor een stijging tot aan de drempel potentiaal. Vervolgens wordt automatisch wordt een actie potentiaal gegenereerd. Wanneer nu de rust membraanpotentiaal verlaagd wordt, door transport van negatieve ionen, is een natuurlijk signaal niet meer voldoende om tot aan de drempel potentiaal te geraken. Bijgevolg wordt geen actie potentiaal gegenereerd en is de activiteit van de neuron ge\"inhibeerd. 
-Het controleren van neuron activiteit is dus hetzelfde als het controleren van de activiteit van de ionenkanalen in de cel.
-
+\label{sub:optogenetica}
+Neuronen hebben net zoals alle andere cellen in ons lichaam een plasmamembraan die de scheiding vormt tussen het intercellulair en extracellulair milieu. Dit plasmamembraan bestaat uit een dubbellaag van fosfolipiden en membraanprote\"inen, zie figuur \ref{fig:Opsins}. 
+Deze laatste functioneren als doorgangskanalen voor moleculen en zijn dan ook verantwoordelijk voor de communicatie van cellen onder elkaar. Een belangrijke soort membraanprote\"inen zijn ionenkanalen. Door het transport van ionen ontstaat er een potentiaal over het plasmamembraan. Een cel in rust heeft een membraanpotentiaal van ongeveer $-70mV$. 
+Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen van buiten de cel naar binnen in de cel te transporteren. Enkele ionenkanalen openen en gelijdelijk aan stijgt de membraanpotentiaal. Op het moment dat een drempel potentiaal ($\approx 40-55mV$)  bereikt wordt openen de ionenkanalen volledig en stijgt de membraanpotentiaal exponentieel.
 \begin{figure}[h!]
 	\centering
 			\includegraphics[width=9cm]{gfx/ratbrein.png}
@@ -31,9 +26,37 @@ Het controleren van neuron activiteit is dus hetzelfde als het controleren van d
 	\caption{(a) Een opname van een actiepotentiaal in een neocorticale neuron uit en rat brein \cite{Neuroscience}. De rust membraan potentiaal ligt daar iets hoger $\approx 68mV$\cite{ActPot} \\(b) Lengtedoorsnede van en rat brein met de doorsnede plaats voor afbeelding c (c) Dwarsdoorsnede van een rat brein \cite{Ratbrein}. }
 	\label{fig:two}
 \end{figure}
+Dit neuron signaal wordt een  actie potentiaal genoemd (zie figuur \ref{fig:ratbrein}). Belangrijk om op te merken is dat de actie potentiaal automatisch gegenereerd wordt eens de drempel potentiaal bereikt is (\emph{all or nothing principle}). 
+De celactiviteit inhiberen gebeurt alsvolgt. Een natuurlijk signaal zorgt voor een stijging tot aan de drempel potentiaal. Vervolgens wordt automatisch een actie potentiaal gegenereerd. Wanneer nu de rust membraanpotentiaal verlaagd wordt, door transport van negatieve ionen, is een natuurlijk signaal niet meer voldoende om tot aan de drempel potentiaal te geraken. Bijgevolg wordt geen actie potentiaal gegenereerd en is de activiteit van de neuron ge\"inhibeerd. 
+Het controleren van neuron activiteit is dus hetzelfde als het controleren van de activiteit van de ionenkanalen in de cel.
 
 Enkele micro-organismen zijn prachtig ge\"evolueerd naar organismen die licht kunnen gebruiken als energiebron.
-Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de membraanpotentialen te onderhouden of om een geschikte levensomgevingen te identificeren \cite{Opsin}. Een belangrijke soort van deze lichtgevoelige prote\"inen, \emph{opsins}, zijn transmembrane rodopsines. Ze zorgen voor het transport van ionen over het plasmamembraan en doen dit na stimulatie met electromagnetische straling van een specifieke golflengte (zie figuur \ref{fig:Opsins}). Ook hebben ze zeer snelle kinetische eigenschappen en worden ze gecodeerd door slechts \'e\'en gen. Dat maakt ze zeer interessant voor gebruik in optogenetische experimenten. 
+Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de membraanpotentialen te onderhouden of om een geschikte levensomgevingen te identificeren \cite{Opsin}. Een belangrijke soort van deze lichtgevoelige prote\"inen, \emph{opsins}, zijn transmembrane rodopsines. Ze zorgen voor het transport van ionen over het plasmamembraan en doen dit na stimulatie met electromagnetische straling van een specifieke golflengte (zie figuur \ref{fig:Opsins}). Ook hebben ze zeer snelle kinetische eigenschappen en worden ze gecodeerd door slechts \'e\'en gen. Dat maakt ze zeer interessant voor gebruik in optogenetische experimenten. In tabel \ref{tab:opsin} staan enkele veel gebruikte opsines met hun golflengte nodig voor maximale activiteit. Deze optogenetische instrumenten zijn het resultaat van moleculaire en genetische manipulaties om de gewenste zowel fysiologische (activatie of inhibitie) als kinetische (voldoende snel) als optische (golflengte, power,..) eigenschappen te bekomen \cite{OptoGen}.
+\begin{table*}[h!]
+	\caption{Opsines gebruikt in optogenetische experimenten met spectrale data \cite{OptoGen}}
+	\label{tab:opsin}
+	\centering
+	\begin{tabular}{l|cc}
+	\hline
+	\hline
+	\textbf{Opsin} & \textbf{Mechanisme} & \textbf{Activatie piek $\lambda$ [nm]} \\
+	\hline
+	Snelle activatie & &\\
+	\hline
+		ChR2 & Kationen kanaal & $470$nm \\
+		ChIEF & Kationen kanaal & $450$nm \\
+		ChRGR& Kationen kanaal & $505$nm \\
+		C1V1 & Kationen kanaal & $540$nm\\
+	\hline
+	Inhibitie & &\\
+	\hline
+		eNpHR2.0 & Chloride pomp & $590$nm \\
+		ArchT & protonen pomp & $566$nm \\
+		eBR & protonen pomp & $540$nm \\
+	\hline
+	\hline
+	\end{tabular}
+\end{table*}
 
 Door genetische modificatie kunnen opsins tot expressie gebracht worden in de neuronen. De cellen worden ge\"infecteerd met onschadelijke virussen (vectors) die het gen, dat codeert voor het gewenste prote\"ine, bevatten. 
 Wanneer deze cellen vervolgens met licht van de juiste golflengte bestraald worden, zullen de opsins ionen transporteren en kan de activiteit van de neuronen be\"invloed worden. Vaak wordt aan het prote\"ine een fluorescent molecule toegevoegd. Hierdoor kan precies nagegaan worden welke cellen het prote\"ine tot expressie gebracht hebben. De activiteit van deze neuronen is nu controleerbaar en hun functie kan bestudeerd worden. 
@@ -100,7 +123,6 @@ De drempel irradiantie nodig voor opsin activatie in optogenetische experimenten
 		$\approx 41$ & denaturatie van prote\"inen (irreversibel)\\
 		$\approx 45$ & weefsel coagulatie met bloedklonter vorming\\
 	\hline
-
 	\hline
 	\end{tabular}
 \end{table}
