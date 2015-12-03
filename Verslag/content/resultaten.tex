@@ -4,28 +4,48 @@
 %lijn 25: fluence rate vervangen door lichtverdeling of tussen haakjes erbij zetten.
 \subsection{Energieverdeling} % (fold)
 \label{sub:energieverdeling}
-De eerste code werd gebruikt om de lichtverdeling $\phi(r,z)$ voor een bepaalde input power te bekomen. Hiervoor wordt vergelijking \ref{} gebruikt. Figuur \ref{fig:FR} geeft $\phi(r,z)$ weer voor een stimulatie van laserlicht met een power van $1mW$ en voor de vier verschillende protocols waarop gefocusd wordt in dit onderzoek. 
-De contourlijn op $1\frac{mW}{mm^2}$ geeft het maximale oppervlak aan waarin opsin stimulatie kan optreden, zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}.  
+De lichtverdeling $\phi(r,z)$ voor een bepaald input vermogen P werd gesimuleerd met de eerste code. Figuur \ref{fig:FR} geeft $\phi(r,z)$ weer voor een stimulatie met een power van $1mW$ en voor de vier verschillende protocols waarop gefocusd wordt in dit onderzoek. De straling met vermogen $1mW$ komt binnen op positie ($0,0$). Omdat de situatie volledig symmetrisch is wordt hier een lengtedoorsnede getoond van het gestimuleerd volume.
+De contourlijn op $1\frac{mW}{mm^2}$ geeft het maximale volume aan waarin het veel gebruikte opsine ChR2 geactiveerd wordt, zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}. De contourlijnen voor $\phi^{+}$ en $\phi^{-}$ tonen de invloeden van de weefsel parameters op de lichtverdeling. 
+$\phi^{+}$ is de lichtverdeling met $(\mu_{a} + \sigma) \text{ en } (\mu_{s} + \sigma)$ en $\phi^-$ is de lichtverdeling met $(\mu_a- \sigma) \text{ en } (\mu_s- \sigma)$ (zie tabel \ref{tab:thermEig}). $\phi^+$ zal een bovengrens geven voor $\Delta T$ en $\phi^-$ een ondergrens (zie paragraaf \ref{subsec:fout}). Verder in paragraaf \ref{subsec:fout} wordt de invloed van de parameters op de lichtverdeling individueel besproken. Uit figuur \ref{fig:FR} is in ieder geval al duidelijk dat niet zozeer de grootte maar eerder de vorm van het volume verandert door de weefselparameters.  
 \begin{figure*}[!ht]
   	\centering
   	\includegraphics[width=\textwidth]{gfx/FR_P1mW.png}
-  	\caption{Lichtverdeling voor een vermogen van $1mW$ voor de 4 verschillende protocols. De volle contourlijn ligt op $1\frac{mW}{mm^2}$. De stippelijn en streepjeslijn tonen dezelfde contour, maar dan voor $\phi \pm \sigma$ (zie paragraaf \ref{subsec:fout}). }
+  	\caption{Lichtverdeling voor een vermogen van $1mW$ voor de 4 verschillende protocols. De volle contourlijn ligt op $1\frac{mW}{mm^2}$. $\phi^{+}$ is de lichtverdeling met $(\mu_{a} + \sigma) \text{ en } (\mu_{s} + \sigma)$ en $\phi^-$ is de lichtverdeling met $(\mu_a- \sigma) \text{ en } (\mu_s- \sigma)$ (zie tabel \ref{tab:thermEig}). $\phi^+$ zal een bovengrens geven voor $\Delta T$ en $\phi^-$ een ondergrens (zie paragraaf \ref{subsec:fout}). }
   	\label{fig:FR}
   \end{figure*}
-Er zijn een aantal dingen die onmiddellijk opvallen bij de vergelijking van de energieverdeling voor de verschillende protocols. Wanneer de twee golflengten vergeleken worden valt op dat voor $474nm$ de energie meer radiaal verspreidt wordt, terwijl bij de $560nm$ vooral in de axiale riching verdeeld wordt. Een hoge absorptie zorgt dus voor minder verspreiding in de radiale richting en meer in axiale richting. 
 
-De energieverdelingen voor de verschillende optische vezels (NA=$0.12$ en NA=$0.37$) verschillen vooral wat betreft de energieverspreiding. Bij een single-mode (NA=$0.12$) is de meeste energie geconcentreerd rond de oorsprong, terwijl bij de multi-mode een meer homogene verdeling van de energie plaatsvindt. Dit is wat te verwachten was. Een kleine NA betekent een kleine verspreidingshoek waaronder het laserlicht aangevoerd wordt naar het weefsel. Alle energie wordt op een kleine plek geconcentreerd en dus het grootste deel van de energie wordt op dezelfde plek geabsorbeerd. Wanneer de energie echter vanaf het begin meer gespreid wordt aangevoerd (multi-mode) zal deze zich meer evenredig verspreiden over het oppervlak. De maximale energieconcentratie bij de SM is dus een factor $10^2$ groter. 
+Er zijn een aantal dingen die onmiddellijk opvallen bij de vergelijking van de energieverdeling voor de verschillende protocols. Wanneer de twee golflengten vergeleken worden valt op dat voor $474nm$ de energie meer radiaal verspreid wordt, terwijl bij de $560nm$ vooral in de axiale riching verdeeld wordt. Een hoge absorptie zorgt dus voor minder verspreiding in de radiale richting en meer in axiale richting. 
 
-Er is een poging ondernomen om de resolutie van de afbeeldingen van $\phi(r,z)$ te verbeteren. Vooral bij de simulaties voor de SM zou dit nuttig zijn. Als invoer in het MCML-programma moet je naast de thermische en weefsel eigenschappen ook het aantal afgevuurde fotonen en het gebied specifici\"eren. Het gebied waarin de fotonen mogen wandelen is een rooster met allemaal roosterpunten. Het aantal moet dus gespecifici\"eerd worden en de roosterafstand. 
+De energieverdelingen voor de verschillende optische vezels (NA=$0.12$ en NA=$0.37$) verschillen vooral wat betreft de energieverspreiding. Bij een single-mode (NA=$0.12$) is de meeste energie geconcentreerd rond de oorsprong, terwijl bij de multi-mode een meer homogene verdeling van de energie plaatsvindt. Een kleine NA gaat samen met een kleine diameter van de draad. Alle energie wordt op een kleine plek geconcentreerd en dus het grootste deel van de energie wordt op dezelfde plek geabsorbeerd. Wanneer de energie echter vanaf het begin meer gespreid wordt aangevoerd (multi-mode) zal deze zich meer evenredig verspreiden over het oppervlak. De maximale energieconcentratie bij de SM is dus een factor $10^2$ groter. 
+
+Tot slot is het interessant om te weten hoe groot het gestimuleerde volume is. Ook dit is met de matlab code berekend en de resultaten staan in tabel \ref{tab:Volumes}. Het verschil tussen SM en MM voor \'e\'en golflengte in klein ($\approx 0.01mm^3$). Echter is een duidelijk verschil tussen de volumes voor beide golflengten. Het gestimuleerd volume voor $560$nm zowel voor SM als MM is kleiner ($\approx 0.06mm^3$) dan voor $474$nm. Dit wordt verklaard door de hoge absorptie bij $560$nm door hemoglobine. De energie wordt gemakkellijker geabsorbeerd en kan hierdoor minder ver diffuseren.
+\begin{table}[!ht]
+\begin{threeparttable}
+  \caption{Volumes binnen een contour van $1\frac{mW}{mm^2}$ voor verschillende stimulatie protocols$^*$.}
+  \label{tab:Volumes}
+  \centering
+
+  \begin{tabular}{l|cc}
+  \hline
+  \hline
+  \textbf{Golflengte} & \multicolumn{2}{c}{\textbf{Gestimuleerd volume [$mm^3$]}}\\
+  \hline
+   & SM &MM\\
+   $474$nm & $0.2509$ & $0.2611$\\
+   $560$nm & $0.1905$ & $0.2052$\\ 
+  \hline
+  \hline
+  \end{tabular}
+   \begin{tablenotes}
+      \footnotesize 
+      \item $^*$Dit is het volume waarbinnen het opsine ChR2 gestimuleerd zal worden (zie paragraaf \ref{sub:optogenetica})\normalsize
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
+
+Er is geprobeerd de resolutie van de afbeeldingen van $\phi(r,z)$ te verbeteren. Vooral bij de simulaties voor de SM zou dit nuttig zijn. Als invoer in het MCML-programma moet je naast de thermische en weefsel eigenschappen ook het aantal afgevuurde fotonen en het gebied specifici\"eren. Het gebied waarin de fotonen zich verspreiden is een rooster met allemaal roosterpunten. De afmetingen van het gebied moeten dus gespecifici\"eerd worden samen met de roosterafstand. 
 Een eerste mogelijkheid is het verhogen van het aantal afgevuurde fotonen. Dit vraagt echter veel rekenvermogen, dus gepast technologisch materiaal is hiervoor vereist.
-Een tweede mogelijkheid is een zelfde aantal fotonen afvuren maar het gebied verkleinen, dus de roosterafstand verkleinen. Echter moet opgepast worden dat het gebied niet te klein is, de fotonen mogen niet in de buurt van de rand komen omdat daar geen rekening mee is gehouden in de code. Dit is een aantal keer geprobeerd maar er trad elke een probleem op met de schaling. Het gebied in een richting (axiaal of radiaal) is gelijk aan het aantal roosterpunten vermenigvuldigd met de roosterafstand. De eersta schaling was $1000$ roosterpunten in de axiale richting en $500$ in de radiale. De roosterafstand was twee keer $10^-4 cm$. De afmetingen van het gebied waarin de lichtverdeling gesimuleerd moet worden is: $0.1cm$ x $0.05cm$. Echter krijgen we uit de data van het programma afmetingen van $1cm$ x $O.5cm$. Wanneer nu de rooster afstand gehalveerd word, waren de afmetingen wel wat verwacht was, namelijk $0.5cm$ x $0.25cm$. Het eigenaardige is vooral dat er twee keer exact dezelfde code wordt gebruikt, zowel het MCML simulatie programma als de matlab code die de data-files inleest, omzet en grafisch weergeeft. Dit is een probleem waar niet onmiddellijk een oplosing voor gevonden kon worden omdat de code voor het MCML programma niet beschikbaar is. De simulaties zijn verschillende keren herhaald met steed hetzelfde eigenaardige resultaat. Echter wordt niet uitgesloten dat het eventueel toch ergens een menselijke fout is in de inleescode. Indien betere resolutie van de lichtverdeling noodzakelijk is dit iets wat de moeite waard is om na te kijken. 
-Verder is er ook een typfout bij de eenheden in de resulterende data file gevonden. Bij het omzetten van de fotonendistributie naar een fysische grootheid zijn er verschillende mogelijkheden. 
-\begin{itemize}
-	\item .Frzc, Fluence rate [$W\cdot cm^-2$]
-	\item .Arz, Absorptie [$W\cdot cm^-3$]
-	\item \ldots
-\end{itemize}
-De extensie die hier nodig is, is de .Frzc en in deze datafile staat als eenheid bij de lichtverdeling [$W\cdot cm^-3$]. Aangezien een andere extensie deze eenheid al heeft, is dit een verwarrende fout die uit de code gehaald moet worden. 
+Een tweede mogelijkheid is een zelfde aantal fotonen afvuren maar het gebied verkleinen, dus de roosterafstand verkleinen. Echter moet opgepast worden dat het gebied niet te klein is. De fotonen mogen niet in de buurt van de rand komen omdat daar geen rekening mee is gehouden in de code. Dit is een aantal keer geprobeerd maar er trad elke keer een probleem op met de schaling. Het gebied in een richting (axiaal of radiaal) is gelijk aan het aantal roosterpunten vermenigvuldigd met de roosterafstand. De eerste schaling was $1000$ roosterpunten in de axiale richting en $500$ in de radiale. De roosterafstand was voor beide richtingen$10^{-4} cm$. De afmetingen van het gebied waarin de lichtverdeling gesimuleerd moet worden is: $0.1cm$ x $0.05cm$. Echter kregen we uit de data van het programma afmetingen van $1cm$ x $O.5cm$. Wanneer de rooster afstand gehalveerd werd, waren de afmetingen wel wat verwacht werd, namelijk $0.5cm$ x $0.25cm$. Het eigenaardige is vooral dat er twee keer exact dezelfde code werd gebruikt, zowel het MCML simulatie programma als de matlab code die de data-files inleest, omzet en grafisch weergeeft. Dit is een probleem waar niet onmiddellijk een oplosing voor gevonden kon worden omdat de code voor het MCML programma niet beschikbaar is. De simulaties zijn verschillende keren herhaald met steeds hetzelfde eigenaardige resultaat.Indien betere resolutie van de lichtverdeling noodzakelijk is dit iets wat de moeite waard is om na te kijken.  
 
 \subsection{Temperatuurstijging bij continue stimulatie}
 De resultaten voor de lichtverdeling bekomen met de Monte-Carlo simulatie werden gebruikt om de temperatuurstijging voor continue stimulatie te bepalen. Dit werd gedaan voor alle vier de protocols, telkens bij een vermogen van $1mW$. Er kunnen nu verschillende figuren gemaakt worden.
@@ -44,7 +64,7 @@ Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstij
 %figuur
 % label{fig:dT_tijd_SM}
 %label{fig:dT_tijd_MM}
-\begin{figure}[h!]
+\begin{figure}[!ht]
   	\centering
 
   	\includegraphics[width=8.5cm]{gfx/dT_tijd_SM.png}
@@ -59,7 +79,6 @@ Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstij
   	\caption{Temperatuurstijging met fouten op $z=0$ en $r=0$ voor MM.}
   	\label{fig:dT_tijd_MM}
   \end{figure} 
-\\
 Zoals daarnet al werd vermeld, is er een zeer klein verschil tussen de tijdsconstanten voor eenzelfde vezel. Dit kan men zien in tabel \ref{tab:tau}. Voor verschillende golflengten is $\tau$ min of meer gelijk. De rede hiervoor is dat de waarde van de optische parameters (deze zijn afhankelijk van de golflengte) weinig invloed heeft op $\tau$. Ze heffen elkaar als het ware op. Anderzijds heeft de gebruikte vezel een zeer grote invloed op de waarde van $\tau$. De rede hiervoor is dat de tijdsconstante zeer sterk afhankelijk is van de straal van de optische vezel ($w_L$). Men kan zien dat voor de muli-mode vezel de tijdsconstanten veel groter zijn dan voor single-mode. De rede hiervoor is vrij eenvoudig intui\"tief te verklaren. Een SM vezel is smaller, waardoor alle energie zich in een klein en smal gebied bevindt. Hierdoor kan de temperatuur makkelijker en dus sneller stijgen, wat leidt tot een kleine $\tau$. Voor de MM vezel is dezelfde energie over een groter gebied verspreidt, waardoor de temperatuur trager zal stijgen. Dit geeft een grotere waarde voor de tijdsconstante. 
 \begin{figure*}[!ht]
     \centering
@@ -101,7 +120,7 @@ In tabel \ref{tab:Tmax} vindt men de resultaten voor de maximale temperatuurstij
 Opnieuw is te zien dat de temperatuurstijging bij $560nm$ hoger is.
 Men zien dat de gevonden maximale temperatuurstijgingen ruim onder de $0.5^{\circ}C$ blijven, wat als ondergrens wordt genomen voor mogelijke schade aan het weefsel. Binnen dit model kan dus besloten worden dat gepulste stimulatie met de gegeven protocols waarschijnlijk geen weefselschade zal opleveren. Het is echter wel mogelijk dat wanneer de fouten berekend zouden worden, de temperatuurstijging toch hoger blijkt dan $0.5^{\circ}C$. Belangrijk hierbij is op te merken dat het gebruikte model een lagere temperatuurstijging voorspelt dan er in werkelijkheid is (zie figuur \ref{fig:comparison}). De mogelijkheid bestaat dus dat met het model een temperatuurstijging berekend wordt die niet schadelijk is, maar dat de werkelijke temperatuurstijging hoger is en mogelijks wel schadelijke gevolgen heeft. 
 	
-\begin{table*}[]
+\begin{table*}[!ht]
 \centering
 \caption{Maximale temperatuurstijging bij gepulste stimulatie met een MM vezel voor verschillende protocols.}
 \label{tab:Tmax}

@@ -1,13 +1,13 @@
 \section{Methode} % (fold)
 \label{sec:methode}
-   \begin{figure*}[h!]
+   \begin{figure*}[!ht]
 		\centering
 		\includegraphics[width=\textwidth]{gfx/Scat.png}
 		\caption{Absorptieco\"effici\"ent en gereduceerde verstrooiingsco\"effici\"ent voor de hippocampus bij ratten. De grote piek bij $560$nm komt door de aanwezigheid van hemoglobine}
 	\label{fig:AbsEnScat}
 \end{figure*} 
  Simulaties voor de temperatuursverandering in weefsel met de tijdsconstanten methode, zie paragraaf \ref{sec:theoretische_achtergrond}, worden uitgevoerd voor de hippocampus regio in ratten hersenen (zie figuur \ref{fig:ratbrein}). De weefsel eigenschappen zoals $\mu_a$ en $\mu_s'$ zijn golflengte afhankelijk zoals blijkt uit figuur \ref{fig:AbsEnScat}. Er wordt gefocusd op protocols met golflengten $474nm$ en $560nm$ voor zowel een single-mode ($d=0.009nm$, NA=$0.12$) als multi-mode ($d=0.300nm$, NA=$0.37$) optische vezel. Er werd gekozen voor deze twee golflengte, omdat het veel gebruikte opsine ChR2 optimaal werkt bij een golflengte $\approx 470nm$ en er een hoge piek is bij de absorptieco\"effici\"ent voor een golflengte vaan $560nm$. Dit is ideaal om de invloed van de absorptie op de temperatuursverandering na te gaan. De gebruikte waarden voor de thermische en weefsel eigenschappen voor de hippocampus staan in tabel \ref{tab:thermEig}. De fouten op de thermische eigenschappen en $g$ en n kunnen verwaarloosd worden in vergelijking met de fouten op de weefsel parameters (zie figuur \ref{fig:AbsEnScat}).
-\begin{table*}[h!]
+\begin{table*}[!ht]
 	\caption{Thermische en weefseleigenschappen van rat hippocampus}
 	\label{tab:thermEig}
 	\centering
@@ -20,7 +20,7 @@
 	Dichtheid $\rho$	 &  $1040 \frac{kg}{m^3}$ \\
 	Warmtecapaciteit $c$ & $3650 \frac{mJ}{g\cdot K}$\\
 	Thermische conductiviteit $k$ & $0.530 \frac{W}{m\cdot K}$\\
-		Anisotropie afctor $g$ & $0.88$ \\
+		Anisotropie factor $g$ & $0.88$ \\
 	Brekingsindex n & $1.4$\\
 	\multirow{2}{*}{Absorptieco\"effici\"ent $\mu_a$} & $474nm$: $0.511 \pm 0.349 cm^{-1}$\\
  	&  $560nm$:$1.079^{+0.559}_{-0.525} {cm^-1}$\\
@@ -32,14 +32,14 @@
 \end{table*} 
 \subsection{Monte-carlo simulatie} % (fold)
 \label{sub:monte_carlo_simulatie}
-Als eerste moet lichtverdeling $\phi(r,z)$ bepaald worden. De lichtverdeling is een grootheid die aangeeft hoe de energie van de invallende fotonen zich verdeeld over het weefsel. Om meer precies te zijn, het geeft in elk punt de verandering van de energie per eenheid van oppervlakte, per eenheid van tijd. De lichtverdeling hangt af van zowel de weefsel eigenschappen (absorptieco\"efficient $\mu_a$, verstrooingsco\"fficient $\mu_s$,brekingsindex n , anisotropie factor $g$ ) als van de laserbeam eigenschappen (golflengte $\lambda$, numerieke apertuur $NA$, diameter $d$). Om $\phi(r,z)$ te modelleren wordt een monte-carlo simulatie uitgevoerd. De energieverdeling wordt gezien als een \emph{random walk} van fotonen. 
+Als eerste moet lichtverdeling $\phi(r,z)$ bepaald worden. De lichtverdeling is een grootheid die aangeeft hoe de energie per oppervlak van de invallende fotonen zich verdeeld over het weefsel. Om meer precies te zijn, het geeft in elk punt de verandering van de energie per eenheid van oppervlakte, per eenheid van tijd. De lichtverdeling hangt af van zowel de weefsel eigenschappen (absorptieco\"efficient $\mu_a$, verstrooingsco\"fficient $\mu_s$,brekingsindex n , anisotropie factor $g$ ) als van de lichtstraal eigenschappen (golflengte $\lambda$, numerieke apertuur $NA$, diameter $d$). Om $\phi(r,z)$ te modelleren wordt een monte-carlo simulatie uitgevoerd. De energieverdeling wordt gezien als een \emph{random walk} van fotonen. 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=8cm]{gfx/MCML.png}
 	\caption{Random walk van \'e\'en foton.}
 	\label{fig:MCML}
 \end{figure}
-Het principe wordt uitgelegd aan de hand van een simpel voorbeeld; het zenden van 1 foton doorheen het weefsel (zie figuur \ref{fig:MCML}). Wanneer een foton het oppervlak van het weefsel bereikt, wordt het opgenomen door een molecule. Dat molecule wordt ge\"exciteerd en door conductie effecten wordt een deel van die energie doorgegeven aan omliggende moleculen. Dit gaat zo door tot en niet genoeg thermische energie meer is om doorgegeven te worden. Bovenstaand proces kan ook gezien worden als \'e\'en foton met een bepaald gewicht/energie die een random walk uitvoert en na elke stap een deel van zijn energie verliest. Hoeveel energie hij verliest en de geprefereede staprichting wordt random gekozen maar is be\"invloed door de weefsel parameters. Het foton blijft wandelen totdat zijn gewicht onder een bepaalde drempel is gekomen. Dan stopt de simulatie voor dat foton. Wanneer dit herhaald wordt voor $1$ miljoen fotonen kan een duidelijk beeld verkregen worden van hoe de energie verdeeld wordt over het weefsel. Aan de hand van een statistisch wiskundig protocol kan vervolgens de fotonverdeling omgezet worden naar kwantitatieve gegevens voor $\phi(r,z)$\cite{MCML}. 
+Het principe wordt uitgelegd aan de hand van een simpel voorbeeld; het zenden van 1 foton doorheen het weefsel (zie figuur \ref{fig:MCML}). Wanneer een foton het oppervlak van het weefsel bereikt, wordt het verstrooid en of geabsorbeerd door moleculen. Dit proces kan gemodelleerd worden als een foton met een statistisch gewicht die een random walk uitvoert. Na elke stap verliest het een deel van zijn gewicht.  Hoeveel energie hij verliest en de geprefereede staprichting wordt random gekozen binnen een verdelingsfunctie bepaald door de weefsel parameters. Wanneer het gewicht onder een bepaalde drempel is gekomen stopt de simulatie voor dat foton. Wanneer dit herhaald wordt voor $1$ miljoen fotonen kan een duidelijk beeld verkregen worden van hoe de energie verdeeld wordt over het weefsel. Aan de hand van een statistisch wiskundig protocol kan vervolgens de fotonverdeling omgezet worden naar kwantitatieve gegevens voor $\phi(r,z)$\cite{MCML}. 
 Een programma geschreven door \emph{Lihong Wang en Steven L. Jacques} aan  de universiteit van Texas doet dergelijke monte-carlo simulaties en geeft uiteindelijk lichtverdeling voor het gewenst gebied. Voor meer details wordt verwezen naar de publicatie \cite{MCML}.  
 \subsection{Temperatuursverandering simulatie} % (fold)
 \label{sub:temperatuursverandering_simulatie}
