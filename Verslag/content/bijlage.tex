@@ -1,5 +1,508 @@
 \section*{Bijlage} % (fold)
 \label{sec:bijlage}
+\subsection{Matlabcode} % (fold)
+\label{sub:matlabcode}
+\subsubsection{Lichtverdeling} % (fold)
+\label{ssub:lichtverdeling}
+Onderstaande matlabcode leest de .frzc files van de monte-carlo simulatie en geeft ze grafisch weer in een \emph{imagesc}. De .frzc files zijn de lichtverdelingen voor de verschillende protocols gesimuleerd met een input power $1mW$ en een gaussische lichtbundel. Er werden 1 miljoen fotonen afgevuurd.
+De bestanden voor de verschillende protocols zijn alsvolgt gelabeld:
+$L\_\text{\emph{golflengte}}\_N\_\text{\emph{numerieke apertuur}}$. Ze bevinden zich in de map \emph{Output}. De lichtverdeling $\phi^+$ (met $(\mu_a + \sigma) \text{ en } (\mu_s+\sigma)$) en $\phi^-$ (met $(\mu_a - \sigma) \text{ en } (\mu_s-\sigma)$) worden op dezelfde wijze gelabeld en staan in respectivelijk de mappen \emph{Output+} en \emph{Output-}. Het script schrijft de data van de lichtverdeling corresponderend met een eenheids irradiantie ($\psi(r,z)$) voor elk protocol ook als een .csv bestand naar de map \emph{unitFR}.\\
+\textbf{MCML$\_$plot.m}
+\begin{lstlisting}
+MCML_Setup_Data
+                                                    
+for i = 1: length(L);
+    for j=1:length(NA)
+        %------DATA--------
+        n_L=L(i); n_NA=NA(j);               
+        protocol_name = ['L_' num2str(n_L) '_NA_' num2str(n_NA) ];
+        %------Calculation--------
+        for l=1:3
+            %Calc. Fluence rate  [mm mm W/m^2]
+            [r,z,fRate,filename]=...
+                MCML_Data(n_L,n_NA,file_path,protocol_name,l); 
+            %Calc. Fluence rate I=Unit peak irradiance  
+            psi=fRate.*((pi*w_L(j)^2)/2).*10^3; 
+            %Convert psi to Fluence rate phi for the asked Power/Irradiance
+            if ne(PL,0) == 1
+                IL=PL/((pi*w_L(j)^2)/2);
+            end
+            phi=IL.*psi;
+            
+            %Save all data
+            dF(:,:,l)=phi; %[W/m^2]
+            
+            fullfilename=[fullfile(file_path,'UnitFR', filename)];
+            filename_r=[fullfile(file_path,'FR_r')];
+            filename_z=[fullfile(file_path,'FR_z')];
+            csvwrite(fullfilename,psi); %[W/m^2]
+            csvwrite(filename_r, r);%[mm]
+            csvwrite(filename_z, z);%[mm]
+        end
+        %------Plot--------
+        %Change units
+        dF(:,:,:)=dF(:,:,:).*10^-3; %[mW/mm^2]
+        
+        fig=figure(k); 
+        hold on
+        %Colorgraph
+        imagesc(r,z,dF(:,:,1));c=colorbar; 
+        
+        %Contourlines
+        [C, h]=contour(r,z,dF(:,:,1),v,'color','w');
+        [Cplus, hpuls]=contour(r,z,dF(:,:,2),v,'--','color','w');
+        [Cminus, hminus]=contour(r,z,dF(:,:,3),v,':','color','w');
+        
+        title({'Fluence Rate';['$\lambda=$' num2str(n_L) ', NA=' ...
+            num2str(n_NA) ', Input Irradiance=' num2str(IL) ]},...
+            'interpreter', 'LaTex');
+        xlabel('r [mm]', 'interpreter', 'LaTex');
+        ylabel('z [mm]', 'interpreter', 'LaTex');
+        c.Label.String= '$\phi(r,z)$ [$mW \cdot mm^{-2}$]';
+        c.Label.Interpreter='latex';
+        c.Label.FontSize=20;
+        
+        xlim([-0.6 0.6])
+        ylim([0 1.5])
+        set(gca,'ydir','rev')
+        hold off
+        
+        %------Calculation Stimulated Volume--------
+        %Collect the datapoints of the concerning contourline
+        if j==1
+            s=find(C(1,:)==1,2)
+            [y_0,Iy_0]=max(C(2,2:s(length(s))-1));
+            s=find(Cplus(1,:)==1,2)
+            [y_0plus,Iy_0plus]=max(Cplus(2,2:s(length(s))-1));
+             s=find(Cminus(1,:)==1,2)
+            [y_0minus,Iy_0minus]=max(Cminus(2,2:s(length(s))-1));
+        elseif j==2
+            [y_0,Iy_0]=max(C(2,2:length(C(1,:))));
+            [y_0plus,Iy_0plus]=max(Cplus(2,2:length(Cplus(1,:))));
+            s=find(Cminus(1,:)==1,2)
+            [y_0minus,Iy_0minus]=max(Cminus(2,2:s(length(s))-1));
+        end
+        %Rotate the graph 90degrees
+        x=C(2,2:Iy_0);
+        y=C(1,2:Iy_0);
+        
+        xplus=Cplus(2,2:Iy_0plus);
+        yplus=Cplus(1,2:Iy_0plus);
+ 
+        xminus=Cminus(2,2:Iy_0minus);
+        yminus=Cminus(1,2:Iy_0minus);
+        
+        %Fit with a polynomial of degree g
+        p=polyfit(x,y,g);
+        fun=@(t) pi*(polyval(p,t)).^2;
+        int=integral(fun,x(1),x(length(x)))
+        
+        pplus=polyfit(xplus,yplus,g);
+        fun=@(t) pi*(polyval(pplus,t)).^2;
+        intplus=integral(fun,xplus(1),xplus(length(xplus)))
+        
+        pminus=polyfit(xminus,yminus,g);
+        fun=@(t) pi*(polyval(pminus,t)).^2;
+        intminus=integral(fun,xminus(1),xminus(length(xminus)))
+        
+        
+        %Uncomment this section if you want to check the polynomal fit
+        %------Plot polynomial fit--------
+%         k=k+1;
+%         figure(k)
+%         plot(x,y,'--','color','k')
+%         hold on
+%         plot(x, polyval(p,x),'color','k');
+%         
+%         plot(xplus,yplus,'--','color','r');
+%         plot(xplus, polyval(pplus,xplus),'color','r');
+%      
+%         plot(xminus,yminus,'--','color','b');
+%         plot(xminus, polyval(pminus,xminus),'color','b');
+%       
+%       hold off
+        k=k+1;
+    end
+end
+
+\end{lstlisting}
+\textbf{MCML$\_$Setup$\_$Data.m}
+\begin{lstlisting}
+%------Setup--------
+    close all
+    % Change default text font size
+        set(0,'DefaultAxesFontSize', 18)
+    %File Path
+        file_path=path; 
+%------DATA--------
+    %Wavelengths(nm)
+        L = [474,560]; 
+    %Numerical Aperture (dimensionless)
+        NA = [12,37];  
+    %Diameter (mum)
+        d = [9,200];
+    %1/e^2 radius [m]
+        w_L= [0.0000045 0.0001];
+
+    %Choose the stimulation, specify either the input power or the input
+    %irradiace. Set the other to the default value
+    %Laser Power [W] (default 0)
+        PL=0.001;
+    %Irradiance [W/m^2] (default 1)
+        IL=1;  
+    %Value contourline [mW/mm^2] (plots will be in mW/mm^2)
+        v = [1,1];
+    %Polynomial degree of contourfit
+        g=3 ;
+%------Initiations-------- 
+    %Vector to store Fluence Rates
+    dF=zeros(1000,1000,3);
+    %Index for figures
+    k=1; 
+\end{lstlisting}
+\textbf{MCML$\_$Data.m}
+\begin{lstlisting}
+function [R_Fig,z, Data_Fig, file_name] = MCML_Data(L,NA,path,protocol_name,l)
+%MCML_Data.m Creates Fluence Rate for each grid point 
+%   Reads the data file by using the function read_F
+%   The data file is chosen by the protocol; protocol_name and the error
+%   l=1 No error
+%   l=2 +sigma u_a, +sigma u_s
+%   l=3 -sigma u_a, -sigma u_s 
+%   path is the loaction of the data files
+%   Puts the data in the right configuration to use it in MCML_plot    
+
+    if l==1
+         file_name = ['L_' num2str(L) '_NA_' num2str(NA) ] ;
+        file_Frz = [fullfile(path,'OutputMCML',[protocol_name '.Frzc'])] ;
+    elseif l==2
+         file_name = ['L_' num2str(L) '_NA_' num2str(NA) '+u_a+u_s']; 
+        file_Frz = [fullfile(path,'OutputMCML+',[protocol_name '.Frzc'])];
+    elseif l==3
+         file_name = ['L_' num2str(L) '_NA_' num2str(NA) '-u_a-u_s']; 
+        file_Frz = [fullfile(path,'OutputMCML-',[protocol_name '.Frzc'])];
+    end
+    [r,z,Data] = MCML_read_F(file_Frz);               %Read data, [mm,mm,/mm^2]                            
+    R_Fig = [-r(end:-1:1), r];                                  
+    Data_Fig = [Data(:,end:-1:1) Data]*1;        % * # mW/mm^2 @ tip
+    Data_Fig= Data_Fig.*10^3; % SI units W/m^2                                        
+end
+\end{lstlisting}
+\textbf{MCML$\_$read.m}
+\begin{lstlisting}
+function [r,z,Data] = MCML_read_F(MCML_file_MCO)
+%read_F reads data from an .Frzc file
+%   Reads in the data form teh MCML_file_MCO
+%   changes the units
+%   puts everything in the right format
+
+    S= importdata(MCML_file_MCO);
+    r = S.data(:,1); 
+    z = S.data(:,2); 
+    Data = S.data(:,3); 
+    clear S;
+
+    step_z = z(2)-z(1); z_min = min(z); z_max = max(z);
+    
+    z_length = round((z_max - z_min)./step_z)+1;
+    r_length = length(r)./z_length;
+    
+    r = reshape(r,z_length,r_length); 
+    r = r(1,:).*10;  % cm->mm
+    z = reshape(z,z_length,r_length); 
+    z = z(:,1)'.*10;% cm->mm
+    Data = reshape(Data,z_length,r_length);
+    Data(end,:) = 0;
+    Data(:,end) = 0;
+   Data = Data./100; %% /cm^2-> /mm^2
+
+end
+
+\end{lstlisting}
+\subsubsection{Temperatuursverandering continue stimulatie} % (fold)
+\label{ssub:dtcontinue}
+Onderstaande matlabcode leest de .csv bestanden uit de map \emph{unitFR} en berekent de temperatuursverandering voor een continue stimulatie met behulp van vergelijking \ref{eq:solBH}. Vervolgens plot hij op drie tijdstippen (\emph{Times$\_$to$\_$plot}) de temperatuursverandering. Tot slot worden nog twee grafieken (voor SM en MM) gemaakt van $\DeltaT$ in functie van de tijd.\\
+\textbf{Trise$\_$plot.m}
+\begin{lstlisting}
+Trise_Setup_Data
+for i = 1: length(L);
+    for j=1:length(NA)
+        
+        %--------Data--------------
+        n_L=L(i); n_NA=NA(j);
+        protocol_name = ['L_' num2str(n_L) '_NA_' num2str(n_NA) ];
+        %define tissue properties
+        prop(1)=u_a(i);    %absorption coefficient [m^-1]
+        prop(2)=u_s(i) ;   %scattering coefficient [m^-1]
+        prop(7)=w_L(j);   %1:e^ radius [m]
+      
+        %Read Fluence rate I=Unit peak irradiance  
+        psi=csvread(fullfile(path,'UnitFR',protocol_name)); %[W/m^2]
+        %Fluence rate +u_a
+        psiplus=csvread(fullfile(path,'UnitFR',[protocol_name '+u_s']));
+        %Fluence rate -u_a
+        psiminus=csvread(fullfile(path,'UnitFR',[protocol_name '-u_s']));
+        %Convert psi to Fluence rate phi for the asked Power/Irradiance
+        if ne(PL,0) == 1
+        IL=PL/((pi*prop(7)^2)/2);
+        end
+        %Save all data
+        phi=IL.*psi;
+        phiplus=IL.*psiplus; 
+        phiminus=IL.*psiminus;
+        
+        %--------Calculation--------------
+        if j==1
+            for l=1:length(t1)
+                
+                %Calc. Temperature increade
+                [dT(:,:,k,l), tau(k)]=Trise_Data(phi,0,0,prop,t1(l));
+                
+                [dTplus(k,l) p]=Trise_Data(phiplus(2,500),du_a_plus(i),...
+                    du_s_plus(i),prop,t1(l));
+                [dTminus(k,l), p]=Trise_Data(phiminus(2,500),du_a_minus(i),...
+                    du_s_minus(i),prop,t1(l));
+               
+            end
+        elseif j==2
+            for l=1:length(t2)
+                
+                %calculate temperature raise
+                [dT(:,:,k,l), tau(k)]=Trise_Data(phi,0,0,prop,t2(l));
+                
+                [dTplus(k,l),p]=Trise_Data(phiplus(2,500),du_a_plus(i),...
+                   du_s_plus(i), prop,t2(l));
+               [dTminus(k,l),p]=Trise_Data(phiminus(2,500),du_a_minus(i),...
+                   du_s_minus(i),prop,t2(l));
+               
+                
+            end
+        end
+        figure(m);
+        imagesc(r,z,dT(:,:,k,timesToPlot(1))); c=colorbar;
+        
+        %scaling
+        if j==1
+            xlim([-0.5,0.5]);ylim([0,1]);
+        elseif j==2
+            xlim([-0.5,0.5]);ylim([0,1]);
+        end
+        if i==1 && j==1
+            caxis([0 0.002]);
+        elseif i==1 && j==2
+            caxis([0 0.025]);
+        elseif i==2 && j==1
+            caxis([0 0.002]);
+        elseif i==2 && j==2
+            caxis([0 0.025]);
+        end
+
+        %labels
+        if j==1
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) ', t=' ...
+                num2str(t1(timesToPlot(1)))]},'interpreter', 'LaTex');
+        elseif j==2
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) '; t='...
+                num2str(t2(timesToPlot(1)))]},'interpreter', 'LaTex');
+        end
+        xlabel('r [mm]', 'interpreter', 'LaTex');
+        ylabel('z [mm]', 'interpreter', 'LaTex');
+        c.Label.String= '$dT$ [$K$]';
+        c.Label.FontSize=20;
+        c.Label.Interpreter='latex';
+        
+
+        %------------------------------------------------------------------    
+        m=m+1  ;     
+        figure(m);
+        imagesc(r,z,dT(:,:,k,timesToPlot(2))); c=colorbar;
+         %scaling
+        if j==1
+            xlim([-0.5,0.5]);ylim([0,1]);
+        elseif j==2
+            xlim([-0.5,0.5]);ylim([0,1]);
+        end
+        if i==1 && j==1
+            caxis([0 0.002]);
+        elseif i==1 && j==2
+            caxis([0 0.025]);
+        elseif i==2 && j==1
+            caxis([0 0.002]);
+        elseif i==2 && j==2
+            caxis([0 0.025]);
+        end
+        %labels
+        if j==1
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) ', t=' ...
+                num2str(t1(timesToPlot(2)))]},'interpreter', 'LaTex');
+        elseif j==2
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) '; t='...
+                num2str(t2(timesToPlot(2)))]},'interpreter', 'LaTex');
+        end
+        xlabel('r [mm]', 'interpreter', 'LaTex');
+        ylabel('z [mm]', 'interpreter', 'LaTex');
+        c.Label.String= '$dT$ [$K$]';
+        c.Label.FontSize=20;
+        c.Label.Interpreter='latex';
+
+        %------------------------------------------------------------------        
+        m=m+1;       
+        fig=figure(m);
+        imagesc(r,z,dT(:,:,k,timesToPlot(3))); c=colorbar;
+          %scaling
+        if j==1
+            xlim([-0.5,0.5]);ylim([0,1]);
+        elseif j==2
+            xlim([-0.5,0.5]);ylim([0,1]);
+        end
+        if i==1 && j==1
+            caxis([0 0.002]);
+        elseif i==1 && j==2
+            caxis([0 0.025]);
+        elseif i==2 && j==1
+            caxis([0 0.002]);
+        elseif i==2 && j==2
+            caxis([0 0.025]);
+        end
+
+        %labels
+        if j==1
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) ', t=' ...
+                num2str(t1(timesToPlot(3)))]},'interpreter', 'LaTex');
+        elseif j==2
+            title({'Temperature increase';['$\lambda=$' num2str(n_L)...
+                ', NA=' num2str(n_NA) '; t='...
+                num2str(t2(timesToPlot(3)))]},'interpreter', 'LaTex');
+        end
+        xlabel('r [mm]', 'interpreter', 'LaTex');
+        ylabel('z [mm]', 'interpreter', 'LaTex');
+        c.Label.String= '$dT$ [$K$]';
+        c.Label.FontSize=20;
+        c.Label.Interpreter='latex';
+        
+        m=m+1;
+        k=k+1;
+        
+        
+    end
+end
+%------Plot--------
+figure(m)
+hold on
+    plot(t1,squeeze(dT(2,500,1,:)),'Color',hex2rgb('352A86'));%blue474nm
+    plot(t1,dTplus(1,:),'--','color',hex2rgb('352A86'))
+    plot(t1,dTminus(1,:),'--','color',hex2rgb('352A86'))
+    plot(tau(1),0,'r*');
+            
+    plot(t1,squeeze(dT(2,500,3,:)),'Color',hex2rgb('f1b94a'));%yellow 560nm
+    plot(t1,dTplus(3,:),'--','color',hex2rgb('f1b94a'))
+    plot(t1,dTminus(3,:),'--','color',hex2rgb('f1b94a'))
+    plot(tau(3),0,'b*');
+hold off
+           
+    xlabel('t [s]', 'interpreter', 'LaTex');
+    ylabel('dT[K]', 'interpreter', 'LaTex');
+m=m+1;
+figure(m)
+hold on
+    plot(t2,squeeze(dT(2,500,2,:)),'Color',hex2rgb('352A86')); %blue 474nm
+    plot(t2,dTplus(2,:),'--','color',hex2rgb('352A86'))
+    plot(t2,dTminus(2,:),'--','color',hex2rgb('352A86'))
+    plot(tau(2),0,'r*');
+            
+    plot(t2,squeeze(dT(2,500,4,:)),'Color',hex2rgb('f1b94a')); %yellow 560nm
+    plot(t2,dTplus(4,:),'--','color',hex2rgb('f1b94a'))
+    plot(t2,dTminus(4,:),'--','color',hex2rgb('f1b94a'))
+    plot(tau(4),0,'b*');
+hold off
+           
+    xlabel('t [s]', 'interpreter', 'LaTex');
+    ylabel('dT[K]', 'interpreter', 'LaTex');          
+\end{lstlisting}
+\textbf{Trise$\_$Setup$\_$Data.m}
+\begin{lstlisting}
+%------Setup--------
+close all
+% Change default text font size
+    set(0,'DefaultAxesFontSize', 18)
+%File Path
+    path=LD;
+%------DATA--------
+
+%Optical properties
+    L = [474 560];          %Wavelengths(nm)
+    NA = [12 37];           %Numerical Aperture (dimensionless)
+    d = [9 200];            %Diameter (mum)
+%Tissue properties
+    u_a=[51.1 107.9];       % absorpion coefficient [m^-1]
+    u_s=[12733 9266];       %scattering coefficient [m^-1]
+    g=0.88;                 %anisotropy factor [unitless]
+    p=1040;                 %tissue density [kg/m^3] 
+    c=3650;                 %specific heat [J/(kg*K)]
+    k_d=0.530;               %,thermal diffusivity [W/(m*K)]
+    w_L= [0.0000045 0.0001];%1:e^ radius [m] 
+%Errors
+    du_a_plus=[34.9, 55.9];
+    du_a_minus=[-34.9, -52.5];
+    du_s_plus=[3267, 3558];
+    du_s_minus=[-3267, -3492];
+%Times to evaluate[s]       
+    t1=linspace(0,0.000075,50);
+    t2=linspace(0,0.040,50);
+%Time indices to plot
+    timesToPlot=[2 16 47];
+%Laser Power [W] (default 0)
+    PL=0.001;
+%Irradiance [W/m^2] (default 1)
+    IL=1;
+ %positions in tissue
+    filename_R=[fullfile(path,'FR_r')];
+    filename_Z=[fullfile(path,'FR_z')];
+    r=csvread(filename_R);  %radial position[mm]
+    z=csvread(filename_Z);  %axial position[mm]
+%-----Inistiations---
+    %Tissue properties
+    prop=[0 0 g p c k_d 0] ;%anisotropy factor;tissue density,
+                            %specific heat,thermal diffusivity
+    %Vector to store timeconstants
+    tau=zeros(1,length(L)*length(NA)); 
+    %Vector to store Temperature increases
+    dT=zeros(1000,1000,4,length(t1)); 
+    dTplus=zeros(4,length(t1));
+    dTminus=zeros(4,length(t1));
+    k=1%index for protocols
+    m=1%index for figures    
+\end{lstlisting}
+\textbf{Trise$\_$Data.m}
+\begin{lstlisting}
+function [ dT, tau] = Trise_Data( phi,du_a,du_s,prop,t )
+%UNTITLED2 Summary of this function goes here
+%   Detailed explanation goes here
+%1)u_a
+%2)u_s (niet de gereduceerde!)
+%3)g
+%4)p
+%5)c
+%6)k
+%7)w_L
+prop(1)=du_a+prop(1);
+prop(2)=du_s+prop(2);
+r_0=prop( 7 ); 
+z_0=2 / (prop(1) + ((1 - prop(3)) * prop(2))) ;
+x=prop(4)*prop(5);
+y=prop(6)*(2.4)^2;
+z=r_0*pi/(4.8*z_0);
+tau=(x/y)*(r_0^2/(1+z^2));
+
+dT=(tau*prop(1)/(prop(4)*prop(5)))*(1-exp(-t/tau)).*phi;
+end
+\end{lstlisting}
+\newpage
 \begin{figure*}[tb]
 	\centering
 	\includegraphics[width=\textwidth]{gfx/dT_Overig_bijlage.png}
@@ -20,3 +523,5 @@
 	\caption{De invloed van $\mu_a \pm \sigma$ en $\mu_s \pm \sigma$ op de lichtverdeling voor $474nm$, SM en MM en voor $560nm$, SM.}
 	\label{fig:FR_scat+abs_variatie}
 \end{figure*}
+\twocolumn
+
