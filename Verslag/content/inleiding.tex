@@ -9,30 +9,29 @@ Een eerste mogelijkheid is elektrische stimulatie van de neuronen met electroden
  Een belangrijk effect is de temperatuurstijging en dat is het onderwerp van dit onderzoek. 
 
 \subsection{Optogenetica} % (fold)#TODO waarom optogenetica?
-\begin{figure}[h!]
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=8cm]{gfx/Opsins.png}
-	\caption{Schematische weergave van een plasmamembraan met lichtgevoelige ionenkanalen of opsins (membraanprote\"inen). ChR2 is een veelgebruikt voorbeeld van een $Na^+$ kanaal en NpHR van een $Cl^-$ kanaal. Het eerste werkt optimaal bij stimulatie van $470nm$ en het tweede bij $560nm$.}
+	\caption{Schematische weergave van een plasmamembraan met lichtgevoelige ionenkanalen of opsines (membraanprote\"inen). ChR2 is een veelgebruikt voorbeeld van een $Na^+$ kanaal en NpHR van een $Cl^-$ kanaal. Het eerste werkt optimaal bij stimulatie van $470nm$ en het tweede bij $560nm$.}
 	\label{fig:Opsins}
 \end{figure}
 \label{sub:optogenetica}
 Neuronen hebben net zoals alle andere cellen in ons lichaam een plasmamembraan die de scheiding vormt tussen het intercellulair en extracellulair milieu. Dit plasmamembraan bestaat uit een dubbellaag van fosfolipiden en membraanprote\"inen, zie figuur \ref{fig:Opsins}. 
 Deze laatste functioneren als doorgangskanalen voor moleculen en zijn dan ook verantwoordelijk voor de communicatie van cellen onder elkaar. Een belangrijke soort membraanprote\"inen zijn ionenkanalen. Door het transport van ionen ontstaat er een potentiaal over het plasmamembraan. Een cel in rust heeft een membraanpotentiaal van ongeveer $-70mV$. 
 Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen van buiten de cel naar binnen in de cel te transporteren. Enkele ionenkanalen openen en gelijdelijk aan stijgt de membraanpotentiaal. Op het moment dat een drempel potentiaal ($\approx 40-55mV$)  bereikt wordt openen de ionenkanalen volledig en stijgt de membraanpotentiaal exponentieel.
-\begin{figure}[h!]
+\begin{figure}[!ht]
 	\centering
-			\includegraphics[width=9cm]{gfx/ratbrein.png}
-			\label{fig:ratbrein}
-	\caption{(a) Een opname van een actiepotentiaal in een neocorticale neuron uit en rat brein \cite{Neuroscience}. De rust membraan potentiaal ligt daar iets hoger $\approx 68mV$\cite{ActPot} \\(b) Lengtedoorsnede van en rat brein met de doorsnede plaats voor afbeelding c (c) Dwarsdoorsnede van een rat brein \cite{Ratbrein}. }
-	\label{fig:two}
+	\includegraphics[width=9cm]{gfx/ratbrein.png}
+	\caption{(a) Een opname van een actiepotentiaal in een neocorticale neuron uit en ratten hersenen \cite{Neuroscience}. De rust membraan potentiaal ligt daar iets hoger $\approx 68mV$\cite{ActPot} \\(b) Lengtedoorsnede van en rat brein met de doorsnede plaats voor afbeelding c (c) Dwarsdoorsnede van een rat brein \cite{Ratbrein}. }
+	\label{fig:ratbrein}
 \end{figure}
 Dit neuron signaal wordt een  actie potentiaal genoemd (zie figuur \ref{fig:ratbrein}). Belangrijk om op te merken is dat de actie potentiaal automatisch gegenereerd wordt eens de drempel potentiaal bereikt is (\emph{all or nothing principle}). 
-De celactiviteit inhiberen gebeurt alsvolgt. Een natuurlijk signaal zorgt voor een stijging tot aan de drempel potentiaal. Vervolgens wordt automatisch een actie potentiaal gegenereerd. Wanneer nu de rust membraanpotentiaal verlaagd wordt, door transport van negatieve ionen, is een natuurlijk signaal niet meer voldoende om tot aan de drempel potentiaal te geraken. Bijgevolg wordt geen actie potentiaal gegenereerd en is de activiteit van de neuron ge\"inhibeerd. 
+De celactiviteit inhiberen gebeurt alsvolgt. Een natuurlijk signaal zorgt voor een stijging tot aan de drempel potentiaal. Vervolgens wordt automatisch een actie potentiaal gegenereerd. Wanneer nu de rust membraanpotentiaal verlaagd wordt, transport van negatieve ionen, is een natuurlijk signaal niet meer voldoende om tot aan de drempel potentiaal te geraken. Bijgevolg wordt geen actie potentiaal gegenereerd en is de activiteit van de neuron ge\"inhibeerd. 
 Het controleren van neuron activiteit is dus hetzelfde als het controleren van de activiteit van de ionenkanalen in de cel.
 
 Enkele micro-organismen zijn prachtig ge\"evolueerd naar organismen die licht kunnen gebruiken als energiebron.
-Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de membraanpotentialen te onderhouden of om een geschikte levensomgevingen te identificeren \cite{Opsin}. Een belangrijke soort van deze lichtgevoelige prote\"inen, \emph{opsins}, zijn transmembrane rodopsines. Ze zorgen voor het transport van ionen over het plasmamembraan en doen dit na stimulatie met electromagnetische straling van een specifieke golflengte (zie figuur \ref{fig:Opsins}). Ook hebben ze zeer snelle kinetische eigenschappen en worden ze gecodeerd door slechts \'e\'en gen. Dat maakt ze zeer interessant voor gebruik in optogenetische experimenten. In tabel \ref{tab:opsin} staan enkele veel gebruikte opsines met hun golflengte nodig voor maximale activiteit. Deze optogenetische instrumenten zijn het resultaat van moleculaire en genetische manipulaties om de gewenste zowel fysiologische (activatie of inhibitie) als kinetische (voldoende snel) als optische (golflengte, power,..) eigenschappen te bekomen \cite{OptoGen}.
-\begin{table*}[h!]
+Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de membraanpotentialen te onderhouden of om een geschikte levensomgevingen te identificeren \cite{Opsin}. Een belangrijke soort van deze lichtgevoelige prote\"inen, \emph{opsines}, zijn transmembrane rodopsines. Ze zorgen voor het transport van ionen over het plasmamembraan en doen dit na stimulatie met electromagnetische straling van een specifieke golflengte (zie figuur \ref{fig:Opsins}). Ook hebben ze zeer snelle kinetische eigenschappen en worden ze gecodeerd door slechts \'e\'en gen. Dat maakt ze zeer interessant voor gebruik in optogenetische experimenten. In tabel \ref{tab:opsin} staan enkele veel gebruikte opsines met hun golflengte nodig voor maximale activiteit. Deze optogenetische instrumenten zijn het resultaat van moleculaire en genetische manipulaties om de gewenste zowel fysiologische (activatie of inhibitie) als kinetische (voldoende snel) als optische (golflengte, power,..) eigenschappen te bekomen \cite{OptoGen}.
+\begin{table*}[!ht]
 	\caption{Opsines gebruikt in optogenetische experimenten met spectrale data \cite{OptoGen}}
 	\label{tab:opsin}
 	\centering
@@ -58,28 +57,30 @@ Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de
 	\end{tabular}
 \end{table*}
 
-Door genetische modificatie kunnen opsins tot expressie gebracht worden in de neuronen. De cellen worden ge\"infecteerd met onschadelijke virussen (vectors) die het gen, dat codeert voor het gewenste prote\"ine, bevatten. 
-Wanneer deze cellen vervolgens met licht van de juiste golflengte bestraald worden, zullen de opsins ionen transporteren en kan de activiteit van de neuronen be\"invloed worden. Vaak wordt aan het prote\"ine een fluorescent molecule toegevoegd. Hierdoor kan precies nagegaan worden welke cellen het prote\"ine tot expressie gebracht hebben. De activiteit van deze neuronen is nu controleerbaar en hun functie kan bestudeerd worden. 
-In figuur is twee keer een opname van rat hersenen en een vergroting op \'e\'en neuron te zien. Op de linker figuur heeft de cel een activatie opsin (\emph{ChR2}, Channelrodopsine) tot expressie gebracht. De grafiek eronder toont dat met de juiste stimulatie de neuron verschillende actie potentialen genereerd. De rechter afbeelding toont een neuron die \emph{eArchT3.0}, een inhibitie opsin, tot expressie bracht. De opname van de activiteit na stimulatie met een golflengte van $560nm$ toont de werking van het prote\"ine \cite{Nerf}.
-\begin{figure*}[tb]
+Door genetische modificatie kunnen opsines tot expressie gebracht worden in de neuronen. De cellen worden ge\"infecteerd met onschadelijke virussen (vectors) die het gen, dat codeert voor het gewenste prote\"ine, bevatten. 
+Wanneer deze cellen vervolgens met licht van de juiste golflengte bestraald worden, zullen de opsines ionen transporteren en kan de activiteit van de neuronen be\"invloed worden. Vaak wordt aan het prote\"ine een fluorescent molecule toegevoegd. Hierdoor kan precies nagegaan worden welke cellen het prote\"ine tot expressie gebracht hebben.
+\begin{figure*}[!ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{gfx/act_inh.png}
 	\caption{Opnames van rat hersenen. Links een cel met ChR2 (activatie) en recht een cel met eArchT3.0 (inhibitie). Eronder een opname van de activiteit na stimulatie met juiste golflengte.}
 	\label{fig:act_inh}
-\end{figure*}
+\end{figure*} 
+In figuur \ref{fig:act_inh} is twee keer een opname van rat hersenen en een vergroting op \'e\'en neuron te zien. Op de linker figuur heeft de cel een activatie opsin (ChR2, \emph{Channelrodopsine}) tot expressie gebracht. De grafiek eronder toont dat met de juiste stimulatie de neuron verschillende actie potentialen genereerd. De rechter afbeelding toont een neuron die \emph{eArchT3.0}, een inhibitie opsin, tot expressie bracht. De opname van de activiteit na stimulatie met een golflengte van $560nm$ toont de werking van het prote\"ine \cite{Nerf}.
 
-\subsection{De levering van straling naar het brein} % (fold)
+\subsection{Stimulatie van de neuronen} % (fold)
 \label{sub:de_levering_van_straling_naar_het_brein}
-Om het brein te stimuleren met elektromagnetische straling gebruikt men vaak optische vezels. Dit zijn draden bestaande uit twee delen met verschillende brekingsindex; een kern en een mantel. Door het verschil in brekingsindex wordt elektromagnetische straling in de kern intern gereflecteerd tegen de mantel en kan een optische vezel licht begeleiden \cite{OpticalFib}.
-\begin{figure}[tb]
+Om neuronen te stimuleren kunnen verschillende lichtbronnen gebruikt worden, vaak een laser of een led van juiste golflengte. Deze laatste wordt geprefereerd in optogenetische experimenten aangezien hij compacter en goedkoper is. Wanneer een neuron actief is zendt hij verschillende korte signalen na elkaar. De membraanpotentiaal depolariseert en polariseert  voordurend. Wanneer \emph{in vivo} experimenten met proefdieren plaatsvinden en enkele neuronen gestimuleerd dienen te worden is het de bedoeling om zo goed mogelijk een echt fysiologisch process na te bootsen. Daarom wordt voor de activatie gewerkt met korte pulsen van elektromagnetische straling, ideaal is $t\approx 1-10ms$ \cite{Blog}. Bij de inhibitie moet er gedurende een langere periode polarisatie van het membraan optreden en wordt een langere puls gebruikt. Er zijn dus twee verschillende stimulatie manieren, continue stimulatie (voornamelijk voor inhibitie) en gepulste stimulatie (voornamelijk voor activatie). De temperatuursverandering voor beide stimulaties zullen aan bod komen.
+
+Om de straling van aan de lichtbron naar de cellen te leiden worden optische vezels gebruikt. Dit zijn draden bestaande uit twee lagen met verschillende brekingsindex; een kern en een mantel. Door het verschil in brekingsindex wordt elektromagnetische straling in de kern intern gereflecteerd tegen de mantel en kan een optische vezel licht begeleiden \cite{OpticalFib}.
+\begin{figure}[!ht]
  	\centering
  	\includegraphics[width=0.5\textwidth]{gfx/OptFib.png}
  	\caption{(a) Dwarsdoorsnede van een optische vezel (b) lengtedoorsnede van een multi-mode (MM) vezel met kern diameter $d$ (c) lengtedoorsnede van een single-mode (SM) vezel met kern diameter $d$}
  	\label{fig:OptFib}
  \end{figure} 
-De brekingsindex van een materiaal is gedefinieerd als de verhouding van de sinusssen van de hoek $\theta_1$ van inval en de brekingshoek $\theta_2$ wanneer licht vanuit het vacu\"um invalt.%#TODO afbeelding
+De brekingsindex van een materiaal is gedefinieerd als de verhouding van de sinusssen van de hoek van inval $\theta_1$  en de brekingshoek $\theta_2$ wanneer licht vanuit het vacu\"um invalt.%#TODO afbeelding
 $$n=\frac{\text{sin}\theta_1}{\text{sin}\theta_2}$$
-De reflectie aan het scheidingsvlak wordt beschreven door de wet van Snell.
+De reflectie aan het scheidingsvlak wordt beschreven met de wet van Snell.
 $$n_1\text{sin}\phi_1=n_2\text{sin}\phi_2$$
 hierin is $\phi_1$ de invallende hoek en $\phi_2$ de brekingshoek. Totale interne reflectie treedt op wanneer de invallende hoek groter wordt dan de kritische hoek $\phi_{krit}$.
 $$\phi_{krit}=\frac{n_1}{n_2}$$
@@ -89,31 +90,31 @@ Een belangrijke eigenschap van een optische vezel is de numerieke apertuur NA.
 	\text{NA}=n_0\cdot\text{sin}\alpha=\sqrt{n_1^2+n_2^2}
 \end{equation}
 $\alpha$ is de spreidingshoek van de uitgaande straling in vacu\"um/lucht (zie figuur). %#TODO
-Ook wordt een onderscheidt gemaakt tussen \emph{multi-mode} en \emph{single-mode} vezels (zie figuur \ref{fig:OptFib}). 
+Ook wordt een onderscheidt gemaakt tussen \emph{multi-mode} (MM) en \emph{single-mode} (SM) vezels (zie figuur \ref{fig:OptFib}). 
 Een vezel met een kleinere kerndiameter $d$ en bijgevolg ook kleinere numerieke apertuur NA, kan slechts \'e\'en lichtstraal of mode\footnote{lichte mode refereert naar een oplossing van de Maxwell vergelijkingen} begeleiden. De diameter is dan meestal gelijkaardig aan de golflengte van de staling. 
 % bedoel je met gelijkaardig, even groot of van de zelfde grote orde als? Want dan zou ik denk ik dat gebruiken. 
-Een multi-mode vezel heeft een grotere diameter $d$ en numerieke apertuur NA zodat meerdere modes tegelijk begeleid kunnen worden. Beide vezels worden gebruikt in optogenetische experimenten. 
+Een multi-mode vezel heeft een grotere diameter $d$ en een grotere numerieke apertuur NA zodat meerdere modes tegelijk begeleid kunnen worden. Beide vezels worden gebruikt in optogenetische experimenten. 
 
 \subsection{Interactie van weefsel met straling}
 \label{sub:interactie_van_weefsel_met_elektromagnetische_straling}
-Er zijn verschillende soorten interacties van straling met weefsel die kunnen voorkomen afhankelijk van de energie, intensiteit en blootstellingsperiode van de straling. De moleculen in het weefsel absorberen de fotonen en de mogelijke effecten worden opgedeeld in vijf categorie\"en\cite{laser} (zie figuur \ref{fig:interaction}). De combinatie van zeer hoge intensiteit en korte blootstellings tijd (hoge irradiantie) zorgt voor volledige ionisatie van de moleculen, wat resulteert in een kettingreactie en plasmavorming. Langere blootstellingstijd zorgt dan voor de mechanische effecten die samen gaan met plasmavorming zoals schokgolven, bubbel vorming,\ldots. Ze worden gegroepeerd onder de naam fotodisruptie. Dit maakt het weefsel kapot vindt dus een toepassing in de geneeskunde voor bijvoorbeeld het verwijderen van nierstenen.
-% Hierbij wordt het weefsel kapot gemaakt en dit vindt toepassingen in de geneeskunde voor bijvoorbeeld het verwijderen van nierstelen.
-Bij lagere irradianties worden de elektronen ge\"exiteerd.  Foto-ablatie (zie figuur \ref{fig:interaction}) zorgt voor dissociatie van de moleculen. De electronen absorberen hoog energetische fotonen en verplaatsen zich van een bindende naar een niet bindende orbitaal. Elektronen van moleculen kunnen zich ook verplaatsen van een bindend orbitaal naar een ander bindend orbitaal (op een hoger energieniveau). Een ge\"exiteerd molecule zal andere chemische bindingen ondergaan, vaak met apoptose (geprogrammeerde celdood) tot gevolg. Deze fotochemische reacties treden op bij lage irradiantie en lange blootstellings tijd. Wanneer de moleculen de energie van de fotonen absorberen\footnote{licht absorberende moleculen noemt men chromoforen}, wordt deze omgezet in warmte via moleculaire vibraties en botsingen. 
-\begin{figure}[h!]
+Er zijn verschillende soorten interacties van straling met weefsel die kunnen voorkomen afhankelijk van de energie, intensiteit en blootstellingsperiode van de straling. De moleculen in het weefsel absorberen de fotonen en de mogelijke effecten worden opgedeeld in vijf categorie\"en \cite{laser} (zie figuur \ref{fig:interaction}). De combinatie van zeer hoge intensiteit en korte blootstellings tijd (hoge irradiantie) zorgt voor volledige ionisatie van de moleculen, wat resulteert in een kettingreactie en plasmavorming. Langere blootstellingstijd zorgt dan voor de mechanische effecten die samen gaan met plasmavorming zoals schokgolven, bubbel vorming,\ldots. Ze worden gegroepeerd onder de naam fotodisruptie. 
+Hierbij wordt het weefsel kapot gemaakt en dit vindt toepassingen in de geneeskunde voor bijvoorbeeld het verwijderen van nierstelen.
+Bij lagere irradianties worden de elektronen ge\"exiteerd.  Foto-ablatie (zie figuur \ref{fig:interaction}) zorgt voor dissociatie van de moleculen. De electronen absorberen hoog energetische fotonen en verplaatsen zich van een bindend naar een niet bindend orbitaal. Elektronen van moleculen kunnen zich ook verplaatsen van een bindend orbitaal naar een ander bindend orbitaal (op een hoger energieniveau). Dit noemt men een ge\"exiteerd molecule en het zal andere chemische bindingen ondergaan, vaak met apoptose (geprogrammeerde celdood) tot gevolg. Deze fotochemische reacties treden op bij lage irradiantie en lange blootstellings tijd. Wanneer de moleculen de energie van de fotonen absorberen\footnote{licht absorberende moleculen noemt men chromoforen}, wordt deze omgezet in warmte via moleculaire vibraties en botsingen. 
+\begin{figure}[!ht]
 	\centering
 	\includegraphics[width=8.5cm]{gfx/interaction.png}
 	\caption{De verschillende soorten interacties tussen elektromagnetische straling en weefsel in functie van de irradantie en blootstellingsduur.}
 	\label{fig:interaction}
 \end{figure}
 
-De drempel irradiantie nodig voor opsin activatie in optogenetische experimenten vari\"eert van opsin tot opsin, ongeveer $\geq 1 \frac{mW}{mm^2}$, en de nodige blootstellingstijd is in de milliseconde range. Uit figuur \ref{fig:interaction} blijkt dus dat bij optogenetische experimenten vooral \emph{fotothermische} effecten zullen optreden. De schade aan het weefsel hangt af van de temperatuursstijging en de duur van de opwarming. Tabel \ref{tab:tempeffect} geeft een overzicht van thermische effecten in weefsel.
+De drempel irradiantie nodig voor opsine activatie in optogenetische experimenten vari\"eert van opsine tot opsine. Voor ChR2, het meest gebruikte activatie kationen kanaal is dit ongeveer $\geq 1 \frac{mW}{mm^2}$ en de nodige blootstellingstijd is in de milliseconde range. Uit figuur \ref{fig:interaction} kan afgeleid worden dat bij optogenetische experimenten vooral \emph{fotothermische} effecten zullen optreden. De schade aan het weefsel hangt af van de temperatuursstijging en de duur van de opwarming. Tabel \ref{tab:tempeffect} geeft een overzicht van thermische effecten in weefsel.
 
-\begin{table}[tb]
+\begin{table}[!ht]
 	\caption{Temperatuureffecten in weefsel}
 	\label{tab:tempeffect}
 	\centering
 
-	\begin{tabular}{l|c}
+	\begin{tabular}{l|p{6cm}}
 	\hline
 	\hline
 	\textbf{T ($^{\circ}C$)} & \textbf{Effect} \\
@@ -127,12 +128,10 @@ De drempel irradiantie nodig voor opsin activatie in optogenetische experimenten
 	\end{tabular}
 \end{table}
 
-Over vanaf wanneer er precies onomkeerbare schade optreedt is wat discussie.
-% Deze zin klink voor mij een beetje raar, ik zou eerder iets anders schrijven, maar ik heb daar niet echt een goede rede voor.Bijvoorbeeld
-% Er is wat discussie over vanaf wanneer er precies onomkeerbare schade optreedt.  
-Sommige zeggen al vanaf $0.5^{\circ} C$, andere pas vanaf $1.5^{\circ}C$. In ieder geval denatureren prote\"inen al zeer snel, maar het lichaam is daar tot op zeker hoogte tegen beschermd. In het cytoplasma van de cel zijn er de zogenaamde \emph{Chaperonne-eiwitten}. Deze helpen bij de opvouwing van de prote\"inen en houden de prote\"inen in vorm tijdens stress situaties zoals een te hoge temperatuur. Chaperonne prote\"inen die voornamelijk de tweede functie hebben worden ook wel \emph{stress prote\"inen} of \emph{heat-shock proteins} (Hsps) genoemd\cite{Chaperons}. Echter vanaf $41^{\circ}C$ is dit mechanisme niet meer voldoende en zal permanente denaturatie optreden. Hogere temperatuurstijgingen geven aanleiding tot afbraak van het weefsel.
+Er is discussie over vanaf wanneer er precies onomkeerbare schade optreedt.  
+Sommige zeggen al vanaf $0.5^{\circ}$C, andere pas vanaf $1.5^{\circ}$C. In ieder geval denatureren prote\"inen al zeer snel, maar het lichaam is daar tot op zeker hoogte tegen beschermd. In het cytoplasma van de cel zijn er de zogenaamde \emph{Chaperonne-eiwitten}. Deze helpen bij de opvouwing van de prote\"inen of houden de prote\"inen in vorm tijdens stress situaties zoals een te hoge temperatuur. Chaperonne prote\"inen die voornamelijk de tweede functie hebben worden ook wel \emph{stress prote\"inen} of \emph{heat-shock proteins} (Hsps) genoemd \cite{Chaperons}. Echter vanaf $41^{\circ}C$ is dit mechanisme niet meer voldoende en zal permanente denaturatie optreden. Hogere temperatuurstijgingen geven aanleiding tot afbraak van het weefsel.
 
-Het is duidelijk dat significante temperatuursstijgingen in de hersenen door elektromagnetische straling vermeden moeten worden. Daarom is het belangrijk om een duidelijk model op te stellen voor de temperatuurstijging in het weefsel en dit voor verschillende stimulatie protocols; energie, intensiteit, pulsfrequentie,\ldots van de laserbeam. 
+Het is duidelijk dat significante temperatuursstijgingen in de hersenen door elektromagnetische straling vermeden moeten worden. Daarom is het belangrijk om een duidelijk model op te stellen voor de temperatuurstijging in het weefsel en dit voor verschillende stimulatie protocols; energie, intensiteit, pulsfrequentie,\ldots van de lichtbron. 
 
 
 
