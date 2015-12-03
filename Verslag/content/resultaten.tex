@@ -28,7 +28,7 @@ Tot slot is het interessant om te weten hoe groot het gestimuleerde volume is. O
   \begin{tabular}{l|cc}
   \hline
   \hline
-  \textbf{Golflengte} & \multicolumn{2}{c}{\textbf{Gestimuleerd volume [$mm^3$]}}\\
+  \textbf{$\lambda$} & \multicolumn{2}{c}{\textbf{Gestimuleerd volume [$mm^3$]}}\\
   \hline
    & SM &MM\\
    $474$nm & $0.2509$ & $0.2611$\\
@@ -49,7 +49,7 @@ Een tweede mogelijkheid is een zelfde aantal fotonen afvuren maar het gebied ver
 
 \subsection{Temperatuurstijging bij continue stimulatie}
 De resultaten voor de lichtverdeling bekomen met de Monte-Carlo simulatie werden gebruikt om de temperatuurstijging voor continue stimulatie te bepalen. Dit werd gedaan voor alle vier de protocols, telkens bij een vermogen van $1mW$. Er kunnen nu verschillende figuren gemaakt worden.
-\\
+
 Als eerste werden er kleurenplots gemaakt die de tijdsevolutie van de temperatuursverandering weergeven. De resultaten voor \'{e}\'{e}n van de protocols, namelijk $\lambda = 560nm$ en multi-mode, staan afgebeeld in figuur \ref{fig:dT_560_MM}, die voor de andere protocols kan men vinden in de bijlage (figuur \ref{fig:dT_Overig_Bijlage}). De temperatuurstijging werd telkens geplot op drie verschillende tijdstippen. Een eerste tijdstip werd gekozen vlak nadat het laserlicht op het weefsel begint te schijnen, in dit geval $t=0.001s$. Als tweede tijdstip werd telkens $t=\tau $ gekozen en als laatste tijdstip werd $t=3\tau$, dit tijdstip is de uiterste grens waarop ons model geldig is. Op dit laatste tijdstip is de temperatuur reeds gesatureerd, zodat de rechtse afbeelding telkens de finale temperatuurstijging weergeeft. Op deze afbeeldingen is duidelijk de evolutie van de temperatuursverandering zichtbaar. In het begin is de maximale temperatuurstijging lager en is de verandering minder verspreidt. Naarmate de tijd vordert wordt de maximale temperatuur groter en verspreidt de temperatuurstijging zich verder doorheen het weefsel. De fouten op deze figuren werden wel berekend, maar niet afgebeeldt omdat dat de figuren te ingewikkeld zou maken.  
 % figuur
 % label{fig:dT_560_MM}
@@ -60,22 +60,22 @@ Als eerste werden er kleurenplots gemaakt die de tijdsevolutie van de temperatuu
   	\label{fig:dT_560_MM}
   \end{figure*} 
 \\
-Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstijging van het hersenweefsel geplot in functie van de tijd op $z=0$ en $r=0$, telkens voor de twee verschillende golflengtes. Op de grafieken werd telkens $t=\tau$ aangeduid met een stippellijn. Aangezien de tijdsconstante voor eenzelfde vezel (SM of MM) zeer weinig van elkaar verschillen (zie later) kon er per afbeelding \'e\'en stippellijn getekend worden. Wanneer men naar de vorm van de grafieken kijkt, is te zien dat de temperatuurstijging inderdaad vrij snel zal satureren. Anderzijds is het opvallend dat de temperatuurstijging voor $560nm$ veel groter is dan voor $474nm$. Dit komt omdat de absorptie co\"effici\"ent van het weefsel een piek vertoont rond $550nm$. Rond $550nm$ zal de absorptie van fotonen door het weefsel veel groter zijn omwille van absorptie door hemoglobine. \cite{ ThermEff } Hierdoor zal de absorptie co\"ffici\"ent bij $560nm$ groter zijn dan bij $474nm$ en aangezien absorptie verantwoordelijk is voor temperatuurstijging, verklaart dit de grotere temperatuursverandering bij $560nm$.
+Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstijging van het hersenweefsel geplot in functie van de tijd op $z=0$ en $r=0$, telkens voor de twee verschillende golflengtes. Op de grafieken werd telkens $t=\tau$ aangeduid met een stippellijn. Aangezien de tijdsconstante voor eenzelfde vezel (SM of MM) zeer weinig van elkaar verschillen (zie later) kon er per afbeelding \'e\'en stippellijn getekend worden. Wanneer men naar de vorm van de grafieken kijkt, is te zien dat de temperatuurstijging inderdaad vrij snel zal satureren. Anderzijds is het opvallend dat de temperatuurstijging voor $560nm$ veel groter is dan voor $474nm$. Dit komt omdat de absorptie co\"effici\"ent van het weefsel een piek vertoont rond $550nm$. Rond $550nm$ zal de absorptie van fotonen door het weefsel veel groter zijn omwille van absorptie door hemoglobine \cite{ThermEff}. Hierdoor zal de absorptie co\"ffici\"ent bij $560nm$ groter zijn dan bij $474nm$ en aangezien absorptie verantwoordelijk is voor temperatuurstijging, verklaart dit de grotere temperatuursverandering bij $560nm$.
 %figuur
 % label{fig:dT_tijd_SM}
 %label{fig:dT_tijd_MM}
 \begin{figure}[!ht]
   	\centering
 
-  	\includegraphics[width=8.5cm]{gfx/dT_tijd_SM.png}
+  	\includegraphics[width=0.5\textwidth]{gfx/dT_tijd_SM.png}
   	\caption{Temperatuurstijging met fouten op $z=0$ en $r=0$ voor SM.}
 
   	\label{fig:dT_tijd_SM}
   \end{figure} 
 	
-	\begin{figure}[h!]
+	\begin{figure}[!ht]
   	\centering
-  	\includegraphics[width=8.5cm]{gfx/dT_tijd_MM.png}
+  	\includegraphics[width=0.5\textwidth]{gfx/dT_tijd_MM.png}
   	\caption{Temperatuurstijging met fouten op $z=0$ en $r=0$ voor MM.}
   	\label{fig:dT_tijd_MM}
   \end{figure} 
@@ -87,7 +87,7 @@ Zoals daarnet al werd vermeld, is er een zeer klein verschil tussen de tijdscons
     \label{fig:4dT}
   \end{figure*}
 % tabel met tau
-\begin{table}
+\begin{table*}[!ht]
 \centering
 \caption{Bekomen tijdsconstanten $\tau$ voor elk protocol.}
 \begin{tabular}{c||c|c}
@@ -96,7 +96,7 @@ $474 nm$ & $2.517870\pm 0.000007$ & $12.414\pm 0.016$ \\
 $560 nm$ & $2.517975\pm 0.000006$ & $12.415\pm 0.014$ \\
 \end{tabular}
 \label{tab:tau}
-\end{table}
+\end{table*}
 
 Tot slot kunnen we de kleurenplots voor de vier protocols met elkaar vergelijken. Afbeelding \ref{fig:4dT} geeft de temperatuurstijging weer voor de verschillende protocols, telkens op $3\tau$, wat de uiterste grens van de geldigheid van het model is. Men kan een aantal zaken opmerken. Ten eerste komt de vorm sterk overeen met die van de afbeeldingen voor de lichtverdeling. Dat komt omdat in een gebied met een hoge lichtverdeling de temperatuur sterk zal stijgen en in een gebied met een lage lichtverdeling, zal de temperatuur minder sterk stijgen. Ook is te zien dat de temperatuursverandering voor $560nm$ telkens groter en verder verspreid is dan voor $474nm$. Dit komt, zoals eerder al vermeld werd, door de hogere absorptie bij $560nm$. 
 
@@ -146,10 +146,9 @@ $5$ & $20$ & $8$ & $0.777$ & $1.62$ \\
 \hline                   
 \end{tabular}
 \end{table*}
-
-\subsection{Foutenanalyse}
-\label{subsec:fout}
-Het is belangrijk om bij het berekenen van de temperatuurstijging rekening te houden met de fouten op de gebruikte parameters. Er moet dus een foutenanalyse gedaan worden om zo de fouten op $\Delta T$ te berekenen. De temperatuurstijging is afhankelijk van volgende parameters $\Delta T(\mu_a,\mu_s, g,\rho, c, k, w_L, \phi)$ met $\phi(\mu_a, \mu_s, g)$. Aangezien de fouten op de absorptieco\"effici\"ent $\mu_a$ en gereduceerde verstrooiingsco\"effici\"ent $\mu_s'$ zeer groot zijn (zie figuur \ref{fig:AbsEnScat}), worden de fouten op de andere parameters verwaarloosd. De fouten op $\mu_a$ en $\mu_s'$ kunnen uit deze grafiek afgelezen worden. Vervolgens kan door $g$ constant te nemen, de fout op $\mu_s'$ eenvouding omgezet worden in een fout op $\mu_s$, daar $\mu_s'=(1-g)\mu_s$. Omdat de lichtverdeling bepaald werd met een Monte-Carlo methode, kan de fout hierop niet berekend worden met behulp van de doorwerkingsregel. De doorwerkingsregel voor een grootheid $Z$, berekend uit N onafhankelijke grootheden $X_1,X_2,\ldots,X_N$ met $Z=f(X_1,X_2,\ldots,X_N)$ wordt gegeven door:
+ De mogelijkheid bestaat dus dat met het model een temperatuurstijging berekend wordt die niet schadelijk is, maar dat de werkelijke temperatuurstijging hoger is en mogelijks wel schadelijke gevolgen heeft. \subsection{Foutenanalyse}
+ \label{subsec:fout}
+ Het is belangrijk om bij het berekenen van de temperatuurstijging rekening te houden met de fouten op de gebruikte parameters. Er moet dus een foutenanalyse gedaan worden om zo de fouten op $\Delta T$ te berekenen. De temperatuurstijging is afhankelijk van volgende parameters $\Delta T(\mu_a,\mu_s, g,\rho, c, k, w_L, \phi)$ met $\phi(\mu_a, \mu_s, g)$. Aangezien de fouten op de absorptieco\"effici\"ent $\mu_a$ en gereduceerde verstrooiingsco\"effici\"ent $\mu_s'$ zeer groot zijn (zie figuur \ref{fig:AbsEnScat}), worden de fouten op de andere parameters verwaarloosd. De fouten op $\mu_a$ en $\mu_s'$ kunnen uit deze grafiek afgelezen worden. Vervolgens kan door $g$ constant te nemen, de fout op $\mu_s'$ eenvouding omgezet worden in een fout op $\mu_s$, daar $\mu_s'=(1-g)\mu_s$. Omdat de lichtverdeling bepaald werd met een Monte-Carlo methode, kan de fout hierop niet berekend worden met behulp van de doorwerkingsregel. De doorwerkingsregel voor een grootheid $Z$, berekend uit N onafhankelijke grootheden $X_1,X_2,\ldots,X_N$ met $Z=f(X_1,X_2,\ldots,X_N)$ wordt gegeven door:
 \footnotesize
 \begin{equation}
 (\Delta Z)^2 = \left(\frac {\partial f}{\partial X_1}\right)^2(\Delta X_1)^2 +\left(\frac {\partial f}{\partial X_2}\right)^2(\Delta X_2)^2+ \cdots

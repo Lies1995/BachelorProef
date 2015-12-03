@@ -40,14 +40,13 @@ Als eerste moet lichtverdeling $\phi(r,z)$ bepaald worden. De lichtverdeling is 
 	\label{fig:MCML}
 \end{figure}
 Het principe wordt uitgelegd aan de hand van een simpel voorbeeld; het zenden van 1 foton doorheen het weefsel (zie figuur \ref{fig:MCML}). Wanneer een foton het oppervlak van het weefsel bereikt, wordt het verstrooid en of geabsorbeerd door moleculen. Dit proces kan gemodelleerd worden als een foton met een statistisch gewicht die een random walk uitvoert. Na elke stap verliest het een deel van zijn gewicht.  Hoeveel energie hij verliest en de geprefereede staprichting wordt random gekozen binnen een verdelingsfunctie bepaald door de weefsel parameters. Wanneer het gewicht onder een bepaalde drempel is gekomen stopt de simulatie voor dat foton. Wanneer dit herhaald wordt voor $1$ miljoen fotonen kan een duidelijk beeld verkregen worden van hoe de energie verdeeld wordt over het weefsel. Aan de hand van een statistisch wiskundig protocol kan vervolgens de fotonverdeling omgezet worden naar kwantitatieve gegevens voor $\phi(r,z)$\cite{MCML}. 
-Een programma geschreven door \emph{Lihong Wang en Steven L. Jacques} aan  de universiteit van Texas doet dergelijke monte-carlo simulaties en geeft uiteindelijk lichtverdeling voor het gewenst gebied. Voor meer details wordt verwezen naar de publicatie \cite{MCML}.  
+Een programma geschreven door \emph{Lihong Wang en Steven L. Jacques} aan  de universiteit van Texas doet dergelijke monte-carlo simulaties en geeft uiteindelijk lichtverdeling benaderende voor het gewenst gebied. Voor meer details wordt verwezen naar de publicatie \cite{MCML}.
 \subsection{Temperatuursverandering simulatie} % (fold)
 \label{sub:temperatuursverandering_simulatie}
-% subsection temperatuursverandering_simulatie (end)
-
 Om de temperatuursveranderingen te modelleren volgens de benaderende oplossing besproken in paragraaf \ref{sec:theoretische_achtergrond} werd een matlab code geschreven, zie hiervoor de bijlage. 
 De code bestaat uit drie scripts. Een eerste om de data file voor lichtverdeling van het monte-carlo simulatie programma in te lezen en de resultaten grafisch weer te geven. In deze code wordt de data voor de lichtverdeling corresponderend met een eenheids irradiantie ($\psi(r,z)$) opgeslaan als een .csv bestand. Deze kan dan gebruikt worden om in het tweede script de temperatuursverandering voor een continue stimulatie in elk punt te berekenen en grafisch weer te geven. Hiervoor wordt de oplossing van de bioheat vergelijking (vergelijking \ref{eq:solBH}) gebruikt. Een derde script berekent de temperatuursverandering voor een gepulste stimulatie.
 Zoals in de vorige paragraaf reeds uitgelegd is, is de temperatuursverandering voor een gepulste stimulatie een sommatie van indiviuele korte continue stimulaties (zie figuur \ref{fig:puls4}). Welke functies er opgeteld moeten worden hangt af van de tijd. Noem $t_L$ de lengte van de puls en $F-t_L$ de tijd tussen twee individuele pulsen. Dan kan de tijd alsvolgt opgedeeld worden. 
+
 \footnotesize
 \begin{equation}
 \Delta T(t) = \left\{\begin{array}{l l} 

@@ -11,7 +11,7 @@ Een eerste mogelijkheid is elektrische stimulatie van de neuronen met electroden
 \subsection{Optogenetica} % (fold)#TODO waarom optogenetica?
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=8cm]{gfx/Opsins.png}
+	\includegraphics[width=0.5\textwidth]{gfx/Opsins.png}
 	\caption{Schematische weergave van een plasmamembraan met lichtgevoelige ionenkanalen of opsines (membraanprote\"inen). ChR2 is een veelgebruikt voorbeeld van een $Na^+$ kanaal en NpHR van een $Cl^-$ kanaal. Het eerste werkt optimaal bij stimulatie van $470nm$ en het tweede bij $560nm$.}
 	\label{fig:Opsins}
 \end{figure}
@@ -21,7 +21,7 @@ Deze laatste functioneren als doorgangskanalen voor moleculen en zijn dan ook ve
 Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen van buiten de cel naar binnen in de cel te transporteren. Enkele ionenkanalen openen en gelijdelijk aan stijgt de membraanpotentiaal. Op het moment dat een drempel potentiaal ($\approx -50mV$)  bereikt wordt openen alle ionenkanalen en stijgt de membraanpotentiaal exponentieel.
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=9cm]{gfx/ratbrein.png}
+	\includegraphics[width=0.5\textwidth]{gfx/ratbrein.png}
 	\caption{(a) Een opname van een actiepotentiaal in een neocorticale neuron uit en ratten hersenen \cite{Neuroscience}. De rust membraan potentiaal ligt daar iets hoger $\approx 68mV$\cite{ActPot} \\(b) Lengtedoorsnede van en rat brein met de doorsnede plaats voor afbeelding c (c) Dwarsdoorsnede van een rat brein \cite{Ratbrein}. }
 	\label{fig:ratbrein}
 \end{figure}
@@ -29,7 +29,7 @@ Dit neuron signaal wordt een  actie potentiaal genoemd (zie figuur \ref{fig:ratb
 De celactiviteit inhiberen gebeurt alsvolgt. Spontane activiteit zorgt voor een stijging tot aan de drempel potentiaal. Vervolgens wordt automatisch een actie potentiaal gegenereerd. Wanneer nu de rust membraanpotentiaal verlaagd wordt, door transport van negatieve ionen, is de membraandepolarisatie door spontane activiteit niet meer voldoende om tot aan de drempel potentiaal te geraken. Bijgevolg wordt geen actie potentiaal gegenereerd en is de activiteit van de neuron ge\"inhibeerd. 
 Het controleren van neuron activiteit is dus hetzelfde als het controleren van de activiteit van de ionenkanalen in de cel.
 
-Enkele micro-organismen zijn prachtig ge\"evolueerd naar organismen die licht kunnen gebruiken als energiebron.
+Enkele micro-organismen kunnen licht gebruiken als energiebron.
 Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de membraanpotentialen te onderhouden of om een geschikte levensomgevingen te identificeren \cite{Opsin}. Een belangrijke soort van deze lichtgevoelige prote\"inen, \emph{opsines}, zijn transmembrane rodopsines. Ze zorgen voor het transport van ionen over het plasmamembraan en doen dit na stimulatie met electromagnetische straling van een specifieke golflengte (zie figuur \ref{fig:Opsins}). Ook hebben ze zeer snelle kinetische eigenschappen en worden ze gecodeerd door slechts \'e\'en gen. Dat maakt ze zeer interessant voor gebruik in optogenetische experimenten. In tabel \ref{tab:opsin} staan enkele veel gebruikte opsines met hun golflengte nodig voor maximale activiteit. Deze optogenetische instrumenten zijn het resultaat van moleculaire en genetische manipulaties om de gewenste zowel fysiologische (activatie of inhibitie) als kinetische (voldoende snel) als optische (golflengte, power,..) eigenschappen te bekomen \cite{OptoGen}.
 \begin{table*}[!ht]
 	\caption{Opsines gebruikt in optogenetische experimenten met spectrale data \cite{OptoGen}}
@@ -66,7 +66,6 @@ Wanneer deze cellen vervolgens met licht van de juiste golflengte bestraald word
 	\label{fig:act_inh}
 \end{figure*} 
 In figuur \ref{fig:act_inh} is twee keer een opname van rat hersenen en een vergroting op \'e\'en neuron te zien. Op de linker figuur heeft de cel een activatie opsin (ChR2, \emph{Channelrodopsine}) tot expressie gebracht. De grafiek eronder toont dat met de juiste stimulatie de neuron verschillende actie potentialen genereerd. De rechter afbeelding toont een neuron die \emph{eArchT3.0}, een inhibitie opsin, tot expressie bracht. De opname van de activiteit na stimulatie met een golflengte van $560nm$ toont de werking van het prote\"ine \cite{Nerf}.
-
 \subsection{Stimulatie van de neuronen} % (fold)
 \label{sub:de_levering_van_straling_naar_het_brein}
 Om neuronen te stimuleren kunnen verschillende lichtbronnen gebruikt worden, vaak een laser of een led van juiste golflengte. Deze laatste wordt geprefereerd in optogenetische experimenten aangezien hij compacter en goedkoper is. Wanneer een neuron actief is zendt hij verschillende korte signalen na elkaar. De membraanpotentiaal depolariseert en polariseert  voordurend. Wanneer \emph{in vivo} experimenten met proefdieren plaatsvinden en enkele neuronen gestimuleerd dienen te worden is het de bedoeling om zo goed mogelijk een echt fysiologisch process na te bootsen. Daarom wordt voor de activatie gewerkt met korte pulsen van elektromagnetische straling, ideaal is $t\approx 1-15ms$ \cite{Blog}. Bij de inhibitie moet er gedurende een langere periode polarisatie van het membraan optreden en wordt een langere puls gebruikt. Er zijn dus twee verschillende stimulatie manieren, continue stimulatie (voornamelijk voor inhibitie) en gepulste stimulatie (voornamelijk voor activatie). De temperatuursverandering voor beide stimulaties zullen aan bod komen.
@@ -78,7 +77,13 @@ Om de straling van aan de lichtbron naar de cellen te leiden worden optische vez
  	\caption{(a) Dwarsdoorsnede van een optische vezel (b) lengtedoorsnede van een multi-mode (MM) vezel met kern diameter $d$ (c) lengtedoorsnede van een single-mode (SM) vezel met kern diameter $d$}
  	\label{fig:OptFib}
  \end{figure} 
-De brekingsindex van een materiaal is gedefinieerd als de verhouding van de sinusssen van de hoek van inval $\theta_1$  en de brekingshoek $\theta_2$ wanneer licht vanuit het vacu\"um invalt.%#TODO afbeelding
+ \begin{figure}[!ht]
+ 	\centering
+ 	\includegraphics[width=0.5\textwidth]{gfx/snell.png}
+ 	\caption{(a)de spreidingshoek $\alpha$ in een medium met brekingsindex $n_0$ (b) De wet van Snell}
+ 	\label{fig:snell}
+ \end{figure}
+De brekingsindex van een materiaal is gedefinieerd als de verhouding van de sinusssen van de hoek van inval $\theta_1$  en de brekingshoek $\theta_2$ wanneer licht vanuit het vacu\"um invalt (zie afbeelding \ref{fig:snell}).
 $$n=\frac{\text{sin}\theta_1}{\text{sin}\theta_2}$$
 De reflectie aan het scheidingsvlak wordt beschreven met de wet van Snell.
 $$n_1\text{sin}\phi_1=n_2\text{sin}\phi_2$$
@@ -102,7 +107,7 @@ Hierbij wordt het weefsel kapot gemaakt en dit vindt toepassingen in de geneesku
 Bij lagere irradianties worden de elektronen ge\"exiteerd.  Foto-ablatie (zie figuur \ref{fig:interaction}) zorgt voor dissociatie van de moleculen. De electronen absorberen hoog energetische fotonen en verplaatsen zich van een bindend naar een niet bindend orbitaal. Elektronen van moleculen kunnen zich ook verplaatsen van een bindend orbitaal naar een ander bindend orbitaal (op een hoger energieniveau). Dit noemt men een ge\"exiteerd molecule en het zal andere chemische bindingen ondergaan, vaak met apoptose (geprogrammeerde celdood) tot gevolg. Deze fotochemische reacties treden op bij lage irradiantie en lange blootstellings tijd. Wanneer de moleculen de energie van de fotonen absorberen\footnote{licht absorberende moleculen noemt men chromoforen}, wordt deze omgezet in warmte via moleculaire vibraties en botsingen. 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=8.5cm]{gfx/interaction.png}
+	\includegraphics[width=0.5\textwidth]{gfx/interaction.png}
 	\caption{De verschillende soorten interacties tussen elektromagnetische straling en weefsel in functie van de irradantie en blootstellingsduur.}
 	\label{fig:interaction}
 \end{figure}
@@ -114,7 +119,7 @@ De drempel irradiantie nodig voor opsine activatie in optogenetische experimente
 	\label{tab:tempeffect}
 	\centering
 
-	\begin{tabular}{l|p{6cm}}
+	\begin{tabular}{l|p{5.5cm}}
 	\hline
 	\hline
 	\textbf{T ($^{\circ}C$)} & \textbf{Effect} \\
