@@ -1,8 +1,8 @@
 \section*{Bijlage} % (fold)
 \label{sec:bijlage}
-\subsection{Matlabcode} % (fold)
+\subsection*{Matlabcode} % (fold)
 \label{sub:matlabcode}
-\subsubsection{Lichtverdeling} % (fold)
+\subsubsection*{Lichtverdeling} % (fold)
 \label{ssub:lichtverdeling}
 Onderstaande matlabcode leest de .frzc files van de monte-carlo simulatie en geeft ze grafisch weer in een \emph{imagesc}. De .frzc files zijn de lichtverdelingen voor de verschillende protocols gesimuleerd met een input power $1mW$ en een gaussische lichtbundel. Er werden 1 miljoen fotonen afgevuurd.
 De bestanden voor de verschillende protocols zijn alsvolgt gelabeld:
@@ -219,9 +219,9 @@ function [r,z,Data] = MCML_read_F(MCML_file_MCO)
 end
 
 \end{lstlisting}
-\subsubsection{Temperatuursverandering continue stimulatie} % (fold)
+\subsubsection*{Temperatuursverandering continue stimulatie} % (fold)
 \label{ssub:dtcontinue}
-Onderstaande matlabcode leest de .csv bestanden uit de map \emph{unitFR} en berekent de temperatuursverandering voor een continue stimulatie met behulp van vergelijking \ref{eq:solBH}. Vervolgens plot hij op drie tijdstippen (\emph{Times$\_$to$\_$plot}) de temperatuursverandering. Tot slot worden nog twee grafieken (voor SM en MM) gemaakt van $\DeltaT$ in functie van de tijd.\\
+Onderstaande matlabcode leest de .csv bestanden uit de map \emph{unitFR} en berekent de temperatuursverandering voor een continue stimulatie met behulp van vergelijking \ref{eq:solBH}. Vervolgens plot hij op drie tijdstippen (\emph{Times$\_$to$\_$plot}) de temperatuursverandering. Tot slot worden nog twee grafieken (voor SM en MM) gemaakt van $\Delta T$ in functie van de tijd.\\
 \textbf{Trise$\_$plot.m}
 \begin{lstlisting}
 Trise_Setup_Data

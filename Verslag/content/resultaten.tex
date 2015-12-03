@@ -19,7 +19,7 @@ Er zijn een aantal dingen die onmiddellijk opvallen bij de vergelijking van de e
 De energieverdelingen voor de verschillende optische vezels (NA=$0.12$ en NA=$0.37$) verschillen vooral wat betreft de energieverspreiding. Bij een single-mode (NA=$0.12$) is de meeste energie geconcentreerd rond de oorsprong, terwijl bij de multi-mode een meer homogene verdeling van de energie plaatsvindt. Een kleine NA gaat samen met een kleine diameter van de draad. Alle energie wordt op een kleine plek geconcentreerd en dus het grootste deel van de energie wordt op dezelfde plek geabsorbeerd. Wanneer de energie echter vanaf het begin meer gespreid wordt aangevoerd (multi-mode) zal deze zich meer evenredig verspreiden over het oppervlak. De maximale energieconcentratie bij de SM is dus een factor $10^2$ groter. 
 
 Tot slot is het interessant om te weten hoe groot het gestimuleerde volume is. Ook dit is met de matlab code berekend en de resultaten staan in tabel \ref{tab:Volumes}. Het verschil tussen SM en MM voor \'e\'en golflengte in klein ($\approx 0.01mm^3$). Echter is een duidelijk verschil tussen de volumes voor beide golflengten. Het gestimuleerd volume voor $560$nm zowel voor SM als MM is kleiner ($\approx 0.06mm^3$) dan voor $474$nm. Dit wordt verklaard door de hoge absorptie bij $560$nm door hemoglobine. De energie wordt gemakkellijker geabsorbeerd en kan hierdoor minder ver diffuseren.
-\begin{table}[tb]
+\begin{table}[!ht]
 \begin{threeparttable}
   \caption{Volumes binnen een contour van $1\frac{mW}{mm^2}$ voor verschillende stimulatie protocols$^*$.}
   \label{tab:Volumes}
@@ -64,7 +64,7 @@ Op figuren \ref{fig:dT_tijd_SM}  en \ref{fig:dT_tijd_MM} werd de temperatuurstij
 %figuur
 % label{fig:dT_tijd_SM}
 %label{fig:dT_tijd_MM}
-\begin{figure}[h!]
+\begin{figure}[!ht]
   	\centering
 
   	\includegraphics[width=8.5cm]{gfx/dT_tijd_SM.png}
@@ -120,7 +120,7 @@ In tabel \ref{tab:Tmax} vindt men de resultaten voor de maximale temperatuurstij
 Opnieuw is te zien dat de temperatuurstijging bij $560nm$ hoger is.
 Men zien dat de gevonden maximale temperatuurstijgingen ruim onder de $0.5^{\circ}C$ blijven, wat als ondergrens wordt genomen voor mogelijke schade aan het weefsel. Binnen dit model kan dus besloten worden dat gepulste stimulatie met de gegeven protocols waarschijnlijk geen weefselschade zal opleveren. Het is echter wel mogelijk dat wanneer de fouten berekend zouden worden, de temperatuurstijging toch hoger blijkt dan $0.5^{\circ}C$. Belangrijk hierbij is op te merken dat het gebruikte model een lagere temperatuurstijging voorspelt dan er in werkelijkheid is (zie figuur \ref{fig:comparison}). De mogelijkheid bestaat dus dat met het model een temperatuurstijging berekend wordt die niet schadelijk is, maar dat de werkelijke temperatuurstijging hoger is en mogelijks wel schadelijke gevolgen heeft. 
 	
-\begin{table*}[]
+\begin{table*}[!ht]
 \centering
 \caption{Maximale temperatuurstijging bij gepulste stimulatie met een MM vezel voor verschillende protocols.}
 \label{tab:Tmax}
