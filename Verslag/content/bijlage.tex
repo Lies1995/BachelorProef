@@ -481,15 +481,20 @@ close all
 \textbf{Trise$\_$Data.m}
 \begin{lstlisting}
 function [ dT, tau] = Trise_Data( phi,du_a,du_s,prop,t )
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
-%1)u_a
-%2)u_s (niet de gereduceerde!)
-%3)g
-%4)p
-%5)c
-%6)k
-%7)w_L
+%Trise_Data Calculates the temperature increase 
+    %This function uses the solution of the bioheat equation to calculate
+    %the temperature increase. It use the fluence rate phi en the
+    %properties in prop
+    %prop(1)=u_a        absorpion coefficient [m^-1]
+    %prop(2)=u_s        scattering coefficient [m^-1]
+    %prop(3)=g          anisotropy factor [unitless]
+    %prop(4)=p          tissue density [kg/m^3] 
+    %prop(5)=c          specific heat [J/(kg*K)]
+    %prop(6)=k          thermal diffusivity [W/(m*K)]
+    %prop(7)=w_L        1/e^ radius [m] 
+    %du_a ans du_s are the errors on the absorption and scattering
+    %coefficient
+
 prop(1)=du_a+prop(1);
 prop(2)=du_s+prop(2);
 r_0=prop( 7 ); 
@@ -500,9 +505,266 @@ z=r_0*pi/(4.8*z_0);
 tau=(x/y)*(r_0^2/(1+z^2));
 
 dT=(tau*prop(1)/(prop(4)*prop(5)))*(1-exp(-t/tau)).*phi;
+
+end
+\end{lstlisting}
+\subsubsection*{Temperatuursverandering gepulste stimulatie} % (fold)
+\label{ssub:dtcontinue}
+Onderstaande matlabcode leest de .csv bestanden uit de map \emph{unitFR} en berekent de temperatuursverandering voor een gepulste stimulatie op de manier zoals uitgelegd in paragraaf \ref{sub:temperatuursverandering_simulatie}. Vervolgens wordt de temperatuursstijging op positie [(pos($1$),pos($2$)] geplot in functie van de tijd voor de vier stimulatie protocols. 
+\textbf{Puls$\_$plot.m}
+\begin{lstlisting}
+%-------Setup-------
+Puls_Setup_Data
+%-------PLOT---------
+for i = 1: length(L);
+    for j=1:length(NA)
+        %--------Data--------------
+        n_L=L(i); n_NA=NA(j);
+        protocol_name = ['L_' num2str(n_L) '_NA_' num2str(n_NA) ];
+        %initialisation times to evaluate for each protocol
+        t1=linspace(0,tL,ntss);
+        t2=linspace(tL+t1(2),F-t1(2),ntsd); 
+        %define tissue properties
+        prop(1)=u_a(i);    %absorption coefficient [m^-1]
+        prop(2)=u_s(i) ;   %scattering coefficient [m^-1]
+        prop(7)=w_L(j);   %1:e^ radius [m]
+        
+        %Read Fluence rate I=Unit peak irradiance  
+        psi=csvread(fullfile(path,protocol_name)); %[W/m^2]
+        %Convert psi to Fluence rate phi for the asked Power/Irradiance
+        if ne(PL,1) == 1 
+        IL=PL/((pi*prop(7)^2)/2);
+        end
+        %Save all data
+        phi=IL.*psi;
+        %--------Calculation--------------
+        %A loop over all the time windows
+        for h= 1:t_w 
+            if h==1 %first time window
+                for l= 1:length(t1)
+                    dT(1,l,k)=t1(l);
+                    dT(2,l,k)=Rising(pos, prop, phi, t1(l) ,h);
+                end
+                for l=length(t1)+1: length(t1)+length(t2)
+                    dT(1,l,k)=t2(l-length(t1));
+                    dT(2,l,k)=Descending(pos, prop, phi, t2(l-length(t1)),h-1);
+                end
+            else %other time windows
+                %first window is one rising and a sum over the previous
+                %descending functions
+                %The next one has only descending functions
+                
+                %rising
+                for l= (h-1)*(length(t1)+length(t2))+1:...
+                        (h-1)*(length(t1)+length(t2))+length(t1)
+                    dT(1,l,k)=t1(l-((h-1)*(length(t1)+length(t2))));
+                    dT(2,l,k)=Rising(pos,prop,phi,...
+                        t1(l-(h-1)*(length(t1)+length(t2))),h); 
+                %sum over previous descending functions
+                    for p=1:h-1 
+                        dT(2,l,k)=dT(2,l,k)+Descending(pos, prop, phi, ...
+                            t1(l-(h-1)*(length(t1)+length(t2))),p-1);
+                    end
+                    
+                end
+                %sum over previous descending funcitons
+                for l=(h-1)*(length(t1)+length(t2))+length(t1)+1:...
+                        (h-1)*(length(t1)+length(t2))+length(t1)+length(t2)
+                    dT(1,l,k)=t2(l-((h-1)*...
+                        (length(t1)+length(t2))+length(t1)));
+                    for p=1:h 
+                        dT(2,l,k)=dT(2,l,k)+Descending(pos, prop, ...
+                            phi,t2(l-((h-1)*...
+                            (length(t1)+length(t2))+length(t1))),p-1);
+                    end
+                end
+            end
+            %Move the time one period
+            t1=t1+F;
+            t2=t2+F; 
+        end
+
+        k=k+1;
+    end
+    
+end
+fig=figure
+set(fig, 'Position', [10 1000 1000 750]);
+subplot(2,2,1)
+plot(squeeze(dT(1,:,1)),squeeze(dT(2,:,1)))
+xlabel('t [s]', 'interpreter', 'LaTex');
+ylabel('dT [K]', 'interpreter', 'LaTex');
+h=legend(['$\lambda=$' num2str(L(1))...
+    ', NA=' num2str(NA(1))]);
+set(h,'Interpreter','latex')
+set(h,'Box','off')
+grid on
+
+subplot(2,2,3)
+plot(squeeze(dT(1,:,2)),squeeze(dT(2,:,2)))
+ylim([0 0.0010]);
+xlabel('t [s]', 'interpreter', 'LaTex');
+ylabel('dT [K]', 'interpreter', 'LaTex');
+set(gca,'yaxislocation','right');
+h=legend(['$\lambda=$' num2str(L(1))...
+    ', NA=' num2str(NA(2))]);
+set(h,'Interpreter','latex')
+set(h,'Box','off')
+grid on
+
+subplot(2,2,2)
+plot(squeeze(dT(1,:,3)),squeeze(dT(2,:,3)))
+
+xlabel('t [s]', 'interpreter', 'LaTex');
+ylabel('dT [K]', 'interpreter', 'LaTex');
+h=legend(['$\lambda=$' num2str(L(2))...
+    ', NA=' num2str(NA(1))]);
+set(h,'Interpreter','latex')
+set(h,'Box','off')
+grid on
+subplot(2,2,4)
+plot(squeeze(dT(1,:,4)),squeeze(dT(2,:,4)))
+
+xlabel('t [s]', 'interpreter', 'LaTex');
+ylabel('dT [K]', 'interpreter', 'LaTex');
+set(gca,'yaxislocation','right');
+h=legend(['$\lambda=$' num2str(L(2))...
+    ', NA=' num2str(NA(2))]);
+set(h,'Interpreter','latex')
+set(h,'Box','off')
+grid on
+
+shg;
+p=mtit('Temperature increase for Pulsed stimulation for' ,...
+    'fontsize',24,'interpreter', 'LaTex',...
+    'xoff',0,'yoff',.05);
+
+p=mtit( ['$\nu$=' num2str(freq) ' Hz , $t_L$=' num2str(tL) ' s , $I$=' num2str(IL) '$ \frac{W}{m^2}$'],...
+    'fontsize',24,'interpreter', 'LaTex',...
+    'xoff',0,'yoff',.015);
+\end{lstlisting}
+\textbf{Puls$\_$Setup$\_$Data.m}
+\begin{lstlisting}
+%------Setup--------
+    close all
+    % Change default text font size
+        set(0,'DefaultAxesFontSize', 18)
+        set(0,'defaulttextinterpreter','latex')
+        
+    %File Path
+        LD =[fullfile('/Users','LIesDeceuninck', 'Documents','Bachelorproef',...
+            'Data','Licht_verdeling','code','Data','UnitFR')];
+        HV=[fullfile('C:','Users','hannelore','Documents','2015-2016',...
+            'BachelorProef2015','BachelorProef','Data','Licht_verdeling','code','Data','UnitFR')];    
+        path=LD;
+%------DATA--------
+%optical properties
+    L = [474 560];          %Wavelengths(nm)
+    NA = [12 37];           %Numerical Aperture (dimensionless)
+    d = [9 200];            %Diameter (mum)
+%tissue properties
+    u_a=[51.1 107.9];       % absorpion coefficient [m^-1]
+    u_s=[12733 9266];       %scattering coefficient [m^-1]
+    g=0.88;                 %anisotropy factor [unitless]
+    rho=1040;               %tissue density [kg/m^3] 
+    c=3650;                 %specific heat [J/(kg*K)]
+    k_d=0.530;              %,thermal diffusivity [W/(m*K)]
+    w_L= [0.0000045 0.0001];%1:e^ radius [m] 
+%Laser Power [W] (default 0)
+    PL=1;
+%Irradiance [W/m^2] (default 1)
+    IL=46000
+%Pulse length [s]
+    tL=0.001; 
+%Frequency of the pulses [s^-1]
+    freq=40; 
+    F=1/freq;               %time between pulses [s]
+%Times to evaluate[s] 
+    time=0.2;               %total time length
+    ntss=400;               %number of time steps in a puls
+    ntsd=500;               %number of time steps between pulses
+    
+    t1=linspace(0,tL,ntss); %times to evaluate in one puls
+    t2=linspace(tL+t1(2),F-t1(2),ntsd); %times to evaluate between pulses
+    
+    t_w=floor(time/F);      %number of timewindows
+%Position in the tissue to evaluate dT [z r]
+    pos=[2 500];
+%-----Initiations---
+dT=zeros(2, (length(t1)+length(t2))*t_w , 4); %datacollection vector
+prop=[0 0 g rho c k_d 0 tL F] ;         
+                            %anisotropy factor;tissue density,specific 
+                            %heat,thermal diffusivity,pulse length [s], 
+                            %time between pulses[s]
+k=1; %index for the protocols
+
+
+\end{lstlisting}
+\textbf{Rising.m}
+\begin{lstlisting}
+function [ dTs ] = Rising( pos,prop,phi,t,h)
+%Rising Calculates the temperature increase during the pulse
+    %This function uses the solution of the bioheat equation to calculate
+    %the temperature increase in the tissue on positon [pos(1), pos(2)]. 
+    %It use the fluence rate phi en the properties in prop
+    %prop(1)=u_a        absorpion coefficient [m^-1]
+    %prop(2)=u_s        scattering coefficient [m^-1]
+    %prop(3)=g          anisotropy factor [unitless]
+    %prop(4)=p          tissue density [kg/m^3] 
+    %prop(5)=c          specific heat [J/(kg*K)]
+    %prop(6)=k          thermal diffusivity [W/(m*K)]
+    %prop(7)=w_L        1/e^ radius [m] 
+    %du_a ans du_s are the errors on the absorption and scattering
+    %coefficient
+    %h is the time-window indes
+r_0=prop(7); 
+z_0=2 / (prop(1) + ((1 - prop(3)) * prop(2))) ;
+x=prop(4)*prop(5);
+y=prop(6)*(2.4)^2;
+z=r_0*pi/(4.8*z_0);
+
+tau=(x/y)*(r_0^2/(1+z^2));
+dTss=((tau*prop(1))/x);
+
+dTs=dTss*(1-exp(-(t-((h-1)*prop(9)) )/tau))*phi(pos(1),pos(2));
+end
+\end{lstlisting}
+\textbf{Descending.m}
+\begin{lstlisting}
+function [ dTd ] = Descending( pos ,prop,phi,t,D)
+%Descending Calculates the temperature decrease after a puls 
+    %This function uses the time constant from the solution of the bioheat 
+    %equation to calculate the temperature decrease. It's an descending 
+    %exponential function with timeconstant tau. 
+    %It use the fluence rate phi en the properties in prop
+    %prop(1)=u_a        absorpion coefficient [m^-1]
+    %prop(2)=u_s        scattering coefficient [m^-1]
+    %prop(3)=g          anisotropy factor [unitless]
+    %prop(4)=p          tissue density [kg/m^3] 
+    %prop(5)=c          specific heat [J/(kg*K)]
+    %prop(6)=k          thermal diffusivity [W/(m*K)]
+    %prop(7)=w_L        1/e^ radius [m] 
+    %du_a ans du_s are the errors on the absorption and scattering
+    %coefficient
+    %D is the time-window index
+
+r_0=prop( 7 ); 
+z_0=2 / (prop(1) + ((1 - prop(3)) * prop(2))) ;
+x=prop(4)*prop(5);
+y=prop(6)*(2.4)^2;
+z=r_0*pi/(4.8*z_0);
+
+tau=(x/y)*(r_0^2/(1+z^2));
+
+dTss=((tau*prop(1))/x)*phi(pos(1),pos(2));
+T0=dTss*(1-exp(-prop(8)/tau));
+
+dTd=T0*exp(-(t-prop(8)-D*prop(9))/tau);
 end
 \end{lstlisting}
 \newpage
+\subsection*{Figuren} % (fold)
+\label{sub:figuren}
 \begin{figure*}[tb]
 	\centering
 	\includegraphics[width=\textwidth]{gfx/dT_Overig_bijlage.png}
