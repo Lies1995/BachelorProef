@@ -6,7 +6,7 @@ Om de werking van het hersenen te begrijpen is het noodzakelijk de activiteit va
 Controle van de activiteit van de hercencellen is dus essenti\"eel in neurologisch onderzoek en verscheidene technieken hiervoor zijn reeds ontwikkeld.
 
 Een eerste mogelijkheid is elektrische stimulatie van de neuronen met electroden. Omdat de signalen tussen neuronen van elektrische aard zijn, is dit een voor de hand liggende techniek. Een tweede mogelijkheid is het gebruik van electromagnetische straling om neuronen te activeren of te inhiberen.  Hierbij worden de neuronen genetisch gemanipuleerd zodat ze lichtgevoelig worden, \emph{optogenetica}. Helaas interageert electromagnetische straling met weefsels en kan het dus nog andere reacties induceren \footnote{zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}}.
- Een belangrijk effect is de temperatuurstijging en dat is het onderwerp van dit onderzoek. 
+ Een belangrijk effect is de temperatuurstijging (zie paragraaf \ref{sub:interactie_van_weefsel_met_elektromagnetische_straling}) en dat is het onderwerp van dit onderzoek. 
 
 \subsection{Optogenetica} % (fold)#TODO waarom optogenetica?
 \begin{figure}[!ht]
@@ -18,7 +18,7 @@ Een eerste mogelijkheid is elektrische stimulatie van de neuronen met electroden
 \label{sub:optogenetica}
 Neuronen hebben net zoals alle andere cellen in ons lichaam een plasmamembraan dat de scheiding vormt tussen het intercellulair en extracellulair milieu. Dit plasmamembraan bestaat uit een dubbellaag van fosfolipiden en membraanprote\"inen, zie figuur \ref{fig:Opsins}. 
 Deze laatste functioneren als doorgangskanalen voor moleculen en zijn dan ook verantwoordelijk voor de communicatie van cellen onder elkaar. Een belangrijke soort membraanprote\"inen zijn ionenkanalen. Door het transport van ionen ontstaat er een potentiaal over het plasmamembraan. Een cel in rust heeft een membraanpotentiaal van ongeveer $-70mV$. 
-Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen van buiten de cel naar binnen in de cel te transporteren. Enkele ionenkanalen openen en gelijdelijk aan stijgt de membraanpotentiaal. Op het moment dat een drempel potentiaal ($\approx -50mV$)  bereikt wordt, openen alle ionenkanalen en stijgt de membraanpotentiaal exponentieel.
+Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positieve ionen van buiten de cel naar binnen in de cel te transporteren of negatieve naar buiten. Enkele ionenkanalen openen en gelijdelijk aan stijgt de membraanpotentiaal. Op het moment dat een drempel potentiaal ($\approx -50mV$)  bereikt wordt, openen alle ionenkanalen en stijgt de membraanpotentiaal exponentieel.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{gfx/ratbrein.png}
@@ -26,7 +26,7 @@ Om een signaal te sturen moet de membraanpotentiaal omhoog. Dit kan door positie
 	\label{fig:ratbrein}
 \end{figure}
 Dit neuron signaal wordt een  actiepotentiaal genoemd (zie figuur \ref{fig:ratbrein}). Belangrijk om op te merken is dat de actiepotentiaal automatisch gegenereerd wordt eens de drempel potentiaal bereikt is (\emph{all or nothing principle}). 
-De celactiviteit inhiberen gebeurt als volgt. Spontane activiteit zorgt voor een stijging tot aan de drempel potentiaal. Vervolgens wordt automatisch een actiepotentiaal gegenereerd. Wanneer nu de rust membraanpotentiaal verlaagd wordt, door transport van negatieve ionen, is de membraan depolarisatie door spontane activiteit niet meer voldoende om tot aan de drempel potentiaal te geraken. Bijgevolg wordt geen actiepotentiaal gegenereerd en is de activiteit van het neuron ge\"inhibeerd. 
+De celactiviteit inhiberen gebeurt als volgt. Spontane activiteit zorgt voor een stijging tot aan de drempel potentiaal. Vervolgens wordt automatisch een actiepotentiaal gegenereerd. Wanneer nu de rust membraanpotentiaal verlaagd wordt, door transport van negatieve ionen van buiten naar binnen in de cel, is de membraan depolarisatie door spontane activiteit niet meer voldoende om tot aan de drempel potentiaal te geraken. Bijgevolg wordt geen actiepotentiaal gegenereerd en is de activiteit van het neuron ge\"inhibeerd. 
 Het controleren van neuron activiteit is dus hetzelfde als het controleren van de activiteit van de ionenkanalen in de cel.
 
 Enkele micro-organismen kunnen licht gebruiken als energiebron.
@@ -57,7 +57,7 @@ Licht gevoelige prote\"inen absorberen de straling en gebruiken de energie om de
 	\end{tabular}
 \end{table*}
 
-Door genetische modificatie kunnen opsines tot expressie gebracht worden in de neuronen. De cellen worden ge\"infecteerd met onschadelijke virussen (virale vectors) die het gen, dat codeert voor het gewenste prote\"ine, bevatten. 
+Door genetische modificatie kunnen opsines tot expressie gebracht worden in de neuronen. De cellen worden ge\"infecteerd met onschadelijke virussen (virale vectors) die het gen, dat codeert voor het gewenste prote\"ine, bevatten.In deze cellen wordt vervolgens het opsine tot expressie gebracht.  
 Wanneer deze cellen vervolgens met licht van de juiste golflengte bestraald worden, zullen de opsines ionen transporteren en kan de activiteit van de neuronen be\"invloed worden. Vaak wordt aan het prote\"ine een fluorescent molecule toegevoegd. Hierdoor kan precies nagegaan worden welke cellen het prote\"ine tot expressie gebracht hebben.
 \begin{figure*}[!ht]
 	\centering
@@ -69,9 +69,9 @@ In figuur \ref{fig:act_inh} is twee keer een opname van de hersenen van een rat 
 
 \subsection{Stimulatie van de neuronen} % (fold)
 \label{sub:de_levering_van_straling_naar_het_brein}
-Om neuronen te stimuleren kunnen verschillende lichtbronnen gebruikt worden, vaak een laser of een led van juiste golflengte. Deze laatste wordt geprefereerd in optogenetische experimenten aangezien hij compacter en goedkoper is en minder geluid maakt. Wanneer een neuron actief is, zendt hij verschillende korte signalen na elkaar uit. De membraanpotentiaal depolariseert en polariseert  voordurend. Wanneer \emph{in vivo} experimenten met proefdieren plaatsvinden en enkele neuronen gestimuleerd dienen te worden, is het de bedoeling om zo goed mogelijk een echt fysiologisch process na te bootsen. Daarom wordt voor de activatie gewerkt met korte pulsen van elektromagnetische straling, ideaal is $t\approx 1-15ms$ \cite{Blog}. Bij de inhibitie moet er gedurende een langere periode polarisatie van het membraan optreden en wordt een langere puls gebruikt. Er zijn dus twee verschillende stimulatie manieren, continue stimulatie (voornamelijk voor inhibitie) en gepulste stimulatie (voornamelijk voor activatie). De temperatuursverandering voor beide stimulaties zullen aan bod komen.
+Om neuronen te stimuleren kunnen verschillende lichtbronnen gebruikt worden, vaak een laser of een led van juiste golflengte. Deze laatste wordt geprefereerd in optogenetische experimenten aangezien hij compacter en goedkoper is. Wanneer een neuron actief is, zendt hij verschillende korte signalen na elkaar uit. De membraanpotentiaal depolariseert en polariseert  voordurend. Wanneer \emph{in vivo} experimenten met proefdieren plaatsvinden en enkele neuronen gestimuleerd dienen te worden, is het de bedoeling om zo goed mogelijk een echt fysiologisch process na te bootsen. Daarom wordt voor de activatie gewerkt met korte pulsen van elektromagnetische straling, ideaal is $t\approx 1-15ms$ \cite{Blog}. Bij de inhibitie moet er gedurende een langere periode polarisatie van het membraan optreden en wordt een langere puls gebruikt. Er zijn dus twee verschillende stimulatie manieren, continue stimulatie (voornamelijk voor inhibitie) en gepulste stimulatie (voornamelijk voor activatie). De temperatuursverandering voor beide stimulaties zullen aan bod komen.
 
-Om de straling van aan de lichtbron naar de cellen te leiden worden optische vezels gebruikt. Dit zijn draden bestaande uit twee lagen met verschillende brekingsindex; een kern en een mantel (zie figuur zie figuur \ref{fig:OptFib}). Door het verschil in brekingsindex wordt elektromagnetische straling in de kern intern gereflecteerd tegen de mantel en kan een optische vezel licht begeleiden \cite{OpticalFib}.
+Om de straling van aan de lichtbron naar de cellen te leiden worden optische vezels gebruikt. Dit zijn draden bestaande uit twee lagen met verschillende brekingsindex; een kern en een mantel (zie figuur zie figuur \ref{fig:OptFib}). Door het verschil in brekingsindex wordt elektromagnetische straling in de kern intern gereflecteerd tegen de mantel en kan een optische vezel licht geleiden \cite{OpticalFib}.
 \begin{figure}[!ht]
  	\centering
  	\includegraphics[width=0.5\textwidth]{gfx/OptFib.png}

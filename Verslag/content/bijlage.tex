@@ -4,8 +4,8 @@
 \label{sub:matlabcode}
 \subsubsection*{Lichtverdeling} % (fold)
 \label{ssub:lichtverdeling}
-Onderstaande matlabcode leest de .frzc files van de monte-carlo simulatie en geeft ze grafisch weer in een \emph{imagesc}. De .frzc files zijn de lichtverdelingen voor de verschillende protocols gesimuleerd met een input power $1mW$ en een gaussische lichtbundel. Er werden 1 miljoen fotonen afgevuurd.
-De bestanden voor de verschillende protocols zijn alsvolgt gelabeld:
+Onderstaande matlabcode leest de .frzc files van de Monte-Carlo simulatie en geeft ze grafisch weer in een \emph{imagesc}. De .frzc files zijn de lichtverdelingen voor de verschillende protocols gesimuleerd met een input power $1mW$ en een gaussische lichtbundel. Er werden 1 miljoen fotonen afgevuurd.
+De bestanden voor de verschillende protocols zijn als volgt gelabeld:
 $L\_\text{\emph{golflengte}}\_N\_\text{\emph{numerieke apertuur}}$. Ze bevinden zich in de map \emph{Output}. De lichtverdeling $\phi^+$ (met $(\mu_a + \sigma) \text{ en } (\mu_s+\sigma)$) en $\phi^-$ (met $(\mu_a - \sigma) \text{ en } (\mu_s-\sigma)$) worden op dezelfde wijze gelabeld en staan in respectivelijk de mappen \emph{Output+} en \emph{Output-}. Het script schrijft de data van de lichtverdeling corresponderend met een eenheids irradiantie ($\psi(r,z)$) voor elk protocol ook als een .csv bestand naar de map \emph{unitFR}.\\
 \textbf{MCML$\_$plot.m}
 \begin{lstlisting}
@@ -510,7 +510,7 @@ end
 \end{lstlisting}
 \subsubsection*{Temperatuursverandering gepulste stimulatie} % (fold)
 \label{ssub:dtcontinue}
-Onderstaande matlabcode leest de .csv bestanden uit de map \emph{unitFR} en berekent de temperatuursverandering voor een gepulste stimulatie op de manier zoals uitgelegd in paragraaf \ref{sub:temperatuursverandering_simulatie}. Vervolgens wordt de temperatuursstijging op positie [(pos($1$),pos($2$)] geplot in functie van de tijd voor de vier stimulatie protocols. 
+Onderstaande matlabcode leest de .csv bestanden uit de map \emph{unitFR} en berekent de temperatuursverandering voor een gepulste stimulatie op de manier zoals uitgelegd in paragraaf \ref{sub:temperatuursverandering_simulatie}. Vervolgens wordt de temperatuurstijging op positie [(pos($1$), pos($2$)] geplot in functie van de tijd voor de vier stimulatie protocols.\\ 
 \textbf{Puls$\_$plot.m}
 \begin{lstlisting}
 %-------Setup-------
@@ -765,25 +765,24 @@ end
 \newpage
 \subsection*{Figuren} % (fold)
 \label{sub:figuren}
-\begin{figure*}[tb]
+\begin{figure*}[!ht]
 	\centering
 	\includegraphics[width=\textwidth]{gfx/dT_Overig_bijlage.png}
-	\caption{Temperatuurstijging voor continue stimulatie bij $474nm$, SM en MM en bij $560nm$, MM op 3 verschillende tijdstippen.}
+	\caption{Temperatuurstijging voor continue stimulatie bij $474nm$, SM en MM en bij $560nm$, MM op 3 verschillende tijdstippen met een input vermogen van $1mW$.}
 	\label{fig:dT_Overig_Bijlage}
 \end{figure*}
 
-\begin{figure*}[tb]
-    \centering
-    \includegraphics[width=0.8\textwidth]{gfx/dT_time_mu-a_mu-sSM.png}
-    \caption{De invloed van $\mu_a \pm \sigma$ en $\mu_s \pm \sigma$ op de temperatuurstijging voor SM.}
-    \label{fig:foutSM}
-\end{figure*}
-
-\begin{figure*}[tb]
+\begin{figure*}[!ht]
 	\centering
 	\includegraphics[width=\textwidth]{gfx/FR_scat+abs_variatie.png}
-	\caption{De invloed van $\mu_a \pm \sigma$ en $\mu_s \pm \sigma$ op de lichtverdeling voor $474nm$, SM en MM en voor $560nm$, SM.}
+	\caption{De invloed van $\mu_a \pm \sigma$ en $\mu_s \pm \sigma$ op de lichtverdeling voor $474nm$, SM en MM en voor $560nm$, SM met een input vermogen van $1mW$.}
 	\label{fig:FR_scat+abs_variatie}
+\end{figure*}
+\begin{figure*}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{gfx/dT_time_mu-a_mu-sSM.png}
+    \caption{De invloed van $\mu_a \pm \sigma$ en $\mu_s \pm \sigma$ op de temperatuurstijging voor SM voor een input vermogen van $1mW$.}
+    \label{fig:foutSM}
 \end{figure*}
 \twocolumn
 
