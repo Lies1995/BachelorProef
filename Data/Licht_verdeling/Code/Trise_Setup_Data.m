@@ -19,7 +19,7 @@ close all
     g=0.88;                 %anisotropy factor [unitless]
     p=1040;                 %tissue density [kg/m^3] 
     c=3650;                 %specific heat [J/(kg*K)]
-    k_d=0.530;               %,thermal diffusivity [W/(m*K)]
+    k_d=0.530;              %,thermal diffusivity [W/(m*K)]
     w_L= [0.0000045 0.0001];%1:e^ radius [m] 
 %Errors
     du_a_plus=[34.9, 55.9];
