@@ -167,18 +167,9 @@
 
 
 %------------------------------------------------
-\subsection{Interaction of EM radiation with tissue} % (fold)%Hannelore
+\subsection{Photothermal effects} % (fold)%Hannelore
 \label{sub:EM}
 %------------------------------------------------
-
-	\begin{frame}{Different types of interactions}
-        \footlineextra{Source:\cite{laser}}
-			\begin{figure}[tb]
-				\centering
-				\includegraphics[width=11cm]{images/mindmap.png}
-				\label{fig:mindmap}
-			\end{figure}
-    \end{frame}
 		
     \begin{frame}{Photothermal effects}
     \footlineextra{Source:\cite{laser}}
@@ -196,7 +187,7 @@
             \begin{itemize}
             \small
                 \item at $\sim 38^{\circ}C-38.5^{\circ}C:$\\
-                no irreversible changes
+                no irreversible damage
                 \item at $\sim 41^{\circ}C:$\\ protein denaturation
                 \item from $\sim 45^{\circ}C:$\\ collagen breaking, tissue coagulation, blood clots
                
@@ -230,7 +221,30 @@
 			\end{description}				
 
     \end{frame}
+%------------------------------------------------
+\subsection{Solution} % (fold)%Hannelore
+\label{sub:solution}
+%------------------------------------------------
 
+    \begin{frame}{Solution of the bioheat equation}
+      \footlineextra{Source:\cite{Gemert}}
+			\begin{equation*}
+			\Delta T(t,z,r) = \frac{\tau \mu_a\phi(z,r)}{\rho c}(1-e^{-\frac{t}{\tau}})
+			\label{eq:solutionBHeq}
+			\end{equation*}
+		
+			\begin{figure}[tb]
+                \centering
+                \includegraphics[width=11cm]{images/comparison.png}
+    
+                \label{fig:comparison}
+		  \end{figure}
+		
+    \end{frame}
+%------------------------------------------------
+%------------------------------------------------
+\section{Results}
+%------------------------------------------------
 %------------------------------------------------
 \subsection{Fluence Rate} % (fold)%Lies
 \label{sub:FRate}
@@ -274,59 +288,52 @@
     %4 afbeeldingen fluence rate power 1mW
     \begin{figure}[tb]
             \centering
-            \includegraphics[width=10cm, height=7.5cm]{images/FR.png}%picture of one photon
-             \label{fig:MCML1} 
+            \includegraphics[width=0.8\textwidth]{images/FR_P1mW.png}%picture of one photon
         \end{figure}
     \end{frame}
-%------------------------------------------------
-\subsection{Solution} % (fold)%Hannelore
-\label{sub:solution}
-%------------------------------------------------
 
-    \begin{frame}{Solution of the bioheat equation}
-      \footlineextra{Source:\cite{Gemert}}
-			\begin{equation*}
-			\Delta T(t,z,r) = \frac{\tau \mu_a\phi(z,r)}{\rho c}(1-e^{-\frac{t}{\tau}})
-			\label{eq:solutionBHeq}
-			\end{equation*}
-		
-			\begin{figure}[tb]
-                \centering
-                \includegraphics[width=11cm]{images/comparison.png}
-    
-                \label{fig:comparison}
-		  \end{figure}
-		
+    \begin{frame}[tb]
+    \frametitle{Influence of absorption and scattering}
+        \begin{figure}[tb]
+        	\centering
+        	\includegraphics[width=\textwidth]{images/scat+abs_variatie.png}
+        \end{figure}
     \end{frame}
-
-%------------------------------------------------
-%------------------------------------------------
-\section{Results}
-%------------------------------------------------
 %------------------------------------------------
 \subsection{Continuous stimulation} % (fold) %Hannelore
 \label{sub:continuous_stimulation}
 %------------------------------------------------
-    \begin{frame}{Continuous stimulation ($I=1\frac{mW}{mm^2}$)}
-      
+    \begin{frame}{Continuous stimulation ($P=1mW$)}
         \begin{columns}[c]
-        \column{.7\textwidth} % Leuveft column and width
             \begin{figure}[tb]
                 \centering
-                \includegraphics[width=8cm]{images/dT.png}
+                \includegraphics[width=\textwidth]{images/4dT.png}
                 
                 \label{fig:figure1}
             \end{figure}
-        \column{.25\textwidth} 
-            \scriptsize
-            \begin{equation*}
-            \tau = \left ( \frac{1}{\tau_r}+\frac{1}{\tau_z} \right )^{-1} 
-            \end{equation*}
-            
+    \end{frame}
+    \begin{frame}[t]
+    	\frametitle{Continuous stimulation ($P=1mW$)}
+    	\begin{columns}[c]
+    	\column{.5\textwidth}
+        \begin{figure}[tb]
+        	\centering
+        	\includegraphics[width=\textwidth]{images/dT_tijd_SM}
+        \end{figure}
+        \column{.5\textwidth}
+        \begin{figure}[tb]
+        	\centering
+        	\includegraphics[width=\textwidth]{images/dT_tijd_MM}
+        \end{figure}
         \end{columns}
-
-    
-
+    \end{frame}
+    \begin{frame}[t]
+    \frametitle{Influence of absorption and scattering}
+    \vspace{1cm}
+        \begin{figure}[tb]
+        	\centering
+        	\includegraphics[width=\textwidth]{images/dT_time_mu-a_mu-s_foutMM}
+        \end{figure}
     \end{frame}
 
 %------------------------------------------------  
@@ -371,7 +378,7 @@
 \end{overprint}
 \end{center}
     \end{frame}
-    \begin{frame}{Results}
+    \begin{frame}{Pulsed stimulation}
     \centering
         $\nu=40 Hz$, pulse length $t_L=0.001 s$, \\
         Irradiance $I=46\frac{mW}{mm^2}$ and $NA=0.37$
@@ -383,39 +390,32 @@
     \end{figure}
     \end{frame}
  
-%------------------------------------------------  
-%------------------------------------------------
-\section{Error analysis} %Hannelore
-%------------------------------------------------
-%------------------------------------------------
-    \begin{frame}{Error analysis}
+    \begin{frame}{Pulsed stimulation}
+    \centering
+		\begin{table*}
+		\centering
+		\begin{tabular}{p{1.8cm}|p{1.6cm}|p{1.6cm}||p{2cm}|p{2cm}}
 
-      \footlineextra{Source: \cite{Barbara}}
-
-		\begin{equation*}
-		\Delta T(\mu_a,\mu_s,g,\rho,c,k,w_L,\phi)
-		\end{equation*}
-		\begin{equation*}
-		\phi(\mu_a,\mu_s,g)
-		\end{equation*}
-      
-
-      \begin{columns}
-      \column{.5\textwidth} 		
-      	\begin{figure}[tb]
-			\centering
-			\includegraphics[width=6cm,height=4.5cm]{images/scat.png}
-			\label{fig:comparison}
-			\end{figure}
-		\column{.5\textwidth} 	
-			\begin{figure}[tb]
-			\centering
-			\includegraphics[width=6cm,height=4.5cm]{images/absorp.png}
-			\label{fig:comparison}
-			\end{figure}
-        \end{columns}
-			\end{frame}
-
+		\hline
+		Irradiantie [$mW/mm^2$] & Pulslengte [$ms$] & Frequentie [$Hz$] & \multicolumn{2}{c}{Maximale $\Delta T$}[$m^{\circ}C$] \\
+		& & & $\lambda = 474$nm & $\lambda = 560$nm\\ 
+		\hline
+		\hline
+		$70.5$ & $5$ & $5$ & $4.54$ & $9.44$ \\
+		& & $20$ & $4.62$ & $9.61$\\
+		& & $130$ & $9.81$ & $20.4$ \\
+		$380$ & $30$ & $5$ & $67.2$ &$140$ \\
+		& & $10$ & $67.2$ &$140$ \\
+		& & $20$ & $68.4$ &$142$\\
+		$10$ & $4$ & $5$ & $0.535$  & $1.11$ \\			
+		& & $10$ & $0.535$ & $1.11$\\
+		& & $45$ & $0.642$ & $1.34$ \\
+		$5$ & $20$ & $8$ & $0.777$ & $1.62$ \\
+		\hline
+		\hline                   
+		\end{tabular}
+		\end{table*}
+	\end{frame}
 %------------------------------------------------ 
 %------------------------------------------------
 \section{Conclusion}%lies
@@ -428,10 +428,11 @@
 \column{.4\textwidth} % Left column and width
    
    \begin{itemize}
-       \item Stimulated Volume
-       \item Maximum temperature rise
-       \item Error due to the model
-       \item animation temperature rise
+   		\item physical insight
+    	\item limitid validity
+    	\item no predicted damage
+    	\item Error due to the model
+    	\item numerical solutions
    \end{itemize}
 
     \column{.5\textwidth} % Right column and width
