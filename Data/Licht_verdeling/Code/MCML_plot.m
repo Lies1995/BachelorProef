@@ -39,8 +39,8 @@ for i = 1: length(L);
         
         %Contourlines
         [C, h]=contour(r,z,dF(:,:,1),v,'color','w');
-        [Cplus, hpuls]=contour(r,z,dF(:,:,2),v,'--','color','w');
-        [Cminus, hminus]=contour(r,z,dF(:,:,3),v,':','color','w');
+       % [Cplus, hpuls]=contour(r,z,dF(:,:,2),v,'--','color','w');
+       % [Cminus, hminus]=contour(r,z,dF(:,:,3),v,':','color','w');
         
         title({'Fluence Rate';['$\lambda=$' num2str(n_L) ', NA=' ...
             num2str(n_NA) ', Input Irradiance=' num2str(IL) ]},...
@@ -56,44 +56,44 @@ for i = 1: length(L);
         set(gca,'ydir','rev')
         hold off
         
-        %------Calculation Stimulated Volume--------
-        %Collect the datapoints of the concerning contourline
-        if j==1
-            s=find(C(1,:)==1,2)
-            [y_0,Iy_0]=max(C(2,2:s(length(s))-1));
-            s=find(Cplus(1,:)==1,2)
-            [y_0plus,Iy_0plus]=max(Cplus(2,2:s(length(s))-1));
-             s=find(Cminus(1,:)==1,2)
-            [y_0minus,Iy_0minus]=max(Cminus(2,2:s(length(s))-1));
-        elseif j==2
-            [y_0,Iy_0]=max(C(2,2:length(C(1,:))));
-            [y_0plus,Iy_0plus]=max(Cplus(2,2:length(Cplus(1,:))));
-            s=find(Cminus(1,:)==1,2)
-            [y_0minus,Iy_0minus]=max(Cminus(2,2:s(length(s))-1));
-        end
-        %Rotate the graph 90degrees
-        x=C(2,2:Iy_0);
-        y=C(1,2:Iy_0);
-        
-        xplus=Cplus(2,2:Iy_0plus);
-        yplus=Cplus(1,2:Iy_0plus);
- 
-        xminus=Cminus(2,2:Iy_0minus);
-        yminus=Cminus(1,2:Iy_0minus);
-        
-        %Fit with a polynomial of degree g
-        p=polyfit(x,y,g);
-        fun=@(t) pi*(polyval(p,t)).^2;
-        int=integral(fun,x(1),x(length(x)))
-        
-        pplus=polyfit(xplus,yplus,g);
-        fun=@(t) pi*(polyval(pplus,t)).^2;
-        intplus=integral(fun,xplus(1),xplus(length(xplus)))
-        
-        pminus=polyfit(xminus,yminus,g);
-        fun=@(t) pi*(polyval(pminus,t)).^2;
-        intminus=integral(fun,xminus(1),xminus(length(xminus)))
-        
+%         %------Calculation Stimulated Volume--------
+%         %Collect the datapoints of the concerning contourline
+%         if j==1
+%             s=find(C(1,:)==1,2)
+%             [y_0,Iy_0]=max(C(2,2:s(length(s))-1));
+%             s=find(Cplus(1,:)==1,2)
+%             [y_0plus,Iy_0plus]=max(Cplus(2,2:s(length(s))-1));
+%              s=find(Cminus(1,:)==1,2)
+%             [y_0minus,Iy_0minus]=max(Cminus(2,2:s(length(s))-1));
+%         elseif j==2
+%             [y_0,Iy_0]=max(C(2,2:length(C(1,:))));
+%             [y_0plus,Iy_0plus]=max(Cplus(2,2:length(Cplus(1,:))));
+%             s=find(Cminus(1,:)==1,2)
+%             [y_0minus,Iy_0minus]=max(Cminus(2,2:s(length(s))-1));
+%         end
+%         %Rotate the graph 90degrees
+%         x=C(2,2:Iy_0);
+%         y=C(1,2:Iy_0);
+%         
+%         xplus=Cplus(2,2:Iy_0plus);
+%         yplus=Cplus(1,2:Iy_0plus);
+%  
+%         xminus=Cminus(2,2:Iy_0minus);
+%         yminus=Cminus(1,2:Iy_0minus);
+%         
+%         %Fit with a polynomial of degree g
+%         p=polyfit(x,y,g);
+%         fun=@(t) pi*(polyval(p,t)).^2;
+%         int=integral(fun,x(1),x(length(x)))
+%         
+%         pplus=polyfit(xplus,yplus,g);
+%         fun=@(t) pi*(polyval(pplus,t)).^2;
+%         intplus=integral(fun,xplus(1),xplus(length(xplus)))
+%         
+%         pminus=polyfit(xminus,yminus,g);
+%         fun=@(t) pi*(polyval(pminus,t)).^2;
+%         intminus=integral(fun,xminus(1),xminus(length(xminus)))
+%         
         
         %Uncomment this section if you want to check the polynomal fit
         %------Plot polynomial fit--------

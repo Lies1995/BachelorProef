@@ -227,11 +227,11 @@
 
 			\begin{description}
 				\item[] $\Delta T$ temperature rise
-			  	\item[] $\mu_a$ tissue-absorption coefficient ($m^{-1}$)
-			  	\item[] $k$ thermal conductivity ($Wm^{-1}^{\circ}C^{-1}$)
-			 	\item[] $\rho$ tissue density ($kg$ $m^{-3}$)
-				\item[] $c$ heat capacity ($J$ $kg^{-1}^{\circ}C^{-1}$)
-				\item[] $\phi(z,r)$ fluence rate of the laser light
+			  	\item[] $\mu_a$ tissue-absorption coefficient [$m^{-1}$]
+			  	\item[] $k$ thermal conductivity [$Wm^{-1}^{\circ}C^{-1}$]
+			 	\item[] $\rho$ tissue density [$kg$ $m^{-3}$]
+				\item[] $c$ heat capacity [$J$ $kg^{-1}^{\circ}C^{-1}$]
+				\item[] $\phi(z,r)$ fluence rate of the laser light or LED [$W m^{-2}$]
 			\end{description}				
 
     \end{frame}
@@ -269,19 +269,19 @@
 
         \begin{columns}[c]
 
-        \column{.3\textwidth} % Leuveft column and width
+        \column{.4\textwidth} % Leuveft column and width
             \begin{itemize}
             \small
-            	\item Laser properties \\%afbeelding +uitleg optical fiber
+            	\item Radiation properties \\%afbeelding +uitleg optical fiber
                 Power, Energy,..\\
                 \item Tissue properties\\
                 $\mu_a$, $\mu_s$, $g$
             \end{itemize}
 
-        \column{.7\textwidth} 
+        \column{.6\textwidth} 
             \begin{figure}[tb]
                 \centering
-                \includegraphics[width=4.5cm]{images/anisotropy.png}%picture of one photon
+                \includegraphics[width=0.6\textwidth]{images/anisotropy.png}%picture of one photon
             \label{fig:aniso} 
             \end{figure}
         \end{columns}
@@ -297,7 +297,7 @@
 
     \end{frame}
 
-    \begin{frame}{Simulation with MCML$^{\ast}$ for  $\phi(r,z)$[$\frac{mW}{mm^2}$] and $P=1mW$}
+    \begin{frame}{Simulation with MCML$^{\ast}$ \small $P=1mW$}
       \footlineextra{*Monte Carlo Multi Layer \\ Source:\cite{MCML}}
     %4 afbeeldingen fluence rate power 1mW
     \begin{figure}[tb]
@@ -317,15 +317,15 @@
 \subsection{Continuous stimulation} % (fold) %Hannelore
 \label{sub:continuous_stimulation}
 %------------------------------------------------
-    \begin{frame}{Continuous stimulation ($P=1mW$)}
+    \begin{frame}{Continuous stimulation \small $P=1mW$}
             \begin{figure}
                 \centering
-                \includegraphics[width=\textwidth]{images/4dT.png}
+                \includegraphics[width=0.85\textwidth]{images/4dT.png}
                 \label{fig:figure1}
             \end{figure}
     \end{frame}
     \begin{frame}
-    	\frametitle{Continuous stimulation ($P=1mW$)}
+    	\frametitle{Continuous stimulation \small $P=1mW$}
     	\begin{columns}[c]
     	\column{.5\textwidth}
         	\begin{figure}[tb]
