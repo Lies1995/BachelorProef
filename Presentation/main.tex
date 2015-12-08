@@ -66,8 +66,7 @@
 \footlineextra{}
 \makeatother
 
-\title[Katholieke Universiteit Leuven]{\large Temperature changes in the rat brain during optogenetic stimulations }
-\author[L. Deceuninck, H. Verhoeven]{Lies Deceuninck \\Hannelore Verhoeven} % Your name
+\author[L. Deceuninck, H. Verhoeven]{} % Your name
 
 \date{}
 
@@ -128,7 +127,7 @@
 \label{sub:optogenetics}%lies
 %------------------------------------------------
 
-	\begin{frame}{Opsins}
+	\begin{frame}{}
 
 		\footlineextra{Source:\cite{Opsin}}
         \begin{center}
@@ -142,6 +141,8 @@
             }
             \pause
         \only<2>{
+        \centering
+        \large Ion Channels
         	\begin{columns}[c]
         	\column{.4\textwidth}
         	\begin{figure}[tb]
@@ -157,6 +158,8 @@
 
         	}
         \only<3>{
+        \centering
+        \large Opsins
             \begin{figure}[tb]
             \centering
             \includegraphics[width=11cm]{images/Opsins3.png}
@@ -294,10 +297,10 @@
         \label{fig:MCML1} 
     \end{figure}
 
-
     \end{frame}
 
-    \begin{frame}{Simulation with MCML$^{\ast}$ \small $P=1mW$}
+    \begin{frame}{Simulation with MCML$^{\ast}$ \\ \small Fluence Rate $P=1mW$}
+
       \footlineextra{*Monte Carlo Multi Layer \\ Source:\cite{MCML}}
     %4 afbeeldingen fluence rate power 1mW
     \begin{figure}[tb]
@@ -305,15 +308,7 @@
             \includegraphics[width=0.8\textwidth]{images/FR_P1mW.png}%picture of one photon
         \end{figure}
     \end{frame}
-
-    \begin{frame}[tb]
-    \frametitle{Influence of absorption and scattering}
-        \begin{figure}[tb]
-        	\centering
-        	\includegraphics[width=\textwidth]{images/scat+abs_variatie.png}
-        \end{figure}
-    \end{frame}
-%------------------------------------------------
+-------------------------------
 \subsection{Continuous stimulation} % (fold) %Hannelore
 \label{sub:continuous_stimulation}
 %------------------------------------------------
@@ -326,18 +321,10 @@
     \end{frame}
     \begin{frame}
     	\frametitle{Continuous stimulation \small $P=1mW$}
-    	\begin{columns}[c]
-    	\column{.5\textwidth}
         	\begin{figure}[tb]
         		\centering
         		\includegraphics[width=\textwidth]{images/dT_tijd_SM}
         	\end{figure}
-        \column{.5\textwidth}
-        	\begin{figure}[tb]
-        		\centering
-        		\includegraphics[width=\textwidth]{images/dT_tijd_MM}
-        	\end{figure}
-        \end{columns}
     \end{frame}
 
     \begin{frame}[t]
