@@ -1,0 +1,33 @@
+Possible questions
+slide 6: How can you see that the second term is negativ?
+
+slide 7: What are these approximantions and why are they valid? 
+	1. Fluence rate is proportiononal to spatial distribution of the
+	temperature increase for all times. 
+		logical: high power -> higher T
+	2. radial distribution of fluence rate represented by a zero-order 
+	Bessel function, the axial distribution by a cosine function.	
+		This is a typical solution when solving T(t,z,r)= theta(t)phi(z,r) 
+		with the right boundary conditions with the method of seperations of
+		variables.
+	3. T=phi=0 for z>z0 and r>r0
+		This is only valid when the thermal diffusion length is smaler then r0 
+		z0. For z0 this is not a problem, for r0 this gives a limitation of the
+		model. sqrt(4 k t_{puls}/ rho c)
+	4. optical and thermal properties are independent of temperature. 
+		They do depend on temperature, but here the temperature changes are to
+		smal.
+slide 7: Why has this graf a different chape than your solutions?
+	It has a logaritmic scale.
+slide 10: Why is there a difference in temperature for different wavelengths?
+	For 560nm the temperature is larger because the absorption is higher 
+	because of absorption from hemoglobin. 
+slide 10: Why is there a difference in temperature for different fibers?
+	Because tau is bigger for a MM there is more time for the energy to be
+	absorbed by the tissue, so the temperature can become larger.
+slide 14: Why didn't you do an error analysis for the pulsed stimulation?
+
+Why don't you just use numerical solutions?
+	They are indeed more precise, but they need much computation time and
+	they give less insight in the relation between the tissue and thermal 
+	properties and the temperature rise. 
