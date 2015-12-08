@@ -93,7 +93,7 @@
 
 \begin{frame}
 \frametitle{Overview} 
-\footlineextra{Source:\cite{Barbara}}
+\footlineextra{Source: [B. Gysbrechts et al. - Journal of BioPhotonics - 2015]}
 \begin{columns}[c]
 
 \column{.4\textwidth} % Left column and width
@@ -130,7 +130,7 @@
 
 	\begin{frame}{Opsins}
 
-		\footlineextra{Source:\cite{Opsin}}
+		\footlineextra{Source: [F.Zhang et al. - Nature Protocols - 2010]}
         \begin{center}
         \begin{overprint}
         \only<1>{
@@ -169,7 +169,7 @@
 
 
     \begin{frame}{Control neuron activity}
-        \footlineextra{Source:\cite{act_inh}}
+        \footlineextra{Source: [JJ Sun et al. - Optogenetic Experiments - 2014]}
 
         \begin{figure}[tb]
             \centering
@@ -186,7 +186,7 @@
 %------------------------------------------------
 		
     \begin{frame}{Photothermal effects}
-    \footlineextra{Source:\cite{laser}}
+    \footlineextra{Source: [B. Cox - Introduction to Laser-Tissue Interactions - 2013]}
       \centering 37$^{\circ}C:$ normal body temperature
     \begin{columns}[c]
 
@@ -218,7 +218,7 @@
 %------------------------------------------------
 %------------------------------------------------
    \begin{frame}{Bioheat equation}%Bioheat equation%Hannelore
-        \footlineextra{Source:\cite{Gemert}}
+        \footlineextra{Source: [M.J.C. van Gemert - Time constants in thermal laser medicine - 1989]}
 
 			\begin{equation*}
 				\frac{\partial{\Delta T(t,z,r)}}{\partial{t}} = \frac{\mu_{a}\phi(z,r)}{\rho c}+\frac{k}{\rho c}\left[ \frac{\partial^2{\Delta 				T}}{\partial{z^2}}+\frac{\partial^2{\Delta T}}{\partial{r^2}}+\frac{1}{r}\frac{\partial{\Delta T}}{\partial{r}}\right]
@@ -226,7 +226,7 @@
 			\end{equation*}
 
 			\begin{description}
-				\item[] $\Delta T$ temperature rise
+				\item[] $\Delta T$ temperature rise [$^{\circ}C$]
 			  	\item[] $\mu_a$ tissue-absorption coefficient [$m^{-1}$]
 			  	\item[] $k$ thermal conductivity [$Wm^{-1}^{\circ}C^{-1}$]
 			 	\item[] $\rho$ tissue density [$kg$ $m^{-3}$]
@@ -241,7 +241,7 @@
 %------------------------------------------------
 
     \begin{frame}{Solution of the bioheat equation}
-      \footlineextra{Source:\cite{Gemert}}
+      \footlineextra{Source: [M.J.C. van Gemert - Time constants in thermal laser medicine - 1989]}
 			\begin{equation*}
 			\Delta T(t,z,r) = \frac{\tau \mu_a\phi(z,r)}{\rho c}(1-e^{-\frac{t}{\tau}})
 			\label{eq:solutionBHeq}
@@ -265,7 +265,7 @@
 %------------------------------------------------
 
     \begin{frame}{Fluence Rate $\phi(r,z)$[$\frac{W}{m^2}$]}
-      \footlineextra{Source:\cite{laser} and \cite{MCML} }
+      \footlineextra{Source: [B. Cox - Introduction to Laser-Tissue Interactions - 2013] and [L. Wang, S. L. Jacques, and L. Zhenb - Computer Methods and Programs in Biomedicine - 1995] }
 
         \begin{columns}[c]
 
@@ -298,7 +298,7 @@
     \end{frame}
 
     \begin{frame}{Simulation with MCML$^{\ast}$ \small $P=1mW$}
-      \footlineextra{*Monte Carlo Multi Layer \\ Source:\cite{MCML}}
+      \footlineextra{*Monte Carlo Multi Layer \\ Source: [L. Wang, S. L. Jacques, and L. Zhenb - Computer Methods and Programs in Biomedicine - 1995]}
     %4 afbeeldingen fluence rate power 1mW
     \begin{figure}[tb]
             \centering
@@ -317,15 +317,18 @@
 \subsection{Continuous stimulation} % (fold) %Hannelore
 \label{sub:continuous_stimulation}
 %------------------------------------------------
-    \begin{frame}{Continuous stimulation \small $P=1mW$}
+    \begin{frame}{Continuous stimulation \small $P=1mW$ }
+		\centering Temperature increase
             \begin{figure}
                 \centering
-                \includegraphics[width=0.85\textwidth]{images/4dT.png}
+                \includegraphics[width=0.8\textwidth]{images/4dT.png}
                 \label{fig:figure1}
             \end{figure}
     \end{frame}
+		
     \begin{frame}
     	\frametitle{Continuous stimulation \small $P=1mW$}
+			\centering Temperature increase
     	\begin{columns}[c]
     	\column{.5\textwidth}
         	\begin{figure}[tb]
@@ -342,6 +345,7 @@
 
     \begin{frame}[t]
     \frametitle{Influence of absorption and scattering}
+		\centering Temperature increase
         \begin{figure}[tb]
         	\centering
         	\includegraphics[width=\textwidth]{images/dT_time_mu-a_mu-s_foutMM}
@@ -406,10 +410,10 @@
     \centering
 		\begin{table*}
 		\centering
-		\begin{tabular}{p{1.8cm}|p{1.6cm}|p{1.6cm}||p{2cm}|p{2cm}}
+		\begin{tabular}{p{1.8cm}|p{1.9cm}|p{1.6cm}||p{2cm}|p{2cm}}
 
 			\hline
-			Irradiantie [$mW/mm^2$] & Pulslengte [$ms$] & Frequentie [$Hz$] & \multicolumn{2}{c}{Maximale $\Delta T$}[$m^{\circ}C$] \\
+			Irradiance [$mW/mm^2$] & Puls length [$ms$] & Frequency [$Hz$] & \multicolumn{2}{c}{Maximal $\Delta T$}[$10^{-3}^{\circ}C$] \\
 			& & & $\lambda = 474$nm & $\lambda = 560$nm\\ 
 			\hline
 			\hline
@@ -434,18 +438,18 @@
 %------------------------------------------------
 %------------------------------------------------
     \begin{frame}{Conclusion}
-      \footlineextra{Source:\cite{Barbara}}
+      \footlineextra{Source: [B. Gysbrechts et al. - Journal of BioPhotonics - 2015]}
 
 		\begin{columns}[c]
 
 		\column{.4\textwidth} % Left column and width
    
    			\begin{itemize}
-   				\item Limited validity
-    			\item Physical insight
-    			\item No predicted damage
+   				\item No predicted damage
     			\item Error due to the model
-    			\item Error pulsed stimulation
+					\item Physical insight
+    			\item Limited validity
+    			\item Error analysis pulsed stimulation
    			\end{itemize}
 
    		\column{.5\textwidth} 
